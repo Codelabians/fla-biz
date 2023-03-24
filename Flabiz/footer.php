@@ -51,7 +51,9 @@
   <!-- end container -->
 
 </div>
-    <script src="<?php bloginfo('template_url'); ?>/js/bootstrap.bundle.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/bootstrap.bundle.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/jquery-3.6.4.min"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/myjs.js"></script>
 <script type="text/javascript">function add_chatinline(){
 
 	var hccid=36868316;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);
