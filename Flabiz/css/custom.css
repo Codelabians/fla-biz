@@ -1,0 +1,39 @@
+﻿.navbar-default{border-color:transparent;}
+.navbar-default .navbar-nav > li > a{color:#fff;
+                                     font-size: 12pt;
+    font-weight: 400;
+}
+.btn-copy{
+    color: #fff;
+    background-color: #B22234;
+    border-color: #B22234;
+    padding:10px 20px !important;
+    border-radius:0px;
+    -moz-border-radius:0px;
+    -webkit-border-radius:0px;
+}
+.btn-copy:hover,.btn-copy:active{
+    color: #fff;
+    background-color: #830f1d;
+    border-color: #830f1d;
+}
+#tf-blog{padding:10px 0px;}
+#tf-home h1{font-size:40px;font-weight:400;}
+#tf-intro p{font-size:12pt;font-weight:400;text-align:justify;padding:5px 20px;}
+@media(max-width: 460px){
+    #tf-home h1{font-size:24px;padding:20px;}
+    #tf-home{
+        background-image:url(/img/copyright-bg-small.jpg);
+        background-position:bottom;
+        background-size:auto;
+        background-attachment:initial;
+    }
+    #tf-home .overlay{
+        padding:12% 0%;
+    }
+    .about-left-content{padding-bottom:0px;}
+    .about-right-content{padding:0px;}
+    a.goto-btn{
+        font-size:16px;
+    }
+}
