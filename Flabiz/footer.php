@@ -52,7 +52,6 @@
 
 </div>
 <script src="<?php bloginfo('template_url'); ?>/js/bootstrap.bundle.js"></script>
-<script src="<?php bloginfo('template_url'); ?>/js/jquery-3.6.4.min"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/myjs.js"></script>
 <script type="text/javascript">function add_chatinline(){
 
