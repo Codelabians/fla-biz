@@ -18,6 +18,9 @@
     border-color: #830f1d;
 }
 
+.container-fluid{
+    padding: 0 7rem;
+}
 
 .select-boxes-right{
     margin-top: 2.2rem;
