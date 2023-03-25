@@ -1,32 +1,32 @@
 jQuery.noConflict();
-$(document).ready(function () {
-    $(document).on("click" , ".business_mailing_address_check" , function (){
-        if($(this).val() === "different"){
-            $("#business_mailing_address").show()
+jQuery(document).ready(function () {
+    jQuery(document).on("click" , ".business_mailing_address_check" , function (){
+        if(jQuery(this).val() === "different"){
+            jQuery("#business_mailing_address").show()
         }else {
-            $("#business_mailing_address").hide()
+            jQuery("#business_mailing_address").hide()
         }
     })
-    $(document).on("keyup" , ".address_fields" , showAddress)
+    jQuery(document).on("keyup" , ".address_fields" , showAddress)
 
     function showAddress(){
         var address = ""
-        if($("#address").val().trim() !== ""){
-            if($("#city").val().trim() !== ""){
-                if($("#zip_code").val().trim() !== ""){
-                    address = $("#address").val().trim()+"<br>"+$("#city").val().trim()+",FL"+" "+$("#zip_code").val().trim();
-                    $("#business_mailing_address_if_same").text(address)
+        if(jQuery("#address").val().trim() !== ""){
+            if(jQuery("#city").val().trim() !== ""){
+                if(jQuery("#zip_code").val().trim() !== ""){
+                    address = jQuery("#address").val().trim()+"<br>"+jQuery("#city").val().trim()+",FL"+" "+jQuery("#zip_code").val().trim();
+                    jQuery("#business_mailing_address_if_same").text(address)
                 }else{
-                    $("#zip_code").addClass("in-valid");
+                    jQuery("#zip_code").addClass("in-valid");
                 }
             }else{
-                $("#city").addClass("in-valid");
+                jQuery("#city").addClass("in-valid");
             }
         }else{
-            $("#address").addClass("in-valid");
+            jQuery("#address").addClass("in-valid");
         }
     }
-    $(document).on("keyup" , ".phone_numbers" , formatPhoneNumber($(this).val()))
+    jQuery(document).on("keyup" , ".phone_numbers" , formatPhoneNumber(jQuery(this).val()))
     function formatPhoneNumber(phoneNumber) {
         // Remove all non-digit characters from the phone number
         const cleaned = phoneNumber.replace(/\D/g, '');
