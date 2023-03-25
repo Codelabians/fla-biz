@@ -1,3 +1,4 @@
+$.noConflict();
 $(document).ready(function () {
     $(document).on("click" , ".business_mailing_address_check" , function (){
         if($(this).val() === "different"){
