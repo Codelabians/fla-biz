@@ -254,8 +254,8 @@ get_header();
                 <!--Different Mailing Address-->
                 <div class="row">
                     <div class="offset-md-3 offset-lg-3 col-sm-12 col-lg-9 col-md-9">
-                        <input value="different" class="form-check-input business_mailing_address_check" type="radio" name="business_mailing_address_check" id="business_mailing_address_check">
-                        <label class="form-check-label" for="business_mailing_address_check">
+                        <input value="different" class="form-check-input business_mailing_address_check" type="radio" name="business_mailing_address_check" id="business_mailing_address_check_other">
+                        <label class="form-check-label" for="business_mailing_address_check_other">
                             Other (please specify below)
                         </label>
                     </div>
