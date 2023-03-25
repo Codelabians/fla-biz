@@ -14,8 +14,8 @@ jQuery(document).ready(function () {
         if(jQuery("#address").val().trim() !== ""){
             if(jQuery("#city").val().trim() !== ""){
                 if(jQuery("#zip_code").val().trim() !== ""){
-                    address = jQuery("#address").val().trim()+"<br>"+jQuery("#city").val().trim()+",FL"+" "+jQuery("#zip_code").val().trim();
-                    jQuery("#business_mailing_address_if_same").text(address)
+                    address = "<h4>"+jQuery("#address").val().trim()+"<br>"+jQuery("#city").val().trim()+",FL"+" "+jQuery("#zip_code").val().trim()+"</h4>";
+                    jQuery("#business_mailing_address_if_same").html(address)
                 }else{
                     jQuery("#zip_code").addClass("in-valid");
                 }

@@ -262,8 +262,7 @@ get_header();
                 </div>
                 <!--Show Same Mailing Address-->
                 <div class="row">
-                    <div class="col-md-12 col-sm-12 col-lg-12">
-                        <p id="business_mailing_address_if_same"></p>
+                    <div id="business_mailing_address_if_same" class="offset-md-3 offset-lg-3 col-sm-12 col-lg-9 col-md-9">
                     </div>
                 </div>
                 <!--Different Mailing Address Fields Div -->
