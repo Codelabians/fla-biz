@@ -245,7 +245,7 @@ get_header();
                 <!--Same as above principal address-->
                 <div class="row">
                     <div class="offset-md-3 offset-lg-3 col-sm-12 col-lg-9 col-md-9">
-                        <input class="form-check-input business_mailing_address_check" type="radio" name="business_mailing_address_check" id="business_mailing_address_check">
+                        <input checked class="form-check-input business_mailing_address_check" type="radio" name="business_mailing_address_check" id="business_mailing_address_check">
                         <label class="form-check-label" for="business_mailing_address_check">
                             Same as Principal Place of Business Address (specified above)
                         </label>
