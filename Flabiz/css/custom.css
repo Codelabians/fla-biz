@@ -17,6 +17,14 @@
     background-color: #830f1d;
     border-color: #830f1d;
 }
+
+
+.select-boxes-right{
+    margin-top: 2.2rem;
+}
+.country-paragraph{
+    padding: 0.5rem;
+}
 #tf-blog{padding:10px 0px;}
 #tf-home h1{font-size:40px;font-weight:400;}
 #tf-intro p{font-size:12pt;font-weight:400;text-align:justify;padding:5px 20px;}

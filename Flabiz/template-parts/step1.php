@@ -18,8 +18,7 @@ get_header();
                         <input class="form-control" id="preferred_name" name="preferred_name" type="text">
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12">
-                        <label for="preferred_name_type" class="form-label">Select</label>
-                        <select class="form-select" name="preferred_name_type" aria-label="Default select">
+                        <select class="form-select select-boxes-right" name="preferred_name_type" aria-label="Default select">
                             <option value="">Select</option>
                             <option value="Co.">Co.</option>
                             <option value="Company">Company</option>
@@ -37,8 +36,7 @@ get_header();
                         <input class="form-control" id="alternate_name" name="alternate_name" type="text">
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12">
-                        <label for="alternate_name_type" class="form-label">Select</label>
-                        <select class="form-select" name="alternate_name_type" aria-label="Default select">
+                        <select class="form-select select-boxes-right" name="alternate_name_type" aria-label="Default select">
                             <option value="">Select</option>
                             <option value="Co.">Co.</option>
                             <option value="Company">Company</option>
@@ -61,7 +59,7 @@ get_header();
                 </div>
                 <!--Fields-->
 
-                <!--Preferred Name-->
+                <!--Principal Activity-->
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-lg-3">
                         <label for="principal_activity" class="form-label">Principal Activity</label>
@@ -87,8 +85,8 @@ get_header();
                         </select>
                     </div>
                 </div>
-                <!--Alternate Name-->
-                <div class="row">
+                <!--Company's purpose-->
+                <div class="row mt-4">
                     <div class="col-md-3 col-sm-12 col-lg-3">
                         <label for="company_purpose" class="form-label">Briefly summarize the company's purpose</label>
                     </div>
@@ -137,10 +135,10 @@ get_header();
                 <!--Country-->
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-lg-3">
-                        <label for="city" class="form-label">City</label>
+                        <label for="country" class="form-label">Country</label>
                     </div>
                     <div class="col-lg-7 col-md-7 col-sm-12">
-                        <select name="county" id="county" class="form-control">
+                        <select name="country" id="country" class="form-control">
                             <option value="">Select County</option>
                             <option value="Alachua">Alachua</option>
                             <option value="Baker">Baker</option>
@@ -212,7 +210,7 @@ get_header();
                         </select>
                     </div>
                     <div class="col-lg-2 col-sm-2 col-md-12">
-                        <p>,FL</p>
+                        <h5 class="text-center country-paragraph">,FL</h5>
                     </div>
                 </div>
                 <!--Zip code-->
