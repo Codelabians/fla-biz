@@ -11,12 +11,31 @@ get_header();
                 <!--Primary Contact Information-->
                 <!--Heading-->
                 <h2>Business Management</h2>
+                <p><strong>We show your information as:</strong></p>
+                <table class="table table-striped" id="myTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="main-name"></td>
+                            <td id="main-address"></td>
+                            <td id="main-email"></td>
+                        </tr>
+                    </tbody>
+                </table>
                 <h3 class="mt-5">Director Information</h3>
                 <p>
                     Your company must have at least one director, but may have more. You may also be the only director. A director must be a legal adult (18 years of age or older) and
                     <strong>is NOT required to live within the State of Florida</strong>.
                 </p>
                 <p><strong>Would you like to be a director?</strong></p>
+                <button class="btn bg-none border-success">Yes</button>
+                <button class="btn bg-none border-success">No</button>
                 <p style="display:none;">
                     The current corporate directors are listed below. Review this list for accuracy before continuing. You can remove any existing director by clicking the <strong class="text-danger">"x"</strong> icon to the right of that director's information.
                 </p>
