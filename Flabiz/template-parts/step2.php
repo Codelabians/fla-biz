@@ -36,29 +36,29 @@ get_header();
                     <!--Phone Number-->
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-12">
-                            <label for="phone" class="form-label">Phone</label>
+                            <label for="primary_phone" class="form-label">Phone</label>
                         </div>
                         <div class="col-md-9 col-lg-9 col-sm-12">
-                            <input class="form-control" id="phone" name="phone" type="text">
+                            <input class="form-control" id="primary_phone" name="primary_phone" type="text">
                         </div>
                     </div>
 
                     <!--Email-->
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-12">
-                            <label for="email" class="form-label">Email</label>
+                            <label for="primary_email" class="form-label">Email</label>
                         </div>
                         <div class="col-md-9 col-lg-9 col-sm-12">
-                            <input class="form-control" id="email" name="email" type="text">
+                            <input class="form-control" id="primary_email" name="primary_email" type="text">
                         </div>
                     </div>
                     <!--Validate Email-->
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-12">
-                            <label for="validate_email" class="form-label">Validate Email</label>
+                            <label for="primary_validate_email" class="form-label">Validate Email</label>
                         </div>
                         <div class="col-md-9 col-lg-9 col-sm-12">
-                            <input class="form-control" id="validate_email" name="validate_email" type="text">
+                            <input class="form-control" id="primary_validate_email" name="primary_validate_email" type="text">
                         </div>
                     </div>
 
