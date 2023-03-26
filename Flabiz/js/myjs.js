@@ -40,9 +40,6 @@ jQuery(document).ready(function () {
         }
         return formatted;
     }
-    var submitButton = document.getElementById("submitButton"); // replace with your submit button ID
-    submitButton.addEventListener("click", saveFormData);
-
     // Get the form element
     var formElement = document.getElementById('myForm');
 
