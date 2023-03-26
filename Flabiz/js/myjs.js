@@ -98,7 +98,7 @@ jQuery(document).ready(function () {
         sessionStorage.setItem('formData', JSON.stringify(mergedFormData));
 
         // Redirect the user to the next form page, or do whatever else you need to do
-        window.location.href = $(this).data('action');
+        window.location.href = jQuery(this).data('action');
     });
 
 })
