@@ -40,5 +40,14 @@ jQuery(document).ready(function () {
         }
         return formatted;
     }
+    var submitButton = document.getElementById("submitButton"); // replace with your submit button ID
+    submitButton.addEventListener("click", saveFormData);
+
+    function saveFormData() {
+        var form = document.getElementById("form-one");
+        var formData = new FormData(form);
+        var encodedFormData = encodeURIComponent(JSON.stringify([...formData]));
+        document.cookie = "formData=" + encodedFormData;
+    }
 
 })
