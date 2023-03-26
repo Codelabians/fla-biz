@@ -398,7 +398,11 @@ get_header();
 
                     </div>
                 </div>
-                <input type="submit" value="Next" class="btn btn-success text-success">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <input type="submit" value="Next" class="btn border-success text-success float-end">
+                    </div>
+                </div>
             </form>
         </div>
     </div>

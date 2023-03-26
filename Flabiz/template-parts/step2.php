@@ -186,6 +186,15 @@ get_header();
                             <input type="text" class="form-control address_fields" id="personal_zip_code" name="personal_zip_code">
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <a href="/stepone" class="btn button-success text-white">Previous</a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <input type="submit" value="Next" class="btn border-success text-success float-end">
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
