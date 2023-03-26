@@ -189,7 +189,7 @@ get_header();
 
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <a href="/stepone" class="btn button-success text-white">Previous</a>
+                            <a href="/stepone" class="btn btn-success text-white">Previous</a>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <input type="submit" value="Next" class="btn border-success text-success float-end">

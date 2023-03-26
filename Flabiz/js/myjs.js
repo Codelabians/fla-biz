@@ -49,8 +49,8 @@ jQuery(document).ready(function () {
 // Loop through all the form elements
     for (var i = 0; i < formElement.elements.length; i++) {
         var input = formElement.elements[i];
-        if (input.type !== 'submit') {
-            // Use the stored form data to pre-populate the form inputs, if applicable
+        if (input.type !== 'submit' && formData[input.id || input.name] !== undefined) {
+                // Use the stored form data to pre-populate the form inputs, if applicable
             input.value = formData[input.id || input.name];
         }
     }
@@ -86,7 +86,7 @@ jQuery(document).ready(function () {
         // Loop through all the form elements
         for (var i = 0; i < formElement.elements.length; i++) {
             var input = formElement.elements[i];
-            if (input.type !== 'submit' && formData[input.id || input.name] !== undefined) {
+            if (input.type !== 'submit') {
                 formInputData[input.id || input.name] = input.value;
             }
         }
