@@ -1,5 +1,5 @@
 <?php
-// Template Name: Step1
+// Template Name: Step2
 
 get_header();
 
