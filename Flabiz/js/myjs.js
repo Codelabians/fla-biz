@@ -86,7 +86,7 @@ jQuery(document).ready(function () {
         // Loop through all the form elements
         for (var i = 0; i < formElement.elements.length; i++) {
             var input = formElement.elements[i];
-            if (input.type !== 'submit') {
+            if (input.type !== 'submit' && formData[input.id || input.name] !== undefined) {
                 formInputData[input.id || input.name] = input.value;
             }
         }
