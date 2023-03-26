@@ -43,11 +43,65 @@ jQuery(document).ready(function () {
     var submitButton = document.getElementById("submitButton"); // replace with your submit button ID
     submitButton.addEventListener("click", saveFormData);
 
-    function saveFormData() {
-        var form = document.getElementById("form-one");
-        var formData = new FormData(form);
-        var encodedFormData = encodeURIComponent(JSON.stringify([...formData]));
-        document.cookie = "formData=" + encodedFormData;
+    // Get the form element
+    var formElement = document.getElementById('myForm');
+
+// Retrieve the stored form data from session storage, or create an empty object if no data has been stored yet
+    var formData = JSON.parse(sessionStorage.getItem('formData')) || {};
+
+// Loop through all the form elements
+    for (var i = 0; i < formElement.elements.length; i++) {
+        var input = formElement.elements[i];
+        if (input.type !== 'submit') {
+            // Use the stored form data to pre-populate the form inputs, if applicable
+            input.value = formData[input.id || input.name];
+        }
     }
+
+// Add an event listener to the form that listens for the submit event
+    formElement.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Validate the form inputs
+        var isValid = true;
+        for (var i = 0; i < formElement.elements.length; i++) {
+            var input = formElement.elements[i];
+            if (input.type !== 'submit' && input.dataset.required && !input.value.trim()) {
+                isValid = false;
+                input.classList.add('error');
+            } else {
+                input.classList.remove('error');
+            }
+        }
+
+        // If the form is invalid, don't save the data and display an error message
+        if (!isValid) {
+            var errorMessage = document.createElement('div');
+            errorMessage.classList.add('error-message');
+            errorMessage.textContent = 'Please fill in all required fields';
+            formElement.appendChild(errorMessage);
+            return;
+        }
+
+        // Create an object to store the form data
+        var formInputData = {};
+
+        // Loop through all the form elements
+        for (var i = 0; i < formElement.elements.length; i++) {
+            var input = formElement.elements[i];
+            if (input.type !== 'submit') {
+                formInputData[input.id || input.name] = input.value;
+            }
+        }
+
+        // Merge the form data with any existing data in session storage
+        var mergedFormData = Object.assign({}, formData, formInputData);
+
+        // Store the merged form data in session storage
+        sessionStorage.setItem('formData', JSON.stringify(mergedFormData));
+
+        // Redirect the user to the next form page, or do whatever else you need to do
+        window.location.href = $(this).data('action');
+    });
 
 })

@@ -14,7 +14,7 @@ get_header();
                 <p><strong>We show your information as:</strong></p>
                 <table class="table table-striped" id="myTable">
                     <thead>
-                        <tr>
+                        <tr class="bg-light">
                             <th>Name</th>
                             <th>Address</th>
                             <th>Email</th>
@@ -34,8 +34,31 @@ get_header();
                     <strong>is NOT required to live within the State of Florida</strong>.
                 </p>
                 <p><strong>Would you like to be a director?</strong></p>
-                <button class="btn bg-none border-success">Yes</button>
-                <button class="btn bg-none border-success">No</button>
+                <button class="btn bg-none border-success text-success">Yes</button>
+                <button class="btn bg-none border-success text-success" data-bs-toggle="modal" data-bs-target="#dirModal">No</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="dirModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-2 form-group">
+                                    <label for="directors-first-name" class="mb-1">First Name</label>
+                                    <input name="directors-first-name" id="directors-first-name"  type="text" class="form-control" value=""></div><div class="mb-2 form-group"><label for="directorslastName" class="mb-1">Last Name</label><input name="lastName" id="directorslastName" data-hj-masked="true" type="text" class="form-control" value=""></div><div class="mb-2 form-group"><label for="directorsstreet1" class="mb-1">Address</label><input name="street1" id="directorsstreet1" data-hj-masked="true" type="text" class="form-control" value=""></div><div class="mb-2 form-group"><label for="directorsstreet2" class="mb-1">Suite. Apt. #, etc.</label><input name="street2" id="directorsstreet2" data-hj-masked="true" type="text" class="form-control" value=""></div><div class="mb-2 form-group"><label for="directorscity" class="mb-1">City</label><input name="city" id="directorscity" data-hj-masked="true" type="text" class="form-control" value=""></div><div class="mb-2 form-group"><label for="directorsstate" class="mb-1">State</label><select name="stateProvince" id="directorsstate" data-hj-masked="true" class="custom-select"><option value="">Select State</option><option value="- ">Outside the US or Canada</option><option value="AB">Alberta</option><option value="AK">Alaska</option><option value="AL">Alabama</option><option value="AR">Arkansas</option><option value="AZ">Arizona</option><option value="BC">British Columbia</option><option value="CA">California</option><option value="CO">Colorado</option><option value="CT">Connecticut</option><option value="DC">District of Columbia</option><option value="DE">Delaware</option><option value="FL">Florida</option><option value="GA">Georgia</option><option value="HI">Hawaii</option><option value="IA">Iowa</option><option value="ID">Idaho</option><option value="IL">Illinois</option><option value="IN">Indiana</option><option value="KS">Kansas</option><option value="KY">Kentucky</option><option value="LA">Louisiana</option><option value="LB">Labrador</option><option value="MA">Massachusetts</option><option value="MB">Manitoba</option><option value="MD">Maryland</option><option value="ME">Maine</option><option value="MI">Michigan</option><option value="MN">Minnesota</option><option value="MO">Missouri</option><option value="MS">Mississippi</option><option value="MT">Montana</option><option value="NB">New Brunswick</option><option value="NC">North Carolina</option><option value="ND">North Dakota</option><option value="NE">Nebraska</option><option value="NF">Newfoundland</option><option value="NH">New Hampshire</option><option value="NJ">New Jersey</option><option value="NM">New Mexico</option><option value="NS">Nova Scotia</option><option value="NT">Northwest Territories</option><option value="NU">Nunavut</option><option value="NV">Nevada</option><option value="NY">New York</option><option value="OH">Ohio</option><option value="OK">Oklahoma</option><option value="ON">Ontario</option><option value="OR">Oregon</option><option value="PA">Pennsylvania</option><option value="PE">Prince Edward Island</option><option value="PQ">Quebec</option><option value="PR">Puerto Rico</option><option value="RI">Rhode Island</option><option value="SC">South Carolina</option><option value="SD">South Dakota</option><option value="SK">Saskatchewan</option><option value="TN">Tennessee</option><option value="TX">Texas</option><option value="UT">Utah</option><option value="VA">Virginia</option><option value="VT">Vermont</option><option value="WA">Washington</option><option value="WI">Wisconsin</option><option value="WV">West Virginia</option><option value="WY">Wyoming</option><option value="YT">Yukon Territory</option></select></div><div class="mb-2 form-group"><label for="directorspostalCode" class="mb-1">Zip Code</label><input name="postalCode" id="directorspostalCode" data-hj-masked="true" type="text" class="form-control" value=""></div><div class="mb-2 form-group"><label for="directorsemailAddress" class="mb-1">Email</label><input name="emailAddress" id="directorsemailAddress" data-hj-masked="true" type="text" class="form-control" value=""></div></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
                 <p style="display:none;">
                     The current corporate directors are listed below. Review this list for accuracy before continuing. You can remove any existing director by clicking the <strong class="text-danger">"x"</strong> icon to the right of that director's information.
                 </p>

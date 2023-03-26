@@ -10,7 +10,7 @@ get_header();
         <div class="col-sm-12 col-md-8 col-lg-8">
             <h2>Filing Information</h2>
             <p>Please enter the business name you wish to register. Make sure the business name you are filing is spelled correctly.</p>
-            <form id="form-one">
+            <form id="myForm" data-action="/step2">
                 <!--Filing Information-->
                 <div class="row">
                     <div class="col-md-9 col-lg-9 col-sm-12">
@@ -398,6 +398,7 @@ get_header();
 
                     </div>
                 </div>
+                <input type="submit" value="Next" class="btn btn-success text-success">
             </form>
         </div>
     </div>
