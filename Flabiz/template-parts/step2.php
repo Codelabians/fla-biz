@@ -12,7 +12,7 @@ get_header();
                 <!--Heading-->
                 <h2>Primary Contact Information</h2>
                 <p>Please provide the following information for the designated Point of Contact for this registration. This will be our primary way of contacting you.</p>
-                <form id="form-two">
+                <form id="myForm" data-action="/step-three">
                     <!--Fields-->
                     <!--First Name-->
                     <div class="row">
