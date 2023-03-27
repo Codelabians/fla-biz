@@ -12,6 +12,10 @@
     -moz-border-radius:0px;
     -webkit-border-radius:0px;
 }
+.error{
+    border: 1px solid red;
+    border-radius: 5px;
+}
 .btn-copy:hover,.btn-copy:active{
     color: #fff;
     background-color: #830f1d;
