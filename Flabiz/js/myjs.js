@@ -113,9 +113,7 @@ jQuery(document).ready(function () {
         if (!isValid) {
             jQuery("#modal-error").html(errorMessage);
             var myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
-            document.onreadystatechange = function () {
-                myModal.show();
-            };
+            myModal.show();
             return;
         }
 
