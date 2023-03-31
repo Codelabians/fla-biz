@@ -398,7 +398,7 @@ get_header();
 
                     </div>
                 </div>
-                <div class="error-div">
+                <div id="error-div">
 
                 </div>
                 <div class="row">
