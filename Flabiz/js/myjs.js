@@ -34,6 +34,7 @@ jQuery(document).ready(function () {
     // Phone Validtion
     jQuery(document).on("keyup" , ".phone" , function () {
         if(!formatPhoneNumber(jQuery(this).val())){
+            jQuery(this).val("")
             jQuery(this).addClass("error")
         }else{
             jQuery(this).val(formatPhoneNumber(jQuery(this).val()))
