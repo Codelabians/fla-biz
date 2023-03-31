@@ -27,10 +27,9 @@ jQuery(document).ready(function () {
         }
     }
     jQuery(document).on("keyup" , ".phone" , function () {
-        formatPhoneNumber(jQuery(this).val())
+        $(this).val(formatPhoneNumber(jQuery(this).val()))
     })
     function formatPhoneNumber(phoneNumber) {
-        console.log(phoneNumber);
         // Remove all non-digit characters from the phone number
         const cleaned = phoneNumber.replace(/\D/g, '');
         // Format the cleaned phone number with hyphens
