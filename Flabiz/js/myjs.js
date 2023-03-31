@@ -129,7 +129,7 @@ jQuery(document).ready(function () {
                 errorMessage += "<li>"+input.dataset.error+"</li>"
                 input.classList.add('error');
             }else {
-                if(input.hasClass("phone") && input.value.startsWith("0")){
+                if(input.classList.contains("phone") && input.value.startsWith("0")){
                     isValid = false;
                     errorMessage += "<li>Phone Number format is XXX-XXX-XXXX</li>"
                     input.classList.add('error');
