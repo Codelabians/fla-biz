@@ -1,5 +1,8 @@
 jQuery.noConflict();
 jQuery(document).ready(function () {
+    // Getting Modal
+    var myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
+
     // Address Validation
     jQuery(document).on("click" , ".business_mailing_address_check" , function (){
         if(jQuery(this).val() === "different"){
@@ -112,7 +115,6 @@ jQuery(document).ready(function () {
         // If the form is invalid, don't save the data and display an error message
         if (!isValid) {
             jQuery("#modal-error").html(errorMessage);
-            var myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
             myModal.show();
             return;
         }
@@ -136,6 +138,12 @@ jQuery(document).ready(function () {
 
         // Redirect the user to the next form page, or do whatever else you need to do
         window.location.href = jQuery(this).data('action');
+    });
+
+
+    myModal._element.addEventListener('hidden.bs.modal', function (event) {
+        document.body.classList.remove('modal-open');
+        myModal._element.parentNode.removeChild(myModal._element);
     });
 
 })

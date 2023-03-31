@@ -404,14 +404,14 @@ get_header();
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Oops, please fix the following issues:</h5>
+                                <h4 class="modal-title" id="exampleModalLabel">Oops, please fix the following issues:</h4>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body" id="modal-error">
 
                             </div>
                             <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">OK</button>
+                            <button type="button" data-bs-dismiss="modal" class="btn btn-primary">OK</button>
                         </div>
                     </div>
                 </div>
