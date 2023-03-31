@@ -13,8 +13,8 @@
     -webkit-border-radius:0px;
 }
 .error{
-    border: 1px solid red;
-    border-radius: 5px;
+    border: 1px solid red!important;
+    border-radius: 5px!important;
 }
 .btn-copy:hover,.btn-copy:active{
     color: #fff;
