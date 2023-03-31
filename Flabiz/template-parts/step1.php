@@ -15,7 +15,7 @@ get_header();
                 <div class="row">
                     <div class="col-md-9 col-lg-9 col-sm-12">
                         <label for="preferred_name" class="form-label">Preferred Name</label>
-                        <input class="form-control" id="preferred_name" name="preferred_name" type="text">
+                        <input class="form-control" id="preferred_name" name="preferred_name" type="text" data-required="true">
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12">
                         <select class="form-select select-boxes-right" name="preferred_name_type" aria-label="Default select">
