@@ -1,5 +1,6 @@
 jQuery.noConflict();
 jQuery(document).ready(function () {
+    // Address Validation
     jQuery(document).on("click" , ".business_mailing_address_check" , function (){
         if(jQuery(this).val() === "different"){
             jQuery("#business_mailing_address").show()
@@ -26,6 +27,8 @@ jQuery(document).ready(function () {
             jQuery("#address").addClass("in-valid");
         }
     }
+
+    // Phone Validtion
     jQuery(document).on("keyup" , ".phone" , function () {
         jQuery(this).val(formatPhoneNumber(jQuery(this).val()))
     })
@@ -42,8 +45,39 @@ jQuery(document).ready(function () {
         }
         return formatted;
     }
+
+
+
     // Get the form element
     var formElement = document.getElementById('myForm');
+
+    // Generaric form validation
+    const fields = formElement.querySelectorAll('[data-required="true"]');
+
+    fields.forEach((field) => {
+        field.addEventListener('blur', () => {
+            if (!field.value.trim()) {
+                field.classList.add('error');
+            } else {
+                field.classList.remove('error');
+            }
+        });
+
+        field.addEventListener('focus', () => {
+            if (field.classList.contains('error')) {
+                field.classList.remove('error');
+            }
+        });
+
+        field.addEventListener('keyup', () => {
+            if (!field.value.trim()) {
+                field.classList.add('error');
+            } else {
+                field.classList.remove('error');
+            }
+        });
+    });
+
 
 // Retrieve the stored form data from session storage, or create an empty object if no data has been stored yet
     var formData = JSON.parse(sessionStorage.getItem('formData')) || {};
@@ -63,23 +97,21 @@ jQuery(document).ready(function () {
 
         // Validate the form inputs
         var isValid = true;
+        var errorMessage = "<ol>"
         for (var i = 0; i < formElement.elements.length; i++) {
             var input = formElement.elements[i];
             if (input.type !== 'submit' && input.dataset.required && !input.value.trim()) {
                 isValid = false;
+                errorMessage += "<li>"+input.dataset.error+"</li>"
                 input.classList.add('error');
             } else {
                 input.classList.remove('error');
             }
         }
-
+        errorMessage+="</ol>";
         // If the form is invalid, don't save the data and display an error message
         if (!isValid) {
-            var error = document.getElementById('error-div');
-            var errorMessage = document.createElement('div');
-            errorMessage.classList.add('text-danger');
-            errorMessage.textContent = 'Please fill in all required fields';
-            error.innerHTML = errorMessage;
+            jQuery("#modal-error").html(errorMessage)
             return;
         }
 

@@ -15,10 +15,10 @@ get_header();
                 <div class="row">
                     <div class="col-md-9 col-lg-9 col-sm-12">
                         <label for="preferred_name" class="form-label">Preferred Name</label>
-                        <input class="form-control" id="preferred_name" name="preferred_name" type="text" data-required="true">
+                        <input class="form-control" data-error="Preferred Name is required" id="preferred_name" name="preferred_name" type="text" data-required="true">
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12">
-                        <select data-required="true" class="form-select select-boxes-right" name="preferred_name_type" aria-label="Default select">
+                        <select data-required="true" data-error="Preferred Name type is required" class="form-select select-boxes-right" name="preferred_name_type" aria-label="Default select">
                             <option value="">Select</option>
                             <option value="Co.">Co.</option>
                             <option value="Company">Company</option>
@@ -33,10 +33,10 @@ get_header();
                 <div class="row">
                     <div class="col-md-9 col-lg-9 col-sm-12">
                         <label for="alternate_name" class="form-label">Alternate Name</label>
-                        <input data-required="true" class="form-control" id="alternate_name" name="alternate_name" type="text">
+                        <input data-required="true" data-error="Alternate Name is required" class="form-control" id="alternate_name" name="alternate_name" type="text">
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12">
-                        <select class="form-select select-boxes-right" data-required="true" name="alternate_name_type" aria-label="Default select">
+                        <select class="form-select select-boxes-right" data-error="Alternate Name type is required" data-required="true" name="alternate_name_type" aria-label="Default select">
                             <option value="">Select</option>
                             <option value="Co.">Co.</option>
                             <option value="Company">Company</option>
@@ -65,7 +65,7 @@ get_header();
                         <label for="principal_activity" class="form-label">Principal Activity</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <select data-required="true" class="form-select" id="principal_activity" name="principal_activity" aria-label="Default select">
+                        <select data-required="true" class="form-select" data-error="Principal Activity type is required" id="principal_activity" name="principal_activity" aria-label="Default select">
                             <option value="">Select One</option>
                             <option value="Accommodation & Food Services">Accommodation & Food Services</option>
                             <option value="Construction">Construction</option>
@@ -91,7 +91,7 @@ get_header();
                         <label for="company_purpose" class="form-label">Briefly summarize the company's purpose</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <textarea data-required="true" id="company_purpose" name="company_purpose" class="form-control"></textarea>
+                        <textarea data-required="true" data-error="Company Purpose is required" id="company_purpose" name="company_purpose" class="form-control"></textarea>
                         <small class="text-light">50 characters os less</small>
                     </div>
                 </div>
@@ -111,7 +111,7 @@ get_header();
                         <label for="address" class="form-label">Address</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input data-required="true" type="text" class="form-control address_fields" id="address" name="address">
+                        <input data-required="true" type="text" data-error="Address is required" class="form-control address_fields" id="address" name="address">
                     </div>
                 </div>
                 <!--Apartment-->
@@ -398,10 +398,27 @@ get_header();
 
                     </div>
                 </div>
-                <div id="error-div">
 
+                <!-- Error Modal -->
+                <div class="modal fade" id="dirModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Oops, please fix the following issues:</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" id="modal-error">
+
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">OK</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
+        </div>
+
+
+        <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <input type="submit" value="Next" class="btn border-success text-success float-end">
                     </div>
