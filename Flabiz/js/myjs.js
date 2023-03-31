@@ -111,7 +111,11 @@ jQuery(document).ready(function () {
         errorMessage+="</ol>";
         // If the form is invalid, don't save the data and display an error message
         if (!isValid) {
-            jQuery("#modal-error").html(errorMessage)
+            jQuery("#modal-error").html(errorMessage);
+            var myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
+            document.onreadystatechange = function () {
+                myModal.show();
+            };
             return;
         }
 
