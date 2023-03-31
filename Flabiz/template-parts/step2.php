@@ -20,7 +20,7 @@ get_header();
                             <label for="first_name" class="form-label">First Name</label>
                         </div>
                         <div class="col-md-9 col-lg-9 col-sm-12">
-                            <input class="form-control" id="first_name" name="first_name" type="text">
+                            <input data-required="true" data-error="First Name is required" class="form-control" id="first_name" name="first_name" type="text">
                         </div>
                     </div>
                     <!--Last Name-->
@@ -29,7 +29,7 @@ get_header();
                             <label for="last_name" class="form-label">Last Name</label>
                         </div>
                         <div class="col-md-9 col-lg-9 col-sm-12">
-                            <input class="form-control" id="last_name" name="last_name" type="text">
+                            <input class="form-control" data-required="true" data-error="Last Name is required" id="last_name" name="last_name" type="text">
                         </div>
                     </div>
 
@@ -39,7 +39,7 @@ get_header();
                             <label for="primary_phone" class="form-label">Phone</label>
                         </div>
                         <div class="col-md-9 col-lg-9 col-sm-12">
-                            <input class="form-control" id="primary_phone" name="primary_phone" type="text">
+                            <input class="form-control phone" data-required="true" data-error="Phone is required" id="primary_phone" name="primary_phone" type="text">
                         </div>
                     </div>
 
@@ -49,7 +49,7 @@ get_header();
                             <label for="primary_email" class="form-label">Email</label>
                         </div>
                         <div class="col-md-9 col-lg-9 col-sm-12">
-                            <input class="form-control" id="primary_email" name="primary_email" type="text">
+                            <input class="form-control" data-required="true" data-error="Primary Email is required" id="primary_email" name="primary_email" type="text">
                         </div>
                     </div>
                     <!--Validate Email-->
@@ -58,7 +58,7 @@ get_header();
                             <label for="primary_validate_email" class="form-label">Validate Email</label>
                         </div>
                         <div class="col-md-9 col-lg-9 col-sm-12">
-                            <input class="form-control" id="primary_validate_email" name="primary_validate_email" type="text">
+                            <input class="form-control" data-required="true" data-error="Please add validating email" id="primary_validate_email" name="primary_validate_email" type="text">
                         </div>
                     </div>
 
@@ -78,7 +78,7 @@ get_header();
                             <label for="personal_address" class="form-label">Address</label>
                         </div>
                         <div class="col-lg-9 col-md-9 col-sm-12">
-                            <input type="text" class="form-control address_fields" id="personal_address" name="personal_address">
+                            <input data-required="true" data-error="Address is required" type="text" class="form-control" id="personal_address" name="personal_address">
                         </div>
                     </div>
                     <!--Apartment-->
@@ -96,7 +96,7 @@ get_header();
                             <label for="personal_city" class="form-label">City</label>
                         </div>
                         <div class="col-lg-9 col-md-9 col-sm-12">
-                            <input type="text" class="form-control address_fields" id="personal_city" name="personal_city">
+                            <input type="text" data-required="true" data-error="City is required" class="form-control address_fields" id="personal_city" name="personal_city">
                         </div>
                     </div>
                     <!--Country-->
@@ -105,7 +105,7 @@ get_header();
                             <label for="personal_country" class="form-label">Country</label>
                         </div>
                         <div class="col-lg-9 col-md-9 col-sm-12">
-                            <select name="personal_country" id="personal_country" class="form-control">
+                            <select name="personal_country" id="personal_country" class="form-control" data-required="true" data-error="Country is required">
                                 <option value="">Select County</option>
                                 <option value="Alachua">Alachua</option>
                                 <option value="Baker">Baker</option>
@@ -183,7 +183,7 @@ get_header();
                             <label for="personal_zip_code" class="form-label">Zip Code</label>
                         </div>
                         <div class="col-lg-9 col-md-9 col-sm-12">
-                            <input type="text" class="form-control address_fields" id="personal_zip_code" name="personal_zip_code">
+                            <input type="text" class="form-control address_fields" data-required="true" data-error="Zip Code is required" id="personal_zip_code" name="personal_zip_code">
                         </div>
                     </div>
 
