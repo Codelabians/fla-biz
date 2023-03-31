@@ -26,7 +26,7 @@ jQuery(document).ready(function () {
             jQuery("#address").addClass("in-valid");
         }
     }
-    jQuery(document).on("keyup" , ".phone_numbers" , formatPhoneNumber(jQuery(this).val()))
+    jQuery(document).on("keyup" , ".phone" , formatPhoneNumber(jQuery(this).val()))
     function formatPhoneNumber(phoneNumber) {
         // Remove all non-digit characters from the phone number
         const cleaned = phoneNumber.replace(/\D/g, '');
