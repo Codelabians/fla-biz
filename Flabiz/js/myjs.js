@@ -79,7 +79,7 @@ jQuery(document).ready(function () {
             var errorMessage = document.createElement('div');
             errorMessage.classList.add('text-danger');
             errorMessage.textContent = 'Please fill in all required fields';
-            error.html(errorMessage);
+            error.innerHTML = errorMessage;
             return;
         }
 
