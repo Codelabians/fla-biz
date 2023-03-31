@@ -75,10 +75,11 @@ jQuery(document).ready(function () {
 
         // If the form is invalid, don't save the data and display an error message
         if (!isValid) {
+            var error = document.getElementById('error-div');
             var errorMessage = document.createElement('div');
-            errorMessage.classList.add('error-message');
+            errorMessage.classList.add('text-danger');
             errorMessage.textContent = 'Please fill in all required fields';
-            formElement.appendChild(errorMessage);
+            error.html(errorMessage);
             return;
         }
 

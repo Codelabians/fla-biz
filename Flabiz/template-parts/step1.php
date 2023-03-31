@@ -398,6 +398,9 @@ get_header();
 
                     </div>
                 </div>
+                <div class="error-div">
+
+                </div>
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <input type="submit" value="Next" class="btn border-success text-success float-end">
