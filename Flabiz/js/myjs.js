@@ -144,6 +144,8 @@ jQuery(document).ready(function () {
     myModal._element.addEventListener('hidden.bs.modal', function (event) {
         document.body.classList.remove('modal-open');
         myModal._element.parentNode.removeChild(myModal._element);
+        document.querySelector('.modal-backdrop').remove();
+
     });
 
 })
