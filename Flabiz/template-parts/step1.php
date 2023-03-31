@@ -415,7 +415,7 @@ get_header();
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
 
 
         <div class="row">
