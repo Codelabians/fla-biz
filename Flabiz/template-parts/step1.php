@@ -129,7 +129,7 @@ get_header();
                         <label for="city" class="form-label">City</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input data-required="true" type="text" class="form-control address_fields" id="city" name="city">
+                        <input data-required="true" data-error="City is required" type="text" class="form-control address_fields" id="city" name="city">
                     </div>
                 </div>
                 <!--Country-->
@@ -138,7 +138,7 @@ get_header();
                         <label for="country" class="form-label">Country</label>
                     </div>
                     <div class="col-lg-7 col-md-7 col-sm-12">
-                        <select data-required="true" name="country" id="country" class="form-control">
+                        <select data-required="true" data-error="Country is required" name="country" id="country" class="form-control">
                             <option value="">Select County</option>
                             <option value="Alachua">Alachua</option>
                             <option value="Baker">Baker</option>
@@ -219,7 +219,7 @@ get_header();
                         <label for="zip_code" class="form-label">Zip Code</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input data-required="true" type="text" class="form-control address_fields" id="zip_code" name="zip_code">
+                        <input data-required="true" type="text" data-error="Zip code is required" class="form-control address_fields" id="zip_code" name="zip_code">
                     </div>
                 </div>
                 <!--Phone-->
@@ -228,7 +228,7 @@ get_header();
                         <label for="phone" class="form-label">Phone</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input data-required="true" placeholder="111-111-1111" type="text" class="form-control phone" id="phone" name="phone">
+                        <input data-required="true" data-error="Phone is required" placeholder="111-111-1111" type="text" class="form-control phone" id="phone" name="phone">
                     </div>
                 </div>
 

@@ -33,12 +33,22 @@ jQuery(document).ready(function () {
 
     // Phone Validtion
     jQuery(document).on("keyup" , ".phone" , function () {
-        jQuery(this).val(formatPhoneNumber(jQuery(this).val()))
+        if(!formatPhoneNumber(jQuery(this).val())){
+            jQuery(this).addClass("error")
+        }else{
+            jQuery(this).val(formatPhoneNumber(jQuery(this).val()))
+        }
     })
+
     function formatPhoneNumber(phoneNumber) {
         // Remove all non-digit characters from the phone number
         const cleaned = phoneNumber.replace(/\D/g, '');
         // Format the cleaned phone number with hyphens
+
+        if (cleaned.startsWith('0')) {
+            return false;
+        }
+
         let formatted = "";
         for (let i = 0; i < cleaned.length && i < 10; i++) {
             if (i === 3 || i === 6) {
@@ -48,6 +58,17 @@ jQuery(document).ready(function () {
         }
         return formatted;
     }
+
+
+    // Company Purpose length fixing
+    jQuery(document).on("keyup" , "#company_purpose" , function () {
+        if(jQuery(this).val().trim().length > 50){
+            jQuery(this).addClass("error")
+        }else {
+            jQuery(this).removeClass("error")
+
+        }
+    })
 
 
 
@@ -107,7 +128,16 @@ jQuery(document).ready(function () {
                 isValid = false;
                 errorMessage += "<li>"+input.dataset.error+"</li>"
                 input.classList.add('error');
-            } else {
+            }else {
+                if(input.hasClass("phone") && input.value.startsWith("0")){
+                    isValid = false;
+                    errorMessage += "<li>Phone Number format is XXX-XXX-XXXX</li>"
+                    input.classList.add('error');
+                }else if(input.name === "company_purpose" && input.value.length > 50){
+                    isValid = false;
+                    errorMessage += "<li>Company purpose can't br greater than 50 characters</li>"
+                    input.classList.add('error');
+                }
                 input.classList.remove('error');
             }
         }
