@@ -205,9 +205,9 @@ jQuery(document).ready(function () {
         if(formData.personal_zip_code !== undefined)
             personalAddress += formData.personal_zip_code
         if(formData.primary_email !== undefined)
-            user.primary_email += formData.primary_email
+            user.primary_email = formData.primary_email
         if(formData.first_name !== undefined)
-            user.first_name += formData.first_name
+            user.first_name = formData.first_name
         user.personal_address = personalAddress
         var mainName = jQuery("#main-name");
         var mainAddress = jQuery("#main-address");
