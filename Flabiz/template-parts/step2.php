@@ -12,7 +12,7 @@ get_header();
                 <!--Heading-->
                 <h2>Primary Contact Information</h2>
                 <p>Please provide the following information for the designated Point of Contact for this registration. This will be our primary way of contacting you.</p>
-                <form id="myForm" data-action="/step-three">
+                <form id="myForm" data-action="step-three">
                     <!--Fields-->
                     <!--First Name-->
                     <div class="row">
@@ -189,7 +189,7 @@ get_header();
 
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <a href="/stepone" class="btn btn-success text-white">Previous</a>
+                            <a href="step-one" class="btn btn-success text-white">Previous</a>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <input type="submit" value="Next" class="btn border-success text-success float-end">
@@ -200,7 +200,7 @@ get_header();
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title" id="exampleModalLabel">Oops, please fix the following issues:</h4>
+                                    <h5 class="modal-title text-black fw-bold" id="exampleModalLabel">Oops, please fix the following issues:</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body" id="modal-error">

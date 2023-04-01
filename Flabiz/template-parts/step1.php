@@ -10,7 +10,7 @@ get_header();
         <div class="col-sm-12 col-md-8 col-lg-8">
             <h2>Filing Information</h2>
             <p>Please enter the business name you wish to register. Make sure the business name you are filing is spelled correctly.</p>
-            <form id="myForm" data-action="/step-two">
+            <form id="myForm" data-action="step-two">
                 <!--Filing Information-->
                 <div class="row">
                     <div class="col-md-9 col-lg-9 col-sm-12">
@@ -400,25 +400,25 @@ get_header();
                 </div>
 
                 <!-- Error Modal -->
-                <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="exampleModalLabel">Oops, please fix the following issues:</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body" id="modal-error">
+                    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-black fw-bold" id="exampleModalLabel">Oops, please fix the following issues:</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" id="modal-error">
 
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" data-bs-dismiss="modal" class="btn btn-primary">OK</button>
                             </div>
-                            <div class="modal-footer">
-                            <button type="button" data-bs-dismiss="modal" class="btn btn-primary">OK</button>
                         </div>
                     </div>
                 </div>
-            </div>
 
 
-        <div class="row">
+                <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <input type="submit" value="Next" class="btn border-success text-success float-end">
                     </div>
