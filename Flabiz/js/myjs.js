@@ -194,29 +194,27 @@ jQuery(document).ready(function () {
     }
     var personalAddress = "";
     function fetchMainUser(){
-        if(formData.personal_address !== undefined)
-            personalAddress += formData.personal_address
-        if(formData.personal_suit_apt !== undefined)
-            personalAddress += formData.personal_suit_apt
-        if(formData.personal_city !== undefined)
-            personalAddress += formData.personal_city
-        if(formData.personal_state !== undefined)
-            personalAddress += formData.personal_state
-        if(formData.personal_zip_code !== undefined)
-            personalAddress += formData.personal_zip_code
-        if(formData.primary_email !== undefined)
-            user.primary_email = formData.primary_email
-        if(formData.first_name !== undefined)
-            user.first_name = formData.first_name
-        user.personal_address = personalAddress
         var mainName = jQuery("#main-name");
         var mainAddress = jQuery("#main-address");
         var mainEmail = jQuery("#main-email");
-        if(mainName.length ){
+        if(mainName.length && mainAddress.length && mainEmail.length) {
+            if (formData.personal_address !== undefined)
+                personalAddress += formData.personal_address
+            if (formData.personal_suit_apt !== undefined)
+                personalAddress += formData.personal_suit_apt
+            if (formData.personal_city !== undefined)
+                personalAddress += formData.personal_city
+            if (formData.personal_state !== undefined)
+                personalAddress += formData.personal_state
+            if (formData.personal_zip_code !== undefined)
+                personalAddress += formData.personal_zip_code
+            if (formData.primary_email !== undefined)
+                user.primary_email = formData.primary_email
+            if (formData.first_name !== undefined)
+                user.first_name = formData.first_name
+            user.personal_address = personalAddress
             mainName.text(user.first_name)
-        }if(mainAddress.length ){
             mainAddress.text(user.personal_address)
-        }if(mainEmail.length ){
             mainEmail.text(user.primary_email)
         }
     }
