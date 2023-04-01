@@ -71,6 +71,11 @@ jQuery(document).ready(function () {
         }
     })
 
+    jQuery(document).on("keyup" , "#primary_validate_email" , function (){
+        if(jQuery(this).val().trim() !== jQuery("#primary_email").val().trim()){
+            jQuery(this).addClass("#error")
+        }
+    })
 
 
     // Get the form element
@@ -106,7 +111,7 @@ jQuery(document).ready(function () {
 
 // Retrieve the stored form data from session storage, or create an empty object if no data has been stored yet
     var formData = JSON.parse(sessionStorage.getItem('formData')) || {};
-
+    fetchMainUser();
 // Loop through all the form elements
     for (var i = 0; i < formElement.elements.length; i++) {
         var input = formElement.elements[i];
@@ -137,6 +142,10 @@ jQuery(document).ready(function () {
                 }else if(input.name === "company_purpose" && input.value.length > 50){
                     isValid = false;
                     errorMessage += "<li>Company purpose can't br greater than 50 characters</li>"
+                    input.classList.add('error');
+                }else if(input.id === "primary_validate_email" && input.value.trim() !== jQuery("#primary_email").val()){
+                    isValid = false;
+                    errorMessage += "<li>Validating email is incorrect</li>"
                     input.classList.add('error');
                 }
                 input.classList.remove('error');
@@ -179,4 +188,36 @@ jQuery(document).ready(function () {
 
     });
 
+
+    let user = {
+
+    }
+    var personalAddress = "";
+    function fetchMainUser(){
+        if(formData.personal_address !== undefined)
+            personalAddress += formData.personal_address
+        if(formData.personal_suit_apt !== undefined)
+            personalAddress += formData.personal_suit_apt
+        if(formData.personal_city !== undefined)
+            personalAddress += formData.personal_city
+        if(formData.personal_state !== undefined)
+            personalAddress += formData.personal_state
+        if(formData.personal_zip_code !== undefined)
+            personalAddress += formData.personal_zip_code
+        if(formData.primary_email !== undefined)
+            user.primary_email += formData.primary_email
+        if(formData.first_name !== undefined)
+            user.first_name += formData.first_name
+        user.personal_address = personalAddress
+        var mainName = jQuery("#main-name");
+        var mainAddress = jQuery("#main-address");
+        var mainEmail = jQuery("#main-email");
+        if(mainName.length ){
+            mainName.text(user.first_name)
+        }if(mainAddress.length ){
+            mainAddress.text(user.personal_address)
+        }if(mainEmail.length ){
+            mainEmail.text(user.primary_email)
+        }
+    }
 })
