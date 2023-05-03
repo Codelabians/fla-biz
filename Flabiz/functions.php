@@ -534,6 +534,7 @@ function twentysixteen_scripts() {
 
 
 
+
 	wp_enqueue_script( 'twentysixteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20151204', true );
 
 
@@ -1022,3 +1023,25 @@ function custom_custom_logo_setup() {
 	add_theme_support( 'custom-logo', $defaults );
 }
 add_action( 'after_setup_theme', 'custom_custom_logo_setup' );
+
+
+// ajax request
+function register_user() {
+	$user_name = $_POST['user_name'];
+	$save_password = $_POST['save_password'];
+  
+	// validate form data
+	
+// validate form data
+if (empty($user_name) || empty($save_password)) {
+	echo 'Please fill in all fields.';
+  } else {
+	// process form data
+	// ...
+	echo 'Success!';
+  }
+  
+	die(); // always end your AJAX actions with die()
+  }
+  add_action('wp_ajax_register_user', 'register_user');
+  add_action('wp_ajax_nopriv_register_users', 'register_user');

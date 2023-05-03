@@ -21,7 +21,7 @@ session_start();
 </script>
 <script type="text/javascript">function add_chatinline(){var hccid=36868316;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
 add_chatinline(); </script>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="shortcut icon" href="http://copyrightregistry-online-form.com/wp-content/themes/custom/images/bullet-icon.png" type="image/x-icon">
       <link rel="apple-touch-icon" href="http://copyrightregistry-online-form.com/wp-content/themes/custom/images/bullet-icon.png">
       <link rel="apple-touch-icon" sizes="72x72" href="http://copyrightregistry-online-form.com/wp-content/themes/custom/images/bullet-icon.png">

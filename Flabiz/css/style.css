@@ -1044,6 +1044,7 @@ h4.text-uppercase {
     color: #FFCC33;
 }
 .comment h4 span.comments { color: #333333 }
+
 /* Search */
 button.btn.btn-default {
     padding: 11px 15px;
@@ -1120,3 +1121,4 @@ ul.meta-tags li:last-child:after { content: ' ' }
 .comment form { margin-top: -30px }
 .comment input,
 .comment textarea { margin-bottom: 15px }
+

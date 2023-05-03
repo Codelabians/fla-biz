@@ -2,6 +2,7 @@
 // Template Name: Step2
 
 get_header();
+// get_sidebar();
 
 ?>
 
@@ -49,7 +50,7 @@ get_header();
                             <label for="primary_email" class="form-label">Email</label>
                         </div>
                         <div class="col-md-9 col-lg-9 col-sm-12">
-                            <input class="form-control" data-required="true" data-error="Primary Email is required" id="primary_email" name="primary_email" type="text">
+                            <input class="form-control" data-required="true" data-error="Primary Email is required" id="primary_email" name="primary_email" type="email">
                         </div>
                     </div>
                     <!--Validate Email-->
@@ -58,7 +59,7 @@ get_header();
                             <label for="primary_validate_email" class="form-label">Validate Email</label>
                         </div>
                         <div class="col-md-9 col-lg-9 col-sm-12">
-                            <input class="form-control" data-required="true" data-error="Please add validating email" id="primary_validate_email" name="primary_validate_email" type="text">
+                            <input class="form-control" data-required="true" data-error="Please add validating email" id="primary_validate_email" name="primary_validate_email" type="email">
                         </div>
                     </div>
 
@@ -192,7 +193,7 @@ get_header();
                             <a href="step-one" class="btn btn-success text-white">Previous</a>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
-                            <input type="submit" value="Next" class="btn border-success text-success float-end">
+                            <input type="submit" value="Next" class="btn border-success text-success float-end"> 
                         </div>
                     </div>
                     <!-- Error Modal -->
