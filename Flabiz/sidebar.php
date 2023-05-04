@@ -14,7 +14,7 @@
 		<?php dynamic_sidebar('sidebar-1'); ?>
 	</aside><!-- .sidebar .widget-area -->
 <?php endif; ?>
-<div class="col-lg-12 col-md-6  m-5 ">
+<div class="col-lg-12 col-md-6  m-4 ">
 	<h4>order summary</h4>
 	<ul class="ul">
 		<li id="order1" class=" list-group-item border-1 border-top m-3 ">

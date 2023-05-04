@@ -16,9 +16,9 @@ get_header();
                     This additional service can be added for only $69 for the first year of service.
                 </p>
                 <div class="box-radio d-flex flex-column ">
-                    <label for="">I want fla-biz to be my register agent</label>
+                    <label for="chekbox">I want fla-biz to be my register agent</label>
                     <div class="row">
-                        <input type="checkbox" id="chekbox">
+                        <input type="checkbox" id="chekbox" value="Register agent service $79" name="chekbox">
                         <a href="#">i dont want fla-biz to my register agent</a>
                     </div>
                 </div>

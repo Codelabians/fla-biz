@@ -13,19 +13,19 @@ get_header();
                 <div class="form-row form-group d-flex flex-column">
                     <label for="">Agriculter</label>
                     <div>
-                        <input type="number" id="agri">
+                        <input type="number" id="agri" name="agri">
                         <small>farm worker</small>
                     </div>
                 </div>
                 <div class="form-row form-group d-flex flex-column">
                     <label for="">other</label>
                     <div>
-                        <input type="number" id="others">
+                        <input type="number" name="others" id="others">
                         <small>all other</small>
                     </div>
                 </div>
                 <h3>What is the expected first date wages will be paid?</h3>
-                <input type="date">
+                <input type="date" id="first_date" name="first_date">
                 <p>To file an EIN Application with the IRS, it is necessary to supply the Social Security number of the President of your new corporation. Please provide that below.</p>
 
                 <div id="officer_position-data"></div>

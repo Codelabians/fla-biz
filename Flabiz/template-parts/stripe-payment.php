@@ -1,5 +1,5 @@
 <?php 
-// Template Name: Stripr Payment
+// Template Name: Stripe Payment
 get_header();
  ?>
 
@@ -246,7 +246,7 @@ $(document).ready(function() {
   </noscript>
   <?php
 
-require 'wp-content/themes/Copyright/lib/Stripe.php';
+require 'wp-content/themes/flabiz/stripe/lib/Stripe.php';
 
 $error = '';
 $success = '';

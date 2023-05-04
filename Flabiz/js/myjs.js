@@ -789,20 +789,23 @@ jQuery(document).ready(function () {
     function iterateDirectors(){
         let output = "";
 
-        for(i = 0 ; i < formData.directors.length ; i++){
-            output += "<p>"+formData.directors[i].first_name+"</p>"
-            +""+"<p>"+formData.directors[i].address+"</p>"
+        if(formData.directors != undefined){
+            for(i = 0 ; i < formData.directors.length ; i++){
+                output += "<p>"+formData.directors[i].first_name+"</p>"
+                +""+"<p>"+formData.directors[i].address+"</p>"
 
 
-        }
-        if(jQuery("#myLis".length)){
-            jQuery("#myLis").html(output);
+            }
+            if(jQuery("#myLis".length)){
+                jQuery("#myLis").html(output);
 
+            }
         }
     }
     iterateofficers();
     function iterateofficers(){
         let officeroutput = "";
+        if(formData.officers != undefined){
 
         for(i = 0 ; i < formData.officers.length ; i++){
             officeroutput += "<li >"+formData.officers[i].first_name
@@ -815,5 +818,28 @@ jQuery(document).ready(function () {
 
         }
     }
+    }
+
+        jQuery(document).on("click" , "#final" , function(){
+
+        // Send AJAX request to PHP script
+        jQuery.ajax({
+            type: 'POST',
+            url: jQuery(this).data("url"),
+            data: {
+                action: 'insert_form_data',
+                formData: formData
+            },
+            success: function(response) {
+                console.log(response);
+                alert("coming soon");
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });            
+        })
+
+
 });
 

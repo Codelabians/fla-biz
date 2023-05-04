@@ -26,37 +26,37 @@ get_header();
                 <!--Address-->
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-lg-3">
-                        <label for="personal_address" class="form-label">Address</label>
+                        <label for="personal_address8" class="form-label">Address</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input data-required="true" data-error="Address is required" type="text" class="form-control" id="personal_address" name="personal_address">
+                        <input data-required="true" data-error="Address is required" type="text" class="form-control" id="personal_address8" name="personal_address8">
                     </div>
                 </div>
                 <!--Apartment-->
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-lg-3">
-                        <label for="personal_suit_apt" class="form-label">Suite. Apt. #, etc.</label>
+                        <label for="personal_suit_apt8" class="form-label">Suite. Apt. #, etc.</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input type="text" class="form-control" id="personal_suit_apt" name="personal_suit_apt">
+                        <input type="text" class="form-control" id="personal_suit_apt8" name="personal_suit_apt8">
                     </div>
                 </div>
                 <!--City-->
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-lg-3">
-                        <label for="personal_city" class="form-label">City</label>
+                        <label for="personal_city8" class="form-label">City</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input type="text" data-required="true" data-error="City is required" class="form-control address_fields" id="personal_city" name="personal_city">
+                        <input type="text" data-required="true" data-error="City is required" class="form-control address_fields" id="personal_city8" name="personal_city8">
                     </div>
                 </div>
                 <!--Country-->
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-lg-3">
-                        <label for="personal_state" class="form-label">State</label>
+                        <label for="personal_state8" class="form-label">State</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <select name="personal_state" id="personal_state" class="form-control" data-required="true" data-error="State is required">
+                        <select name="personal_state8" id="personal_state8" class="form-control" data-required="true" data-error="State is required">
                             <option value="">Select State</option>
                             <option value="- ">Outside the US or Canada</option>
                             <option value="AB">Alberta</option>
@@ -131,10 +131,10 @@ get_header();
                 <!--Zip code-->
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-lg-3">
-                        <label for="personal_zip_code" class="form-label">Zip Code</label>
+                        <label for="personal_zip_code8" class="form-label">Zip Code</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input type="text" class="form-control address_fields" data-required="true" data-error="Zip Code is required" id="personal_zip_code" name="personal_zip_code">
+                        <input type="text" class="form-control address_fields" data-required="true" data-error="Zip Code is required" id="personal_zip_code8" name="personal_zip_code8">
                     </div>
                 </div>
                 <h3>
@@ -146,18 +146,18 @@ get_header();
                 <div class="form-row form-group d-flex flex-column">
                     <div class="col-lg-6 sm-6 md-6 d-flex ">
                         <label for="">file my effective date as:</label>
-                        <input type="date" id="date">
+                        <input type="date" id="date" name="date" value="date">
                     </div>
                 </div>
                 <div class="form-row form-group ">
                     <div class="col-lg-6 sm-6 md-6">
-                        <input type="checkbox" id="accept " name="accept">
+                        <input type="checkbox" id="accept " value="accept" name="accept">
                         <label for="">I accept the <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">User Agreement</a> and The Notice of Annual Report</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-lg-3">
-                        <label for="personal_city" class="form-label">Digital signature:</label>
+                        <label for="signature" class="form-label">Digital signature:</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
                         <input type="text" data-required="true" data-error="Signature is required" class="form-control address_fields" id="signature" name="signature">

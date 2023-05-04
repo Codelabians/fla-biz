@@ -229,7 +229,7 @@ get_header();
                         <a href="step-Eight" class="btn btn-success text-white">Previous</a>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 d-flex flex-column">
-                        <input class="btn btn-success text-white" name="insert" type="submit" value="Next">
+                        <input class="btn btn-success text-white" id="final" data-url=<?= admin_url("admin-ajax.php") ?> type="button" value="Next">
 
                         <!-- Button trigger modal -->
                         <!-- <a href="" class="" data-bs-toggle="modal" data-bs-target="#savemodel">Save and contineu later</a> -->
@@ -263,24 +263,4 @@ get_header();
 <?php
 get_footer();
 
-?>
-<?php
-if(isset($_POST['insert'])){
-global $wpdb;
-
-$preferred_name = $_POST['preferred_name'];
-$preferred_name_type = $_POST['preferred_name_type'];
-$alternate_name = $_POST['alternate_name'];
-$alternate_name_type = $_POST['alternate_name_type'];
-$principal_activity = $_POST['principal_activity'];
-$company_purpose = $_POST['company_purpose'];
-$suit_apt = $_POST['suit_apt'];
-$city = $_POST['city'];
-$country = $_POST['country'];
-$zip_code = $_POST['zip_code'];
-$phone = $_POST['phone'];
-$business_mailing_address_check = $_POST['business_mailing_address_check'];
-$mailing_address = $_POST['mailing_address'];
-$mailing_suit_apt = $_POST['mailing_suit_apt'];
-}
 ?>
