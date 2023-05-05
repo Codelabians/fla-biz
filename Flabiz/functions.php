@@ -1022,12 +1022,6 @@ function insert_form_data()
 	// Connect to WordPress database
 	global $wpdb;
 
-	// foreach ($sanitizedFormData as $row) {
-	// 	$wpdb->insert(
-	// 		'flabiz_user',
-	// 		$row
-	// 	);
-	// }
 
 	// Insert form data into database table (example)
 	$wpdb->insert(
@@ -1078,5 +1072,5 @@ function insert_form_data()
         )
 	);
 	// Send response back to JavaScript
-	wp_send_json_success('Form data insertedc successfully.');
+	wp_send_json_success('Form data inserted successfully.');
 }

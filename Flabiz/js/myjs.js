@@ -1,4 +1,4 @@
-jQuery.noConflict(); 
+jQuery.noConflict();
 jQuery(document).ready(function () {
     // Global Variables
     let formElement = document.getElementById('myForm');
@@ -13,8 +13,8 @@ jQuery(document).ready(function () {
     jQuery('#phone').text(formData.primary_phone);
     jQuery('#choice1').text(formData.preferred_name);
     jQuery('#choice2').text(formData.alternate_name_type);
-    jQuery('#purpose').text(formData.principal_activity );
-    jQuery('#purpose2').text(formData.company_purpose );
+    jQuery('#purpose').text(formData.principal_activity);
+    jQuery('#purpose2').text(formData.company_purpose);
     jQuery('#physicalasdress').text(formData.address);
     jQuery('#mailingadress').text(formData.mailing_address);
     jQuery('#shares').text(formData.shares);
@@ -31,96 +31,96 @@ jQuery(document).ready(function () {
 
 
 
-    
 
 
-    
+
+
 
 
 
     // jQuery('#Director').text('Directors'+formData.directors);
 
     // Getting Modal
-    if(jQuery("#errorModal").length) {
+    if (jQuery("#errorModal").length) {
         let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
-            myModal._element.addEventListener('hidden.bs.modal', function (event) {
-                closingModalProperly(myModal)
-            });
+        myModal._element.addEventListener('hidden.bs.modal', function (event) {
+            closingModalProperly(myModal)
+        });
     }
 
     // Closing Modal Properl
-    function closingModalProperly(myModal){
+    function closingModalProperly(myModal) {
         document.body.classList.remove('modal-open');
         myModal._element.parentNode.removeChild(myModal._element);
         document.querySelector('.modal-backdrop').remove();
     }
     // Address Show Hide on basis of same address or different step One
-    jQuery(document).on("click" , ".business_mailing_address_check" , function (){
-        if(jQuery(this).val() === "different"){
+    jQuery(document).on("click", ".business_mailing_address_check", function () {
+        if (jQuery(this).val() === "different") {
             jQuery("#business_mailing_address").show()
-        }else {
+        } else {
             jQuery("#business_mailing_address").hide()
         }
     })
 
     // Address Show Data on basis of same address on Step 1
 
-    jQuery(document).on("keyup" , ".address_fields" , showAddress)
+    jQuery(document).on("keyup", ".address_fields", showAddress)
 
-    function showAddress(){
+    function showAddress() {
         let address = ""
         let addressValue = jQuery("#address").val().trim();
         let cityValue = jQuery("#city").val().trim();
         let zipCodeValue = jQuery("#zip_code").val().trim();
-        if(addressValue !== ""){
-            if(cityValue !== ""){
-                if(zipCodeValue !== ""){
-                    address = "<h4>"+addressValue+"<br>"+cityValue+",FL"+" "+zipCodeValue+"</h4>";
+        if (addressValue !== "") {
+            if (cityValue !== "") {
+                if (zipCodeValue !== "") {
+                    address = "<h4>" + addressValue + "<br>" + cityValue + ",FL" + " " + zipCodeValue + "</h4>";
                     jQuery("#business_mailing_address_if_same").html(address)
-                }else{
+                } else {
                     jQuery("#zip_code").addClass("in-valid");
                 }
-            }else{
+            } else {
                 jQuery("#city").addClass("in-valid");
             }
-        }else{
+        } else {
             jQuery("#address").addClass("in-valid");
         }
     }
 
     // Phone Number Validation
-    jQuery(document).on("keyup" , ".phone" , function () {
-        if(!formatPhoneNumber(jQuery(this).val())){
+    jQuery(document).on("keyup", ".phone", function () {
+        if (!formatPhoneNumber(jQuery(this).val())) {
             jQuery(this).val("")
             jQuery(this).addClass("error")
-        }else{
+        } else {
             jQuery(this).val(formatPhoneNumber(jQuery(this).val()))
         }
     })
-       // ssn Number Validation
-       jQuery(document).on("keyup" , "#ssn" , function () {
-        if(!formatssnNumber(jQuery(this).val())){
+    // ssn Number Validation
+    jQuery(document).on("keyup", "#ssn", function () {
+        if (!formatssnNumber(jQuery(this).val())) {
             jQuery(this).val("")
             jQuery(this).addClass("error")
-        }else{
+        } else {
             jQuery(this).val(formatssnNumber(jQuery(this).val()))
         }
     })
     // digital signature 
-    jQuery(document).on("keyup" , "#digital_signature" , function () {
-        if(jQuery(this).val().trim().length < 1){
+    jQuery(document).on("keyup", "#digital_signature", function () {
+        if (jQuery(this).val().trim().length < 1) {
             jQuery(this).addClass("error")
-        }else {
+        } else {
             jQuery(this).removeClass("error")
 
         }
     })
     // shares
 
-    jQuery(document).on("keyup" , "#shares" , function () {
-        if(jQuery(this).val().trim().length < 1){
+    jQuery(document).on("keyup", "#shares", function () {
+        if (jQuery(this).val().trim().length < 1) {
             jQuery(this).addClass("error")
-        }else {
+        } else {
             jQuery(this).removeClass("error")
 
         }
@@ -166,56 +166,56 @@ jQuery(document).ready(function () {
 
 
     // Company Purpose length fixing
-    jQuery(document).on("keyup" , "#company_purpose" , function () {
-        if(jQuery(this).val().trim().length > 50){
+    jQuery(document).on("keyup", "#company_purpose", function () {
+        if (jQuery(this).val().trim().length > 50) {
             jQuery(this).addClass("error")
-        }else {
+        } else {
             jQuery(this).removeClass("error")
 
         }
     })
     // zip code validation
-    jQuery(document).on("keyup" , "#zip_code" , function () {
-        if(jQuery(this).val().trim().length < 4){
+    jQuery(document).on("keyup", "#zip_code", function () {
+        if (jQuery(this).val().trim().length < 4) {
             jQuery(this).addClass("error")
-        }else {
+        } else {
             jQuery(this).removeClass("error")
 
         }
     })
     // validation for phone number
-    jQuery(document).on("keyup" , "#phone" , function () {
-        if(jQuery(this).val().trim().length < 12){
+    jQuery(document).on("keyup", "#phone", function () {
+        if (jQuery(this).val().trim().length < 12) {
             jQuery(this).addClass("error")
-        }else {
+        } else {
             jQuery(this).removeClass("error")
 
         }
     })
     // Validation Primary Email
-    jQuery(document).on("keyup" , "#primary_validate_email" , function (){
-        if(jQuery(this).val().trim() !== jQuery("#primary_email").val().trim()){
+    jQuery(document).on("keyup", "#primary_validate_email", function () {
+        if (jQuery(this).val().trim() !== jQuery("#primary_email").val().trim()) {
             jQuery(this).addClass("#error")
         }
     })
 
     // Retrieve the stored form data from session storage, or create an empty object if no data has been stored yet
-    if(formElement!= null){
-        if(formElement.length) {
-            genericFromValidation("myForm" , "id")
+    if (formElement != null) {
+        if (formElement.length) {
+            genericFromValidation("myForm", "id")
             populateData(formElement)
             assigningEventListenerToForm(formElement)
         }
     }
 
-    if(jQuery(".modalForm") != null) {
-        if(jQuery(".modalForm").length)
+    if (jQuery(".modalForm") != null) {
+        if (jQuery(".modalForm").length)
             genericFromValidation("modalForm", "class")
     }
     fetchMainUser();
 
     // Generic Form Validation on all Fields
-    function genericFromValidation(formSelector, selectorType){
+    function genericFromValidation(formSelector, selectorType) {
         const formElement = selectorType === 'class' ? document.querySelector(`.${formSelector}`) : document.getElementById(formSelector);
         const fields = formElement.querySelectorAll('[data-required="true"]');
         fields.forEach((field) => {
@@ -243,7 +243,7 @@ jQuery(document).ready(function () {
         });
     }
     // Populate Already Submiited Form data
-    function populateData(formElement){
+    function populateData(formElement) {
         // Loop through all the form elements
         for (var i = 0; i < formElement.elements.length; i++) {
             var input = formElement.elements[i];
@@ -259,11 +259,11 @@ jQuery(document).ready(function () {
         return expr.test(email);
     };
     // FormData Event Listener on Submission and show Error in Modal
-    function assigningEventListenerToForm(formElement){
+    function assigningEventListenerToForm(formElement) {
         formElement.addEventListener('submit', function (event) {
             event.preventDefault();
             // Validate the form inputs
-        console.log("hrllo");
+            console.log("hrllo");
 
             let isValid = true;
             let errorMessage = "<ol>"
@@ -274,11 +274,11 @@ jQuery(document).ready(function () {
                     errorMessage += "<li>" + input.dataset.error + "</li>"
                     input.classList.add('error');
                 } else {
-                    if (input.classList.contains("phone")&&  input.value.startsWith("0")) {
+                    if (input.classList.contains("phone") && input.value.startsWith("0")) {
                         isValid = false;
                         errorMessage += "<li>Phone Number format is XXX-XXX-XXXX</li>"
                         input.classList.add('error');
-                    } else if (input.id==="phone"&&input.value.length < 12){
+                    } else if (input.id === "phone" && input.value.length < 12) {
                         isValid = false;
                         errorMessage += "<li>Phone number can't be less than 12 characters</li>"
                         input.classList.add('error');
@@ -286,43 +286,43 @@ jQuery(document).ready(function () {
                         isValid = false;
                         errorMessage += "<li>Company purpose can't be greater than 50 characters</li>"
                         input.classList.add('error');
-                    }else if (input.name ==="zip_code" && input.value.length<4){
+                    } else if (input.name === "zip_code" && input.value.length < 4) {
                         isValid = false;
                         errorMessage += "<li>Zip code can't be less than 4 characters</li>"
                         input.classList.add('error');
-                    } else if ( input.id === "primary_email" && !ValidateEmail(input.value)){
+                    } else if (input.id === "primary_email" && !ValidateEmail(input.value)) {
                         isValid = false;
                         errorMessage += "<li>Enter valid email</li>"
                         input.classList.add('error');
-                    }else if ( input.id === "primary_validate_email" && !ValidateEmail(input.value)){
+                    } else if (input.id === "primary_validate_email" && !ValidateEmail(input.value)) {
                         isValid = false;
                         errorMessage += "<li>Enter valid email</li>"
                         input.classList.add('error');
-                    }else if (input.id === "primary_validate_email"  && input.value.trim() !== jQuery("#primary_email").val()) {
+                    } else if (input.id === "primary_validate_email" && input.value.trim() !== jQuery("#primary_email").val()) {
                         isValid = false;
                         errorMessage += "<li>Validating email is incorrect</li>"
                         input.classList.add('error');
-                    }else if (input.id === "ssn_number"  && input.value.length < 11) {
+                    } else if (input.id === "ssn_number" && input.value.length < 11) {
                         isValid = false;
                         errorMessage += "<li>Enter presedent ssn number</li>"
                         input.classList.add('error');
-                    }else if (input.id === "digital_signature"  && input.value.length < 0) {
+                    } else if (input.id === "digital_signature" && input.value.length < 0) {
                         isValid = false;
                         errorMessage += "<li> Digital signature is required</li>"
                         input.classList.add('error');
-                    }else if (input.id === "shares"  && input.value.length < 0) {
+                    } else if (input.id === "shares" && input.value.length < 0) {
                         isValid = false;
                         errorMessage += "<li> shares is required</li>"
                         input.classList.add('error');
-                    }else if (input.id === "user_name"  && input.value.length < 0) {
+                    } else if (input.id === "user_name" && input.value.length < 0) {
                         isValid = false;
                         errorMessage += "<li> user name is required</li>"
                         input.classList.add('error');
-                    }else if (input.id === "passcord"  && input.value.length < 0) {
+                    } else if (input.id === "passcord" && input.value.length < 0) {
                         isValid = false;
                         errorMessage += "<li> passcord is required</li>"
                         input.classList.add('error');
-                    }else{
+                    } else {
                         input.classList.remove('error');
                     }
                 }
@@ -339,52 +339,52 @@ jQuery(document).ready(function () {
             savingDataInSessionStorage(true);
             // Redirect the user to the next form page, or do whatever else you need to do
             window.location.href = jQuery(this).data('action');
-        }); 
+        });
     }
 
 
     // Saving data In Session Storage
-    function savingDataInSessionStorage(isForm=true){
+    function savingDataInSessionStorage(isForm = true) {
         // Create an object to store the form data
         var formInputData = {};
         // Loop through all the form elements
-        if(isForm){
-        for (let i =0 ; i < formElement.elements.length ; i++) {
-            var input = formElement.elements[i];
-            console.log(input);
-            if (input.type !== 'submit') {
-                formInputData[input.id || input.name] = input.value;
+        if (isForm) {
+            for (let i = 0; i < formElement.elements.length; i++) {
+                var input = formElement.elements[i];
+                console.log(input);
+                if (input.type !== 'submit') {
+                    formInputData[input.id || input.name] = input.value;
+                }
             }
+            // Merge the form data with any existing data in session storage
+            var mergedFormData = Object.assign({}, formData, formInputData);
+        } else {
+            var mergedFormData = formData;
         }
-        // Merge the form data with any existing data in session storage
-        var mergedFormData = Object.assign({}, formData, formInputData);
-    }else{
-        var mergedFormData = formData;
-    }
-        
+
         // Store the merged form data in session storage
         sessionStorage.setItem('formData', JSON.stringify(mergedFormData));
     }
 
 
     // Fetch Main User and show it on step 3
-    function fetchMainUser(){
+    function fetchMainUser() {
         let user = {
-            first_name : "",
-            last_name : "",
-            address : "",
-            suit_apt : "",
-            city : "",
-            state : "",
-            zip_code : "",
-            email : "",
-            is_main : true
+            first_name: "",
+            last_name: "",
+            address: "",
+            suit_apt: "",
+            city: "",
+            state: "",
+            zip_code: "",
+            email: "",
+            is_main: true
         }
         let personalAddress = "";
         let mainName = jQuery("#main-name");
         let mainAddress = jQuery("#main-address");
         let mainEmail = jQuery("#main-email");
-        if(mainName.length && mainAddress.length && mainEmail.length) {
+        if (mainName.length && mainAddress.length && mainEmail.length) {
             if (formData.personal_address !== undefined) {
                 user.address = formData.personal_address
                 personalAddress += formData.personal_address + ", "
@@ -414,13 +414,13 @@ jQuery(document).ready(function () {
             if (formData.last_name !== undefined) {
                 user.last_name = formData.last_name
             }
-            mainName.text(user.first_name + " "+ user.last_name)
+            mainName.text(user.first_name + " " + user.last_name)
             mainAddress.text(personalAddress)
             mainEmail.html(user.email)
             globalUser = user
         }
     }
-    jQuery(document).on("click" , "#as-director" , function (){
+    jQuery(document).on("click", "#as-director", function () {
         directors.push(globalUser);
         jQuery("#business-manager-detail-table").hide();
         renderDirectorsTable();
@@ -429,42 +429,59 @@ jQuery(document).ready(function () {
         jQuery("#business-manager-detail").show();
     });
 
-// Show Directors in table newly added or previouslyAdded
+    // Show Directors in table newly added or previouslyAdded
 
 
-// Adding Event Listener on ModalForms
-    jQuery(document).on('submit', "#dir-form",function (event) {
+    // Adding Event Listener on ModalForms
+    jQuery(document).on('submit', "#dir-form", function (event) {
         event.preventDefault();
         // Validate the form inputs
         const formElement = document.querySelector(`#dir-form`);
         modalFormValidate(formElement);
-
-
     });
 
 
-    jQuery(document).on('submit', "#officer-form",function (event) {
+    jQuery(document).on('submit', "#officer-form", function (event) {
         event.preventDefault();
         // Validate the form inputs
         const formElement = document.querySelector(`#officer-form`);
         modalFormValidate(formElement);
-        
-
     });
 
-    function modalFormValidate(formElement){
+
+    function modalFormValidate(formElement) {
+
         let isValid = true;
-        for (let i = 0; i < formElement.elements.length; i++) {
-            let input = formElement.elements[i];
-            if (input.type !== 'submit' && input.dataset.required && !input.value.trim()) {
+        console.log(formElement);
+
+        const inputs = $(formElement).find('input, select, textarea');
+        const elementsLength = inputs.length;
+
+        for (let i = 0; i < elementsLength; i++) {
+            const input = inputs.eq(i);
+            if (input.attr('type') !== 'submit' && input.data('required') && !input.val().trim()) {
                 isValid = false;
-                input.classList.add('error');
+                input.addClass('error');
             } else {
-                input.classList.remove('error');
-          
-                
+                input.removeClass('error');
             }
         }
+
+        // old code
+
+        // let isValid = true;
+        // console.log(formElement);
+        // const elementsLength = formElement.elements.length;
+        // for (let i = 0; i < elementsLength; i++) {
+        //     let input = formElement.elements[i];
+        //     if (input.type !== 'submit' && input.dataset.required && !input.value.trim()) {
+        //         isValid = false;
+        //         input.classList.add('error');
+        //     } else {
+        //         input.classList.remove('error');
+        //     }
+        // }
+
         // If the form is invalid, don't save the data and display an error message
         if (!isValid) {
             jQuery(this).find(".modal-body #error").html("<p class='text-danger'>Please fill all required fields*</p>");
@@ -473,18 +490,23 @@ jQuery(document).ready(function () {
 
 
 
-        if(formElement.getAttribute("id") === "dir-form")
+        if (formElement.id === "dir-form") {
+            // console.log("i am dir id", formElement.id)
             generateDirector()
-        else if(formElement.getAttribute("id") === "officer-form")
+        }
+        else if (formElement.id === "officer-form") {
+            // console.log("i am officers id", formElement.id)
             generateOfficer()
+        }
+
+        
 
         let dataModal = new bootstrap.Modal(document.getElementById(formElement.getAttribute("data-modal-id")), {});
         console.log(dataModal);
-        closingModalProperly(dataModal)
     }
 
-// Generate new Director t form Submission
-    function generateDirector(){
+    // Generate new Director t form Submission
+    function generateDirector() {
         let newDirector = {};
         newDirector.first_name = jQuery("#dir_first_name").val().trim()
         newDirector.last_name = jQuery("#dir_last_name").val().trim()
@@ -504,7 +526,7 @@ jQuery(document).ready(function () {
     }
 
 
-// Function to generate HTML for a single director row
+    // Function to generate HTML for a single director row
     function generateDirectorRow(director, index) {
         let name = director.first_name + " " + director.last_name;
         let address = director.address;
@@ -522,7 +544,7 @@ jQuery(document).ready(function () {
     </tr>`;
     }
 
-// Function to render the directors table
+    // Function to render the directors table
     function renderDirectorsTable() {
         let tbody = document.querySelector("#directors-table tbody");
         tbody.innerHTML = "";
@@ -540,7 +562,7 @@ jQuery(document).ready(function () {
         });
     }
 
-// Function to remove a director from the table and the directors array
+    // Function to remove a director from the table and the directors array
     function removeDirector(index) {
         let isMain = directors[index].is_main;
         directors.splice(index, 1);
@@ -549,15 +571,15 @@ jQuery(document).ready(function () {
             fetchMainUser();
             document.querySelector("#business-manager-detail-table").style.display = "block";
         }
-        if(directors.length === 0){
+        if (directors.length === 0) {
             jQuery("#buttons-for-director").show();
             jQuery("#directors-table").hide()
             jQuery("#business-manager-detail").hide();
         }
     }
 
-// officers position
-    function createOfficerByPosition(position){
+    // officers position
+    function createOfficerByPosition(position) {
         let officer = {
             first_name: globalUser.first_name,
             last_name: globalUser.last_name,
@@ -572,7 +594,7 @@ jQuery(document).ready(function () {
         officers.push(officer);
 
     }
-    jQuery(document).on("click" , "#as-officer" , function (){
+    jQuery(document).on("click", "#as-officer", function () {
         officers = [];
         // President
         createOfficerByPosition("President")
@@ -586,7 +608,7 @@ jQuery(document).ready(function () {
         jQuery("#business-manager-officer-detail").show();
     });
 
-    function generateOfficer(){
+    function generateOfficer() {
 
         let newOfficer = {};
         newOfficer.first_name = jQuery("#officer_first_name").val().trim()
@@ -598,7 +620,7 @@ jQuery(document).ready(function () {
         newOfficer.zip_code = jQuery("#officer_zip_code").val().trim()
         newOfficer.email = jQuery("#officer_email").val().trim()
         newOfficer.position = jQuery("#officer_position").val().trim()
-        if(!checkPosition(newOfficer)){
+        if (!checkPosition(newOfficer)) {
             // officers.push(newOfficer);
         }
         renderOfficersTable();
@@ -636,9 +658,9 @@ jQuery(document).ready(function () {
         });
     }
 
-// Function to generate HTML for a single officer row
+    // Function to generate HTML for a single officer row
     function generateOfficerRow(officer, index) {
-        let name = officer.first_name + " " + officer.last_name+"<br>("+officer.position  +")"
+        let name = officer.first_name + " " + officer.last_name + "<br>(" + officer.position + ")"
         let address = officer.address;
         let email = officer.email;
         if (officer.suit_apt) {
@@ -657,14 +679,14 @@ jQuery(document).ready(function () {
     function removeOfficer(index) {
         officers.splice(index, 1);
         renderOfficersTable();
-        if(officers.length === 0){
+        if (officers.length === 0) {
             jQuery("#buttons-for-officer").show();
             jQuery("#officers-table").hide()
             jQuery("#business-manager-officer-detail").hide();
         }
     }
 
-    function checkPresident(){
+    function checkPresident() {
         for (let i = 0; i < officers.length; i++) {
             if (officers[i].position === "President") {
                 return true; // president exists in array
@@ -673,25 +695,25 @@ jQuery(document).ready(function () {
         return false; // president doesn't exist in array
     }
 
-    jQuery(document).on("click" , "#step-three-button" , function () {
+    jQuery(document).on("click", "#step-three-button", function () {
         let errorMessage = "<ol>";
         let countError = 0;
         isValid = true;
-        if(directors.length === 0){
+        if (directors.length === 0) {
             isValid = false;
             countError++;
-            errorMessage += countError+". You must add at least one director"
+            errorMessage += countError + ". You must add at least one director"
 
-        }else if(officers.length === 0){
+        } else if (officers.length === 0) {
             isValid = false
             countError++
-            errorMessage += countError+". You must add at least one officer"
-        }else if(!checkPresident()){
+            errorMessage += countError + ". You must add at least one officer"
+        } else if (!checkPresident()) {
             isValid = false
             countError++
-            errorMessage += countError+". You must add President"
+            errorMessage += countError + ". You must add President"
         }
-        if(!isValid) {
+        if (!isValid) {
             jQuery("#modal-error").html(errorMessage);
             if (jQuery("#errorModal").length) {
                 let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
@@ -704,9 +726,9 @@ jQuery(document).ready(function () {
         savingDataInSessionStorage(false)
         window.location.href = "step-four";
     })
-    
 
-   
+
+
     // show and hide data on checkbox
     $(function () {
         $("#chkbox").click(function () {
@@ -721,7 +743,7 @@ jQuery(document).ready(function () {
     });
 
     //   show data with checkbox in sidebar
-      $(function () {
+    $(function () {
         $("#chekbox").click(function () {
             if ($(this).is(":checked")) {
                 $(".ragreement").show();
@@ -784,43 +806,43 @@ jQuery(document).ready(function () {
         });
 
     });
-    
+
     iterateDirectors();
-    function iterateDirectors(){
+    function iterateDirectors() {
         let output = "";
 
-        if(formData.directors != undefined){
-            for(i = 0 ; i < formData.directors.length ; i++){
-                output += "<p>"+formData.directors[i].first_name+"</p>"
-                +""+"<p>"+formData.directors[i].address+"</p>"
+        if (formData.directors != undefined) {
+            for (i = 0; i < formData.directors.length; i++) {
+                output += "<p>" + formData.directors[i].first_name + "</p>"
+                    + "" + "<p>" + formData.directors[i].address + "</p>"
 
 
             }
-            if(jQuery("#myLis".length)){
+            if (jQuery("#myLis".length)) {
                 jQuery("#myLis").html(output);
 
             }
         }
     }
     iterateofficers();
-    function iterateofficers(){
+    function iterateofficers() {
         let officeroutput = "";
-        if(formData.officers != undefined){
+        if (formData.officers != undefined) {
 
-        for(i = 0 ; i < formData.officers.length ; i++){
-            officeroutput += "<li >"+formData.officers[i].first_name
-            +""+formData.officers[i].address+"</li>"
-            
+            for (i = 0; i < formData.officers.length; i++) {
+                officeroutput += "<li >" + formData.officers[i].first_name
+                    + "" + formData.officers[i].address + "</li>"
 
-        }
-        if(jQuery("#officerLis".length)){
-            jQuery("#officerLis").html(officeroutput);
 
+            }
+            if (jQuery("#officerLis".length)) {
+                jQuery("#officerLis").html(officeroutput);
+
+            }
         }
     }
-    }
 
-        jQuery(document).on("click" , "#final" , function(){
+    jQuery(document).on("click", "#final", function () {
 
         // Send AJAX request to PHP script
         jQuery.ajax({
@@ -830,15 +852,15 @@ jQuery(document).ready(function () {
                 action: 'insert_form_data',
                 formData: formData
             },
-            success: function(response) {
+            success: function (response) {
                 console.log(response);
                 alert("coming soon");
             },
-            error: function(xhr, status, error) {
-                console.error(error);
+            error: function (xhr, status, error) {
+                console.error("the error of sending ajax request is:", error, "stauts:", status, "and xhr:", xhr);
             }
-        });            
-        })
+        });
+    })
 
 
 });

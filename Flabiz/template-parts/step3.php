@@ -203,7 +203,7 @@ get_header();
                             </div>
                             <div class="modal-footer justify-content-between">
                                 <button type="button" class="btn border-success text-success" data-bs-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-success text-white float-end"><i class="fa fa-users"></i> <i class="fa fa-plus"></i> <span class="ms-2">Add Director</span></button>
+                                <button data-bs-dismiss="modal" type="submit" class="btn btn-success text-white float-end"><i class="fa fa-users"></i> <i class="fa fa-plus"></i> <span class="ms-2">Add Director</span></button>
                             </div>
                         </form>
                     </div>
@@ -263,7 +263,7 @@ get_header();
 
                             </tbody>
                         </table>
-                        <button class="btn btn-success text-white" data-bs-toggle="modal" data-bs-target="#officerModal">
+                        <button class="btn btn-success text-white"  data-bs-toggle="modal" data-bs-target="#officerModal">
                             <i class="fa fa-users"></i> <i class="fa fa-plus"></i> <span class="ms-2">Add Officer</span>
                         </button>
                     </div>
@@ -440,7 +440,7 @@ get_header();
                                     </div>
                                     <div class="modal-footer justify-content-between">
                                         <button type="button" class="btn border-success text-success" data-bs-dismiss="modal">Cancel</button>
-                                        <button type="submit" class="btn btn-success text-white float-end"><i class="fa fa-users"></i> <i class="fa fa-plus"></i> <span class="ms-2">Add Officer</span></button>
+                                        <button data-bs-dismiss="modal" type="submit" class="btn btn-success text-white float-end"><i class="fa fa-users"></i> <i class="fa fa-plus"></i> <span class="ms-2">Add Officer</span></button>
                                     </div>
                                 </form>
                             </div>
