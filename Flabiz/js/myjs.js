@@ -461,20 +461,6 @@ jQuery(document).ready(function () {
             }
         }
 
-        // old code
-
-        // let isValid = true;
-        // console.log(formElement);
-        // const elementsLength = formElement.elements.length;
-        // for (let i = 0; i < elementsLength; i++) {
-        //     let input = formElement.elements[i];
-        //     if (input.type !== 'submit' && input.dataset.required && !input.value.trim()) {
-        //         isValid = false;
-        //         input.classList.add('error');
-        //     } else {
-        //         input.classList.remove('error');
-        //     }
-        // }
 
         // If the form is invalid, don't save the data and display an error message
         if (!isValid) {
@@ -493,7 +479,7 @@ jQuery(document).ready(function () {
             generateOfficer()
         }
 
-        
+
 
         let dataModal = new bootstrap.Modal(document.getElementById(formElement.getAttribute("data-modal-id")), {});
         console.log(dataModal);
@@ -847,8 +833,14 @@ jQuery(document).ready(function () {
                 formData: formData
             },
             success: function (response) {
-                console.log(response);
-                alert("coming soon");
+                if (response.success) {
+                    alert(response.data);
+                    // show success message
+                    alert('Your account has been created, and data has been sent to the site admin. Thanks!');
+                } else {
+                    alert(response.data);
+                    // show error message
+                }
             },
             error: function (xhr, status, error) {
                 console.error("the error of sending ajax request is:", error, "stauts:", status, "and xhr:", xhr);
