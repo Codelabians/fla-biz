@@ -1010,67 +1010,78 @@ add_action('after_setup_theme', 'custom_custom_logo_setup');
 // AJAX handler function
 add_action('wp_ajax_insert_form_data', 'insert_form_data');
 add_action('wp_ajax_nopriv_insert_form_data', 'insert_form_data');
-function insert_form_data()
-{
-	// Retrieve form data from AJAX request
-	$formData = $_POST['formData'];
-	
+function insert_form_data() {
+    // Retrieve form data from AJAX request
+    $formData = $_POST['formData'];
+    
+    // Connect to WordPress database
+    global $wpdb;
 
-	// Sanitize and validate form data (example)
-	$sanitizedFormData = array_map('sanitize_text_field', $formData);
+    // Create an array of user data
+    $user_data = array(
+		'user_login' => 'dolixddpsmqent',
+        'user_email' => 'jabbxdars1q23@devmateapps.com',
+        'user_pass'  => 'passxdsqword',
+        'first_name' => 'jabbxar',
+        'last_name'  => 'axzam'
+    );
 
-	// Connect to WordPress database
-	global $wpdb;
+    // Insert user data into the WordPress user table
+    $user_id = wp_insert_user($user_data);
+
+    // Check if user was created successfully
+    if (is_wp_error($user_id)) {
+        wp_send_json_error('Error creating user: ' . $user_id->get_error_message());
+    } else {
+        // User was created successfully, insert additional data as user meta
+        update_user_meta($user_id, 'first_name', $formData['first_name']);
+        update_user_meta($user_id, 'last_name', $formData['last_name']);
+        update_user_meta($user_id, 'date', $formData['date']);
+        update_user_meta($user_id, 'personal_address8', $formData['personal_address8']);
+        update_user_meta($user_id, 'personal_city8', $formData['personal_city8']);
+        update_user_meta($user_id, 'personal_suit_apt8', $formData['personal_suit_apt8']);
+        update_user_meta($user_id, 'personal_zip_code8', $formData['personal_zip_code8']);
+        update_user_meta($user_id, 'primary_ssn', $formData['primary_ssn']);
+        update_user_meta($user_id, 'shares', $formData['shares']);
+        update_user_meta($user_id, 'signature', $formData['signature']);
+        update_user_meta($user_id, 'chekbox7', $formData['chekbox7']);
+        update_user_meta($user_id, 'chekbox6', $formData['chekbox6']);
+        update_user_meta($user_id, 'chekbox5', $formData['chekbox5']);
+        update_user_meta($user_id, 'chekbox4', $formData['chekbox4']);
+        update_user_meta($user_id, 'chekbox3', $formData['chekbox3']);
+        update_user_meta($user_id, 'chekbox', $formData['chekbox']);
+        update_user_meta($user_id, 'checbox', $formData['checbox']);
+        update_user_meta($user_id, 'agri', $formData['agri']);
+        update_user_meta($user_id, 'accept ', $formData['accept ']);
+        update_user_meta($user_id, 'Fictitiousname', $formData['Fictitiousname']);
+
+		if (!empty($formData['officers'])) {
+			$officer_titles = array('president', 'vice_president', 'treasurer', 'secretary');
+			foreach ($officer_titles as $title) {
+				if (!empty($formData['officers'][$title])) {
+					update_user_meta($user_id, 'officer_' . $title, $formData['officers'][$title]);
+				}
+			}
+		}
+
+		
+		// Update user meta for officers
+		if (!empty($formData['officers'])) {
+			foreach ($formData['officers'] as $key => $value) {
+				update_user_meta($user_id, 'officer_' . $key, $value);
+			}
+		}
+
+		// Update user meta for directors
+		if (!empty($formData['directors'])) {
+			foreach ($formData['directors'] as $key => $value) {
+				update_user_meta($user_id, 'director_' . $key, $value);
+			}
+		}
 
 
-	// Insert form data into database table (example)
-	$wpdb->insert(
-		'flabiz_user',
-		array(
-            // 'preferred_name' => $sanitizedFormData['preferred_name'],
-            // // 'accept ' => $sanitizedFormData['accept '],
-            // 'address' => $sanitizedFormData['address'],
-            // 'agri' => $sanitizedFormData['agri'],
-            // 'alternate_name' => $sanitizedFormData['alternate_name'],
-            // 'alternate_name_type' => $sanitizedFormData['alternate_name_type'],
-            // 'business_mailing_address_check' => $sanitizedFormData['business_mailing_address_check'],
-            // 'business_mailing_address_check_other' => $sanitizedFormData['business_mailing_address_check_other'],
-            // 'checbox' => $sanitizedFormData['checbox'],
-            // 'chekbox' => $sanitizedFormData['chekbox'],
-            // 'chekbox3' => $sanitizedFormData['chekbox3'],
-            // 'chekbox4' => $sanitizedFormData['chekbox4'],
-            // 'chekbox5' => $sanitizedFormData['chekbox5'],
-            // 'chekbox6' => $sanitizedFormData['chekbox6'],
-            // 'chekbox7' => $sanitizedFormData['chekbox7'],
-            // 'city' => $sanitizedFormData['city'],
-            // 'company_purpose' => $sanitizedFormData['company_purpose'],
-            // 'country' => $sanitizedFormData['country'],
-            // 'date' => $sanitizedFormData['date'],
-            // 'others' => $sanitizedFormData['others'],
-            // 'passcord' => $sanitizedFormData['passcord'],
-            // 'personal_address' => $sanitizedFormData['personal_address'],
-            // 'personal_address8' => $sanitizedFormData['personal_address8'],
-            // 'personal_city' => $sanitizedFormData['personal_city'],
-            // 'personal_city8' => $sanitizedFormData['personal_city8'],
-            // 'personal_state' => $sanitizedFormData['personal_state'],
-            // 'personal_state8' => $sanitizedFormData['personal_state8'],
-            // 'personal_suit_apt' => $sanitizedFormData['personal_suit_apt'],
-            // 'personal_suit_apt8' => $sanitizedFormData['personal_suit_apt8'],
-            // 'personal_zip_code' => $sanitizedFormData['personal_zip_code'],
-            // 'personal_zip_code8' => $sanitizedFormData['personal_zip_code8'],
-            // 'phone' => $sanitizedFormData['phone'],
-            // 'preferred_name_type' => $sanitizedFormData['preferred_name_type'],
-            // 'primary_ssn' => $sanitizedFormData['primary_ssn'],
-            // 'primary_validate_email' => $sanitizedFormData['primary_validate_email'],
-            // 'primary_phone' => $sanitizedFormData['primary_phone'],
-            // 'principal_activity' => $sanitizedFormData['principal_activity'],
-            // 'shares' => $sanitizedFormData['shares'],
-            // 'signature' => $sanitizedFormData['signature'],
-            // 'suit_apt' => $sanitizedFormData['suit_apt'],
-            // 'user_name' => $sanitizedFormData['user_name'],
-            // 'zip_code' => $sanitizedFormData['zip_code'],
-        )
-	);
-	// Send response back to JavaScript
-	wp_send_json_success('Form data inserted successfully.');
+		// Send response back to JavaScript
+        wp_send_json_success('User created successfully, and its data is inserted.');
+    }
+
 }
