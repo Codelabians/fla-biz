@@ -485,7 +485,7 @@ jQuery(document).ready(function () {
             generateOfficer()
         }
 
-        
+
 
         let dataModal = new bootstrap.Modal(document.getElementById(formElement.getAttribute("data-modal-id")), {});
         console.log(dataModal);
@@ -839,7 +839,14 @@ jQuery(document).ready(function () {
                 formData: formData
             },
             success: function (response) {
-                console.log(response);
+                if (response.success) {
+                    alert(response.data);
+                    // show success message
+                    alert('Your account has been created, and data has been sent to the site admin. Thanks!');
+                } else {
+                    alert(response.data);
+                    // show error message
+                }
             },
             error: function (xhr, status, error) {
                 console.error("the error of sending ajax request is:", error, "stauts:", status, "and xhr:", xhr);

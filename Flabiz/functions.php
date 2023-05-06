@@ -1019,11 +1019,11 @@ function insert_form_data() {
 
     // Create an array of user data
     $user_data = array(
-		'user_login' => 'dolixddpsmqent',
-        'user_email' => 'jabbxdars1q23@devmateapps.com',
-        'user_pass'  => 'passxdsqword',
-        'first_name' => 'jabbxar',
-        'last_name'  => 'axzam'
+		'user_login' => 'xdoflixdsdpsmqent',
+        'user_email' => 'jxabbsfxdars1q23@devmateapps.com',
+        'user_pass'  => 'pxassfsxdsqword',
+        'first_name' => 'jabsbxar',
+        'last_name'  => 'asxzam'
     );
 
     // Insert user data into the WordPress user table
@@ -1033,49 +1033,32 @@ function insert_form_data() {
     if (is_wp_error($user_id)) {
         wp_send_json_error('Error creating user: ' . $user_id->get_error_message());
     } else {
-        // User was created successfully, insert additional data as user meta
-        update_user_meta($user_id, 'first_name', $formData['first_name']);
-        update_user_meta($user_id, 'last_name', $formData['last_name']);
-        update_user_meta($user_id, 'date', $formData['date']);
-        update_user_meta($user_id, 'personal_address8', $formData['personal_address8']);
-        update_user_meta($user_id, 'personal_city8', $formData['personal_city8']);
-        update_user_meta($user_id, 'personal_suit_apt8', $formData['personal_suit_apt8']);
-        update_user_meta($user_id, 'personal_zip_code8', $formData['personal_zip_code8']);
-        update_user_meta($user_id, 'primary_ssn', $formData['primary_ssn']);
-        update_user_meta($user_id, 'shares', $formData['shares']);
-        update_user_meta($user_id, 'signature', $formData['signature']);
-        update_user_meta($user_id, 'chekbox7', $formData['chekbox7']);
-        update_user_meta($user_id, 'chekbox6', $formData['chekbox6']);
-        update_user_meta($user_id, 'chekbox5', $formData['chekbox5']);
-        update_user_meta($user_id, 'chekbox4', $formData['chekbox4']);
-        update_user_meta($user_id, 'chekbox3', $formData['chekbox3']);
-        update_user_meta($user_id, 'chekbox', $formData['chekbox']);
-        update_user_meta($user_id, 'checbox', $formData['checbox']);
-        update_user_meta($user_id, 'agri', $formData['agri']);
-        update_user_meta($user_id, 'accept ', $formData['accept ']);
-        update_user_meta($user_id, 'Fictitiousname', $formData['Fictitiousname']);
 
+		// First, save the main form data
+		if (!empty($formData)) {
+			foreach ($formData as $key => $value) {
+				if ($key == 'officers' || $key == 'directors') {
+					continue;
+				}
+				update_user_meta($user_id, $key, $value);
+			}
+		}
+
+		// Save the officers metadata
 		if (!empty($formData['officers'])) {
-			$officer_titles = array('president', 'vice_president', 'treasurer', 'secretary');
-			foreach ($officer_titles as $title) {
-				if (!empty($formData['officers'][$title])) {
-					update_user_meta($user_id, 'officer_' . $title, $formData['officers'][$title]);
+			foreach ($formData['officers'] as $officer_key => $officer_value) {
+				foreach ($officer_value as $meta_key => $meta_value) {
+					update_user_meta($user_id, 'officer_' . $officer_key . '_' . $meta_key, $meta_value);
 				}
 			}
 		}
 
-		
-		// Update user meta for officers
-		if (!empty($formData['officers'])) {
-			foreach ($formData['officers'] as $key => $value) {
-				update_user_meta($user_id, 'officer_' . $key, $value);
-			}
-		}
-
-		// Update user meta for directors
+		// Save the directors metadata
 		if (!empty($formData['directors'])) {
-			foreach ($formData['directors'] as $key => $value) {
-				update_user_meta($user_id, 'director_' . $key, $value);
+			foreach ($formData['directors'] as $director_key => $director_value) {
+				foreach ($director_value as $meta_key => $meta_value) {
+					update_user_meta($user_id, 'director_' . $director_key . '_' . $meta_key, $meta_value);
+				}
 			}
 		}
 
