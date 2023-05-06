@@ -32,39 +32,22 @@ get_header();
                     <input type="date" id="Expiration" class="form-control" data-required="true" />
                 </div>
                 <h5 class="mb-4">Payment</h5>
-
-                <div class="form-check">
-                    <label class="form-check-label" for="checkoutForm3">
-                        Credit card
-                    </label>
-                    <input class="form-check-input" value="Credit card" type="radio" name="flexRadioDefault" id="checkoutForm3" checked />
-
-                </div>
-
-                <div class="form-check">
-                    <label class="form-check-label" for="checkoutForm4">
-                        Debit card
-                    </label>
-                    <input class="form-check-input" value="Debit card" type="radio" name="flexRadioDefault" id="checkoutForm4" />
-
-                </div>
-
-                <div class="form-check mb-4">
-                    <label class="form-check-label" for="checkoutForm5">
-                        Paypal
-                    </label>
-                    <input class="form-check-input" value="  Paypal" type="radio" name="flexRadioDefault" id="checkoutForm5" />
-                </div>
-
+                <select name="paymentCard" id="paymentCard" class="form-control" data-required="true" data-error="Card is required">
+                    <option value="">Select card</option>
+                    <option value="MasterCard">Master card</option>
+                    <option value="visaCard">Visa card</option>
+                    <option value="AmericanExpress">American Express</option>
+                    <option value="Discover">Discover</option>
+                </select>
                 <hr class="my-4" />
                 <div class="row mt-5">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <a href="step-six" class="btn btn-success text-white">Previous</a>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 d-flex flex-column">
-                    <input class="btn btn-success text-white" type="submit" value="Next">
+                        <input class="btn btn-success text-white" type="submit" value="Next">
                     </div>
-                </div>     
+                </div>
             </form>
         </div>
         <div class="col">

@@ -228,9 +228,7 @@ get_header();
                         </li>
                         <li class="list-group-item d-flex justify-content-lg-between">
                             <span class="info-title">payment with:</span>
-                            <span class="info-data me-3" id="p_checkoutForm3"></span>
-                            <span class="info-data me-3" id="p_checkoutForm4"></span>
-                            <span class="info-data me-3" id="p_checkoutForm5"></span>
+                            <span class="info-data me-3" id="FormpaymentCard"></span>
                         </li>
                     </ul>
                 </div>
