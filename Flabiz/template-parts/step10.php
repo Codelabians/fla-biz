@@ -1,5 +1,5 @@
 <?php
-// Template Name: step10
+// Template Name: step-ten
 get_header();
 ?>
 <div class="container">

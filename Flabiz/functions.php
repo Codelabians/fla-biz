@@ -1019,11 +1019,11 @@ function insert_form_data() {
 
     // Create an array of user data
     $user_data = array(
-		'user_login' => 'xdoflixdsdpsmqent',
-        'user_email' => 'jxabbsfxdars1q23@devmateapps.com',
-        'user_pass'  => 'pxassfsxdsqword',
-        'first_name' => 'jabsbxar',
-        'last_name'  => 'asxzam'
+		'user_login' => 'xdoflixssdsdpsmqent',
+        'user_email' => 'jxassbbsfxdars1q23@devmateapps.com',
+        'user_pass'  => 'pxassssfsxdsqword',
+        'first_name' => 'jabsssbxar',
+        'last_name'  => 'asxsszam'
     );
 
     // Insert user data into the WordPress user table
@@ -1046,21 +1046,33 @@ function insert_form_data() {
 
 		// Save the officers metadata
 		if (!empty($formData['officers'])) {
+			$officers_data = array();
 			foreach ($formData['officers'] as $officer_key => $officer_value) {
 				foreach ($officer_value as $meta_key => $meta_value) {
-					update_user_meta($user_id, 'officer_' . $officer_key . '_' . $meta_key, $meta_value);
+					$officers_data[$officer_key][$meta_key] = $meta_value;
 				}
 			}
+			// Encode officers data as JSON
+			$officers_json = json_encode($officers_data);
+			// Save officers data as a user meta field
+			update_user_meta($user_id, 'officers_data', $officers_json);
 		}
+		
 
 		// Save the directors metadata
 		if (!empty($formData['directors'])) {
+			$directors_data = array();
 			foreach ($formData['directors'] as $director_key => $director_value) {
+				$director_data = array();
 				foreach ($director_value as $meta_key => $meta_value) {
-					update_user_meta($user_id, 'director_' . $director_key . '_' . $meta_key, $meta_value);
+					$director_data[$meta_key] = $meta_value;
 				}
+				$directors_data[] = $director_data;
 			}
+			$directors_data_json = json_encode($directors_data);
+			update_user_meta($user_id, 'directors_data', $directors_data_json);
 		}
+		
 
 
 		// Send response back to JavaScript
@@ -1068,31 +1080,18 @@ function insert_form_data() {
     }
 
 
+	// restricte users and user page 
+	function restrict_page_access() {
+		if ( ! current_user_can( 'manage_options' ) && ( is_page( 'users' ) || is_page( 'user' ) ) ) {
+			wp_redirect( home_url() );
+			exit;
+		}
+	}
+	add_action( 'wp', 'restrict_page_access' );
+	
 
 
 
-
-	add_action( 'wp_ajax_delete_user', 'delete_user_callback' );
-function delete_user_callback() {
-  // Verify that the user is logged in and has permission to delete users
-  if ( ! current_user_can( 'delete_users' ) ) {
-    wp_die( 'Access denied.' );
-  }
-
-  // Verify that the security nonce is valid
-  if ( ! wp_verify_nonce( $_POST['security'], 'delete_user_' . $_POST['user_id'] ) ) {
-    wp_die( 'Access denied.' );
-  }
-
-  // Delete the user permanently from the database
-  if ( wp_delete_user( $_POST['user_id'] ) ) {
-    echo 'success';
-  } else {
-    echo 'error';
-  }
-
-  wp_die();
-}
 
 	
 
