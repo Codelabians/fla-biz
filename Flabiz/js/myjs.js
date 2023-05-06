@@ -852,8 +852,9 @@ jQuery(document).ready(function () {
                 console.error("the error of sending ajax request is:", error, "stauts:", status, "and xhr:", xhr);
             }
         });
-    })
+    });
 
-
+   
+    
 });
 

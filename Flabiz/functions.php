@@ -1067,4 +1067,36 @@ function insert_form_data() {
         wp_send_json_success('User created successfully, and its data is inserted.');
     }
 
+
+
+
+
+
+	add_action( 'wp_ajax_delete_user', 'delete_user_callback' );
+function delete_user_callback() {
+  // Verify that the user is logged in and has permission to delete users
+  if ( ! current_user_can( 'delete_users' ) ) {
+    wp_die( 'Access denied.' );
+  }
+
+  // Verify that the security nonce is valid
+  if ( ! wp_verify_nonce( $_POST['security'], 'delete_user_' . $_POST['user_id'] ) ) {
+    wp_die( 'Access denied.' );
+  }
+
+  // Delete the user permanently from the database
+  if ( wp_delete_user( $_POST['user_id'] ) ) {
+    echo 'success';
+  } else {
+    echo 'error';
+  }
+
+  wp_die();
+}
+
+	
+
+
+	
+
 }
