@@ -30,9 +30,7 @@ jQuery(document).ready(function () {
     jQuery('#p_CardNumber').text(formData.CardNumber);
     jQuery('#p_CVV').text(formData.CVV);
     jQuery('#P_Expiration').text(formData.Expiration);
-    jQuery('#p_checkoutForm3').text(formData.checkoutForm3);
-    jQuery('#p_checkoutForm4').text(formData.checkoutForm4);
-    jQuery('#p_checkoutForm5').text(formData.checkoutForm5);
+    jQuery('#FormpaymentCard').text(formData.paymentCard);
     jQuery('#signature').text(formData.signature);
     // Getting Modal
     if (jQuery("#errorModal").length) {
