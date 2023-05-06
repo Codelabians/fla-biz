@@ -193,7 +193,7 @@ get_header();
                                 <!--Email-->
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-12">
-                                        <label for="primary_email" class="form-label">Email</label>
+                                        <label for="dir_email" class="form-label">Email</label>
                                     </div>
                                     <div class="col-md-9 col-lg-9 col-sm-12">
                                         <input class="form-control" data-required="true" data-error="Primary Email is required" id="dir_email" name="dir_email" type="text">

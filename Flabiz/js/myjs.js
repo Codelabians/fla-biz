@@ -90,7 +90,7 @@ jQuery(document).ready(function () {
         }
     })
     // ssn Number Validation
-    jQuery(document).on("keyup", "#ssn", function () {
+    jQuery(document).on("keyup", ".ssn", function () {
         if (!formatssnNumber(jQuery(this).val())) {
             jQuery(this).val("")
             jQuery(this).addClass("error")
@@ -98,6 +98,15 @@ jQuery(document).ready(function () {
             jQuery(this).val(formatssnNumber(jQuery(this).val()))
         }
     })
+    // Card Number Validation
+    // jQuery(document).on("keyup", "#CardNumber", function () {
+    //     if (!formatCardNumber(jQuery(this).val())) {
+    //         jQuery(this).val("")
+    //         jQuery(this).addClass("error")
+    //     } else {
+    //         jQuery(this).val(formatCardNumber(jQuery(this).val()))
+    //     }
+    // })
     // digital signature 
     jQuery(document).on("keyup", "#digital_signature", function () {
         if (jQuery(this).val().trim().length < 1) {
@@ -117,6 +126,14 @@ jQuery(document).ready(function () {
 
         }
     })
+    // length fix of card
+    jQuery(document).on("keyup", ".card", function () {
+        if (jQuery(this).val().trim().length < 16) {
+            jQuery(this).addClass("error")
+        } else {
+            jQuery(this).removeClass("error")
+        }
+    })
     // Formatting the phone number
     function formatPhoneNumber(phoneNumber) {
         // Remove all non-digit characters from the phone number
@@ -129,7 +146,7 @@ jQuery(document).ready(function () {
 
         let formatted = "";
         for (let i = 0; i < cleaned.length && i < 10; i++) {
-            if (i === 3 || i === 6) {
+            if (i === 4 || i === 4) {
                 formatted += '-';
             }
             formatted += cleaned[i];
@@ -138,25 +155,21 @@ jQuery(document).ready(function () {
     }
     // Formatting the ssn number
     function formatssnNumber(ssn) {
-        // Remove all non-digit characters from the phone number
-        const cleaned = ssn.replace(/\D/g, '');
-        // Format the cleaned phone number with hyphens
-
-        if (cleaned.startsWith('0')) {
+        // Remove all non-digit characters from the ssn number
+        const cleanedssn = ssn.replace(/\D/g, '');
+        // Format the cleaned ssn number with hyphens
+        if (cleanedssn.startsWith('0')) {
             return false;
         }
-
-        let formatted = "";
-        for (let i = 0; i < cleaned.length && i < 10; i++) {
-            if (i === 3 || i === 6) {
-                formatted += '-';
+        let formatted2 = "";
+        for (let i = 0; i < cleanedssn.length && i < 10; i++) {
+            if (i === 3 || i === 5) {
+                formatted2 += '-';
             }
-            formatted += cleaned[i];
+            formatted2 += cleanedssn[i];
         }
-        return formatted;
+        return formatted2;
     }
-
-
     // Company Purpose length fixing
     jQuery(document).on("keyup", "#company_purpose", function () {
         if (jQuery(this).val().trim().length > 50) {
@@ -169,6 +182,15 @@ jQuery(document).ready(function () {
     // zip code validation
     jQuery(document).on("keyup", "#zip_code", function () {
         if (jQuery(this).val().trim().length < 4) {
+            jQuery(this).addClass("error")
+        } else {
+            jQuery(this).removeClass("error")
+
+        }
+    })
+    // ssn validation
+    jQuery(document).on("keyup", "#ssn", function () {
+        if (jQuery(this).val().trim().length < 11) {
             jQuery(this).addClass("error")
         } else {
             jQuery(this).removeClass("error")
@@ -255,8 +277,6 @@ jQuery(document).ready(function () {
         formElement.addEventListener('submit', function (event) {
             event.preventDefault();
             // Validate the form inputs
-            console.log("hrllo");
-
             let isValid = true;
             let errorMessage = "<ol>"
             for (var i = 0; i < formElement.elements.length; i++) {
@@ -314,7 +334,11 @@ jQuery(document).ready(function () {
                         isValid = false;
                         errorMessage += "<li> password is required</li>"
                         input.classList.add('error');
-                    } else {
+                    }else if (input.id === "CardNumber" && input.value.length < 16) {
+                        isValid = false;
+                        errorMessage += "<li> card number can't not be greater or less then 16 </li>"
+                        input.classList.add('error');
+                    }else {
                         input.classList.remove('error');
                     }
                 }
@@ -444,30 +468,30 @@ jQuery(document).ready(function () {
     function modalFormValidate(formElement) {
 
         let isValid = true;
-        console.log(formElement);
-
         const inputs = $(formElement).find('input, select, textarea');
         const elementsLength = inputs.length;
 
+   
         for (let i = 0; i < elementsLength; i++) {
             const input = inputs.eq(i);
             if (input.attr('type') !== 'submit' && input.data('required') && !input.val().trim()) {
                 isValid = false;
-                input.addClass('error');
+                errorMessage += "<li>" + input.dataset.error + "</li>"
+                input.classList.add('error');
+            }else if (input.id === "dir_email" && !ValidateEmail(input.value)) {
+                isValid = false;
+                errorMessage += "<li>Enter valid email</li>"
+                input.classList.add('error');
             } else {
                 input.removeClass('error');
             }
-        }
-
-
-        // If the form is invalid, don't save the data and display an error message
+            // If the form is invalid, don't save the data and display an error message
         if (!isValid) {
             jQuery(this).find(".modal-body #error").html("<p class='text-danger'>Please fill all required fields*</p>");
             return;
         }
-
-
-
+        }
+        
         if (formElement.id === "dir-form") {
             // console.log("i am dir id", formElement.id)
             generateDirector()
