@@ -26,20 +26,14 @@ jQuery(document).ready(function () {
     jQuery('#pssn').text(formData.primary_ssn);
     jQuery('#date').text(formData.date);
     jQuery('#application2').text(formData.chekbox7);
+    jQuery('#p_NameOnCard').text(formData.NameOnCard);
+    jQuery('#p_CardNumber').text(formData.CardNumber);
+    jQuery('#p_CVV').text(formData.CVV);
+    jQuery('#P_Expiration').text(formData.Expiration);
+    jQuery('#p_checkoutForm3').text(formData.checkoutForm3);
+    jQuery('#p_checkoutForm4').text(formData.checkoutForm4);
+    jQuery('#p_checkoutForm5').text(formData.checkoutForm5);
     jQuery('#signature').text(formData.signature);
-
-
-
-
-
-
-
-
-
-
-
-    // jQuery('#Director').text('Directors'+formData.directors);
-
     // Getting Modal
     if (jQuery("#errorModal").length) {
         let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
@@ -318,9 +312,9 @@ jQuery(document).ready(function () {
                         isValid = false;
                         errorMessage += "<li> user name is required</li>"
                         input.classList.add('error');
-                    } else if (input.id === "passcord" && input.value.length < 0) {
+                    } else if (input.id === "password" && input.value.length < 0) {
                         isValid = false;
-                        errorMessage += "<li> passcord is required</li>"
+                        errorMessage += "<li> password is required</li>"
                         input.classList.add('error');
                     } else {
                         input.classList.remove('error');

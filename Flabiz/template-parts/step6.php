@@ -28,15 +28,17 @@ get_header();
                 <input type="date" id="first_date" name="first_date">
                 <p>To file an EIN Application with the IRS, it is necessary to supply the Social Security number of the President of your new corporation. Please provide that below.</p>
 
-                <div id="officer_position-data"></div>
+                <div id="officer_position-data">
+
+                </div>
                 <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-12">
-                            <label for="primary_ssn" class="form-label">SSN:</label>
-                        </div>
-                        <div class="col-md-9 col-lg-9 col-sm-12">
-                            <input class="form-control phone" data-required="true" data-error="ssn number is required is required" id="primary_ssn" name="primary_ssn" type="text">
-                        </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12">
+                        <label for="primary_ssn" class="form-label">SSN:</label>
                     </div>
+                    <div class="col-md-9 col-lg-9 col-sm-12">
+                        <input class="form-control phone" data-required="true" data-error="ssn number is required is required" id="primary_ssn" name="primary_ssn" type="text">
+                    </div>
+                </div>
                 <div class="row mt-5">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <a href="step-five" class="btn btn-success text-white">Previous</a>
@@ -49,21 +51,21 @@ get_header();
         </div>
         <!-- Error Modal -->
         <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title text-black fw-bold" id="exampleModalLabel">Oops, please fix the following issues:</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body" id="modal-error">
-
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" data-bs-dismiss="modal" class="btn btn-primary">OK</button>
-                                </div>
-                            </div>
-                        </div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-black fw-bold" id="exampleModalLabel">Oops, please fix the following issues:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+                    <div class="modal-body" id="modal-error">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" data-bs-dismiss="modal" class="btn btn-primary">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col">
             <?php get_sidebar(); ?>
         </div>
