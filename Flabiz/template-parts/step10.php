@@ -6,7 +6,7 @@ get_header();
     <div class="row d-flex">
         <div class="col-sm-12 col-md-10 col-lg-8">
 
-            <form data-action="step-nine" id="myForm" class=" m-3">
+            <form data-action="" id="myForm" class=" m-3">
                 <h1>Company Information Summary</h1>
                 <p>
                     Following is a summary of your company's information as you have entered it; please verify this is complete and accurate as shown. If any of the information is incorrect, please click the Edit link for that section to be taken to the appropriate page to change it.

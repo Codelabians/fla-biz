@@ -1,5 +1,6 @@
 <?php
 // Template Name: Thank you
+ob_start();
 get_header();
 
 
@@ -45,7 +46,7 @@ get_header();
 
             session_start();
             if (!isset($_SESSION['ValidStep'])) {
-                header("Location: /apply");
+                // header("Location: /apply");
                 exit;
             }
             $email = $_POST['ContactEmail'];

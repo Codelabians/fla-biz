@@ -310,6 +310,10 @@ jQuery(document).ready(function () {
                         isValid = false;
                         errorMessage += "<li>Enter valid email</li>"
                         input.classList.add('error');
+                    }else if (input.id === "dir_email" && !ValidateEmail(input.value)) {
+                        isValid = false;
+                        errorMessage += "<li>Enter valid email</li>"
+                        input.classList.add('error');
                     } else if (input.id === "primary_validate_email" && input.value.trim() !== jQuery("#primary_email").val()) {
                         isValid = false;
                         errorMessage += "<li>Validating email is incorrect</li>"
@@ -444,7 +448,6 @@ jQuery(document).ready(function () {
         jQuery("#buttons-for-director").hide();
         jQuery("#business-manager-detail").show();
     });
-
     // Show Directors in table newly added or previouslyAdded
 
 
@@ -463,34 +466,71 @@ jQuery(document).ready(function () {
         const formElement = document.querySelector(`#officer-form`);
         modalFormValidate(formElement);
     });
+    function modalFormValidate(formElement) {
+        formElement.addEventListener('submit', function (event) {
+            event.preventDefault();
+            // Validate the form inputs
+            let isValid = true;
+            let errorMessage = "<ol>"
+            for (var i = 0; i < formElement.elements.length; i++) {
+                var input = formElement.elements[i];
+                if (input.type !== 'submit' && input.dataset.required && !input.value.trim()) {
+                    isValid = false;
+                    errorMessage += "<li>" + input.dataset.error + "</li>"
+                    input.classList.add('error');
+                } else {
+                 if (input.id === "dir_email" && !ValidateEmail(input.value)) {
+                        isValid = false;
+                        errorMessage += "<li>Enter valid email</li>"
+                        input.classList.add('error');
+                    } else {
+                        input.classList.remove('error');
+                    }
+                }
+            }
+            errorMessage += "</ol>";
+            // If the form is invalid, don't save the data and display an error message
+            if (!isValid) {
+                jQuery("#modal-error").html(errorMessage);
+                let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
+                myModal.show();
+                return;
+            }
 
+        });
+    }
 
     function modalFormValidate(formElement) {
-
+        formElement.addEventListener('submit', function (event) {
+            event.preventDefault();
         let isValid = true;
         const inputs = $(formElement).find('input, select, textarea');
         const elementsLength = inputs.length;
-
-
+        let errorMessage = "<ol>"
         for (let i = 0; i < elementsLength; i++) {
             const input = inputs.eq(i);
             if (input.attr('type') !== 'submit' && input.data('required') && !input.val().trim()) {
                 isValid = false;
-                errorMessage += "<li>" + input.dataset.error + "</li>"
+                errorMessage += "<li>"+input.dataset.error+"</li>"
                 input.classList.add('error');
-            } else if (input.id === "dir_email" && !ValidateEmail(input.value)) {
-                isValid = false;
-                errorMessage += "<li>Enter valid email</li>"
-                input.classList.add('error');
-            } else {
-                input.removeClass('error');
+            }  else {
+                 if (input.id === "dir_email" && !ValidateEmail(input.value)) {
+                    isValid = false;
+                    errorMessage += "<li>Enter valid email</li>"
+                    input.classList.add('error');
+                } 
             }
-            // If the form is invalid, don't save the data and display an error message
-            if (!isValid) {
-                jQuery(this).find(".modal-body #error").html("<p class='text-danger'>Please fill all required fields*</p>");
-                return;
-            }
+           
         }
+        errorMessage += "</ol>";
+        // If the form is invalid, don't save the data and display an error message
+        if (!isValid) {
+            jQuery("#modal-error").html(errorMessage);
+            let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
+            myModal.show();
+            return;
+        }
+    });
 
         if (formElement.id === "dir-form") {
             // console.log("i am dir id", formElement.id)
@@ -696,7 +736,6 @@ jQuery(document).ready(function () {
         }
         return false; // president doesn't exist in array
     }
-
     jQuery(document).on("click", "#step-three-button", function () {
         let errorMessage = "<ol>";
         let countError = 0;
@@ -705,16 +744,39 @@ jQuery(document).ready(function () {
             isValid = false;
             countError++;
             errorMessage += countError + ". You must add at least one director"
-
-        } else if (officers.length === 0) {
-            isValid = false
-            countError++
-            errorMessage += countError + ". You must add at least one officer"
         } else if (!checkPresident()) {
             isValid = false
             countError++
             errorMessage += countError + ". You must add President"
         }
+          // Check directors inputs
+          const directorsInputs = jQuery("#dir-form input");
+          directorsInputs.each(function(index) {
+              const input = jQuery(this);
+              if (input.data('required') && !input.val().trim()) {
+                  isValid = false;
+                  countError++;
+                  errorMessage += "<li>" + countError + ". " + input.data('error') + "</li>";
+                  input.addClass('error');
+              } else {
+                  input.removeClass('error');
+              }
+          });
+         // Check officer inputs
+            const officerInputs = jQuery("#officer-form input");
+            officerInputs.each(function(index) {
+                const input = jQuery(this);
+                if (input.data('required') && !input.val().trim()) {
+                    isValid = false;
+                    countError++;
+                    errorMessage += "<li>" + countError + ". " + input.data('error') + "</li>";
+                    input.addClass('error');
+                } else {
+                    input.removeClass('error');
+                }
+            });
+          
+            errorMessage += "</ol>";
         if (!isValid) {
             jQuery("#modal-error").html(errorMessage);
             if (jQuery("#errorModal").length) {

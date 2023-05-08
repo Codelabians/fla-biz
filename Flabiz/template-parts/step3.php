@@ -63,7 +63,7 @@ get_header();
                                         <label for="dir_first_name" class="form-label">First Name</label>
                                     </div>
                                     <div class="col-md-9 col-lg-9 col-sm-12">
-                                        <input data-required="true" data-error="First Name is required" class="form-control" id="dir_first_name" name="dir_first_name" type="text">
+                                        <input  data-required="true" data-error="Director First Name is required" class="form-control" id="dir_first_name" name="dir_first_name" type="text">
                                     </div>
                                 </div>
                                 <!--Last Name-->
@@ -196,7 +196,7 @@ get_header();
                                         <label for="dir_email" class="form-label">Email</label>
                                     </div>
                                     <div class="col-md-9 col-lg-9 col-sm-12">
-                                        <input class="form-control" data-required="true" data-error="Primary Email is required" id="dir_email" name="dir_email" type="text">
+                                        <input class="form-control" data-required="true" data-error="Primary Email is required" id="dir_email" name="dir_email" type="email">
                                     </div>
                                 </div>
                                 <div id="error"></div>
@@ -285,7 +285,7 @@ get_header();
                                                 <label for="officer_position" class="form-label">Position</label>
                                             </div>
                                             <div class="col-md-9 col-lg-9 col-sm-12">
-                                                <select id="officer_position" name="officer_position" class="form-control" data-required="true">
+                                                <select id="officer_position" data-error="officers position is required" name="officer_position" class="form-control"  data-required="true">
                                                     <option value="">Select Position</option>
                                                     <option value="President">President</option>
                                                     <option value="Vice President">Vice President</option>
@@ -300,7 +300,7 @@ get_header();
                                                 <label for="officer_first_name" class="form-label">First Name</label>
                                             </div>
                                             <div class="col-md-9 col-lg-9 col-sm-12">
-                                                <input data-required="true" data-error="First Name is required" class="form-control" id="officer_first_name" name="officer_first_name" type="text">
+                                                <input data-required="true" data-error="officers First Name is required" class="form-control" id="officer_first_name" name="officer_first_name" type="text">
                                             </div>
                                         </div>
                                         <!--Last Name-->
@@ -309,7 +309,7 @@ get_header();
                                                 <label for="officer_last_name" class="form-label">Last Name</label>
                                             </div>
                                             <div class="col-md-9 col-lg-9 col-sm-12">
-                                                <input class="form-control" data-required="true" data-error="Last Name is required" id="officer_last_name" name="officer_last_name" type="text">
+                                                <input class="form-control" data-required="true" data-error="officers Last Name is required" id="officer_last_name" name="officer_last_name" type="text">
                                             </div>
                                         </div>
 
@@ -319,7 +319,7 @@ get_header();
                                                 <label for="officer_address" class="form-label">Address</label>
                                             </div>
                                             <div class="col-lg-9 col-md-9 col-sm-12">
-                                                <input data-required="true" data-error="Address is required" type="text" class="form-control" id="officer_address" name="officer_address">
+                                                <input data-required="true" data-error="officers Address is required" type="text" class="form-control" id="officer_address" name="officer_address">
                                             </div>
                                         </div>
                                         <!--Apartment-->
@@ -337,7 +337,7 @@ get_header();
                                                 <label for="officer_city" class="form-label">City</label>
                                             </div>
                                             <div class="col-lg-9 col-md-9 col-sm-12">
-                                                <input type="text" data-required="true" data-error="City is required" class="form-control" id="officer_city" name="officer_city">
+                                                <input type="text" data-required="true" data-error=" officer City is required" class="form-control" id="officer_city" name="officer_city">
                                             </div>
                                         </div>
                                         <!--Country-->
@@ -346,7 +346,7 @@ get_header();
                                                 <label for="officer_state" class="form-label">State</label>
                                             </div>
                                             <div class="col-lg-9 col-md-9 col-sm-12">
-                                                <select name="officer_state" id="officer_state" class="form-control" data-required="true" data-error="State is required">
+                                                <select name="officer_state" id="officer_state" class="form-control" data-required="true" data-error=" officer State is required">
                                                     <option value="">Select State</option>
                                                     <option value="- ">Outside the US or Canada</option>
                                                     <option value="AB">Alberta</option>
@@ -424,7 +424,7 @@ get_header();
                                                 <label for="officer_zip_code" class="form-label">Zip Code</label>
                                             </div>
                                             <div class="col-lg-9 col-md-9 col-sm-12">
-                                                <input type="text" class="form-control" data-required="true" data-error="Zip Code is required" id="officer_zip_code" name="officer_zip_code">
+                                                <input type="text" class="form-control" data-required="true" data-error=" officer Zip Code is required" id="officer_zip_code" name="officer_zip_code">
                                             </div>
                                         </div>
                                         <!--Email-->
@@ -433,7 +433,7 @@ get_header();
                                                 <label for="officer_email" class="form-label">Email</label>
                                             </div>
                                             <div class="col-md-9 col-lg-9 col-sm-12">
-                                                <input class="form-control" data-required="true" data-error="Primary Email is required" id="officer_email" name="officer_email" type="text">
+                                                <input class="form-control" data-required="true" data-error="officer Email is required" id="officer_email" name="officer_email" type="email">
                                             </div>
                                         </div>
                                         <div id="error"></div>
