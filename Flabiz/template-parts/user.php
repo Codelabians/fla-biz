@@ -101,7 +101,7 @@ if ($user_data) {
                 if (!empty($special_note)) {
                     ?>
 
-                    <div class="card-not">
+                    <div class="card-not card">
                         <div class="card-header bg-dark color-white" style="color:#fff;">
                             Speacial Note For this User
                         </div>
