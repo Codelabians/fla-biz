@@ -4,6 +4,7 @@
 get_header();
 
 
+
 $args = array(
     'role' => 'subscriber',
     'orderby' => 'ID',
@@ -26,7 +27,7 @@ if (!empty($user_query->results)) {
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>View</th>
-                    <!-- <th>Delete</th> -->
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,20 +50,19 @@ if (!empty($user_query->results)) {
                         </td>
                         <td>
                             <a href="<?php echo esc_url(get_permalink(get_page_by_title('User')) . '?user_id=' . $user->ID); ?>"
-                                class="btn btn-primary">View</a>
+                                class="btn-primary">View</a>
+                        </td>
+                        <td>
+                            <a href="#">Delete</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
-
-
     </div>
     <?php
 } else {
     echo 'No users found.';
 }
-
-
 get_footer();
 ?>

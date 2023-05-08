@@ -1,5 +1,7 @@
 <?php
 // Template Name: User
+
+ob_start();
 get_header();
 
 
@@ -27,17 +29,108 @@ $exclude_keys = array(
     'officers_data',
     'directors_data',
     'session_tokens',
+    'special_note',
 );
 // Output the user metadata
 if ($user_data) {
     ?>
-    <div class="container p-5">
-        <h2 class="text-center p-5 fw-bold">User
-            <strong>
-                <?php echo esc_html($user_id) ?>
-            </strong>
-            Data
-        </h2>
+    <div class="container p-5 ">
+
+        <div class="container">
+            <h2 class="text-center p-5 fw-bold">User
+                <strong>
+                    <?php echo esc_html($user_id) ?>
+                </strong>
+                Data
+            </h2>
+            <?php
+            if (isset($_POST['special_note']) && isset($_GET['user_id'])) {
+                // Get the user ID from the URL parameter
+                $user_id = intval($_GET['user_id']);
+
+                // Sanitize the note text
+                $note = sanitize_text_field($_POST['special_note']);
+
+                // Update the user meta with the note text
+                update_user_meta($user_id, 'special_note', $note);
+            }
+            ?>
+
+            <?php
+            if (isset($_POST['delete_user'])) {
+                // Get the user ID from the URL parameter
+                
+
+                $user_id = intval($_GET['user_id']);
+                $user_meta = get_user_meta($user_id);
+                foreach ($user_meta as $meta_key => $meta_value) {
+                    $deleted = delete_user_meta($user_id, $meta_key);
+                }
+
+
+
+                if (is_wp_error($deleted)) {
+                    // There was an error deleting the user
+                    $error_message = $deleted->get_error_message();
+                    echo "Error deleting user: $error_message";
+                } else {
+                    // The user was deleted successfully
+                    wp_redirect('users');
+                }
+            }
+            ?>
+
+            <div class="update_user_data container">
+                <div class="inputs">
+                    <form method="post">
+                        <textarea cols="10" name="special_note" class="form-control"
+                            placeholder="Leave a note here, or update your existing note." id="floatingTextarea2"
+                            style="height: 100px"></textarea>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-primary" type="submit">Add Note</button>
+                            <button class="btn btn-danger" name="delete_user">Delete User</button>
+                        </div>
+                    </form>
+                </div>
+
+                <?php
+                // Get the special note for the user
+                $special_note = get_user_meta($user_id, 'special_note', true);
+
+                // Display the special note card if the user has a note
+                if (!empty($special_note)) {
+                    ?>
+
+                    <div class="card">
+                        <div class="card-header bg-dark color-white" style="color:#fff;">
+                            Speacial Note For this User
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <?php echo $special_note; ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <?php
+                } else { ?>
+
+                <div class="card">
+                    <div class="card-header bg-dark color-white" style="color:#fff;">
+                        Speacial Note For this User
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                        <p>You have not yet added any not for this user. Thanks!</p>
+                        </p>
+                    </div>
+                </div>
+                <?php
+                }
+                ?>
+        </div>
+
         <table class="border rounded-3 table table-light table-striped-columns text-center">
             <?php
             $i = 0;

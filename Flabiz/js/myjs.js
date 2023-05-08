@@ -870,16 +870,6 @@ jQuery(document).ready(function () {
         });
     });
 
-    function confirmDelete(userId) {
-        var confirmMsg = "Are you sure you want to delete this user?";
-        if (confirm(confirmMsg)) {
-            // If user clicks "OK" on the confirmation dialog box, redirect to the delete user page
-            window.location.href = "<?php echo esc_url(admin_url('user-edit.php?user_id=')); ?>" + userId + "&amp;action=delete";
-        }
-    }
-
-
-
 
 });
 
