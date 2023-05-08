@@ -310,7 +310,7 @@ jQuery(document).ready(function () {
                         isValid = false;
                         errorMessage += "<li>Enter valid email</li>"
                         input.classList.add('error');
-                    }else if (input.id === "dir_email" && !ValidateEmail(input.value)) {
+                    } else if (input.id === "dir_email" && !ValidateEmail(input.value)) {
                         isValid = false;
                         errorMessage += "<li>Enter valid email</li>"
                         input.classList.add('error');
@@ -358,7 +358,13 @@ jQuery(document).ready(function () {
 
             savingDataInSessionStorage(true);
             // Redirect the user to the next form page, or do whatever else you need to do
-            window.location.href = jQuery(this).data('action');
+            var currentUrl = window.location.href;
+
+            // Check if the current page URL is the excluded page
+            if (currentUrl.indexOf('step-ten') === -1) {
+                // Redirect to the specified URL
+                window.location.href = jQuery(this).data('action');
+            }
         });
     }
 
@@ -371,7 +377,7 @@ jQuery(document).ready(function () {
         if (isForm) {
             for (let i = 0; i < formElement.elements.length; i++) {
                 var input = formElement.elements[i];
-                console.log(input);
+                // console.log(input);
                 if (input.type !== 'submit') {
                     formInputData[input.id || input.name] = input.value;
                 }
@@ -479,7 +485,7 @@ jQuery(document).ready(function () {
                     errorMessage += "<li>" + input.dataset.error + "</li>"
                     input.classList.add('error');
                 } else {
-                 if (input.id === "dir_email" && !ValidateEmail(input.value)) {
+                    if (input.id === "dir_email" && !ValidateEmail(input.value)) {
                         isValid = false;
                         errorMessage += "<li>Enter valid email</li>"
                         input.classList.add('error');
@@ -503,34 +509,34 @@ jQuery(document).ready(function () {
     function modalFormValidate(formElement) {
         formElement.addEventListener('submit', function (event) {
             event.preventDefault();
-        let isValid = true;
-        const inputs = $(formElement).find('input, select, textarea');
-        const elementsLength = inputs.length;
-        let errorMessage = "<ol>"
-        for (let i = 0; i < elementsLength; i++) {
-            const input = inputs.eq(i);
-            if (input.attr('type') !== 'submit' && input.data('required') && !input.val().trim()) {
-                isValid = false;
-                errorMessage += "<li>"+input.dataset.error+"</li>"
-                input.classList.add('error');
-            }  else {
-                 if (input.id === "dir_email" && !ValidateEmail(input.value)) {
+            let isValid = true;
+            const inputs = $(formElement).find('input, select, textarea');
+            const elementsLength = inputs.length;
+            let errorMessage = "<ol>"
+            for (let i = 0; i < elementsLength; i++) {
+                const input = inputs.eq(i);
+                if (input.attr('type') !== 'submit' && input.data('required') && !input.val().trim()) {
                     isValid = false;
-                    errorMessage += "<li>Enter valid email</li>"
+                    errorMessage += "<li>" + input.dataset.error + "</li>"
                     input.classList.add('error');
-                } 
+                } else {
+                    if (input.id === "dir_email" && !ValidateEmail(input.value)) {
+                        isValid = false;
+                        errorMessage += "<li>Enter valid email</li>"
+                        input.classList.add('error');
+                    }
+                }
+
             }
-           
-        }
-        errorMessage += "</ol>";
-        // If the form is invalid, don't save the data and display an error message
-        if (!isValid) {
-            jQuery("#modal-error").html(errorMessage);
-            let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
-            myModal.show();
-            return;
-        }
-    });
+            errorMessage += "</ol>";
+            // If the form is invalid, don't save the data and display an error message
+            if (!isValid) {
+                jQuery("#modal-error").html(errorMessage);
+                let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
+                myModal.show();
+                return;
+            }
+        });
 
         if (formElement.id === "dir-form") {
             // console.log("i am dir id", formElement.id)
@@ -749,34 +755,34 @@ jQuery(document).ready(function () {
             countError++
             errorMessage += countError + ". You must add President"
         }
-          // Check directors inputs
-          const directorsInputs = jQuery("#dir-form input");
-          directorsInputs.each(function(index) {
-              const input = jQuery(this);
-              if (input.data('required') && !input.val().trim()) {
-                  isValid = false;
-                  countError++;
-                  errorMessage += "<li>" + countError + ". " + input.data('error') + "</li>";
-                  input.addClass('error');
-              } else {
-                  input.removeClass('error');
-              }
-          });
-         // Check officer inputs
-            const officerInputs = jQuery("#officer-form input");
-            officerInputs.each(function(index) {
-                const input = jQuery(this);
-                if (input.data('required') && !input.val().trim()) {
-                    isValid = false;
-                    countError++;
-                    errorMessage += "<li>" + countError + ". " + input.data('error') + "</li>";
-                    input.addClass('error');
-                } else {
-                    input.removeClass('error');
-                }
-            });
-          
-            errorMessage += "</ol>";
+        // Check directors inputs
+        const directorsInputs = jQuery("#dir-form input");
+        directorsInputs.each(function (index) {
+            const input = jQuery(this);
+            if (input.data('required') && !input.val().trim()) {
+                isValid = false;
+                countError++;
+                errorMessage += "<li>" + countError + ". " + input.data('error') + "</li>";
+                input.addClass('error');
+            } else {
+                input.removeClass('error');
+            }
+        });
+        // Check officer inputs
+        const officerInputs = jQuery("#officer-form input");
+        officerInputs.each(function (index) {
+            const input = jQuery(this);
+            if (input.data('required') && !input.val().trim()) {
+                isValid = false;
+                countError++;
+                errorMessage += "<li>" + countError + ". " + input.data('error') + "</li>";
+                input.addClass('error');
+            } else {
+                input.removeClass('error');
+            }
+        });
+
+        errorMessage += "</ol>";
         if (!isValid) {
             jQuery("#modal-error").html(errorMessage);
             if (jQuery("#errorModal").length) {
@@ -933,27 +939,27 @@ jQuery(document).ready(function () {
     function showThankYouModal() {
         // Get the modal element by ID
         var modal = document.getElementById('thankyou');
-    
+
         // Create a new Bootstrap modal instance using the modal element
         var modalInstance = new bootstrap.Modal(modal);
-    
+
         // Call the 'show' method to display the modal
         modalInstance.show();
     }
 
 
-    
+
     function showErrorModalForSubmit() {
         // Get the modal element by ID
         var modal = document.getElementById('errormodalforsubmit');
-    
+
         // Create a new Bootstrap modal instance using the modal element
         var modalInstance = new bootstrap.Modal(modal);
-    
+
         // Call the 'show' method to display the modal
         modalInstance.show();
     }
-    
+
 
 
 

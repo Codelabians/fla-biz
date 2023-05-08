@@ -904,11 +904,11 @@ function insert_form_data()
 
 	// Create an array of user data
 	$user_data = array(
-		'user_login' => $_POST['user_login'],
-		'user_email' => $_POST['user_login'],
-		'user_pass' => $_POST['password'],
-		'first_name' => $_POST['first_name'],
-		'last_name' => $_POST['last_name'],
+		'user_login' => $formData['user_name'],
+		'user_email' => $formData['user_login'],
+		'user_pass' => $formData['password'],
+		'first_name' => $formData['first_name'],
+		'last_name' => $formData['last_name'],
 	);
 
 	// Insert user data into the WordPress user table
@@ -974,9 +974,5 @@ function insert_form_data()
 		}
 	}
 	add_action('wp', 'restrict_page_access');
-
-
-
-
 
 }
