@@ -918,12 +918,9 @@ jQuery(document).ready(function () {
             },
             success: function (response) {
                 if (response.success) {
-                    alert(response.data);
-                    // show success message
-                    alert('Your account has been created, and data has been sent to the site admin. Thanks!');
+                    showThankYouModal();
                 } else {
-                    alert(response.data);
-                    // show error message
+                    showErrorModalForSubmit();
                 }
             },
             error: function (xhr, status, error) {
@@ -932,13 +929,32 @@ jQuery(document).ready(function () {
         });
     });
 
-    function confirmDelete(userId) {
-        var confirmMsg = "Are you sure you want to delete this user?";
-        if (confirm(confirmMsg)) {
-            // If user clicks "OK" on the confirmation dialog box, redirect to the delete user page
-            window.location.href = "<?php echo esc_url(admin_url('user-edit.php?user_id=')); ?>" + userId + "&amp;action=delete";
-        }
+
+    function showThankYouModal() {
+        // Get the modal element by ID
+        var modal = document.getElementById('thankyou');
+    
+        // Create a new Bootstrap modal instance using the modal element
+        var modalInstance = new bootstrap.Modal(modal);
+    
+        // Call the 'show' method to display the modal
+        modalInstance.show();
     }
+
+
+    
+    function showErrorModalForSubmit() {
+        // Get the modal element by ID
+        var modal = document.getElementById('errormodalforsubmit');
+    
+        // Create a new Bootstrap modal instance using the modal element
+        var modalInstance = new bootstrap.Modal(modal);
+    
+        // Call the 'show' method to display the modal
+        modalInstance.show();
+    }
+    
+
 
 
 

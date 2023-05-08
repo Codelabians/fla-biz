@@ -9,11 +9,14 @@ get_header();
             <form data-action="" id="myForm" class=" m-3">
                 <h1>Company Information Summary</h1>
                 <p>
-                    Following is a summary of your company's information as you have entered it; please verify this is complete and accurate as shown. If any of the information is incorrect, please click the Edit link for that section to be taken to the appropriate page to change it.
+                    Following is a summary of your company's information as you have entered it; please verify this is
+                    complete and accurate as shown. If any of the information is incorrect, please click the Edit link
+                    for that section to be taken to the appropriate page to change it.
                 </p>
 
                 <p>
-                    If you would like one of our support representatives to clarify the meaning of any of the information below, please call us at 1-800-370-2942.
+                    If you would like one of our support representatives to clarify the meaning of any of the
+                    information below, please call us at 1-800-370-2942.
                 </p>
                 <div class="card-summary card m-3">
                     <h5 class="card-header mt-0 ">Point of Contact
@@ -206,7 +209,7 @@ get_header();
                     </ul>
                 </div>
                 <div class="card-summary card m-3">
-                    <h5 class="card-header mt-0 ">Payment information 
+                    <h5 class="card-header mt-0 ">Payment information
                         <a href="step-one" class=" float-end text-decoration-none ">Edit</a>
                     </h5>
                     <ul class="list-grpup list-group-flush">
@@ -233,13 +236,15 @@ get_header();
                     </ul>
                 </div>
                 <h2>Create an account</h2>
-                <p>With this username and password, you can return to this website at any time to complete or check on the status of your application. An email confirmation will be sent to</p>
+                <p>With this username and password, you can return to this website at any time to complete or check on
+                    the status of your application. An email confirmation will be sent to</p>
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-12">
                         <label for="first_name" class="form-label">First Name</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-sm-12">
-                        <input data-required="true" data-error="First name is required" class="form-control" id="first_name" name="first_name" type="text">
+                        <input data-required="true" data-error="First name is required" class="form-control"
+                            id="first_name" name="first_name" type="text">
                     </div>
                 </div>
                 <div class="row">
@@ -247,7 +252,8 @@ get_header();
                         <label for="last_name" class="form-label">Last Name</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-sm-12">
-                        <input data-required="true" data-error="user Name is required" class="form-control" id="last_name" name="last_name" type="text">
+                        <input data-required="true" data-error="user Name is required" class="form-control"
+                            id="last_name" name="last_name" type="text">
                     </div>
                 </div>
                 <div class="row">
@@ -255,7 +261,8 @@ get_header();
                         <label for="user_name" class="form-label">user Name</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-sm-12">
-                        <input data-required="true" data-error="user Name is required" class="form-control" id="user_name" name="user_name" type="text">
+                        <input data-required="true" data-error="user Name is required" class="form-control"
+                            id="user_name" name="user_name" type="text">
                     </div>
                 </div>
                 <div class="row">
@@ -263,7 +270,8 @@ get_header();
                         <label for="password" class="form-label">password</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-sm-12">
-                        <input data-required="true" data-error="password isrequired" class="form-control" id="password" name="password" type="password">
+                        <input data-required="true" data-error="password isrequired" class="form-control" id="password"
+                            name="password" type="password">
                     </div>
                 </div>
 
@@ -272,19 +280,23 @@ get_header();
                         <a href="step-Eight" class="btn btn-success text-white">Previous</a>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 d-flex flex-column">
-                        <input class="btn btn-success text-white" id="final" data-url=<?= admin_url("admin-ajax.php") ?> type="submit" value="Next">
+                        <input class="btn btn-success text-white" id="final" data-url=<?= admin_url("admin-ajax.php") ?>
+                            type="submit" value="Next">
 
                         <!-- Button trigger modal -->
                         <!-- <a href="" class="" data-bs-toggle="modal" data-bs-target="#savemodel">Save and contineu later</a> -->
                     </div>
                 </div>
                 <!-- Error Modal -->
-                <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title text-black fw-bold" id="exampleModalLabel">Oops, please fix the following issues:</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <h5 class="modal-title text-black fw-bold" id="exampleModalLabel">Oops, please fix the
+                                    following issues:</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
                             <div class="modal-body" id="modal-error">
 
@@ -301,6 +313,47 @@ get_header();
             <?php get_sidebar(); ?>
         </div>
     </div>
+
+
+    <div class="modal" id="thankyou" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thank You</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Thanks for using our service.</p>
+                    <p>Your account has been created successfully, and your data has been sent to the Admin.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="errormodalforsubmit" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cannot Submit Your Data</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Try Differenet Username to create your account,
+                        Your given username is already available in our Data Base
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 </div>
 <?php
