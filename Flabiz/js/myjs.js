@@ -334,11 +334,11 @@ jQuery(document).ready(function () {
                         isValid = false;
                         errorMessage += "<li> password is required</li>"
                         input.classList.add('error');
-                    }else if (input.id === "CardNumber" && input.value.length < 16) {
+                    } else if (input.id === "CardNumber" && input.value.length < 16) {
                         isValid = false;
                         errorMessage += "<li> card number can't not be greater or less then 16 </li>"
                         input.classList.add('error');
-                    }else {
+                    } else {
                         input.classList.remove('error');
                     }
                 }
@@ -471,14 +471,14 @@ jQuery(document).ready(function () {
         const inputs = $(formElement).find('input, select, textarea');
         const elementsLength = inputs.length;
 
-   
+
         for (let i = 0; i < elementsLength; i++) {
             const input = inputs.eq(i);
             if (input.attr('type') !== 'submit' && input.data('required') && !input.val().trim()) {
                 isValid = false;
                 errorMessage += "<li>" + input.dataset.error + "</li>"
                 input.classList.add('error');
-            }else if (input.id === "dir_email" && !ValidateEmail(input.value)) {
+            } else if (input.id === "dir_email" && !ValidateEmail(input.value)) {
                 isValid = false;
                 errorMessage += "<li>Enter valid email</li>"
                 input.classList.add('error');
@@ -486,12 +486,12 @@ jQuery(document).ready(function () {
                 input.removeClass('error');
             }
             // If the form is invalid, don't save the data and display an error message
-        if (!isValid) {
-            jQuery(this).find(".modal-body #error").html("<p class='text-danger'>Please fill all required fields*</p>");
-            return;
+            if (!isValid) {
+                jQuery(this).find(".modal-body #error").html("<p class='text-danger'>Please fill all required fields*</p>");
+                return;
+            }
         }
-        }
-        
+
         if (formElement.id === "dir-form") {
             // console.log("i am dir id", formElement.id)
             generateDirector()
@@ -870,7 +870,16 @@ jQuery(document).ready(function () {
         });
     });
 
-   
-    
+    function confirmDelete(userId) {
+        var confirmMsg = "Are you sure you want to delete this user?";
+        if (confirm(confirmMsg)) {
+            // If user clicks "OK" on the confirmation dialog box, redirect to the delete user page
+            window.location.href = "<?php echo esc_url(admin_url('user-edit.php?user_id=')); ?>" + userId + "&amp;action=delete";
+        }
+    }
+
+
+
+
 });
 

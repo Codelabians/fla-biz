@@ -26,6 +26,7 @@ $exclude_keys = array(
     'dismissed_wp_pointers',
     'officers_data',
     'directors_data',
+    'session_tokens',
 );
 // Output the user metadata
 if ($user_data) {
