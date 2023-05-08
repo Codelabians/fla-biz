@@ -27,7 +27,6 @@ if (!empty($user_query->results)) {
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>View</th>
-                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -52,9 +51,7 @@ if (!empty($user_query->results)) {
                             <a href="<?php echo esc_url(get_permalink(get_page_by_title('User')) . '?user_id=' . $user->ID); ?>"
                                 class="btn-primary">View</a>
                         </td>
-                        <td>
-                            <a href="#">Delete</a>
-                        </td>
+                       
                     </tr>
                 <?php endforeach; ?>
             </tbody>
