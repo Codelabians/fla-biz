@@ -5,7 +5,7 @@ get_header();
 <div class="container">
     <div class="row d-flex">
         <div class="col-sm-12 col-md-10 col-lg-8">
-            <form data-action="step-10" id="myForm" class=" m-3">
+            <form data-action="step-Ten" id="card-form" class=" m-3">
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row mb-4">
                     <div class="col">
@@ -51,22 +51,25 @@ get_header();
             </form>
         </div>
         <!-- Error Modal -->
-        <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+        <div class="modal fade" id="cardErrorModal" tabindex="-1" role="dialog" aria-labelledby="cardErrorModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title text-black fw-bold" id="exampleModalLabel">Oops, please fix the following issues:</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h5 class="modal-title" id="cardErrorModalLabel">Error</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <div class="modal-body" id="modal-error">
-
+                    <div class="modal-body">
+                        <div id="card-modal-error"></div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" data-bs-dismiss="modal" class="btn btn-primary">OK</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="col">
             <?php get_sidebar(); ?>
         </div>

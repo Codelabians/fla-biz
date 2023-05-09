@@ -1,12 +1,12 @@
 <?php
-// Template Name: step-ten
+// Template Name: step10
 get_header();
 ?>
 <div class="container">
     <div class="row d-flex">
         <div class="col-sm-12 col-md-10 col-lg-8">
 
-            <form data-action="" id="myForm" class=" m-3">
+            <form data-action="" id="cardForm" class=" m-3">
                 <h1>Company Information Summary</h1>
                 <p>
                     Following is a summary of your company's information as you have entered it; please verify this is

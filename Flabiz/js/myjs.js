@@ -5,6 +5,8 @@ jQuery(document).ready(function () {
     let formData = JSON.parse(sessionStorage.getItem('formData')) || {};
     let globalUser = {};
     let directors = [];
+    let cards = [];
+
 
     jQuery('#name').text(formData.first_name);
     jQuery('#Address').text(formData.personal_address);
@@ -467,84 +469,37 @@ jQuery(document).ready(function () {
         modalFormValidate(formElement);
     });
     function modalFormValidate(formElement) {
-        formElement.addEventListener('submit', function (event) {
-            event.preventDefault();
-            // Validate the form inputs
-            let isValid = true;
-            let errorMessage = "<ol>"
-            for (var i = 0; i < formElement.elements.length; i++) {
-                var input = formElement.elements[i];
-                if (input.type !== 'submit' && input.dataset.required && !input.value.trim()) {
-                    isValid = false;
-                    errorMessage += "<li>" + input.dataset.error + "</li>"
-                    input.classList.add('error');
-                } else {
-                 if (input.id === "dir_email" && !ValidateEmail(input.value)) {
-                        isValid = false;
-                        errorMessage += "<li>Enter valid email</li>"
-                        input.classList.add('error');
-                    } else {
-                        input.classList.remove('error');
-                    }
-                }
-            }
-            errorMessage += "</ol>";
-            // If the form is invalid, don't save the data and display an error message
-            if (!isValid) {
-                jQuery("#modal-error").html(errorMessage);
-                let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
-                myModal.show();
-                return;
-            }
-
-        });
-    }
-
-    function modalFormValidate(formElement) {
-        formElement.addEventListener('submit', function (event) {
-            event.preventDefault();
         let isValid = true;
         const inputs = $(formElement).find('input, select, textarea');
         const elementsLength = inputs.length;
         let errorMessage = "<ol>"
         for (let i = 0; i < elementsLength; i++) {
             const input = inputs.eq(i);
-            if (input.attr('type') !== 'submit' && input.data('required') && !input.val().trim()) {
+            if (input.data('required') && !input.val().trim()) {
                 isValid = false;
-                errorMessage += "<li>"+input.dataset.error+"</li>"
-                input.classList.add('error');
-            }  else {
-                 if (input.id === "dir_email" && !ValidateEmail(input.value)) {
-                    isValid = false;
-                    errorMessage += "<li>Enter valid email</li>"
-                    input.classList.add('error');
-                } 
+                errorMessage += "<li>"+input.data('error')+"</li>"
+                input.addClass('error');
+            } else {
+                input.removeClass('error');
             }
-           
         }
         errorMessage += "</ol>";
-        // If the form is invalid, don't save the data and display an error message
+      
+        // If the form is invalid, display an error message
         if (!isValid) {
-            jQuery("#modal-error").html(errorMessage);
-            let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
+            jQuery("#director-modal-error").html(errorMessage);
+            let myModal = new bootstrap.Modal(document.getElementById("directorErrorModal"), {});
             myModal.show();
-            return;
+        } else {
+            if (formElement.id === "dir-form") {
+                        // console.log("i am dir id", formElement.id)
+                        generateDirector()
+                    }
+                    else if (formElement.id === "officer-form") {
+                        // console.log("i am officers id", formElement.id)
+                        generateOfficer()
+                    }
         }
-    });
-
-        if (formElement.id === "dir-form") {
-            // console.log("i am dir id", formElement.id)
-            generateDirector()
-        }
-        else if (formElement.id === "officer-form") {
-            // console.log("i am officers id", formElement.id)
-            generateOfficer()
-        }
-
-
-
-        let dataModal = new bootstrap.Modal(document.getElementById(formElement.getAttribute("data-modal-id")), {});
-        console.log(dataModal);
     }
 
     // Generate new Director t form Submission
@@ -749,33 +704,6 @@ jQuery(document).ready(function () {
             countError++
             errorMessage += countError + ". You must add President"
         }
-          // Check directors inputs
-          const directorsInputs = jQuery("#dir-form input");
-          directorsInputs.each(function(index) {
-              const input = jQuery(this);
-              if (input.data('required') && !input.val().trim()) {
-                  isValid = false;
-                  countError++;
-                  errorMessage += "<li>" + countError + ". " + input.data('error') + "</li>";
-                  input.addClass('error');
-              } else {
-                  input.removeClass('error');
-              }
-          });
-         // Check officer inputs
-            const officerInputs = jQuery("#officer-form input");
-            officerInputs.each(function(index) {
-                const input = jQuery(this);
-                if (input.data('required') && !input.val().trim()) {
-                    isValid = false;
-                    countError++;
-                    errorMessage += "<li>" + countError + ". " + input.data('error') + "</li>";
-                    input.addClass('error');
-                } else {
-                    input.removeClass('error');
-                }
-            });
-          
             errorMessage += "</ol>";
         if (!isValid) {
             jQuery("#modal-error").html(errorMessage);
@@ -790,9 +718,42 @@ jQuery(document).ready(function () {
         savingDataInSessionStorage(false)
         window.location.href = "step-four";
     })
+    
 
-
-
+    jQuery(document).on('submit', "#card-form", function (event) {
+        event.preventDefault();
+        const formElement = document.querySelector(`#card-form`);
+        cardFormValidate(formElement);
+      });
+      
+   
+    function cardFormValidate(formElement) {
+        let isValid = true;
+        const inputs = $(formElement).find('input, select, textarea');
+        const elementsLength = inputs.length;
+        let errorMessage = "<ol>"
+        for (let i = 0; i < elementsLength; i++) {
+          const input = inputs.eq(i);
+          if (input.data('required') && !input.val().trim()) {
+            isValid = false;
+            errorMessage += "<li>"+input.data('error')+"</li>"
+            input.addClass('error');
+          } else {
+            input.removeClass('error');
+          }
+        }
+        errorMessage += "</ol>";
+      
+        // If the form is invalid, don't save the data and display an error message
+        if (!isValid) {
+          jQuery("#card-modal-error").html(errorMessage);
+          let myModal = new bootstrap.Modal(document.getElementById("cardErrorModal"), {});
+          myModal.show();
+          return;
+        }
+        
+      }
+      
     // show and hide data on checkbox
     $(function () {
         $("#chkbox").click(function () {
