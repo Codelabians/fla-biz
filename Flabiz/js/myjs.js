@@ -6,6 +6,7 @@ jQuery(document).ready(function () {
     let globalUser = {};
     let directors = [];
 
+
     jQuery('#name').text(formData.first_name);
     jQuery('#Address').text(formData.personal_address);
     jQuery('#email').text(formData.primary_email);
@@ -357,14 +358,6 @@ jQuery(document).ready(function () {
             }
 
             savingDataInSessionStorage(true);
-            // Redirect the user to the next form page, or do whatever else you need to do
-            var currentUrl = window.location.href;
-
-            // Check if the current page URL is the excluded page
-            if (currentUrl.indexOf('step-ten') === -1) {
-                // Redirect to the specified URL
-                window.location.href = jQuery(this).data('action');
-            }
         });
     }
 
@@ -625,6 +618,8 @@ jQuery(document).ready(function () {
             jQuery("#business-manager-detail").hide();
         }
     }
+
+
 
     // officers position
     function createOfficerByPosition(position) {
@@ -915,6 +910,7 @@ jQuery(document).ready(function () {
     jQuery(document).on("click", "#final", function () {
 
         // Send AJAX request to PHP script
+
         jQuery.ajax({
             type: 'POST',
             url: jQuery(this).data("url"),
@@ -923,43 +919,15 @@ jQuery(document).ready(function () {
                 formData: formData
             },
             success: function (response) {
-                if (response.success) {
-                    showThankYouModal();
-                } else {
-                    showErrorModalForSubmit();
-                }
+                alert(JSON.stringify(response.data) );
+                console.log(response);
             },
             error: function (xhr, status, error) {
-                console.error("the error of sending ajax request is:", error, "stauts:", status, "and xhr:", xhr);
+                alert(error)
+                console.error("the error of sending ajax request is:", error);
             }
         });
     });
-
-
-    function showThankYouModal() {
-        // Get the modal element by ID
-        var modal = document.getElementById('thankyou');
-
-        // Create a new Bootstrap modal instance using the modal element
-        var modalInstance = new bootstrap.Modal(modal);
-
-        // Call the 'show' method to display the modal
-        modalInstance.show();
-    }
-
-
-
-    function showErrorModalForSubmit() {
-        // Get the modal element by ID
-        var modal = document.getElementById('errormodalforsubmit');
-
-        // Create a new Bootstrap modal instance using the modal element
-        var modalInstance = new bootstrap.Modal(modal);
-
-        // Call the 'show' method to display the modal
-        modalInstance.show();
-    }
-
 
 
 

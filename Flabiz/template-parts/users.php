@@ -1,9 +1,13 @@
 <?php
 // Template Name: users
 // Get all users
+ob_start();
 get_header();
 
-
+if ( ! current_user_can( 'manage_options' ) ) {
+    wp_redirect('restricted');
+    exit;
+}
 
 $args = array(
     'role' => 'subscriber',
@@ -32,22 +36,22 @@ if (!empty($user_query->results)) {
             <tbody>
                 <?php foreach ($user_query->results as $user): ?>
                     <tr>
-                        <td>
+                        <td class="td">
                             <?php echo esc_html($user->ID); ?>
                         </td>
-                        <td>
+                        <td class="td">
                             <?php echo esc_html($user->user_login); ?>
                         </td>
-                        <td>
+                        <td class="td">
                             <?php echo esc_html($user->user_email); ?>
                         </td>
-                        <td>
+                        <td class="td">
                             <?php echo esc_html($user->first_name); ?>
                         </td>
-                        <td>
+                        <td class="td">
                             <?php echo esc_html($user->last_name); ?>
                         </td>
-                        <td>
+                        <td class="td">
                             <a href="<?php echo esc_url(get_permalink(get_page_by_title('User')) . '?user_id=' . $user->ID); ?>"
                                 class="btn-primary">View</a>
                         </td>

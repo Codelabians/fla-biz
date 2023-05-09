@@ -4,7 +4,10 @@
 ob_start();
 get_header();
 
-
+if ( ! current_user_can( 'manage_options' ) ) {
+    wp_redirect( home_url() );
+    exit;
+}
 
 // Get user ID from query parameter
 $user_id = isset($_GET['user_id']) ? intval($_GET['user_id']) : 0;
@@ -34,7 +37,7 @@ $exclude_keys = array(
 // Output the user metadata
 if ($user_data) {
     ?>
-    <div class="container p-5 ">
+    <div class="container">
 
         <div class="container">
             <h2 class="text-center p-5 fw-bold">User
@@ -247,8 +250,8 @@ $directors = json_decode($directors_data);
 
 if ($directors) {
     ?>
-    <div class="container p-5">
-        <h2 class="text-center pb-5 pt-0 fw-bold">Directors</h2>
+    <div class="container">
+        <h2 class="text-center pb-5 pt-5 fw-bold">Directors</h2>
         <table class="border rounded-3 table table-light table-striped-columns text-center">
             <thead>
                 <tr>
