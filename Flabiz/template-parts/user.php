@@ -37,11 +37,11 @@ $exclude_keys = array(
 // Output the user metadata
 if ($user_data) {
     ?>
-    <div class="container">
+    <div class=" ">
 
         <div class="container">
             <h2 class="text-center p-5 fw-bold">User
-                <strong>
+                <strong >
                     <?php echo esc_html($user_id) ?>
                 </strong>
                 Data
@@ -144,19 +144,19 @@ if ($user_data) {
                     if ($i % 2 == 0) {
                         ?>
                         <tr>
-                            <td><strong class="text-capitalize">
+                            <td><strong class="text-wrap text-break text-capitalize">
                                     <?php echo esc_html($key); ?> :
                                 </strong></td>
-                            <td class="text-capitalize">
+                            <td class="text-capitalize text-wrap text-break">
                                 <?php echo esc_html($value[0]); ?>
                             </td>
                             <?php
                     } else {
                         ?>
-                            <td><strong class="text-capitalize">
+                            <td><strong class="text-capitalize text-wrap text-break">
                                     <?php echo esc_html($key); ?> :
                                 </strong></td>
-                            <td class="text-capitalize">
+                            <td class="text-capitalize text-wrap text-break">
                                 <?php echo esc_html($value[0]); ?>
                             </td>
                         </tr>
@@ -194,7 +194,6 @@ if ($officers) {
                     <th>Address</th>
                     <th>Suit/Apt</th>
                     <th>City</th>
-                    <th>State</th>
                     <th>Zip Code</th>
                     <th>Email</th>
                 </tr>
@@ -202,31 +201,28 @@ if ($officers) {
             <tbody>
                 <?php foreach ($officers as $officer) { ?>
                     <tr>
-                        <td>
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($officer['position']); ?>
                         </td>
-                        <td>
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($officer['first_name']); ?>
                         </td>
-                        <td>
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($officer['last_name']); ?>
                         </td>
-                        <td>
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($officer['address']); ?>
                         </td>
-                        <td>
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($officer['suit_apt']); ?>
                         </td>
-                        <td>
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($officer['city']); ?>
                         </td>
-                        <td>
-                            <?php echo esc_html($officer['state']); ?>
-                        </td>
-                        <td>
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($officer['zip_code']); ?>
                         </td>
-                        <td>
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($officer['email']); ?>
                         </td>
                     </tr>
@@ -267,25 +263,25 @@ if ($directors) {
             <tbody>
                 <?php foreach ($directors as $director) { ?>
                     <tr>
-                        <td>
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($director->first_name . " " . $director->last_name); ?>
                         </td>
-                        <td>
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($director->email); ?>
                         </td>
-                        <td>
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($director->address); ?>
                         </td>
-                        <td>
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($director->suit_apt); ?>
                         </td>
-                        <td>
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($director->city); ?>
                         </td>
-                        <td>
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($director->state); ?>
                         </td>
-                        <td>
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($director->zip_code); ?>
                         </td>
                     </tr>

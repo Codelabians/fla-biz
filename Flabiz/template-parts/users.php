@@ -20,9 +20,9 @@ $user_query = new WP_User_Query($args);
 if (!empty($user_query->results)) {
     ?>
     <!-- Output the table -->
-    <div class="container  p-5">
+    <div class="container  p-5 table-responsive">
         <h3 class="text-center p-5">All Users Data</h3>
-        <table class="border rounded-3 table table-light table-striped-columns text-center">
+        <table class=" border rounded-3 table table-light table-striped-columns text-center">
             <thead>
                 <tr class="table-dark border-dark">
                     <th>ID</th>
@@ -36,22 +36,22 @@ if (!empty($user_query->results)) {
             <tbody>
                 <?php foreach ($user_query->results as $user): ?>
                     <tr>
-                        <td class="td">
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($user->ID); ?>
                         </td>
-                        <td class="td">
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($user->user_login); ?>
                         </td>
-                        <td class="td">
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($user->user_email); ?>
                         </td>
-                        <td class="td">
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($user->first_name); ?>
                         </td>
-                        <td class="td">
+                        <td class="text-wrap text-break">
                             <?php echo esc_html($user->last_name); ?>
                         </td>
-                        <td class="td">
+                        <td class="text-wrap text-break">
                             <a href="<?php echo esc_url(get_permalink(get_page_by_title('User')) . '?user_id=' . $user->ID); ?>"
                                 class="btn-primary">View</a>
                         </td>

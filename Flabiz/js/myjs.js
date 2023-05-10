@@ -359,6 +359,8 @@ jQuery(document).ready(function () {
             }
             window.location.href = jQuery(this).data("action");
             savingDataInSessionStorage(true);
+            window.location.href = jQuery(this).data("action");
+
         });
     }
 
@@ -871,7 +873,7 @@ jQuery(document).ready(function () {
                 formData: formData
             },
             success: function (response) {
-                alert(JSON.stringify(response.data));
+                alert(JSON.stringify(response.data) );
                 console.log(response);
             },
             error: function (xhr, status, error) {
@@ -880,10 +882,4 @@ jQuery(document).ready(function () {
             }
         });
     });
-
-
-
-
-
 });
-
