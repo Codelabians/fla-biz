@@ -745,7 +745,7 @@ jQuery(document).ready(function () {
         savingDataInSessionStorage(false)
         window.location.href = "step-four";
     })
-    
+
     // show and hide data on checkbox
     $(function () {
         $("#chkbox").click(function () {
