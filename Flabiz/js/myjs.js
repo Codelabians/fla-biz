@@ -5,7 +5,7 @@ jQuery(document).ready(function () {
     let formData = JSON.parse(sessionStorage.getItem('formData')) || {};
     let globalUser = {};
     let directors = [];
-    let cards = [];
+
 
 
     jQuery('#name').text(formData.first_name);
@@ -312,7 +312,7 @@ jQuery(document).ready(function () {
                         isValid = false;
                         errorMessage += "<li>Enter valid email</li>"
                         input.classList.add('error');
-                    }else if (input.id === "dir_email" && !ValidateEmail(input.value)) {
+                    } else if (input.id === "dir_email" && !ValidateEmail(input.value)) {
                         isValid = false;
                         errorMessage += "<li>Enter valid email</li>"
                         input.classList.add('error');
@@ -357,10 +357,8 @@ jQuery(document).ready(function () {
                 myModal.show();
                 return;
             }
-
+            window.location.href = jQuery(this).data("action");
             savingDataInSessionStorage(true);
-            // Redirect the user to the next form page, or do whatever else you need to do
-            window.location.href = jQuery(this).data('action');
         });
     }
 
@@ -373,7 +371,7 @@ jQuery(document).ready(function () {
         if (isForm) {
             for (let i = 0; i < formElement.elements.length; i++) {
                 var input = formElement.elements[i];
-                console.log(input);
+                // console.log(input);
                 if (input.type !== 'submit') {
                     formInputData[input.id || input.name] = input.value;
                 }
@@ -458,7 +456,7 @@ jQuery(document).ready(function () {
         event.preventDefault();
         // Validate the form inputs
         const formElement = document.querySelector(`#dir-form`);
-        modalFormValidate(formElement);
+        directorFormValidate(formElement);
     });
 
 
@@ -466,9 +464,9 @@ jQuery(document).ready(function () {
         event.preventDefault();
         // Validate the form inputs
         const formElement = document.querySelector(`#officer-form`);
-        modalFormValidate(formElement);
+        directorFormValidate(formElement);
     });
-    function modalFormValidate(formElement) {
+    function directorFormValidate(formElement) {
         let isValid = true;
         const inputs = $(formElement).find('input, select, textarea');
         const elementsLength = inputs.length;
@@ -477,14 +475,14 @@ jQuery(document).ready(function () {
             const input = inputs.eq(i);
             if (input.data('required') && !input.val().trim()) {
                 isValid = false;
-                errorMessage += "<li>"+input.data('error')+"</li>"
+                errorMessage += "<li>" + input.data('error') + "</li>"
                 input.addClass('error');
             } else {
                 input.removeClass('error');
             }
         }
         errorMessage += "</ol>";
-      
+
         // If the form is invalid, display an error message
         if (!isValid) {
             jQuery("#director-modal-error").html(errorMessage);
@@ -492,13 +490,13 @@ jQuery(document).ready(function () {
             myModal.show();
         } else {
             if (formElement.id === "dir-form") {
-                        // console.log("i am dir id", formElement.id)
-                        generateDirector()
-                    }
-                    else if (formElement.id === "officer-form") {
-                        // console.log("i am officers id", formElement.id)
-                        generateOfficer()
-                    }
+                // console.log("i am dir id", formElement.id)
+                generateDirector()
+            }
+            else if (formElement.id === "officer-form") {
+                // console.log("i am officers id", formElement.id)
+                generateOfficer()
+            }
         }
     }
 
@@ -574,6 +572,8 @@ jQuery(document).ready(function () {
             jQuery("#business-manager-detail").hide();
         }
     }
+
+
 
     // officers position
     function createOfficerByPosition(position) {
@@ -704,7 +704,34 @@ jQuery(document).ready(function () {
             countError++
             errorMessage += countError + ". You must add President"
         }
-            errorMessage += "</ol>";
+        // Check directors inputs
+        const directorsInputs = jQuery("#dir-form input");
+        directorsInputs.each(function (index) {
+            const input = jQuery(this);
+            if (input.data('required') && !input.val().trim()) {
+                isValid = false;
+                countError++;
+                errorMessage += "<li>" + countError + ". " + input.data('error') + "</li>";
+                input.addClass('error');
+            } else {
+                input.removeClass('error');
+            }
+        });
+        // Check officer inputs
+        const officerInputs = jQuery("#officer-form input");
+        officerInputs.each(function (index) {
+            const input = jQuery(this);
+            if (input.data('required') && !input.val().trim()) {
+                isValid = false;
+                countError++;
+                errorMessage += "<li>" + countError + ". " + input.data('error') + "</li>";
+                input.addClass('error');
+            } else {
+                input.removeClass('error');
+            }
+        });
+
+        errorMessage += "</ol>";
         if (!isValid) {
             jQuery("#modal-error").html(errorMessage);
             if (jQuery("#errorModal").length) {
@@ -719,41 +746,6 @@ jQuery(document).ready(function () {
         window.location.href = "step-four";
     })
     
-
-    jQuery(document).on('submit', "#card-form", function (event) {
-        event.preventDefault();
-        const formElement = document.querySelector(`#card-form`);
-        cardFormValidate(formElement);
-      });
-      
-   
-    function cardFormValidate(formElement) {
-        let isValid = true;
-        const inputs = $(formElement).find('input, select, textarea');
-        const elementsLength = inputs.length;
-        let errorMessage = "<ol>"
-        for (let i = 0; i < elementsLength; i++) {
-          const input = inputs.eq(i);
-          if (input.data('required') && !input.val().trim()) {
-            isValid = false;
-            errorMessage += "<li>"+input.data('error')+"</li>"
-            input.addClass('error');
-          } else {
-            input.removeClass('error');
-          }
-        }
-        errorMessage += "</ol>";
-      
-        // If the form is invalid, don't save the data and display an error message
-        if (!isValid) {
-          jQuery("#card-modal-error").html(errorMessage);
-          let myModal = new bootstrap.Modal(document.getElementById("cardErrorModal"), {});
-          myModal.show();
-          return;
-        }
-        
-      }
-      
     // show and hide data on checkbox
     $(function () {
         $("#chkbox").click(function () {
@@ -870,6 +862,7 @@ jQuery(document).ready(function () {
     jQuery(document).on("click", "#final", function () {
 
         // Send AJAX request to PHP script
+
         jQuery.ajax({
             type: 'POST',
             url: jQuery(this).data("url"),
@@ -878,43 +871,15 @@ jQuery(document).ready(function () {
                 formData: formData
             },
             success: function (response) {
-                if (response.success) {
-                    showThankYouModal();
-                } else {
-                    showErrorModalForSubmit();
-                }
+                alert(JSON.stringify(response.data));
+                console.log(response);
             },
             error: function (xhr, status, error) {
-                console.error("the error of sending ajax request is:", error, "stauts:", status, "and xhr:", xhr);
+                alert(error)
+                console.error("the error of sending ajax request is:", error);
             }
         });
     });
-
-
-    function showThankYouModal() {
-        // Get the modal element by ID
-        var modal = document.getElementById('thankyou');
-    
-        // Create a new Bootstrap modal instance using the modal element
-        var modalInstance = new bootstrap.Modal(modal);
-    
-        // Call the 'show' method to display the modal
-        modalInstance.show();
-    }
-
-
-    
-    function showErrorModalForSubmit() {
-        // Get the modal element by ID
-        var modal = document.getElementById('errormodalforsubmit');
-    
-        // Create a new Bootstrap modal instance using the modal element
-        var modalInstance = new bootstrap.Modal(modal);
-    
-        // Call the 'show' method to display the modal
-        modalInstance.show();
-    }
-    
 
 
 

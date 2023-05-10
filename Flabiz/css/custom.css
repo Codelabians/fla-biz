@@ -98,10 +98,10 @@
     justify-content: space-around !important;
     gap: 1rem !important;
     border: 1px solid lightgray;
-    max-width:61rem;
+    max-width: 61rem;
     padding: 1rem;
     margin: auto;
-    margin: 3rem 0;
+    margin-bottom: 3rem;
 }
 
 .card {
@@ -114,4 +114,13 @@
 
 .card-not {
     min-height: 12rem;
+}
+
+
+.td {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
