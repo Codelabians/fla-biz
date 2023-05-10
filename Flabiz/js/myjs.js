@@ -358,6 +358,8 @@ jQuery(document).ready(function () {
             }
 
             savingDataInSessionStorage(true);
+            window.location.href = jQuery(this).data("action");
+
         });
     }
 
@@ -919,8 +921,11 @@ jQuery(document).ready(function () {
                 formData: formData
             },
             success: function (response) {
-                alert(JSON.stringify(response.data) );
-                console.log(response);
+                    if (response.success === true){
+                        console.log('true')
+                    }else{
+                        console.log('false')
+                    }
             },
             error: function (xhr, status, error) {
                 alert(error)
@@ -928,10 +933,4 @@ jQuery(document).ready(function () {
             }
         });
     });
-
-
-
-
-
 });
-
