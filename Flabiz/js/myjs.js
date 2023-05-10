@@ -7,6 +7,7 @@ jQuery(document).ready(function () {
     let directors = [];
 
 
+
     jQuery('#name').text(formData.first_name);
     jQuery('#Address').text(formData.personal_address);
     jQuery('#email').text(formData.primary_email);
@@ -356,7 +357,7 @@ jQuery(document).ready(function () {
                 myModal.show();
                 return;
             }
-
+            window.location.href = jQuery(this).data("action");
             savingDataInSessionStorage(true);
             window.location.href = jQuery(this).data("action");
 
@@ -457,7 +458,7 @@ jQuery(document).ready(function () {
         event.preventDefault();
         // Validate the form inputs
         const formElement = document.querySelector(`#dir-form`);
-        modalFormValidate(formElement);
+        directorFormValidate(formElement);
     });
 
 
@@ -465,87 +466,40 @@ jQuery(document).ready(function () {
         event.preventDefault();
         // Validate the form inputs
         const formElement = document.querySelector(`#officer-form`);
-        modalFormValidate(formElement);
+        directorFormValidate(formElement);
     });
-    function modalFormValidate(formElement) {
-        formElement.addEventListener('submit', function (event) {
-            event.preventDefault();
-            // Validate the form inputs
-            let isValid = true;
-            let errorMessage = "<ol>"
-            for (var i = 0; i < formElement.elements.length; i++) {
-                var input = formElement.elements[i];
-                if (input.type !== 'submit' && input.dataset.required && !input.value.trim()) {
-                    isValid = false;
-                    errorMessage += "<li>" + input.dataset.error + "</li>"
-                    input.classList.add('error');
-                } else {
-                    if (input.id === "dir_email" && !ValidateEmail(input.value)) {
-                        isValid = false;
-                        errorMessage += "<li>Enter valid email</li>"
-                        input.classList.add('error');
-                    } else {
-                        input.classList.remove('error');
-                    }
-                }
+    function directorFormValidate(formElement) {
+        let isValid = true;
+        const inputs = $(formElement).find('input, select, textarea');
+        const elementsLength = inputs.length;
+        let errorMessage = "<ol>"
+        for (let i = 0; i < elementsLength; i++) {
+            const input = inputs.eq(i);
+            if (input.data('required') && !input.val().trim()) {
+                isValid = false;
+                errorMessage += "<li>" + input.data('error') + "</li>"
+                input.addClass('error');
+            } else {
+                input.removeClass('error');
             }
-            errorMessage += "</ol>";
-            // If the form is invalid, don't save the data and display an error message
-            if (!isValid) {
-                jQuery("#modal-error").html(errorMessage);
-                let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
-                myModal.show();
-                return;
-            }
-
-        });
-    }
-
-    function modalFormValidate(formElement) {
-        formElement.addEventListener('submit', function (event) {
-            event.preventDefault();
-            let isValid = true;
-            const inputs = $(formElement).find('input, select, textarea');
-            const elementsLength = inputs.length;
-            let errorMessage = "<ol>"
-            for (let i = 0; i < elementsLength; i++) {
-                const input = inputs.eq(i);
-                if (input.attr('type') !== 'submit' && input.data('required') && !input.val().trim()) {
-                    isValid = false;
-                    errorMessage += "<li>" + input.dataset.error + "</li>"
-                    input.classList.add('error');
-                } else {
-                    if (input.id === "dir_email" && !ValidateEmail(input.value)) {
-                        isValid = false;
-                        errorMessage += "<li>Enter valid email</li>"
-                        input.classList.add('error');
-                    }
-                }
-
-            }
-            errorMessage += "</ol>";
-            // If the form is invalid, don't save the data and display an error message
-            if (!isValid) {
-                jQuery("#modal-error").html(errorMessage);
-                let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
-                myModal.show();
-                return;
-            }
-        });
-
-        if (formElement.id === "dir-form") {
-            // console.log("i am dir id", formElement.id)
-            generateDirector()
         }
-        else if (formElement.id === "officer-form") {
-            // console.log("i am officers id", formElement.id)
-            generateOfficer()
+        errorMessage += "</ol>";
+
+        // If the form is invalid, display an error message
+        if (!isValid) {
+            jQuery("#director-modal-error").html(errorMessage);
+            let myModal = new bootstrap.Modal(document.getElementById("directorErrorModal"), {});
+            myModal.show();
+        } else {
+            if (formElement.id === "dir-form") {
+                // console.log("i am dir id", formElement.id)
+                generateDirector()
+            }
+            else if (formElement.id === "officer-form") {
+                // console.log("i am officers id", formElement.id)
+                generateOfficer()
+            }
         }
-
-
-
-        let dataModal = new bootstrap.Modal(document.getElementById(formElement.getAttribute("data-modal-id")), {});
-        console.log(dataModal);
     }
 
     // Generate new Director t form Submission
@@ -793,9 +747,7 @@ jQuery(document).ready(function () {
         savingDataInSessionStorage(false)
         window.location.href = "step-four";
     })
-
-
-
+    
     // show and hide data on checkbox
     $(function () {
         $("#chkbox").click(function () {
@@ -921,11 +873,8 @@ jQuery(document).ready(function () {
                 formData: formData
             },
             success: function (response) {
-                    if (response.success === true){
-                        console.log('true')
-                    }else{
-                        console.log('false')
-                    }
+                alert(JSON.stringify(response.data) );
+                console.log(response);
             },
             error: function (xhr, status, error) {
                 alert(error)

@@ -63,7 +63,7 @@ get_header();
                                         <label for="dir_first_name" class="form-label">First Name</label>
                                     </div>
                                     <div class="col-md-9 col-lg-9 col-sm-12">
-                                        <input  data-required="true" data-error="Director First Name is required" class="form-control" id="dir_first_name" name="dir_first_name" type="text">
+                                        <input data-required="true" data-error="Director First Name is required" class="form-control" id="dir_first_name" name="dir_first_name" type="text">
                                     </div>
                                 </div>
                                 <!--Last Name-->
@@ -263,7 +263,7 @@ get_header();
 
                             </tbody>
                         </table>
-                        <button class="btn btn-success text-white"  data-bs-toggle="modal" data-bs-target="#officerModal">
+                        <button class="btn btn-success text-white" data-bs-toggle="modal" data-bs-target="#officerModal">
                             <i class="fa fa-users"></i> <i class="fa fa-plus"></i> <span class="ms-2">Add Officer</span>
                         </button>
                     </div>
@@ -285,7 +285,7 @@ get_header();
                                                 <label for="officer_position" class="form-label">Position</label>
                                             </div>
                                             <div class="col-md-9 col-lg-9 col-sm-12">
-                                                <select id="officer_position" data-error="officers position is required" name="officer_position" class="form-control"  data-required="true">
+                                                <select id="officer_position" data-error="officers position is required" name="officer_position" class="form-control" data-required="true">
                                                     <option value="">Select Position</option>
                                                     <option value="President">President</option>
                                                     <option value="Vice President">Vice President</option>
@@ -446,6 +446,26 @@ get_header();
                             </div>
                         </div>
                     </div>
+                    <!-- error modal one -->
+                    <!-- HTML for error modal -->
+                    <div class="modal fade" id="directorErrorModal" tabindex="-1" aria-labelledby="directorErrorModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="directorErrorModalLabel">Director Form Error</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Please correct the following errors:</p>
+                                    <div id="director-modal-error"></div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Error Modal -->
                     <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">

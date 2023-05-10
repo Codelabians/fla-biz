@@ -5,7 +5,7 @@ get_header();
 <div class="container">
     <div class="row d-flex">
         <div class="col-sm-12 col-md-10 col-lg-8">
-            <form data-action="step-ten" id="myForm" class=" m-3">
+            <form id="myForm" data-action="step-ten" class=" m-3">
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row mb-4">
                     <div class="col">
