@@ -101,14 +101,14 @@ jQuery(document).ready(function () {
         }
     })
     // Card Number Validation
-    // jQuery(document).on("keyup", "#CardNumber", function () {
-    //     if (!formatCardNumber(jQuery(this).val())) {
-    //         jQuery(this).val("")
-    //         jQuery(this).addClass("error")
-    //     } else {
-    //         jQuery(this).val(formatCardNumber(jQuery(this).val()))
-    //     }
-    // })
+    jQuery(document).on("keyup", "#CardNumber", function () {
+        if (!formatCardNumber(jQuery(this).val())) {
+            jQuery(this).val("")
+            jQuery(this).addClass("error")
+        } else {
+            jQuery(this).val(formatCardNumber(jQuery(this).val()))
+        }
+    })
     // digital signature 
     jQuery(document).on("keyup", "#digital_signature", function () {
         if (jQuery(this).val().trim().length < 1) {
@@ -147,8 +147,8 @@ jQuery(document).ready(function () {
         }
 
         let formatted = "";
-        for (let i = 0; i < cleaned.length && i < 10; i++) {
-            if (i === 4 || i === 4) {
+        for (let i = 0; i < cleaned.length && i < 12; i++) {
+            if (i === 3 || i === 6) {
                 formatted += '-';
             }
             formatted += cleaned[i];
@@ -472,19 +472,24 @@ jQuery(document).ready(function () {
         let isValid = true;
         const inputs = $(formElement).find('input, select, textarea');
         const elementsLength = inputs.length;
-        let errorMessage = "<ol>"
+        let errorMessage = "<ol>";
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         for (let i = 0; i < elementsLength; i++) {
             const input = inputs.eq(i);
             if (input.data('required') && !input.val().trim()) {
                 isValid = false;
-                errorMessage += "<li>" + input.data('error') + "</li>"
+                errorMessage += "<li>"+input.data('error')+"</li>";
+                input.addClass('error');
+            } else if (input.attr('type') === 'email' && !emailRegex.test(input.val().trim())) {
+                isValid = false;
+                errorMessage += "<li>The email address you entered is not valid</li>";
                 input.addClass('error');
             } else {
                 input.removeClass('error');
             }
         }
         errorMessage += "</ol>";
-
+      
         // If the form is invalid, display an error message
         if (!isValid) {
             jQuery("#director-modal-error").html(errorMessage);
@@ -492,16 +497,15 @@ jQuery(document).ready(function () {
             myModal.show();
         } else {
             if (formElement.id === "dir-form") {
-                // console.log("i am dir id", formElement.id)
+               
                 generateDirector()
             }
             else if (formElement.id === "officer-form") {
-                // console.log("i am officers id", formElement.id)
+              
                 generateOfficer()
-            }
+            };
         }
     }
-
     // Generate new Director t form Submission
     function generateDirector() {
         let newDirector = {};

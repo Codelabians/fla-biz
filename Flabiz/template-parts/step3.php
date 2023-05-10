@@ -466,6 +466,7 @@ get_header();
                         </div>
                     </div>
 
+
                     <!-- Error Modal -->
                     <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
