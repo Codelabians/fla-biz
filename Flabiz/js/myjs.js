@@ -747,7 +747,7 @@ jQuery(document).ready(function () {
         savingDataInSessionStorage(false)
         window.location.href = "step-four";
     })
-    
+
     // show and hide data on checkbox
     $(function () {
         $("#chkbox").click(function () {
@@ -863,7 +863,6 @@ jQuery(document).ready(function () {
 
     jQuery(document).on("click", "#final", function () {
 
-        // Send AJAX request to PHP script
 
         jQuery.ajax({
             type: 'POST',
@@ -873,13 +872,49 @@ jQuery(document).ready(function () {
                 formData: formData
             },
             success: function (response) {
-                alert(JSON.stringify(response.data) );
-                console.log(response);
+                console.log(response)
+                if (response.success === true) {
+                    Swal.fire({
+                        title: 'Thanks!',
+                        text: response.data,
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: response.data,
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
             },
             error: function (xhr, status, error) {
                 alert(error)
                 console.error("the error of sending ajax request is:", error);
+            },
+            complete: function () {
+                jQuery('#final').prop('disabled', false);
             }
         });
     });
+
+
+
+
+    enableAndDisableBtn();
+    function enableAndDisableBtn() {
+        var finalBtn = document.getElementById("final");
+
+        if (formData.user_name && formData.password) {
+            finalBtn.disabled = false;
+        } else {
+            finalBtn.disabled = true;
+        }
+    }
+
+
+
+
 });
+
