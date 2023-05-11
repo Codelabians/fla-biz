@@ -36,8 +36,7 @@ jQuery(document).ready(function () {
     jQuery('#signature').text(formData.signature);
 
 
-
-
+    
     // Getting Modal
     if (jQuery("#errorModal").length) {
         let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
@@ -891,8 +890,8 @@ jQuery(document).ready(function () {
                     icon: 'success',
                     confirmButtonText: 'OK'
                 });
-                jQuery(this).disabled = true;
-                sessionStorage.clear();
+                // jQuery(this).disabled = true;
+                // sessionStorage.clear();
             } else {
                 Swal.fire({
                     title: 'Error!',
