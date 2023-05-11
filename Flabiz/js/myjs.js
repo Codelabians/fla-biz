@@ -34,6 +34,10 @@ jQuery(document).ready(function () {
     jQuery('#P_Expiration').text(formData.Expiration);
     jQuery('#FormpaymentCard').text(formData.paymentCard);
     jQuery('#signature').text(formData.signature);
+
+
+
+
     // Getting Modal
     if (jQuery("#errorModal").length) {
         let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
