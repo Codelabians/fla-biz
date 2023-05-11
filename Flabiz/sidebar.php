@@ -20,7 +20,6 @@
 		<li id="order1" class=" list-group-item border-1 border-top m-3 ">
 			<span>fla-biz service </span>
 			<span class="float-end">$79</span>
-		
 		</li>
 		<li id="order2"class=" list-group-item border-1 border-top m-3 ">
 			<span>EIN Application</span>

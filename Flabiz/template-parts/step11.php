@@ -47,13 +47,22 @@ get_header();
                     </div>
                 </div>
 
+                <h2 class="pt-5 pb-2">Note:</h2>
+                <p>Thank you for choosing to sign up for an account on our website. To create your account, please fill
+                    out the form with your information and click the "Save Data" button. Once you have saved your data,
+                    please review it carefully to ensure that all information is accurate.</p>
+                <p>After you have reviewed your information, please click the "Send Data to Admin" button to submit your
+                    account request. Our team will review your information and create your account within 1-2 business
+                    days. You will receive an email notification when your account has been created.</p>
+                <p>Please note that incomplete or inaccurate information may delay the creation of your account or
+                    result in the rejection of your request.</p>
+
                 <div class="row mt-5">
                     <div class="col-lg-4 col-md-4 col-sm-4">
                         <a href="step-Eight" class="btn btn-success text-white">Previous</a>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-column">
-                        <input class="btn btn-success text-white" 
-                            type="submit" value="Save Data">
+                        <input class="btn btn-success text-white" type="submit" value="Save Data">
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-column">
                         <input class="btn btn-success text-white" id="final" data-url=<?= admin_url("admin-ajax.php") ?>

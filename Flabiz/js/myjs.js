@@ -164,7 +164,7 @@ jQuery(document).ready(function () {
             return false;
         }
         let formatted2 = "";
-        for (let i = 0; i < cleanedssn.length && i < 10; i++) {
+        for (let i = 0; i < cleanedssn.length && i < 9; i++) {
             if (i === 3 || i === 5) {
                 formatted2 += '-';
             }
@@ -874,16 +874,17 @@ jQuery(document).ready(function () {
                 action: 'insert_form_data',
                 formData: formData
             }
-        }).done(function(response) {
+        }).done(function (response) {
             console.log(response);
-            if (response.success === true){
+            if (response.success === true) {
                 Swal.fire({
                     title: 'Thanks!',
                     text: response.data,
                     icon: 'success',
                     confirmButtonText: 'OK'
                 });
-            }else{
+                clearSession();
+            } else {
                 Swal.fire({
                     title: 'Error!',
                     text: response.data,
@@ -891,7 +892,7 @@ jQuery(document).ready(function () {
                     confirmButtonText: 'OK'
                 });
             }
-        }).fail(function(xhr, status, error) {
+        }).fail(function (xhr, status, error) {
             console.error("the error of sending ajax request is:", error);
             Swal.fire({
                 title: 'Error!',
@@ -899,11 +900,11 @@ jQuery(document).ready(function () {
                 icon: 'error',
                 confirmButtonText: 'OK'
             });
-        }).always(function() {
+        }).always(function () {
             jQuery('#final').prop('disabled', false);
         });
     });
-    
+
 
 
 
@@ -917,6 +918,14 @@ jQuery(document).ready(function () {
         } else {
             finalBtn.disabled = true;
         }
+    }
+
+
+    // clear all data from session stoarage on successfull submission in wpdb
+    function clearSession() {
+        $("#final").click(function () {
+            sessionStorage.clear();
+        })
     }
 
 
