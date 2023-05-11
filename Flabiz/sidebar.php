@@ -20,20 +20,10 @@
 		<li id="order1" class=" list-group-item border-1 border-top m-3 ">
 			<span>fla-biz service </span>
 			<span class="float-end">$79</span>
-		
 		</li>
-		<li id="order2"class=" list-group-item border-1 border-top m-3 ">
-			<span>EIN Application</span>
-			<span class="float-end">$79</span>
-			
-
-		</li>
-
 		<li id="agriment" style="display:none"class=" list-group-item border-1 border-top m-3 ">
 			<span>Register agent service </span>
 			<span class="float-end">$79</span>
-			
-
 		</li>
 		<li id="rr" style="display:none"class=" list-group-item border-1 border-top m-3 ">
 			<span>Certificate of Status </span>
@@ -54,22 +44,16 @@
 		<li id="order5"style=" display:none "class=" list-group-item border-1 border-top m-3 ">
 			<span>Bylaws and Minutes </span>
 			<span class="float-end">$49.00</span>
-			
-
 		</li>
 		
 		<li id="order6" style=" display:none "class=" list-group-item border-1 border-top m-3 ">
 			<span>Corporate Embosser </span>
 			<span class="float-end">$20.00</span>
-			
-
 		</li>
 		
 		<li id="order7"style=" display:none "class=" list-group-item border-1 border-top m-3  ">
 			<span>EIN Application</span>
 			<span class="float-end">$25.00</span>
-		
-
 		</li>
 		<li id="total"class=" list-group-item border-1 border-top m-3  ">
 			<span>Sub total </span>

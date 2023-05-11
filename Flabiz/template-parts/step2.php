@@ -216,6 +216,9 @@ get_header();
 
                 </form>
             </div>
+            <div class="col">
+            <?php get_sidebar(); ?>
+        </div>
         </div>
     </div>
 <?php

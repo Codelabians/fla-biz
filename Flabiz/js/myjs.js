@@ -147,7 +147,7 @@ jQuery(document).ready(function () {
         }
 
         let formatted = "";
-        for (let i = 0; i < cleaned.length && i < 12; i++) {
+        for (let i = 0; i < cleaned.length && i < 10; i++) {
             if (i === 3 || i === 6) {
                 formatted += '-';
             }
@@ -164,7 +164,7 @@ jQuery(document).ready(function () {
             return false;
         }
         let formatted2 = "";
-        for (let i = 0; i < cleanedssn.length && i < 10; i++) {
+        for (let i = 0; i < cleanedssn.length && i < 9; i++) {
             if (i === 3 || i === 5) {
                 formatted2 += '-';
             }
@@ -183,7 +183,7 @@ jQuery(document).ready(function () {
     })
     // zip code validation
     jQuery(document).on("keyup", "#zip_code", function () {
-        if (jQuery(this).val().trim().length < 4) {
+        if (jQuery(this).val().trim().length < 5 || jQuery(this).val().trim().length > 5) {
             jQuery(this).addClass("error")
         } else {
             jQuery(this).removeClass("error")
@@ -191,8 +191,8 @@ jQuery(document).ready(function () {
         }
     })
     // ssn validation
-    jQuery(document).on("keyup", "#ssn", function () {
-        if (jQuery(this).val().trim().length < 11) {
+    jQuery(document).on("keyup", ".ssn", function () {
+        if (jQuery(this).val().trim().length < 9) {
             jQuery(this).addClass("error")
         } else {
             jQuery(this).removeClass("error")
@@ -201,7 +201,7 @@ jQuery(document).ready(function () {
     })
     // validation for phone number
     jQuery(document).on("keyup", "#phone", function () {
-        if (jQuery(this).val().trim().length < 12) {
+        if (jQuery(this).val().trim().length < 11) {
             jQuery(this).addClass("error")
         } else {
             jQuery(this).removeClass("error")
@@ -294,15 +294,19 @@ jQuery(document).ready(function () {
                         input.classList.add('error');
                     } else if (input.id === "phone" && input.value.length < 12) {
                         isValid = false;
-                        errorMessage += "<li>Phone number can't be less than 12 characters</li>"
+                        errorMessage += "<li>Phone number can't be less than 11 characters</li>"
                         input.classList.add('error');
-                    } else if (input.name === "company_purpose" && input.value.length > 50) {
+                    } else if (input.id === "company_purpose" && input.value.length > 50) {
                         isValid = false;
                         errorMessage += "<li>Company purpose can't be greater than 50 characters</li>"
                         input.classList.add('error');
-                    } else if (input.name === "zip_code" && input.value.length < 4) {
+                    } else if (input.id === "zip_code" && input.value.length < 5) {
                         isValid = false;
-                        errorMessage += "<li>Zip code can't be less than 4 characters</li>"
+                        errorMessage += "<li>Zip code can't be less than or greater then 5 characters</li>"
+                        input.classList.add('error');
+                    } else if (input.id === "zip_code" && input.value.length > 5) {
+                        isValid = false;
+                        errorMessage += "<li>Zip code can't be less than or greater then 5 characters</li>"
                         input.classList.add('error');
                     } else if (input.id === "primary_email" && !ValidateEmail(input.value)) {
                         isValid = false;
@@ -478,7 +482,7 @@ jQuery(document).ready(function () {
             const input = inputs.eq(i);
             if (input.data('required') && !input.val().trim()) {
                 isValid = false;
-                errorMessage += "<li>"+input.data('error')+"</li>";
+                errorMessage += "<li>" + input.data('error') + "</li>";
                 input.addClass('error');
             } else if (input.attr('type') === 'email' && !emailRegex.test(input.val().trim())) {
                 isValid = false;
@@ -489,7 +493,7 @@ jQuery(document).ready(function () {
             }
         }
         errorMessage += "</ol>";
-      
+
         // If the form is invalid, display an error message
         if (!isValid) {
             jQuery("#director-modal-error").html(errorMessage);
@@ -497,11 +501,11 @@ jQuery(document).ready(function () {
             myModal.show();
         } else {
             if (formElement.id === "dir-form") {
-               
+
                 generateDirector()
             }
             else if (formElement.id === "officer-form") {
-              
+
                 generateOfficer()
             };
         }
@@ -877,7 +881,7 @@ jQuery(document).ready(function () {
                 formData: formData
             },
             success: function (response) {
-                alert(JSON.stringify(response.data) );
+                alert(JSON.stringify(response.data));
                 console.log(response);
             },
             error: function (xhr, status, error) {
@@ -886,4 +890,6 @@ jQuery(document).ready(function () {
             }
         });
     });
+
+
 });
