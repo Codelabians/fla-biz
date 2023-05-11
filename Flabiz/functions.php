@@ -893,7 +893,7 @@ add_action('after_setup_theme', 'custom_custom_logo_setup');
 
 // AJAX handler function
 add_action('wp_ajax_insert_form_data', 'insert_form_data');
-add_action('wp_ajax_nopriv_insert_form_data', 'insert_form_data');
+// add_action('wp_ajax_nopriv_insert_form_data', 'insert_form_data');
 function insert_form_data()
 {
 	// Retrieve form data from AJAX request
@@ -914,8 +914,9 @@ function insert_form_data()
 	// Insert user data into the WordPress user table
 	$user_id = wp_insert_user($user_data);
 
-	// Check if user was created successfully
-	if (is_wp_error($user_id)) {
+	$username = $formData['user_name'];
+
+	if (username_exists($username)) {
 		wp_send_json_error('Error creating user: ' . $user_id->get_error_message());
 	} else {
 
@@ -956,23 +957,28 @@ function insert_form_data()
 			}
 			$directors_data_json = json_encode($directors_data);
 			update_user_meta($user_id, 'directors_data', $directors_data_json);
+
+
 		}
-
-
 
 		// Send response back to JavaScript
 		wp_send_json_success('User created successfully, and its data is inserted.');
+		exit;
+
+
 	}
 
 
-	// restricte users and user page 
-	function restrict_page_access()
-	{
-		if (!current_user_can('manage_options') && (is_page('users') || is_page('user'))) {
-			wp_redirect(home_url());
-			exit;
-		}
-	}
-	add_action('wp', 'restrict_page_access');
 
 }
+
+
+// restricte users and user page 
+function restrict_page_access()
+{
+	if (!current_user_can('manage_options') && (is_page('users') || is_page('user'))) {
+		wp_redirect(home_url());
+		exit;
+	}
+}
+add_action('wp', 'restrict_page_access');

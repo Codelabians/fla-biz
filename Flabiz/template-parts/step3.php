@@ -43,7 +43,8 @@ get_header();
             <div id="buttons-for-director">
                 <p><strong>Would you like to be a director?</strong></p>
                 <button class="btn bg-none border-success text-success" id="as-director">Yes</button>
-                <button class="btn bg-none border-success text-success" data-bs-toggle="modal" data-bs-target="#dirModal">No</button>
+                <button class="btn bg-none border-success text-success" data-bs-toggle="modal" >No</button>
+                <!-- data-bs-target="#dirModal"  this is from NO -->
             </div>
 
             <!-- Directors Modal -->
@@ -247,7 +248,8 @@ get_header();
                     <div id="buttons-for-officer">
                         <p><strong>Would you like to be a director?</strong></p>
                         <button class="btn bg-none border-success text-success" id="as-officer">Yes</button>
-                        <button class="btn bg-none border-success text-success" data-bs-toggle="modal" data-bs-target="#officerModal">No</button>
+                        <button class="btn bg-none border-success text-success" data-bs-toggle="modal" >No</button>
+                        <!-- data-bs-target="#officerModal" this is removed from NO btn -->
                     </div>
                     <div id="officers-table" style="display: none">
                         <table class="table">

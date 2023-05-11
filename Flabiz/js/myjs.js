@@ -478,7 +478,7 @@ jQuery(document).ready(function () {
             const input = inputs.eq(i);
             if (input.data('required') && !input.val().trim()) {
                 isValid = false;
-                errorMessage += "<li>"+input.data('error')+"</li>";
+                errorMessage += "<li>" + input.data('error') + "</li>";
                 input.addClass('error');
             } else if (input.attr('type') === 'email' && !emailRegex.test(input.val().trim())) {
                 isValid = false;
@@ -489,7 +489,7 @@ jQuery(document).ready(function () {
             }
         }
         errorMessage += "</ol>";
-      
+
         // If the form is invalid, display an error message
         if (!isValid) {
             jQuery("#director-modal-error").html(errorMessage);
@@ -497,11 +497,11 @@ jQuery(document).ready(function () {
             myModal.show();
         } else {
             if (formElement.id === "dir-form") {
-               
+
                 generateDirector()
             }
             else if (formElement.id === "officer-form") {
-              
+
                 generateOfficer()
             };
         }
@@ -867,41 +867,43 @@ jQuery(document).ready(function () {
 
     jQuery(document).on("click", "#final", function () {
 
-
         jQuery.ajax({
             type: 'POST',
             url: jQuery(this).data("url"),
             data: {
                 action: 'insert_form_data',
                 formData: formData
-            },
-            success: function (response) {
-                console.log(response)
-                if (response.success === true) {
-                    Swal.fire({
-                        title: 'Thanks!',
-                        text: response.data,
-                        icon: 'error',
-                        confirmButtonText: 'OK'
-                    });
-                } else {
-                    Swal.fire({
-                        title: 'Error!',
-                        text: response.data,
-                        icon: 'error',
-                        confirmButtonText: 'OK'
-                    });
-                }
-            },
-            error: function (xhr, status, error) {
-                alert(error)
-                console.error("the error of sending ajax request is:", error);
-            },
-            complete: function () {
-                jQuery('#final').prop('disabled', false);
             }
+        }).done(function(response) {
+            console.log(response);
+            if (response.success === true){
+                Swal.fire({
+                    title: 'Thanks!',
+                    text: response.data,
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+            }else{
+                Swal.fire({
+                    title: 'Error!',
+                    text: response.data,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        }).fail(function(xhr, status, error) {
+            console.error("the error of sending ajax request is:", error);
+            Swal.fire({
+                title: 'Error!',
+                text: error,
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        }).always(function() {
+            jQuery('#final').prop('disabled', false);
         });
     });
+    
 
 
 
