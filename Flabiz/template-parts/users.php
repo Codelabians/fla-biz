@@ -12,7 +12,7 @@ if ( ! current_user_can( 'manage_options' ) ) {
 $args = array(
     'role' => 'subscriber',
     'orderby' => 'ID',
-    'order' => 'ASC'
+    'order' => 'DESC'
 );
 $user_query = new WP_User_Query($args);
 
@@ -20,9 +20,9 @@ $user_query = new WP_User_Query($args);
 if (!empty($user_query->results)) {
     ?>
     <!-- Output the table -->
-    <div class="container  p-5 table-responsive">
+    <div class="container table-responsive">
         <h3 class="text-center p-5">All Users Data</h3>
-        <table class=" border rounded-3 table table-light table-striped-columns text-center">
+        <table class=" border rounded-3 table table-light table-striped text-center">
             <thead>
                 <tr class="table-dark border-dark">
                     <th>ID</th>
@@ -30,6 +30,7 @@ if (!empty($user_query->results)) {
                     <th>Email</th>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Date Posted</th>
                     <th>View</th>
                 </tr>
             </thead>
@@ -50,6 +51,9 @@ if (!empty($user_query->results)) {
                         </td>
                         <td class="text-wrap text-break">
                             <?php echo esc_html($user->last_name); ?>
+                        </td>
+                        <td class="text-wrap text-break">
+                            <?php echo esc_html($user->date); ?>
                         </td>
                         <td class="text-wrap text-break">
                             <a href="<?php echo esc_url(get_permalink(get_page_by_title('User')) . '?user_id=' . $user->ID); ?>"

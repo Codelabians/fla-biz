@@ -48,15 +48,16 @@ get_header();
                 </div>
 
                 <div class="row mt-5">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
                         <a href="step-Eight" class="btn btn-success text-white">Previous</a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 d-flex flex-column">
+                    <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-column">
+                        <input class="btn btn-success text-white" 
+                            type="submit" value="Save Data">
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-column">
                         <input class="btn btn-success text-white" id="final" data-url=<?= admin_url("admin-ajax.php") ?>
-                            type="submit" value="Next">
-
-                        <!-- Button trigger modal -->
-                        <!-- <a href="" class="" data-bs-toggle="modal" data-bs-target="#savemodel">Save and contineu later</a> -->
+                            type="button" value="Send Data to Admin">
                     </div>
                 </div>
                 <!-- Error Modal -->

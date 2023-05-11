@@ -871,8 +871,6 @@ jQuery(document).ready(function () {
 
     jQuery(document).on("click", "#final", function () {
 
-        // Send AJAX request to PHP script
-
         jQuery.ajax({
             type: 'POST',
             url: jQuery(this).data("url"),
@@ -881,7 +879,7 @@ jQuery(document).ready(function () {
                 formData: formData
             },
             success: function (response) {
-                alert(JSON.stringify(response.data));
+                alert(JSON.stringify(response.data) );
                 console.log(response);
             },
             error: function (xhr, status, error) {
@@ -890,6 +888,4 @@ jQuery(document).ready(function () {
             }
         });
     });
-
-
 });

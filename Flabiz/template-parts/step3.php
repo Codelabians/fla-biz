@@ -246,7 +246,8 @@ get_header();
                     <!--Buttons for adding director-->
                     <div id="buttons-for-officer">
                         <p><strong>Would you like to be a director?</strong></p>
-                        <button class="btn bg-none border-success text-success" data-bs-toggle="modal" data-bs-target="#officerModal" id="as-officer">Add officer</button>
+                        <button class="btn bg-none border-success text-success" id="as-officer">Yes</button>
+                        <button class="btn bg-none border-success text-success" data-bs-toggle="modal" data-bs-target="#officerModal">No</button>
                     </div>
                     <div id="officers-table" style="display: none">
                         <table class="table">
