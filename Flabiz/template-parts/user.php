@@ -91,7 +91,7 @@ if ($user_data) {
                             style="height: 100px"></textarea>
                         <div class="d-flex justify-content-around">
                             <button class="btn btn-primary" type="submit">Add Note</button>
-                            <button class="btn btn-danger" name="delete_user">Delete User</button>
+                            <button onclick="return confirm('Are you sure you want to delete this user?')" class="btn btn-danger" name="delete_user">Delete User</button>
                         </div>
                     </form>
                 </div>
