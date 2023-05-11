@@ -887,7 +887,8 @@ jQuery(document).ready(function () {
                     icon: 'success',
                     confirmButtonText: 'OK'
                 });
-                clearSession();
+                jQuery(this).disabled = true;
+                sessionStorage.clear();
             } else {
                 Swal.fire({
                     title: 'Error!',
@@ -910,27 +911,6 @@ jQuery(document).ready(function () {
     });
 
 
-
-
-
-    enableAndDisableBtn();
-    function enableAndDisableBtn() {
-        var finalBtn = document.getElementById("final");
-
-        if (formData.user_name && formData.password) {
-            finalBtn.disabled = false;
-        } else {
-            finalBtn.disabled = true;
-        }
-    }
-
-
-    // clear all data from session stoarage on successfull submission in wpdb
-    function clearSession() {
-        $("#final").click(function () {
-            sessionStorage.clear();
-        })
-    }
 
 
 

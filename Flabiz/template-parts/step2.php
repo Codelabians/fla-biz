@@ -107,7 +107,8 @@ get_header();
                         </div>
                         <div class="col-lg-9 col-md-9 col-sm-12">
                             <select name="personal_state" id="personal_state" class="form-control" data-required="true" data-error="State is required">
-                                <option value="">Select State</option>
+                                <!-- <option value="">Select State</option> -->
+                                <option value="FL">Florida</option>
                                 <option value="- ">Outside the US or Canada</option>
                                 <option value="AB">Alberta</option>
                                 <option value="AK">Alaska</option>
@@ -120,7 +121,6 @@ get_header();
                                 <option value="CT">Connecticut</option>
                                 <option value="DC">District of Columbia</option>
                                 <option value="DE">Delaware</option>
-                                <option value="FL">Florida</option>
                                 <option value="GA">Georgia</option>
                                 <option value="HI">Hawaii</option>
                                 <option value="IA">Iowa</option>

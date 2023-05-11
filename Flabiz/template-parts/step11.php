@@ -6,7 +6,7 @@ get_header();
     <div class="row d-flex">
         <div class="col-sm-12 col-md-10 col-lg-8">
 
-            <form data-action="" id="myForm" class=" m-3">
+            <form data-action="#" id="myForm" class=" m-3">
                 <h2>Create an account</h2>
                 <p>With this username and password, you can return to this website at any time to complete or check on
                     the status of your application. An email confirmation will be sent to</p>
@@ -28,6 +28,7 @@ get_header();
                             id="last_name" name="last_name" type="text">
                     </div>
                 </div>
+                <p class="text-danger text-center">Note: If you are submiting this form second time, use differnet "username"</p>
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-12">
                         <label for="user_name" class="form-label">user Name</label>
@@ -59,14 +60,14 @@ get_header();
 
                 <div class="row mt-5">
                     <div class="col-lg-4 col-md-4 col-sm-4">
-                        <a href="step-Eight" class="btn btn-success text-white">Previous</a>
+                        <a href="step-ten" class="btn btn-success text-white">Previous</a>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-column">
-                        <input class="btn btn-success text-white" type="submit" value="Save Data">
+                        <input class="btn btn-success text-white" type="submit" value="Save Data" id="final" data-url=<?= admin_url("admin-ajax.php") ?> >
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-column">
-                        <input class="btn btn-success text-white" id="final" data-url=<?= admin_url("admin-ajax.php") ?>
-                            type="button" value="Send Data to Admin">
+                        <!-- <input class="btn btn-success text-white" 
+                            type="button" value="Send Data to Admin"> -->
                     </div>
                 </div>
                 <!-- Error Modal -->

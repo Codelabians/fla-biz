@@ -43,6 +43,7 @@ get_header();
             <div id="buttons-for-director">
                 <p><strong>Would you like to be a director?</strong></p>
                 <button class="btn bg-none border-success text-success" data-bs-toggle="modal" data-bs-target="#dirModal" id="as-director">Yes</button>
+                <button class="btn bg-none border-success text-success" data-bs-toggle="modal" data-bs-target="#dirModal">No</button>
                 
             </div>
 
