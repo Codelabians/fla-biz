@@ -91,7 +91,7 @@ get_header();
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
                         <textarea data-required="true" data-error="Company Purpose is required" id="company_purpose" name="company_purpose" class="form-control"></textarea>
-                        <small class="text-light">50 characters os less</small>
+                        <small class="text">50 characters os less</small>
                     </div>
                 </div>
 
@@ -158,6 +158,7 @@ get_header();
                             <option value="Escambia">Escambia</option>
                             <option value="Flagler">Flagler</option>
                             <option value="Franklin">Franklin</option>
+                            <option value="Florida" selected>Florida</option>
                             <option value="Gadsden">Gadsden</option>
                             <option value="Gilchrist">Gilchrist</option>
                             <option value="Glades">Glades</option>
@@ -218,7 +219,7 @@ get_header();
                         <label for="zip_code" class="form-label">Zip Code</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input data-required="true" type="text" data-error="Zip code is required" class="form-control address_fields" id="zip_code" name="zip_code">
+                        <input data-required="true" type="number" data-error="Zip code is required" class="form-control address_fields" id="zip_code" name="zip_code">
                     </div>
                 </div>
                 <!--Phone-->
@@ -423,6 +424,9 @@ get_header();
                     </div>
                 </div>
             </form>
+        </div>
+        <div class="col">
+            <?php get_sidebar(); ?>
         </div>
     </div>
   </div>

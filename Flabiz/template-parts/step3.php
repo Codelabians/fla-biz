@@ -42,9 +42,8 @@ get_header();
             <!--Buttons for adding director-->
             <div id="buttons-for-director">
                 <p><strong>Would you like to be a director?</strong></p>
-                <button class="btn bg-none border-success text-success" id="as-director">Yes</button>
-                <button class="btn bg-none border-success text-success" data-bs-toggle="modal" >No</button>
-                <!-- data-bs-target="#dirModal"  this is from NO -->
+                <button class="btn bg-none border-success text-success" data-bs-toggle="modal" data-bs-target="#dirModal" id="as-director">Yes</button>
+                
             </div>
 
             <!-- Directors Modal -->
@@ -248,8 +247,7 @@ get_header();
                     <div id="buttons-for-officer">
                         <p><strong>Would you like to be a director?</strong></p>
                         <button class="btn bg-none border-success text-success" id="as-officer">Yes</button>
-                        <button class="btn bg-none border-success text-success" data-bs-toggle="modal" >No</button>
-                        <!-- data-bs-target="#officerModal" this is removed from NO btn -->
+                        <button class="btn bg-none border-success text-success" data-bs-toggle="modal" data-bs-target="#officerModal">No</button>
                     </div>
                     <div id="officers-table" style="display: none">
                         <table class="table">
@@ -462,13 +460,12 @@ get_header();
                                     <div id="director-modal-error"></div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" data-bs-dismiss="modal" class="btn btn-primary">OK</button>
+
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
                     <!-- Error Modal -->
                     <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -500,6 +497,9 @@ get_header();
 
                 </div>
             </div>
+        </div>
+        <div class="col">
+            <?php get_sidebar(); ?>
         </div>
     </div>
 </div>

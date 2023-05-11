@@ -6,7 +6,13 @@ get_header();
     <div class="row d-flex">
         <div class="col-sm-12 col-md-10 col-lg-8">
             <form data-action="step-nine" id="myForm" class=" m-3">
-               
+                <h3>Notice of Annual Report</h3>
+                <p>
+                    This corporation must file an Annual Report with the Division of Corporations between January 1st and May 1st of every year to maintain "active" status. The corporation's first annual report will be due between January 1st and May 1st of the calendar year following the year the corporation is formed and must be filed online. The fee to file a Corporation Annual Report is $150 And the fee to file an LLC Annual Report is $138. A $400 late fee is applied if the report is filed after May 1st. Reminder notices to file the Annual Report will be sent to the e-mail address you provide in these articles. File early to avoid the late fee.
+                </p>
+                <p>
+                    The final step is to authorize Flabiz Incorporation Service to file these documents with the Division of Corporations on your behalf. Because our service is entirely online, this is done by providing your "electronic signature," meaning simply that you must provide your contact information below, accept the user agreement, and type your name into the electronic signature box at the bottom.
+                </p>
 
                 <!--Fields-->
                 <!--Address-->
@@ -120,7 +126,15 @@ get_header();
                         <label for="personal_zip_code8" class="form-label">Zip Code</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input type="text" class="form-control address_fields" data-required="true" data-error="Zip Code is required" id="personal_zip_code8" name="personal_zip_code8">
+                        <input type="number" class="form-control address_fields" data-required="true" data-error="Zip Code is required" id="personal_zip_code8" name="personal_zip_code8">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 col-lg-3">
+                        <label for="phone_number8" class="form-label">phone number</label>
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-12">
+                        <input type="number" class="form-control address_fields" data-required="true" data-error="phone number is required" id="phone_number8" name="phone_number8">
                     </div>
                 </div>
                 <h3>
