@@ -914,11 +914,6 @@ function insert_form_data()
 	// Insert user data into the WordPress user table
 	$user_id = wp_insert_user($user_data);
 
-	$username = $formData['user_name'];
-
-	if (username_exists($username)) {
-		wp_send_json_error('Error creating user: ' . $user_id->get_error_message());
-	} else {
 
 		// First, save the main form data
 		if (!empty($formData)) {
@@ -968,9 +963,6 @@ function insert_form_data()
 
 	}
 
-
-
-}
 
 
 // restricte users and user page 

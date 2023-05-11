@@ -18,12 +18,12 @@ get_header();
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12">
                         <select data-required="true" data-error="Preferred Name type is required" class="form-select select-boxes-right" name="preferred_name_type" aria-label="Default select">
-                            <option value="">Select</option>
+                            <!-- <option value="">Select</option> -->
+                            <option value=",Inc.">,Inc.</option>
                             <option value="Co.">Co.</option>
                             <option value="Company">Company</option>
                             <option value="Corp.">Corp.</option>
                             <option value="Corporation">Corporation</option>
-                            <option value=",Inc.">,Inc.</option>
                             <option value="Incorporated">Incorporated</option>
                             <option value=",P.A.">,P.A.</option>
                         </select>
@@ -36,12 +36,12 @@ get_header();
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12">
                         <select class="form-select select-boxes-right" data-error="Alternate Name type is required" data-required="true" name="alternate_name_type" aria-label="Default select">
-                            <option value="">Select</option>
+                            <!-- <option value="">Select</option> -->
+                            <option value=",Inc.">,Inc.</option>
                             <option value="Co.">Co.</option>
                             <option value="Company">Company</option>
                             <option value="Corp.">Corp.</option>
                             <option value="Corporation">Corporation</option>
-                            <option value=",Inc.">,Inc.</option>
                             <option value="Incorporated">Incorporated</option>
                             <option value=",P.A.">,P.A.</option>
                         </select>
