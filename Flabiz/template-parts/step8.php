@@ -149,12 +149,18 @@ get_header();
                         <input type="date" id="date" name="date" value="date">
                     </div>
                 </div>
-                <div class="form-row form-group ">
+                <div class="ml-md-auto col-sm-12 d-flex">
+                    <div class="box-checkbox  mt-3 mb-3 ">
+                        <input type="checkbox" id="accept " class="form-check-input" value="accept" name="accept">
+                        <label for="">I accept the <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">User Agreement</a> and The Notice of Annual Report</label>
+                    </div>
+                </div>
+                <!-- <div class="form-row form-group ">
                     <div class="col-lg-6 sm-6 md-6">
                         <input type="checkbox" id="accept " value="accept" name="accept">
                         <label for="">I accept the <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">User Agreement</a> and The Notice of Annual Report</label>
                     </div>
-                </div>
+                </div> -->
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-lg-3">
                         <label for="signature" class="form-label">Digital signature:</label>

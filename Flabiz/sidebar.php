@@ -33,7 +33,6 @@
 			<span>Fictitious Name Registration </span>
 			<span class="float-end">$69</span>
 		</li>
-		
 		<li id="order4" style=" display:none "class=" list-group-item border-1 border-top m-3 ">
 			<span>Corporate Seals & Certificates of Stock </span>
 			<span class="float-end">$49</span>

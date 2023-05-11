@@ -15,23 +15,20 @@ get_header();
                     <br>
                     This additional service can be added for only $69 for the first year of service.
                 </p>
-                <div class="box-radio d-flex flex-column ">
-                    <label for="chekbox">I want fla-biz to be my register agent</label>
-                    <div class="row">
-                        <input type="checkbox" id="chekbox" value="Register agent service $79" name="chekbox">
-                        <a href="#">i dont want fla-biz to my register agent</a>
+                <div class="ml-md-auto col-sm-12 d-flex">
+                    <div class="box-checkbox border border-success m-2 ">
+                        <div class="col m-3 ">
+                            <input type="checkbox" id="chekbox" checked value="Register agent service $79" class="form-check-input" name="chekbox">
+                            <a href="#">i dont want fla-biz to be my register agent</a>
+                        </div>
                     </div>
                 </div>
                 <!-- show data on check box -->
-                <div class="ragreement" style="display:none">
+                <div class="ragreement"  style="display:none">
                     <p>
                         As a secondary option, you or someone at your company may prefer to act as the registered agent for the company being formed
                     </p>
-                    <p>
-                        we show your information as
-                    </p>
                     <div class="person-info fade show " role="alert">
-                        <h2>Business Management</h2>
                         <div id="business-manager-detail-table">
                             <p><strong>We show your information as:</strong></p>
                             <!--Main User Data Table-->
@@ -69,7 +66,7 @@ get_header();
                             <a href="step-three" class="btn btn-success text-white">Previous</a>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 d-flex flex-column">
-                        <input class="btn btn-success text-white" type="submit" value="Next">
+                            <input class="btn btn-success text-white" type="submit" value="Next">
                             <!-- Button trigger modal -->
                             <!-- <a href="" class="" data-bs-toggle="modal" data-bs-target="#savemodel">Save and contineu later</a> -->
                         </div>

@@ -129,7 +129,7 @@ jQuery(document).ready(function () {
         }
     })
     // length fix of card
-    jQuery(document).on("keyup", ".card", function () {
+    jQuery(document).on("keyup", "#CardNumber", function () {
         if (jQuery(this).val().trim().length < 16) {
             jQuery(this).addClass("error")
         } else {
@@ -147,7 +147,7 @@ jQuery(document).ready(function () {
         }
 
         let formatted = "";
-        for (let i = 0; i < cleaned.length && i < 10; i++) {
+        for (let i = 0; i < cleaned.length && i < 12; i++) {
             if (i === 3 || i === 6) {
                 formatted += '-';
             }
@@ -183,7 +183,7 @@ jQuery(document).ready(function () {
     })
     // zip code validation
     jQuery(document).on("keyup", "#zip_code", function () {
-        if (jQuery(this).val().trim().length < 5 || jQuery(this).val().trim().length > 5) {
+        if (jQuery(this).val().trim().length < 4) {
             jQuery(this).addClass("error")
         } else {
             jQuery(this).removeClass("error")
@@ -191,8 +191,8 @@ jQuery(document).ready(function () {
         }
     })
     // ssn validation
-    jQuery(document).on("keyup", ".ssn", function () {
-        if (jQuery(this).val().trim().length < 9) {
+    jQuery(document).on("keyup", "#ssn", function () {
+        if (jQuery(this).val().trim().length < 11) {
             jQuery(this).addClass("error")
         } else {
             jQuery(this).removeClass("error")
@@ -201,7 +201,7 @@ jQuery(document).ready(function () {
     })
     // validation for phone number
     jQuery(document).on("keyup", "#phone", function () {
-        if (jQuery(this).val().trim().length < 11) {
+        if (jQuery(this).val().trim().length < 12) {
             jQuery(this).addClass("error")
         } else {
             jQuery(this).removeClass("error")
@@ -294,19 +294,15 @@ jQuery(document).ready(function () {
                         input.classList.add('error');
                     } else if (input.id === "phone" && input.value.length < 12) {
                         isValid = false;
-                        errorMessage += "<li>Phone number can't be less than 11 characters</li>"
+                        errorMessage += "<li>Phone number can't be less than 12 characters</li>"
                         input.classList.add('error');
-                    } else if (input.id === "company_purpose" && input.value.length > 50) {
+                    } else if (input.name === "company_purpose" && input.value.length > 50) {
                         isValid = false;
                         errorMessage += "<li>Company purpose can't be greater than 50 characters</li>"
                         input.classList.add('error');
-                    } else if (input.id === "zip_code" && input.value.length < 5) {
+                    } else if (input.name === "zip_code" && input.value.length < 4) {
                         isValid = false;
-                        errorMessage += "<li>Zip code can't be less than or greater then 5 characters</li>"
-                        input.classList.add('error');
-                    } else if (input.id === "zip_code" && input.value.length > 5) {
-                        isValid = false;
-                        errorMessage += "<li>Zip code can't be less than or greater then 5 characters</li>"
+                        errorMessage += "<li>Zip code can't be less than 4 characters</li>"
                         input.classList.add('error');
                     } else if (input.id === "primary_email" && !ValidateEmail(input.value)) {
                         isValid = false;
@@ -345,6 +341,10 @@ jQuery(document).ready(function () {
                         errorMessage += "<li> password is required</li>"
                         input.classList.add('error');
                     } else if (input.id === "CardNumber" && input.value.length < 16) {
+                        isValid = false;
+                        errorMessage += "<li> card number can't not be greater or less then 16 </li>"
+                        input.classList.add('error');
+                    } else if (input.id === "CardNumber" && input.value.length > 16) {
                         isValid = false;
                         errorMessage += "<li> card number can't not be greater or less then 16 </li>"
                         input.classList.add('error');
@@ -773,10 +773,10 @@ jQuery(document).ready(function () {
     $(function () {
         $("#chekbox").click(function () {
             if ($(this).is(":checked")) {
-                $(".ragreement").show();
+                $(".ragreement").hide();
                 $("#agriment").show();
             } else {
-                $(".ragreement").hide();
+                $(".ragreement").show();
                 $("#agriment").hide();
             }
         });
@@ -869,6 +869,16 @@ jQuery(document).ready(function () {
         }
     }
 
+    const passwordInput = document.querySelector('#password');
+    const showPasswordCheckbox = document.querySelector('#show-password-checkbox');
+
+    showPasswordCheckbox.addEventListener('change', function () {
+        if (showPasswordCheckbox.checked) {
+            passwordInput.type = 'text';
+        } else {
+            passwordInput.type = 'password';
+        }
+    });
     jQuery(document).on("click", "#final", function () {
 
         jQuery.ajax({
@@ -877,15 +887,53 @@ jQuery(document).ready(function () {
             data: {
                 action: 'insert_form_data',
                 formData: formData
-            },
-            success: function (response) {
-                alert(JSON.stringify(response.data) );
-                console.log(response);
-            },
-            error: function (xhr, status, error) {
-                alert(error)
-                console.error("the error of sending ajax request is:", error);
             }
+        }).done(function (response) {
+            console.log(response);
+            if (response.success === true) {
+                Swal.fire({
+                    title: 'Thanks!',
+                    text: response.data,
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+                clearSession();
+            } else {
+                Swal.fire({
+                    title: 'Error!',
+                    text: response.data,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        }).fail(function (xhr, status, error) {
+            console.error("the error of sending ajax request is:", error);
+            Swal.fire({
+                title: 'Error!',
+                text: error,
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        }).always(function () {
+            jQuery('#final').prop('disabled', false);
         });
     });
+    enableAndDisableBtn();
+    function enableAndDisableBtn() {
+        var finalBtn = document.getElementById("final");
+
+        if (formData.user_name && formData.password) {
+            finalBtn.disabled = false;
+        } else {
+            finalBtn.disabled = true;
+        }
+    }
+
+
+    // clear all data from session stoarage on successfull submission in wpdb
+    function clearSession() {
+        $("#final").click(function () {
+            sessionStorage.clear();
+        })
+    }
 });

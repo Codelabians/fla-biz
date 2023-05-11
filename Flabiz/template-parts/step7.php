@@ -19,7 +19,7 @@ get_header();
 
                 <div class="ml-md-auto col-sm-12 d-flex">
                     <div class="box-checkbox border border-success m-2 ">
-                        <input class="custom-control-input m-2 " type="checkbox" id="chekbox7" name="chekbox7">
+                        <input class="custom-control-input m-2 form-check-input " checked type="checkbox" id="chekbox7" name="chekbox7">
                         <label for="chekbox7">
                             <span>
                                 <h4>i neend file for EIN</h4>

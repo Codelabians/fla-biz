@@ -6,7 +6,7 @@ get_header();
     <div class="row d-flex">
         <div class="col-sm-12 col-md-10 col-lg-8">
             <form data-action="step-six" id="myForm" class=" m-3">
-                <h1>Authorized share of stock</h1>
+                <h1 class="text-dark">Authorized share of stock</h1>
                 <p>
                     In Fla-biz, to register a new corporation with the Division of Corporations, whether this is an S or C corporation, requires the corporation to have at least one (1) share. The issuing of shares is how a Corporation is owned.
                 </p>
@@ -23,60 +23,62 @@ get_header();
                         </div>
                     </div>
                 </div>
-                <h3>Compile and optional items</h3>
+                <h3 class="heading m-2 text-dark">Compile and optional items</h3>
                 <p>
                     Listed below are a few additional items that we offer for new companies. To add any of these items to your order, simply check the box next to the item(s) you need.
                 </p>
-                <div class="form-row form-group m-3 ">
-                    <div class="ml-md-auto col-sm-12 ">
-                        <input type="checkbox" id="checbox" value="Certificate of Status - $20" name="checbox">
-                        <label for="checbox">
-                            <span>Certificate of Status - $20</span>
-                        </label>
+                <div class="col m-3 bg-light">
+                    <div class="form-row form-group m-3 ">
+                        <div class="ml-md-auto col-sm-12 ">
+                            <input type="checkbox" class="form-check-input" id="checbox" value="Certificate of Status - $20" name="checbox">
+                            <label for="checbox">
+                                <span>Certificate of Status - $20</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-row form-group m-3 ">
+                        <div class="ml-md-auto col-sm-12 ">
+                            <input type="checkbox" class="form-check-input" id="chekbox3" name="chekbox3" value="Fictitious Name (DBA) - $69">
+                            <label for="chekbox3">
+                                <span>Fictitious Name (DBA) - $69</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-row form-group m-3 Fictitiousname " style="display: none;">
+                        <div class="ml-md-auto col-sm-12 ">
+                            <label for="Fictitiousname">
+                                Enter Fictitious Name
+                            </label>
+                            <input type="text"  id="Fictitiousname" name="Fictitiousname">
+                        </div>
+                    </div>
+                    <div class="form-row form-group m-3">
+                        <div class="ml-md-auto col-sm-12">
+                            <input type="checkbox" class="form-check-input" id="chekbox4" value="Custom stock certificates and corporate seals - $49" name="chekbox4">
+                            <label for="">
+                                <span>Custom stock certificates and corporate seals - $49</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-row form-group m-3">
+                        <div class="ml-md-auto col-sm-12">
+                            <input type="checkbox" class="form-check-input" value=" $20" id="chekbox5" name="chekbox5">
+                            <label for="chekbox5">
+                                <span>Corporate kit with bylaws, minutes, a Florida Business Guide, and a personalized binder for all corporate documents - $20</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-row form-group m-3">
+                        <div class="ml-md-auto col-sm-12">
+                            <input type="checkbox" class="form-check-input" value="Company Embosser - $25" id="chekbox6" name="chekbox6">
+                            <label for="chekbox6">
+                                <span>Company Embosser - $25</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
-                <div class="form-row form-group m-3 ">
-                    <div class="ml-md-auto col-sm-12 ">
-                        <input type="checkbox" id="chekbox3"  name="chekbox3" value="Fictitious Name (DBA) - $69">
-                        <label for="chekbox3">
-                            <span>Fictitious Name (DBA) - $69</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="form-row form-group m-3 Fictitiousname " style="display: none;">
-                    <div class="ml-md-auto col-sm-12 ">
-                        <label for="Fictitiousname">
-                            Enter Fictitious Name
-                        </label>
-                        <input type="text" id="Fictitiousname"  name="Fictitiousname">
-                    </div>
-                </div>
-                <div class="form-row form-group m-3">
-                    <div class="ml-md-auto col-sm-12">
-                        <input type="checkbox" id="chekbox4" value="Custom stock certificates and corporate seals - $49" name="chekbox4">
-                        <label for="">
-                            <span>Custom stock certificates and corporate seals - $49</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="form-row form-group m-3">
-                    <div class="ml-md-auto col-sm-12">
-                        <input type="checkbox" value=" $20" id="chekbox5" name="chekbox5">
-                        <label for="chekbox5">
-                            <span>Corporate kit with bylaws, minutes, a Florida Business Guide, and a personalized binder for all corporate documents - $20</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="form-row form-group m-3">
-                    <div class="ml-md-auto col-sm-12">
-                        <input type="checkbox" value="Company Embosser - $25" id="chekbox6" name="chekbox6">
-                        <label for="chekbox6">
-                            <span>Company Embosser - $25</span>
-                        </label>
-                    </div>
-                </div>
-                <h2>EIN Registration</h2>
-                <h4>What is IEN & why we need one?</h4>
+                <h2 class="text-dark m-2"> <strong>EIN Registration</strong></h2>
+                <h4 class="text-dark mt-2">What is IEN & why we need one?</h4>
                 <p>
                     An EIN has many different names - FEIN, FEI, Employer Tax ID number, Federal Tax ID number, and IRS tax number.
                 </p>
@@ -94,12 +96,14 @@ get_header();
                 </p>
                 <div class="ml-md-auto col-sm-12 d-flex">
                     <div class="box-checkbox border border-success m-2 ">
-                        <input class="custom-control-input m-2 " value="i neend file for EIN" type="checkbox" id="chekbox7" name="chekbox7">
-                        <label for="chekbox7">
-                            <span>
-                                <h4>i neend file for EIN</h4>
-                            </span>
-                        </label>
+                        <div class="col m-2">
+                            <input class="custom-control-input m-2 form-check-input " checked value="i neend file for EIN" type="checkbox" id="chekbox7" name="chekbox7">
+                            <label for="chekbox7">
+                                <span>
+                                    <h4>i neend file for EIN</h4>
+                                </span>
+                            </label>
+                        </div>
                     </div>
                     <a class=" mt-2" href="#">i don't neend file for EIN</a>
                 </div>

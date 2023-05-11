@@ -48,7 +48,7 @@ get_header();
                         <label for="primary_ssn" class="form-label">SSN:</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-sm-12">
-                        <input class="form-control ssn" data-required="true" data-error="ssn number is required " id="primary_ssn" name="primary_ssn" type="number">
+                        <input class="form-control ssn" data-required="true" data-error="ssn number is required " id="primary_ssn" name="primary_ssn" type="text">
                     </div>
                 </div>
                 <div class="row mt-5">
