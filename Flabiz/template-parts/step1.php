@@ -91,7 +91,7 @@ get_header();
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
                         <textarea data-required="true" data-error="Company Purpose is required" id="company_purpose" name="company_purpose" class="form-control"></textarea>
-                        <small class="text">50 characters os less</small>
+                        <small class="text">50 characters or less</small>
                     </div>
                 </div>
 
