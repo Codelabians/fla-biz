@@ -34,9 +34,6 @@ jQuery(document).ready(function () {
     jQuery('#P_Expiration').text(formData.Expiration);
     jQuery('#FormpaymentCard').text(formData.paymentCard);
     jQuery('#signature').text(formData.signature);
-
-
-    
     // Getting Modal
     if (jQuery("#errorModal").length) {
         let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
@@ -890,15 +887,47 @@ jQuery(document).ready(function () {
             data: {
                 action: 'insert_form_data',
                 formData: formData
-            },
-            success: function (response) {
-                alert(JSON.stringify(response.data) );
-                console.log(response);
-            },
-            error: function (xhr, status, error) {
-                alert(error)
-                console.error("the error of sending ajax request is:", error);
             }
+        }).done(function (response) {
+            console.log(response);
+            if (response.success === true) {
+                Swal.fire({
+                    title: 'Thanks!',
+                    text: response.data,
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+                // clearSession();
+            } else {
+                Swal.fire({
+                    title: 'Error!',
+                    text: response.data,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        }).fail(function (xhr, status, error) {
+            console.error("the error of sending ajax request is:", error);
+            Swal.fire({
+                title: 'Error!',
+                text: error,
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        }).always(function () {
+            jQuery('#final').prop('disabled', false);
         });
     });
+    enableAndDisableBtn();
+    function enableAndDisableBtn() {
+        var finalBtn = document.getElementById("final");
+
+        if (formData.user_name && formData.password) {
+            finalBtn.disabled = false;
+        } else {
+            finalBtn.disabled = true;
+        }
+    }
+
+
 });
