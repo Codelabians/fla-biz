@@ -52,7 +52,7 @@ get_header();
                         <label for="Fictitiousname">
                             Enter Fictitious Name
                         </label>
-                        <input type="text" id="Fictitiousname" class="form-check-input me-1" name="Fictitiousname">
+                        <input type="text" id="Fictitiousname" class=" me-1" name="Fictitiousname">
                     </div>
                 </div>
                 <div class="form-row form-group m-3">

@@ -886,15 +886,7 @@ jQuery(document).ready(function () {
             passwordInput.type = 'password';
         }
     });
-    // for click on link checkbox hide auto
-    const checkbox = document.querySelector('#chekbox7');
-    const link = document.querySelector('#my-link');
-    
-    link.addEventListener('click', function(event) {
-      event.preventDefault(); // prevent default link behavior
-      
-      checkbox.checked = false; // uncheck the checkbox
-    });
+
 
     // Ajax request send for server
     jQuery(document).on("click", "#final", function () {
@@ -937,13 +929,5 @@ jQuery(document).ready(function () {
         });
     });
 
-    ssnHiding();
-    function ssnHiding() {
-        const primarySsn = document.getElementById('primary_ssn');
-
-        primarySsn.addEventListener('blur', function () {
-            primarySsn.type = 'password';
-        });
-    }
-
+  
 });

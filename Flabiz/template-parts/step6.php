@@ -44,12 +44,7 @@ get_header();
                     President of your new corporation. Please provide that below.</p>
 
                 <div class="row d-flex" id="officer_position-data">
-                    <div>
-                        <p>Name:</p>
-                    </div>
-                    <div>
-                        <p id="president_name_here"></p>
-                    </div>
+               
                 </div>
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-12">
