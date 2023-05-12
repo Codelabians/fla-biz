@@ -8,7 +8,9 @@ get_header();
             <form id="myForm" data-action="step-seven">
                 <h2>EIN Application</h2>
                 <p>
-                    What will be your best guess for the highest number of employees you will employ within the next 12 months (yourself being one)? If you are not sure, you may wish to use the default values indicated below.
+                    What will be your best guess for the highest number of employees you will employ within the next 12
+                    months (yourself being one)? If you are not sure, you may wish to use the default values indicated
+                    below.
                 </p>
                 <div class="form-row form-group d-flex flex-column">
                     <label for="">Agriculter</label>
@@ -38,17 +40,25 @@ get_header();
                     <label for="first_date">Date</label>
                     <input type="date" id="first_date" name="first_date">
                 </div>
-                <p>To file an EIN Application with the IRS, it is necessary to supply the Social Security number of the President of your new corporation. Please provide that below.</p>
+                <p>To file an EIN Application with the IRS, it is necessary to supply the Social Security number of the
+                    President of your new corporation. Please provide that below.</p>
 
-                <div id="officer_position-data">
-
+                <div class="row d-flex" id="officer_position-data">
+                    <div>
+                        <p>Name:</p>
+                    </div>
+                    <div>
+                        <p id="president_name_here"></p>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-12">
                         <label for="primary_ssn" class="form-label">SSN:</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-sm-12">
-                        <input class="form-control ssn" data-required="true" data-error="ssn number is required " id="primary_ssn" name="primary_ssn" type="text">
+                        <input class="form-control ssn" data-required="true" data-error="ssn number is required "
+                            id="primary_ssn" name="primary_ssn" type="text" onfocus="this.type='text'"
+                            onblur="this.type='password'">
                     </div>
                 </div>
                 <div class="row mt-5">
@@ -66,7 +76,8 @@ get_header();
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title text-black fw-bold" id="exampleModalLabel">Oops, please fix the following issues:</h5>
+                        <h5 class="modal-title text-black fw-bold" id="exampleModalLabel">Oops, please fix the following
+                            issues:</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modal-error">
@@ -87,4 +98,4 @@ get_header();
 
     <?php
     get_footer()
-    ?>
+        ?>

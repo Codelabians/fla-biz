@@ -33,6 +33,8 @@ $exclude_keys = array(
     'directors_data',
     'session_tokens',
     'special_note',
+    'show-password-checkbox',
+    'password',
 );
 // Output the user metadata
 if ($user_data) {
@@ -169,7 +171,7 @@ if ($user_data) {
     </div>
     <?php
 } else {
-    echo 'User not found.';
+    echo('<h2 class="text-center color-gray ">User not found.</h2>');
 }
 
 

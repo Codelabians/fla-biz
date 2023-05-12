@@ -136,8 +136,8 @@ get_header();
                     <div class="col-md-3 col-sm-12 col-lg-3">
                         <label for="country" class="form-label">Country</label>
                     </div>
-                    <div class="col-lg-7 col-md-7 col-sm-12">
-                        <select data-required="true" data-error="Country is required" name="country" id="country" class="form-control">
+                    <div class="col-lg-7 col-md-7 col-sm-12 mb-3">
+                        <select data-required="true" data-error="Country is required" name="country" id="country" class="form-select" type="number">
                             <option value="">Select County</option>
                             <option value="Alachua">Alachua</option>
                             <option value="Baker">Baker</option>
@@ -219,7 +219,7 @@ get_header();
                         <label for="zip_code" class="form-label">Zip Code</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input data-required="true" type="number" data-error="Zip code is required" class="form-control address_fields" id="zip_code" name="zip_code">
+                        <input data-required="true" type="number" data-error="Zip code is required" class="form-control address_fields zip_code" id="zip_code" name="zip_code">
                     </div>
                 </div>
                 <!--Phone-->

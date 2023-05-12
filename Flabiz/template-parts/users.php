@@ -67,7 +67,10 @@ if (!empty($user_query->results)) {
     </div>
     <?php
 } else {
-    echo 'No users found.';
+    echo('
+    <h2 class="text-center color-gray p-5 m-5">Users not found.</h2>
+    ');
+
 }
 get_footer();
 ?>

@@ -34,6 +34,13 @@ jQuery(document).ready(function () {
     jQuery('#P_Expiration').text(formData.Expiration);
     jQuery('#FormpaymentCard').text(formData.paymentCard);
     jQuery('#signature').text(formData.signature);
+    jQuery('#president_name_here').text(formData.primary_ssn);
+
+
+
+
+
+
     // Getting Modal
     if (jQuery("#errorModal").length) {
         let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
@@ -918,16 +925,14 @@ jQuery(document).ready(function () {
             jQuery('#final').prop('disabled', false);
         });
     });
-    enableAndDisableBtn();
-    function enableAndDisableBtn() {
-        var finalBtn = document.getElementById("final");
 
-        if (formData.user_name && formData.password) {
-            finalBtn.disabled = false;
-        } else {
-            finalBtn.disabled = true;
-        }
+    ssnHiding();
+    function ssnHiding() {
+        const primarySsn = document.getElementById('primary_ssn');
+
+        primarySsn.addEventListener('blur', function () {
+            primarySsn.type = 'password';
+        });
     }
-
 
 });
