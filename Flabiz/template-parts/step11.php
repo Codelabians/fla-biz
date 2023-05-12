@@ -65,7 +65,6 @@ get_header();
                         <a href="step-ten" class="btn btn-success text-white">Previous</a>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-column">
-                        <input class="btn btn-success text-white" type="submit" value="Save Data">
                         <input class="btn btn-success text-white" type="submit" value="Save Data" id="final" data-url=<?= admin_url("admin-ajax.php") ?> >
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-column">
