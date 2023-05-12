@@ -16,15 +16,15 @@ get_header();
                     This additional service can be added for only $69 for the first year of service.
                 </p>
                 <div class="ml-md-auto col-sm-12 d-flex">
-                    <div class="box-checkbox border border-success m-2 ">
+                    <div class="box-checkbox border border-2 border-success rounded shadow m-2 p-2  ">
                         <div class="col m-3 ">
-                            <input type="checkbox" id="chekbox" checked value="Register agent service $79" class="form-check-input" name="chekbox">
+                            <input type="checkbox" id="chekbox" checked value="Register agent service $79" class="form-check-input " name="chekbox">
                             <a href="#">i dont want fla-biz to be my register agent</a>
                         </div>
                     </div>
                 </div>
                 <!-- show data on check box -->
-                <div class="ragreement"  style="display:none">
+                <div class="ragreement" style="display:none">
                     <p>
                         As a secondary option, you or someone at your company may prefer to act as the registered agent for the company being formed
                     </p>
@@ -32,6 +32,12 @@ get_header();
                         <div id="business-manager-detail-table">
                             <p><strong>We show your information as:</strong></p>
                             <!--Main User Data Table-->
+                            <ul class="list-grpup list-group-flush">
+                                <li class="list-group-item d-flex justify-content-lg-between">
+                                    <span class="info-title">Physical Adress</span>
+                                    <span class="info-data me-3" id="physicalasdress"></span>
+                                </li>
+                            </ul>
                             <table class="table table-striped">
                                 <thead>
                                     <tr class="bg-light">
