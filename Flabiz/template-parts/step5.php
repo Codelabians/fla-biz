@@ -22,7 +22,7 @@ get_header();
                             <label for="shares" class="form-label">Shares</label>
                         </div>
                         <div class="col-md-9 col-lg-9 col-sm-12">
-                            <input class="form-control shares" data-required="true" data-error="shares is required"
+                            <input class="form-control shares" class="form-check-input me-1" data-required="true" data-error="shares is required"
                                 id="shares" name="shares" type="number">
                         </div>
                     </div>
@@ -34,7 +34,7 @@ get_header();
                 </p>
                 <div class="form-row form-group m-3 ">
                     <div class="ml-md-auto col-sm-12 ">
-                        <input type="checkbox" id="checbox" value="Certificate of Status - $20" name="checbox">
+                        <input type="checkbox" id="checbox" class="form-check-input me-1" value="Certificate of Status - $20" name="checbox">
                         <label for="checbox">
                             <span>Certificate of Status - $20</span>
                         </label>
@@ -42,7 +42,7 @@ get_header();
                 </div>
                 <div class="form-row form-group m-3 ">
                     <div class="ml-md-auto col-sm-12 ">
-                        <input type="checkbox" id="chekbox3"  name="chekbox3" value="Fictitious Name (DBA) - $69">
+                        <input type="checkbox" id="chekbox3" class="form-check-input me-1"  name="chekbox3" value="Fictitious Name (DBA) - $69">
                         <label for="chekbox3">
                             <span>Fictitious Name (DBA) - $69</span>
                         </label>
@@ -53,28 +53,28 @@ get_header();
                         <label for="Fictitiousname">
                             Enter Fictitious Name
                         </label>
-                        <input type="text" id="Fictitiousname"  name="Fictitiousname">
+                        <input type="text" id="Fictitiousname" class="form-check-input me-1"  name="Fictitiousname">
                     </div>
                 </div>
                 <div class="form-row form-group m-3">
                     <div class="ml-md-auto col-sm-12">
-                        <input type="checkbox" id="chekbox4" value="Custom stock certificates and corporate seals - $49" name="chekbox4">
+                        <input type="checkbox" id="chekbox4" class="form-check-input me-1" value="Custom stock certificates and corporate seals - $49" name="chekbox4">
                         <label for="">
                             <span>Custom stock certificates and corporate seals - $49</span>
                         </label>
                     </div>
                 </div>
                 <div class="form-row form-group m-3">
-                    <div class="ml-md-auto col-sm-12">
-                        <input type="checkbox" value=" $20" id="chekbox5" name="chekbox5">
+                    <div class="ml-md-auto col-sm-12 d-flex">
+                        <input type="checkbox" value=" $20" id="chekbox5" class="form-check-input me-1" name="chekbox5">
                         <label for="chekbox5">
-                            <span>Corporate kit with bylaws, minutes, a Florida Business Guide, and a personalized binder for all corporate documents - $20</span>
+                            <span>Corporate kit with bylaws, and a personalized binder for all corporate documents - $20</span>
                         </label>
                     </div>
                 </div>
                 <div class="form-row form-group m-3">
                     <div class="ml-md-auto col-sm-12">
-                        <input type="checkbox" value="Company Embosser - $25" id="chekbox6" name="chekbox6">
+                        <input type="checkbox" class="form-check-input me-1" value="Company Embosser - $25" id="chekbox6" name="chekbox6">
                         <label for="chekbox6">
                             <span>Company Embosser - $25</span>
                         </label>
@@ -106,7 +106,7 @@ get_header();
                 </p>
                 <div class="ml-md-auto col-sm-12 d-flex">
                     <div class="box-checkbox border border-success m-2 ">
-                        <input class="custom-control-input m-2 " value="i neend file for EIN" type="checkbox" id="chekbox7" name="chekbox7">
+                        <input class="custom-control-input m-2 form-check-input " value="i neend file for EIN" type="checkbox" id="chekbox7" name="chekbox7">
                         <label for="chekbox7">
                             <span>
                                 <h4>i neend file for EIN</h4>
