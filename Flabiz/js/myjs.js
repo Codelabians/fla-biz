@@ -897,7 +897,7 @@ jQuery(document).ready(function () {
                     icon: 'success',
                     confirmButtonText: 'OK'
                 });
-                clearSession();
+                // clearSession();
             } else {
                 Swal.fire({
                     title: 'Error!',
@@ -930,10 +930,4 @@ jQuery(document).ready(function () {
     }
 
 
-    // clear all data from session stoarage on successfull submission in wpdb
-    function clearSession() {
-        $("#final").click(function () {
-            sessionStorage.clear();
-        })
-    }
 });
