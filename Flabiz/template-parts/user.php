@@ -35,6 +35,8 @@ $exclude_keys = array(
     'special_note',
     'show-password-checkbox',
     'password',
+    'wptx_capabilities',
+    'Wptx_user_level',
 );
 // Output the user metadata
 if ($user_data) {
@@ -234,7 +236,7 @@ if ($officers) {
     </div>
     <?php
 } else {
-    echo 'Officers data not found.';
+    echo('<h2 class="text-center color-gray mt-5">Officers Data not found.</h2> </br>');
 }
 
 
@@ -293,7 +295,7 @@ if ($directors) {
     </div>
     <?php
 } else {
-    echo 'Directors data not found.';
+    echo('<h2 class="text-center color-gray ">Directors Data not found.</h2>');
 }
 
 

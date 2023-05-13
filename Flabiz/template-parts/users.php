@@ -44,7 +44,7 @@ if (!empty($user_query->results)) {
                             <?php echo esc_html($user->user_login); ?>
                         </td>
                         <td class="text-wrap text-break">
-                            <?php echo esc_html($user->user_email); ?>
+                            <?php echo esc_html($user->primary_email); ?>
                         </td>
                         <td class="text-wrap text-break">
                             <?php echo esc_html($user->first_name); ?>
