@@ -37,6 +37,7 @@ $exclude_keys = array(
     'password',
     'wptx_capabilities',
     'Wptx_user_level',
+    'primary_validate_email',
 );
 // Output the user metadata
 if ($user_data) {

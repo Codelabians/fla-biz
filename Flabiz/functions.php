@@ -915,53 +915,58 @@ function insert_form_data()
 	$user_id = wp_insert_user($user_data);
 
 
-		// First, save the main form data
-		if (!empty($formData)) {
-			foreach ($formData as $key => $value) {
-				if ($key == 'officers' || $key == 'directors') {
-					continue;
-				}
-				update_user_meta($user_id, $key, $value);
+	// First, save the main form data
+	if (!empty($formData)) {
+		foreach ($formData as $key => $value) {
+			if ($key == 'officers' || $key == 'directors') {
+				continue;
+			}
+			update_user_meta($user_id, $key, $value);
+		}
+	}
+
+	// Save the officers metadata
+	if (!empty($formData['officers'])) {
+		$officers_data = array();
+		foreach ($formData['officers'] as $officer_key => $officer_value) {
+			foreach ($officer_value as $meta_key => $meta_value) {
+				$officers_data[$officer_key][$meta_key] = $meta_value;
 			}
 		}
+		// Encode officers data as JSON
+		$officers_json = json_encode($officers_data);
+		// Save officers data as a user meta field
+		update_user_meta($user_id, 'officers_data', $officers_json);
+	}
 
-		// Save the officers metadata
-		if (!empty($formData['officers'])) {
-			$officers_data = array();
-			foreach ($formData['officers'] as $officer_key => $officer_value) {
-				foreach ($officer_value as $meta_key => $meta_value) {
-					$officers_data[$officer_key][$meta_key] = $meta_value;
-				}
+
+	// Save the directors metadata
+	if (!empty($formData['directors'])) {
+		$directors_data = array();
+		foreach ($formData['directors'] as $director_key => $director_value) {
+			$director_data = array();
+			foreach ($director_value as $meta_key => $meta_value) {
+				$director_data[$meta_key] = $meta_value;
 			}
-			// Encode officers data as JSON
-			$officers_json = json_encode($officers_data);
-			// Save officers data as a user meta field
-			update_user_meta($user_id, 'officers_data', $officers_json);
+			$directors_data[] = $director_data;
 		}
-
-
-		// Save the directors metadata
-		if (!empty($formData['directors'])) {
-			$directors_data = array();
-			foreach ($formData['directors'] as $director_key => $director_value) {
-				$director_data = array();
-				foreach ($director_value as $meta_key => $meta_value) {
-					$director_data[$meta_key] = $meta_value;
-				}
-				$directors_data[] = $director_data;
-			}
-			$directors_data_json = json_encode($directors_data);
-			update_user_meta($user_id, 'directors_data', $directors_data_json);
-
-
-		}
-
-		// Send response back to JavaScript
-		wp_send_json_success('User created successfully, and its data is inserted.');
-		exit;
-
+		$directors_data_json = json_encode($directors_data);
+		update_user_meta($user_id, 'directors_data', $directors_data_json);
 
 	}
+
+	$to = 'jabbar.azam@codelab.pk';
+	$subject = 'Test email';
+	$message = 'This is a test email message';
+	$headers = array('Content-Type: text/html; charset=UTF-8');
+	wp_mail($to, $subject, $message, $headers);
+
+	// Send response back to JavaScript
+	wp_send_json_success('User created successfully, and its data is inserted.');
+	exit;
+
+
+}
 
 
 
