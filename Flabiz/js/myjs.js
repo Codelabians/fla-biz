@@ -875,29 +875,42 @@ jQuery(document).ready(function () {
             }
         }
     }
-// show and hide password 
-    const passwordInput = document.querySelector('#password');
-    const showPasswordCheckbox = document.querySelector('#show-password-checkbox');
 
-    showPasswordCheckbox.addEventListener('change', function () {
-        if (showPasswordCheckbox.checked) {
-            passwordInput.type = 'text';
+    $('#show-password-checkbox').on('change', function () {
+        const passwordInput = $('#password');
+        if ($(this).is(':checked')) {
+            passwordInput.attr('type', 'text');
         } else {
-            passwordInput.type = 'password';
+            passwordInput.attr('type', 'password');
         }
     });
 
 
+    // uncehck last checkbox at the end of the page
+    jQuery(document).on('click', '#my-link', function () {
+        console.log('clicked')
+        const myCheckBox = $('#checkbox7');
+        myCheckBox.prop('checked', false);
+    });
+
+
+
+
+
     // Ajax request send for server
     jQuery(document).on("click", "#final", function () {
-
         jQuery.ajax({
             type: 'POST',
             url: jQuery(this).data("url"),
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+            },
             data: {
                 action: 'insert_form_data',
                 formData: formData
             }
+        
         }).done(function (response) {
             console.log(response);
             if (response.success === true) {
@@ -924,10 +937,8 @@ jQuery(document).ready(function () {
                 icon: 'error',
                 confirmButtonText: 'OK'
             });
-        }).always(function () {
-            jQuery('#final').prop('disabled', false);
-        });
+        })
     });
 
-  
+
 });

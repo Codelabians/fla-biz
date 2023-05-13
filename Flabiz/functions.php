@@ -893,7 +893,7 @@ add_action('after_setup_theme', 'custom_custom_logo_setup');
 
 // AJAX handler function
 add_action('wp_ajax_insert_form_data', 'insert_form_data');
-// add_action('wp_ajax_nopriv_insert_form_data', 'insert_form_data');
+add_action('wp_ajax_nopriv_insert_form_data', 'insert_form_data');
 function insert_form_data()
 {
 	// Retrieve form data from AJAX request

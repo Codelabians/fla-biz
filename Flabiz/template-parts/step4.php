@@ -19,12 +19,12 @@ get_header();
                     <div class="box-checkbox border border-2 border-success rounded shadow m-2 p-2  ">
                         <div class="col m-3 ">
                             <input type="checkbox" id="chekbox" checked value="Register agent service $79" class="form-check-input " name="chekbox">
-                            <a href="#">i dont want fla-biz to be my register agent</a>
+                            &nbsp; <label for="chekbox">I dont want fla-biz to be my register agent</label>
                         </div>
                     </div>
                 </div>
                 <!-- show data on check box -->
-                <div class="ragreement" style="display:none">
+                <div class="ragreement pt-5" style="display:none">
                     <p>
                         As a secondary option, you or someone at your company may prefer to act as the registered agent for the company being formed
                     </p>
