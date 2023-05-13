@@ -897,20 +897,16 @@ jQuery(document).ready(function () {
 
 
 
-    // Ajax request send for server
-    jQuery(document).on("click", "#final", function () {
+     // Ajax request send for server
+     jQuery(document).on("click", "#final", function () {
+
         jQuery.ajax({
             type: 'POST',
             url: jQuery(this).data("url"),
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-            },
             data: {
                 action: 'insert_form_data',
                 formData: formData
             }
-        
         }).done(function (response) {
             console.log(response);
             if (response.success === true) {
@@ -937,7 +933,9 @@ jQuery(document).ready(function () {
                 icon: 'error',
                 confirmButtonText: 'OK'
             });
-        })
+        }).always(function () {
+            jQuery('#final').prop('disabled', false);
+        });
     });
 
 
