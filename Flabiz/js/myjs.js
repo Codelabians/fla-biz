@@ -969,6 +969,8 @@ jQuery(document).ready(function () {
     applicationElement3.innerHTML = "";
     applicationElement3.appendChild(span7);
     applicationElement3.appendChild(span8);
+
+    
     // Ajax request send for server
     jQuery(document).on("click", "#final", function () {
 
