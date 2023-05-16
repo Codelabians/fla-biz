@@ -892,13 +892,104 @@ jQuery(document).ready(function () {
         const myCheckBox = $('#checkbox7');
         myCheckBox.prop('checked', false);
     });
+    const value = formData.chekbox7;
+    const value1 = formData.chekbox3;
+    const value2 = formData.chekbox4;
+    const value3 = formData.chekbox6;
+
+
+
+
+    // Split the string value into two parts
+    const parts = value.split(" - ");
+    const parts1 = value1.split(" - ");
+    const parts2 = value2.split(" - ");
+    const parts3 = value3.split(" - ");
+
+
+
+
+    // Create the two span elements
+    const span1 = document.createElement("span");
+    span1.style.float = "left"; // float to the left
+    const span2 = document.createElement("span");
+    span2.style.float = "right"; // float to the right
+    // Create the two span elements
+    const span3 = document.createElement("span");
+    span3.style.float = "left"; // float to the left
+    const span4 = document.createElement("span");
+    span4.style.float = "right"; // float to the right
+    // Create the two span elements
+    const span5 = document.createElement("span");
+    span5.style.float = "left"; // float to the left
+    const span6 = document.createElement("span");
+    span6.style.float = "right"; // float to the right
+    // Create the two span elements
+    const span7 = document.createElement("span");
+    span7.style.float = "left"; // float to the left
+    const span8 = document.createElement("span");
+    span8.style.float = "right"; // float to the right
+
+
+    // Set the text content of the span elements to the parts of the string
+    if (parts.length > 1) {
+        span1.textContent = parts[0];
+        span2.textContent = "- " + parts[1];
+    } else {
+        span1.textContent = parts[0];
+    }
+    if (parts1.length > 1) {
+        span3.textContent = parts1[0];
+        span4.textContent = "- " + parts1[1];
+    } else {
+        span3.textContent = parts[0];
+    }
+    if (parts2.length > 1) {
+        span5.textContent = parts2[0];
+        span6.textContent = "- " + parts2[1];
+    } else {
+        span5.textContent = parts2[0];
+    }
+    if (parts3.length > 1) {
+        span7.textContent = parts3[0];
+        span8.textContent = "- " + parts3[1];
+    } else {
+        span8.textContent = parts3[0];
+    }
+
+    // Get the HTML element where you want to display the span elements
+    const applicationElement = document.getElementById("application");
+    const applicationElement1 = document.getElementById("applications");
+    const applicationElement2 = document.getElementById("applicationss");
+    const applicationElement3 = document.getElementById("applicationsss");
+
+
+
+
+    // Replace the original content of the HTML element with the two new span elements
+    applicationElement.innerHTML = "";
+    applicationElement.appendChild(span1);
+    applicationElement.appendChild(span2);
+    // Replace the original content of the HTML element with the two new span elements
+    applicationElement1.innerHTML = "";
+    applicationElement1.appendChild(span3);
+    applicationElement1.appendChild(span4);
+    // Replace the original content of the HTML element with the two new span elements
+    applicationElement2.innerHTML = "";
+    applicationElement2.appendChild(span5);
+    applicationElement2.appendChild(span6);
+    // Replace the original content of the HTML element with the two new span elements
+    applicationElement3.innerHTML = "";
+    applicationElement3.appendChild(span7);
+    applicationElement3.appendChild(span8);
 
 
 
 
 
-     // Ajax request send for server
-     jQuery(document).on("click", "#final", function () {
+
+    // Ajax request send for server
+    jQuery(document).on("click", "#final", function () {
 
         jQuery.ajax({
             type: 'POST',
