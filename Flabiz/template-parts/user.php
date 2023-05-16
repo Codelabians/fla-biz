@@ -42,7 +42,7 @@ $exclude_keys = array(
 // Output the user metadata
 if ($user_data) {
     ?>
-    <div class=" ">
+    <div class=" container">
 
         <div class="container">
             <h2 class="text-center p-5 fw-bold">User
