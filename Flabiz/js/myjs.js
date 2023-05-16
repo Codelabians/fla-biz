@@ -896,19 +896,11 @@ jQuery(document).ready(function () {
     const value1 = formData.chekbox3;
     const value2 = formData.chekbox4;
     const value3 = formData.chekbox6;
-
-
-
-
     // Split the string value into two parts
     const parts = value.split(" - ");
     const parts1 = value1.split(" - ");
     const parts2 = value2.split(" - ");
     const parts3 = value3.split(" - ");
-
-
-
-
     // Create the two span elements
     const span1 = document.createElement("span");
     span1.style.float = "left"; // float to the left
@@ -956,16 +948,11 @@ jQuery(document).ready(function () {
     } else {
         span8.textContent = parts3[0];
     }
-
     // Get the HTML element where you want to display the span elements
     const applicationElement = document.getElementById("application");
     const applicationElement1 = document.getElementById("applications");
     const applicationElement2 = document.getElementById("applicationss");
     const applicationElement3 = document.getElementById("applicationsss");
-
-
-
-
     // Replace the original content of the HTML element with the two new span elements
     applicationElement.innerHTML = "";
     applicationElement.appendChild(span1);
@@ -982,12 +969,6 @@ jQuery(document).ready(function () {
     applicationElement3.innerHTML = "";
     applicationElement3.appendChild(span7);
     applicationElement3.appendChild(span8);
-
-
-
-
-
-
     // Ajax request send for server
     jQuery(document).on("click", "#final", function () {
 
