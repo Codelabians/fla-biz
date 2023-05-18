@@ -83,11 +83,11 @@ session_start();
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav navbar-nav ms-auto">
-          <li><a href="/" class="scroll nav-link text-white">Home</a></li>
+          <li><a href="<?php echo home_url()?>" class="scroll nav-link text-white">Home</a></li>
 
-          <li><a href="/faq/" class="scroll nav-link text-white">FAQ</a></li>
-          <li><a href="/contact/" class="scroll nav-link text-white">Contact</a></li>
-          <li><a href="/infringment-protection/" class="scroll nav-link text-white">Infringement Protection</a></li>
+          <li><a href="<?php echo home_url()?>#faq/" class="scroll nav-link text-white">FAQ</a></li>
+          <li><a href="<?php echo home_url()?>#contact/" class="scroll nav-link text-white">Contact</a></li>
+          <li><a href="<?php echo home_url()?>#infringment-protection/" class="scroll nav-link text-white">Infringement Protection</a></li>
           <?php
           if (is_user_logged_in()) {
             $user = wp_get_current_user();
@@ -96,11 +96,11 @@ session_start();
             <li><a href="/record" class="scroll nav-link text-white">
                 <?= ucfirst($user->data->user_nicename) ?>
               </a></li>
-            <li><a href="<?= wp_logout_url("/") ?>" class="scroll nav-link text-white">Logout</a></li>
+            <li><a href="<?php echo wp_logout_url("/") ?>" class="scroll nav-link text-white">Logout</a></li>
             <?php
           } else {
             ?>
-            <li><a href="/login/" class="scroll nav-link text-white">Login</a></li>
+            <li><a href="<?php echo home_url()?>/wp-admin" class="scroll nav-link text-white">Login</a></li>
             <?php
           }
           ?>
