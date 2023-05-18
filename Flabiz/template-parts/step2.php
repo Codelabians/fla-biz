@@ -189,11 +189,11 @@ get_header();
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <a href="step-one" class="btn btn-success text-white">Previous</a>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <a href="step-one" class="btn btn-success text-white shadow">Previous</a>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <input type="submit" value="Next" class="btn border-success text-success float-end"> 
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="submit" value="Next" class="btn border-success text-success shadow "> 
                         </div>
                     </div>
                     <!-- Error Modal -->

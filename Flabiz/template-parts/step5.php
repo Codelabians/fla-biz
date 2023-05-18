@@ -3,7 +3,7 @@
 get_header();
 ?>
 <div class="container">
-    <div class="row d-flex">
+    <div class="row">
         <div class="col-sm-12 col-md-10 col-lg-8">
             <form data-action="step-six" id="myForm" class=" m-3">
                 <h1 class="text-dark">Authorized share of stock</h1>
@@ -22,7 +22,7 @@ get_header();
                             <label for="shares" class="form-label">Shares</label>
                         </div>
                         <div class="col-md-9 col-lg-9 col-sm-12">
-                            <input class="form-control shares" value="2000" class="form-check-input me-1"
+                            <input class="form-control shares shadow" value="2000" class="form-check-input me-1"
                                 data-required="true" data-error="shares is required" id="shares" name="shares"
                                 type="number">
                         </div>
@@ -70,7 +70,7 @@ get_header();
                 </div>
                 <div class="form-row form-group m-3">
                     <div class="ml-md-auto col-sm-12 d-flex">
-                        <input type="checkbox" value=" $20" id="chekbox5" class="form-check-input me-1" name="chekbox5">
+                        <input type="checkbox" value=" Corporate kit with bylaws  - $20" id="chekbox5" class="form-check-input me-1" name="chekbox5">
                         <label for="chekbox5">
                             <span>Corporate kit with bylaws, and a personalized binder for all corporate documents -
                                 $20</span>
@@ -123,15 +123,12 @@ get_header();
                     <a class="mt-2" id="my-link" style="cursor:pointer;">I don't need file for EIN</a>
                 </div>
                 <div class="row mt-5">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <a href="step-four" class="btn btn-success text-white">Previous</a>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <a href="step-four" class="btn btn-success text-white shadow">Previous</a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 d-flex flex-column">
-                        <input class="btn btn-success text-white" type="submit" value="Next">
-
-                        <!-- Button trigger modal -->
-                        <!-- <a href="" class="" data-bs-toggle="modal" data-bs-target="#savemodel">Save and contineu later</a> -->
-                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="submit" value="Next" class="btn border-success text-success shadow "> 
+                        </div>
                 </div>
                 <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">

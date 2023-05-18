@@ -3,11 +3,11 @@
 get_header();
 ?>
 <div class="container">
-    <div class="row d-flex">
+    <div class="row ">
         <div class="col-sm-12 col-md-10 col-lg-8">
             <form data-action="step-Eight" id="myForm" class=" m-3">
                 <h1>Entity Classification</h1>
-                <h5 class=" text-dark alert alert-primary show">
+                <h5 class=" text-dark alert alert-primary show shadow">
                     To qualify for S Corporation status, the corporation must be a domestic corporation; have only one class of stock; and have not more than 35 stockholders, who must be individuals, estates, or certain trusts
                 </h5>
                 <h3>Most new corporations files in the State of Florida elect S Corporation status.</h3>
@@ -29,15 +29,12 @@ get_header();
                     <a class="mt-2" id="my-link" style="cursor:pointer;">I don't neend file for EIN</a>
                 </div>
                 <div class="row mt-5">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <a id="my-link" href="step-six" class="btn btn-success text-white">Previous</a>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <a id="my-link" href="step-six" class="btn btn-success text-white shadow ">Previous</a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 d-flex flex-column">
-                    <input class="btn btn-success text-white" type="submit" value="Next">
-                        
-                        <!-- Button trigger modal -->
-                        <!-- <a href="" class="" data-bs-toggle="modal" data-bs-target="#savemodel">Save and contineu later</a> -->
-                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="submit" value="Next" class="btn border-success text-success shadow "> 
+                        </div>
                 </div>
             </form>
         </div>

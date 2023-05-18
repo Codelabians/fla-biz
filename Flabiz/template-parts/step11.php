@@ -3,7 +3,7 @@
 get_header();
 ?>
 <div class="container">
-    <div class="row d-flex">
+    <div class="row ">
         <div class="col-sm-12 col-md-10 col-lg-8">
 
             <form data-action="#" id="myForm" class=" m-3">
@@ -15,7 +15,7 @@ get_header();
                         <label for="first_name" class="form-label">First Name</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-sm-12">
-                        <input data-required="true" data-error="First name is required" class="form-control" id="first_name" name="first_name" type="text">
+                        <input data-required="true" data-error="First name is required" class="form-control shadow" id="first_name" name="first_name" type="text">
                     </div>
                 </div>
                 <div class="row">
@@ -23,7 +23,7 @@ get_header();
                         <label for="last_name" class="form-label">Last Name</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-sm-12">
-                        <input data-required="true" data-error="user Name is required" class="form-control" id="last_name" name="last_name" type="text">
+                        <input data-required="true" data-error="user Name is required" class="form-control shadow" id="last_name" name="last_name" type="text">
                     </div>
                 </div>
                 <p class="text-danger text-center">Note: If you are submiting this form second time, use differnet "username"</p>
@@ -32,7 +32,7 @@ get_header();
                         <label for="user_name" class="form-label">user Name</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-sm-12">
-                        <input data-required="true" data-error="user Name is required" class="form-control" id="user_name" name="user_name" type="text">
+                        <input data-required="true" data-error="user Name is required" class="form-control shadow" id="user_name" name="user_name" type="text">
                     </div>
                 </div>
                 <div class="row">
@@ -40,10 +40,10 @@ get_header();
                         <label for="password" class="form-label">password</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-sm-12">
-                        <input data-required="true" data-error="password isrequired" class="form-control" id="password" name="password" type="password">
+                        <input data-required="true" data-error="password isrequired" class="form-control shadow" id="password" name="password" type="password">
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="show-password-checkbox">
+                        <input class="form-check-input shadow" type="checkbox" id="show-password-checkbox">
                         <label class="form-check-label" for="show-password-checkbox">
                             Show password
                         </label>
@@ -61,15 +61,11 @@ get_header();
                     result in the rejection of your request.</p>
 
                 <div class="row mt-5">
-                    <div class="col-lg-4 col-md-4 col-sm-4">
-                        <a href="step-ten" class="btn btn-success text-white">Previous</a>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <a href="step-ten" class="btn btn-success text-white shadow">Previous</a>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-column">
-                        <input class="btn btn-success text-white" type="submit" value="Save Data" id="final" data-url=<?= admin_url("admin-ajax.php") ?> >
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 d-flex flex-column">
-                        <!-- <input class="btn btn-success text-white" 
-                            type="button" value="Send Data to Admin"> -->
+                    <div class="col-lg-4 col-md-4 col-sm-12 ">
+                        <input class="btn btn-success text-white shadow" type="submit" value="Save Data" id="final" data-url=<?= admin_url("admin-ajax.php") ?> >
                     </div>
                 </div>
                 <!-- Error Modal -->

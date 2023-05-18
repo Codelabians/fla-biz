@@ -3,7 +3,7 @@
 get_header();
 ?>
 <div class="container">
-    <div class="row d-flex">
+    <div class="row ">
         <div class="col-sm-12 col-md-10 col-lg-8">
             <form id="myForm" data-action="step-ten" class=" m-3">
 
@@ -14,14 +14,14 @@ get_header();
                         <div class="form-outline">
                             <label class="form-label" for="NameOnCard">Name on card</label>
                             <input type="text" id="NameOnCard" data-error="Name on card is required"
-                                class="form-control" data-required="true" />
+                                class="form-control shadow" data-required="true" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
                             <label class="form-label" for="CardNumber">Credit card number</label>
                             <input type="number" id="CardNumber" data-error="Card number is required"
-                                class="form-control card" data-required="true" />
+                                class="form-control card shadow" data-required="true" />
                         </div>
                     </div>
                 </div>
@@ -30,16 +30,16 @@ get_header();
                     number to increase the security of your purchase.</p>
                 <div class="form-outline">
                     <label class="form-label" for="CVV">CVN/CVV</label>
-                    <input type="text" id="CVV" data-error="CVN/CVV is required" class="form-control"
+                    <input type="text" id="CVV" data-error="CVN/CVV is required" class="form-control shadow"
                     data-required="true" />
                 </div>
                 <div class="form-outline">
                     <label class="form-label" for="Expiration">Expiration</label>
-                    <input type="date" id="Expiration" data-error="Expiration is required" class="form-control"
+                    <input type="date" id="Expiration" data-error="Expiration is required" class="form-control shadow"
                     data-required="true" />
                 </div>
                 <h5 class="mb-4">Payment</h5>
-                <select name="paymentCard" id="paymentCard" data-error="card type is required" class="form-control"
+                <select name="paymentCard" id="paymentCard" data-error="card type is required" class="form-control shadow "
                     data-required="true" data-error="Card is required">
                     <option value="">Select card</option>
                     <option value="MasterCard">Master card</option>
@@ -48,17 +48,14 @@ get_header();
                     <option value="Discover">Discover</option>
                 </select>
                 
-
-
-
                 <hr class="my-4" />
                 <div class="row mt-5">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <a href="step-eight" class="btn btn-success text-white">Previous</a>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <a href="step-eight" class="btn btn-success text-white shadow">Previous</a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 d-flex flex-column">
-                        <input class="btn btn-success text-white" type="submit" value="Next">
-                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="submit" value="Next" class="btn border-success text-success shadow "> 
+                        </div>
                 </div>
             </form>
         </div>

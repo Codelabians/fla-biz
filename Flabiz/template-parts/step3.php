@@ -11,10 +11,10 @@ get_header();
             <!--Primary Contact Information-->
             <!--Heading-->
             <h2>Business Management</h2>
-            <div id="business-manager-detail-table">
+            <div id="business-manager-detail-table ">
                 <p><strong>We show your information as:</strong></p>
                 <!--Main User Data Table-->
-                <table class="table table-striped">
+                <table class="table table-striped shadow">
                     <thead>
                         <tr class="bg-light">
                             <th>Name</th>
@@ -485,11 +485,11 @@ get_header();
                         </div>
                     </div>
                     <div class="row mt-5">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <a href="step-two" class="btn btn-success text-white">Previous</a>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <a href="step-two"  class="btn btn-success text-white shadow">Previous</a>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <button id="step-three-button" type="button" class="btn border-success text-success float-end">Next</button>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <button id="step-three-button" type="button" class="btn border-success text-success shadow ">Next</button>
                             <!-- <a type="submit" class="btn btn-success text-white">Next</a> -->
                             <!-- Button trigger modal -->
                             <!-- <a href="" class="" data-bs-toggle="modal" data-bs-target="#savemodel">Save and contineu later</a> -->

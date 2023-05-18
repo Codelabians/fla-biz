@@ -41,33 +41,37 @@
 		</li>
 		<li id="application" class=" list-group-item  m-3 d-flex justify-content-between ">
 			
-
-		</li><li id="applications" class=" list-group-item  m-3 d-flex justify-content-between ">
-	
-			
-
-		</li><li id="applicationss" class=" list-group-item p m-3 d-flex justify-content-between ">
-		
-			
-
-		</li><li id="applicationsss" class=" list-group-item  m-3 d-flex justify-content-between ">
-		
 		</li>
-		<li id="order5"style=" display:none "class=" list-group-item border-1 border-top m-3 ">
+		<li id="applications" class=" list-group-item  m-3 d-flex justify-content-between ">
+			
+		</li>
+		<li id="applicationss" class=" list-group-item  m-3 d-flex justify-content-between ">
+			
+		</li>
+		<li id="applicationsss" class=" list-group-item  m-3 d-flex justify-content-between ">
+			
+		</li>
+		<li id="applicationssss" class=" list-group-item  m-3 d-flex justify-content-between ">
+			
+		</li>
+		<li id="applicationsssss" class=" list-group-item  m-3 d-flex justify-content-between ">
+			
+		</li>
+		<li id="order5"style=" display:none "class=" list-group-item  m-3 ">
 			<span>Bylaws and Minutes </span>
 			<span class="float-end">$49.00</span>
 		</li>
 		
-		<li id="order6" style=" display:none "class=" list-group-item border-1 border-top m-3 ">
+		<li id="order6" style=" display:none "class=" list-group-item p m-3 ">
 			<span>Corporate Embosser </span>
 			<span class="float-end">$20.00</span>
 		</li>
 		
-		<li id="order7"style=" display:none "class=" list-group-item border-1 border-top m-3  ">
+		<li id="order7"style=" display:none "class=" list-group-item  m-3  ">
 			<span>EIN Application</span>
 			<span class="float-end">$25.00</span>
 		</li>
-		<li id="total"class=" list-group-item border-1 border-top m-3  ">
+		<li id="total"class=" list-group-item  m-3  ">
 			<span>Sub total </span>
 			<span class="float-end">$79</span>
 		</li>

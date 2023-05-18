@@ -420,7 +420,7 @@ get_header();
 
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <input type="submit" value="Next" class="btn border-success text-success float-end">
+                        <input type="submit" value="Next" class="btn border-success text-success shadow ">
                     </div>
                 </div>
             </form>

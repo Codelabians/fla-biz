@@ -3,7 +3,7 @@
 get_header();
 ?>
 <div class="container">
-    <div class="row d-flex">
+    <div class="row ">
         <div class="col-sm-12 col-md-10 col-lg-8">
             <form data-action="step-nine" id="myForm" class=" m-3">
                 <h3>Notice of Annual Report</h3>
@@ -21,7 +21,7 @@ get_header();
                         <label for="personal_address8" class="form-label">Address</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input data-required="true" data-error="Address is required" type="text" class="form-control" id="personal_address8" name="personal_address8">
+                        <input data-required="true" data-error="Address is required" type="text" class="form-control shadow" id="personal_address8" name="personal_address8">
                     </div>
                 </div>
                 <!--Apartment-->
@@ -30,7 +30,7 @@ get_header();
                         <label for="personal_suit_apt8" class="form-label">Suite. Apt. #, etc.</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input type="text" class="form-control" id="personal_suit_apt8" name="personal_suit_apt8">
+                        <input type="text" class="form-control shadow" id="personal_suit_apt8" name="personal_suit_apt8">
                     </div>
                 </div>
                 <!--City-->
@@ -39,7 +39,7 @@ get_header();
                         <label for="personal_city8" class="form-label">City</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input type="text" data-required="true" data-error="City is required" class="form-control address_fields" id="personal_city8" name="personal_city8">
+                        <input type="text" data-required="true" data-error="City is required" class="form-control address_fields shadow" id="personal_city8" name="personal_city8">
                     </div>
                 </div>
                 <!--Country-->
@@ -48,7 +48,7 @@ get_header();
                         <label for="personal_state8" class="form-label">State</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <select name="personal_state8" id="personal_state8" class="form-control" data-required="true" data-error="State is required">
+                        <select name="personal_state8" id="personal_state8" class="form-control shadow" data-required="true" data-error="State is required">
                             <option value="">Select State</option>
                             <option value="- ">Outside the US or Canada</option>
                             <option value="AB">Alberta</option>
@@ -126,7 +126,7 @@ get_header();
                         <label for="personal_zip_code8" class="form-label">Zip Code</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input type="number" class="form-control address_fields" data-required="true" data-error="Zip Code is required" id="personal_zip_code8" name="personal_zip_code8">
+                        <input type="number" class="form-control address_fields shadow" data-required="true" data-error="Zip Code is required" id="personal_zip_code8" name="personal_zip_code8">
                     </div>
                 </div>
                 <div class="row">
@@ -134,7 +134,7 @@ get_header();
                         <label for="phone_number8" class="form-label">phone number</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input type="number" class="form-control address_fields" data-required="true" data-error="phone number is required" id="phone_number8" name="phone_number8">
+                        <input type="number" class="form-control address_fields shadow" data-required="true" data-error="phone number is required" id="phone_number8" name="phone_number8">
                     </div>
                 </div>
                 <h3>
@@ -146,12 +146,12 @@ get_header();
                 <div class="form-row form-group d-flex flex-column">
                     <div class="col-lg-6 sm-6 md-6 d-flex ">
                         <label for="">file my effective date as:</label>
-                        <input type="date" id="date" name="date" value="date">
+                        <input type="date" id="date" class="shadow" name="date" value="date">
                     </div>
                 </div>
-                <div class="ml-md-auto col-sm-12 d-flex">
+                <div class="ml-md-auto col-sm-12 d-flex ">
                     <div class="box-checkbox  mt-3 mb-3 ">
-                        <input type="checkbox" id="accept " class="form-check-input" value="accept" name="accept" required>
+                        <input type="checkbox" id="accept " class="form-check-input shadow" value="accept" name="accept" required>
                         <label for="">I accept the <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">User Agreement</a> and The Notice of Annual Report</label>
                     </div>
                 </div>
@@ -166,22 +166,20 @@ get_header();
                         <label for="signature" class="form-label">Digital signature:</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input type="text" data-required="true" data-error="Signature is required" class="form-control address_fields" id="signature" name="signature">
+                        <input type="text" data-required="true" data-error="Signature is required" class="form-control address_fields shadow" id="signature" name="signature">
                     </div>
                 </div>
 
                 <div class="row mt-5">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <a href="step-seven" class="btn btn-success text-white">Previous</a>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <a href="step-seven" class="btn btn-success text-white shadow ">Previous</a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 d-flex flex-column">
-                        <input class="btn btn-success text-white" type="submit" value="Next">
-                        <!-- Button trigger modal -->
-                        <!-- <a href="" class="" data-bs-toggle="modal" data-bs-target="#savemodel">Save and contineu later</a> -->
-                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="submit" value="Next" class="btn border-success text-success shadow "> 
+                        </div>
                 </div>
                 <!-- agriment modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade shadow" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">

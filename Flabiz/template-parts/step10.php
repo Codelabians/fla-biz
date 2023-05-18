@@ -3,7 +3,7 @@
 get_header();
 ?>
 <div class="container">
-    <div class="row d-flex">
+    <div class="row ">
         <div class="col-sm-12 col-md-10 col-lg-8">
 
             <form data-action="step-Eleven" id="myForm" class=" m-3">
@@ -18,7 +18,7 @@ get_header();
                     If you would like one of our support representatives to clarify the meaning of any of the
                     information below, please call us at 1-800-370-2942.
                 </p>
-                <div class="card-summary card m-3">
+                <div class="card-summary card m-3 shadow">
                     <h5 class="card-header mt-0 ">Point of Contact
                         <a href="step-one" class="float-end text-decoration-none ">Edit</a>
                     </h5>
@@ -41,7 +41,7 @@ get_header();
                         </li>
                     </ul>
                 </div>
-                <div class="card-summary card m-3">
+                <div class="card-summary card m-3 shadow">
                     <h5 class="card-header mt-0 ">Company Names
                         <a href="step-one" class=" float-end text-decoration-none ">Edit</a>
                     </h5>
@@ -57,7 +57,7 @@ get_header();
 
                     </ul>
                 </div>
-                <div class="card-summary card m-3">
+                <div class="card-summary card m-3 shadow">
                     <h5 class="card-header mt-0 ">Business Activity
                         <a href="step-one" class=" float-end text-decoration-none ">Edit</a>
                     </h5>
@@ -72,7 +72,7 @@ get_header();
                         </li>
                     </ul>
                 </div>
-                <div class="card-summary card m-3">
+                <div class="card-summary card m-3 shadow">
                     <h5 class="card-header mt-0 ">Office Location
                         <a href="step-one" class=" float-end text-decoration-none ">Edit</a>
                     </h5>
@@ -87,7 +87,7 @@ get_header();
                         </li>
                     </ul>
                 </div>
-                <div class="card-summary card m-3">
+                <div class="card-summary card m-3 shadow">
                     <h5 class="card-header mt-0 ">shares
                         <a href="step-five" class=" float-end text-decoration-none ">Edit</a>
                     </h5>
@@ -98,7 +98,7 @@ get_header();
                         </li>
                     </ul>
                 </div>
-                <div class="card-summary card m-3">
+                <div class="card-summary card m-3 shadow">
                     <h5 class="card-header mt-0 ">Register agent
                         <a href="step-four" class=" float-end text-decoration-none ">Edit</a>
                     </h5>
@@ -113,7 +113,7 @@ get_header();
                         </li>
                     </ul>
                 </div>
-                <div class="card-summary card m-3">
+                <div class="card-summary card m-3 shadow">
                     <h5 class="card-header mt-0 ">Ein application
                         <a href="step-five" class=" float-end text-decoration-none ">Edit</a>
                     </h5>
@@ -125,7 +125,7 @@ get_header();
 
                     </ul>
                 </div>
-                <div class="card-summary card m-3">
+                <div class="card-summary card m-3 shadow">
                     <h5 class="card-header mt-0 ">Sub-S Election
                         <a href="step-seven" class=" float-end text-decoration-none ">Edit</a>
                     </h5>
@@ -137,7 +137,7 @@ get_header();
 
                     </ul>
                 </div>
-                <div class="card-summary card m-3">
+                <div class="card-summary card m-3 shadow">
                     <h5 class="card-header mt-0 ">Ein application information
                         <a href="step-six" class=" float-end text-decoration-none ">Edit</a>
                     </h5>
@@ -161,7 +161,7 @@ get_header();
                         </li>
                     </ul>
                 </div>
-                <div class="card-summary card m-3">
+                <div class="card-summary card m-3 shadow">
                     <h5 class="card-header mt-0 ">Director
                         <a href="step-three" class=" float-end text-decoration-none ">Edit</a>
                     </h5>
@@ -172,7 +172,7 @@ get_header();
                         </li>
                     </ul>
                 </div>
-                <div class="card-summary card m-3">
+                <div class="card-summary card m-3 shadow">
                     <h5 class="card-header mt-0 ">officers
                         <a href="step-three " class=" float-end text-decoration-none ">Edit</a>
                     </h5>
@@ -196,7 +196,7 @@ get_header();
                         </li>
                     </ul>
                 </div>
-                <div class="card-summary card m-3">
+                <div class="card-summary card m-3 shadow">
                     <h5 class="card-header mt-0 ">Signature
                         <a href="step-eight" class=" float-end text-decoration-none ">Edit</a>
                     </h5>
@@ -208,7 +208,7 @@ get_header();
 
                     </ul>
                 </div>
-                <div class="card-summary card m-3">
+                <div class="card-summary card m-3 shadow">
                     <h5 class="card-header mt-0 ">Payment information
                         <a href="step-one" class=" float-end text-decoration-none ">Edit</a>
                     </h5>
@@ -237,16 +237,12 @@ get_header();
                 </div>
                 
                 <div class="row mt-5">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <a href="step-nine" class="btn btn-success text-white">Previous</a>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <a href="step-nine" class="btn btn-success text-white shadow">Previous</a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 d-flex flex-column">
-                        <input class="btn btn-success text-white" 
-                            type="submit" value="Next">
-
-                        <!-- Button trigger modal -->
-                        <!-- <a href="" class="" data-bs-toggle="modal" data-bs-target="#savemodel">Save and contineu later</a> -->
-                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="submit" value="Next" class="btn border-success text-success shadow "> 
+                        </div>
                 </div>
                 <!-- Error Modal -->
                 <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel"

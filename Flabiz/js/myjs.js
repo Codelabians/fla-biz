@@ -23,6 +23,9 @@ jQuery(document).ready(function () {
     jQuery('#alternate_name').text(formData.alternate_name);
     jQuery('#city').text(formData.city);
     jQuery('#application').text(formData.chekbox7);
+    // Get the string value you want to split
+    // Get the string value you want to split
+
     jQuery('#agrii').text(formData.agri);
     jQuery('#others').text(formData.others);
     jQuery('#pssn').text(formData.primary_ssn);
@@ -34,13 +37,6 @@ jQuery(document).ready(function () {
     jQuery('#P_Expiration').text(formData.Expiration);
     jQuery('#FormpaymentCard').text(formData.paymentCard);
     jQuery('#signature').text(formData.signature);
-    jQuery('#president_name_here').text(formData.primary_ssn);
-
-
-
-
-
-
     // Getting Modal
     if (jQuery("#errorModal").length) {
         let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
@@ -875,100 +871,89 @@ jQuery(document).ready(function () {
             }
         }
     }
-
-    $('#show-password-checkbox').on('change', function () {
-        const passwordInput = $('#password');
-        if ($(this).is(':checked')) {
-            passwordInput.attr('type', 'text');
-        } else {
-            passwordInput.attr('type', 'password');
-        }
-    });
-
-
-    // uncehck last checkbox at the end of the page
-    jQuery(document).on('click', '#my-link', function () {
-        console.log('clicked')
-        const myCheckBox = $('#checkbox7');
-        myCheckBox.prop('checked', false);
-    });
-    const value = formData.chekbox7;
-    const value1 = formData.chekbox3;
-    const value2 = formData.chekbox4;
-    const value3 = formData.chekbox6;
+    const value = formData.chekbox3;
+    const value1 = formData.chekbox4;
+    const value2 = formData.chekbox6;
+    const value3 = formData.chekbox5;
+    
     // Split the string value into two parts
     const parts = value.split(" - ");
     const parts1 = value1.split(" - ");
+    // Split the string value into two parts
     const parts2 = value2.split(" - ");
     const parts3 = value3.split(" - ");
+
+
     // Create the two span elements
     const span1 = document.createElement("span");
     span1.style.float = "left"; // float to the left
     const span2 = document.createElement("span");
     span2.style.float = "right"; // float to the right
-    // Create the two span elements
-    const span3 = document.createElement("span");
-    span3.style.float = "left"; // float to the left
-    const span4 = document.createElement("span");
-    span4.style.float = "right"; // float to the right
-    // Create the two span elements
+        // Create the two span elements
+        const span4 = document.createElement("span");
+        span4.style.float = "left"; // float to the left
+        const span3 = document.createElement("span");
+        span3.style.float = "right"; // float to the right
+         // Create the two span elements
     const span5 = document.createElement("span");
     span5.style.float = "left"; // float to the left
     const span6 = document.createElement("span");
     span6.style.float = "right"; // float to the right
-    // Create the two span elements
     const span7 = document.createElement("span");
     span7.style.float = "left"; // float to the left
     const span8 = document.createElement("span");
     span8.style.float = "right"; // float to the right
-
+        
 
     // Set the text content of the span elements to the parts of the string
     if (parts.length > 1) {
         span1.textContent = parts[0];
         span2.textContent = "- " + parts[1];
-    } else {
+      } else {
         span1.textContent = parts[0];
-    }
-    if (parts1.length > 1) {
-        span3.textContent = parts1[0];
-        span4.textContent = "- " + parts1[1];
-    } else {
-        span3.textContent = parts[0];
-    }
-    if (parts2.length > 1) {
+      }
+      if (parts1.length > 1) {
+        span4.textContent = parts1[0];
+        span3.textContent = "- " + parts1[1];
+      } else {
+        span4.textContent = parts1[0];
+      }
+      if (parts2.length > 1) {
         span5.textContent = parts2[0];
         span6.textContent = "- " + parts2[1];
-    } else {
+      } else {
         span5.textContent = parts2[0];
-    }
-    if (parts3.length > 1) {
+      }
+      if (parts3.length > 1) {
         span7.textContent = parts3[0];
         span8.textContent = "- " + parts3[1];
-    } else {
-        span8.textContent = parts3[0];
-    }
+      } else {
+        span7.textContent = parts3[0];
+      }
+
     // Get the HTML element where you want to display the span elements
     const applicationElement = document.getElementById("application");
     const applicationElement1 = document.getElementById("applications");
-    const applicationElement2 = document.getElementById("applicationss");
-    const applicationElement3 = document.getElementById("applicationsss");
+     // Get the HTML element where you want to display the span elements
+     const applicationElement2 = document.getElementById("applicationss");
+     const applicationElement3 = document.getElementById("applicationsss");
+
+
     // Replace the original content of the HTML element with the two new span elements
     applicationElement.innerHTML = "";
     applicationElement.appendChild(span1);
     applicationElement.appendChild(span2);
-    // Replace the original content of the HTML element with the two new span elements
-    applicationElement1.innerHTML = "";
-    applicationElement1.appendChild(span3);
-    applicationElement1.appendChild(span4);
-    // Replace the original content of the HTML element with the two new span elements
-    applicationElement2.innerHTML = "";
-    applicationElement2.appendChild(span5);
-    applicationElement2.appendChild(span6);
-    // Replace the original content of the HTML element with the two new span elements
-    applicationElement3.innerHTML = "";
-    applicationElement3.appendChild(span7);
-    applicationElement3.appendChild(span8);
+     // Replace the original content of the HTML element with the two new span elements
+     applicationElement1.innerHTML = "";
+     applicationElement1.appendChild(span4);
+     applicationElement1.appendChild(span3);
+     applicationElement2.innerHTML = "";
+     applicationElement2.appendChild(span5);
+     applicationElement2.appendChild(span6);
+     applicationElement3.innerHTML = "";
+     applicationElement3.appendChild(span7);
+     applicationElement3.appendChild(span8);
+
     // Ajax request send for server
     jQuery(document).on("click", "#final", function () {
 
@@ -1009,6 +994,4 @@ jQuery(document).ready(function () {
             jQuery('#final').prop('disabled', false);
         });
     });
-
-
 });

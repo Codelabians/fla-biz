@@ -4,7 +4,7 @@ get_header();
 
 ?>
 <div class="container ">
-    <div class="row d-flex ">
+    <div class="row ">
         <div class="col-sm-12 col-md-10 col-lg-8 m-4 mt-5 ">
             <form data-action="step-five" id="myForm">
                 <h2>Who will be the registerd Agent?</h2>
@@ -68,19 +68,17 @@ get_header();
                 <!-- for next -->
                 <div class="row mt-1 d-flex flex-column justify-content-end ">
                     <div class="row mt-5">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <a href="step-three" class="btn btn-success text-white">Previous</a>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <a href="step-three" class="btn btn-success text-white shadow">Previous</a>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 d-flex flex-column">
-                            <input class="btn btn-success text-white" type="submit" value="Next">
-                            <!-- Button trigger modal -->
-                            <!-- <a href="" class="" data-bs-toggle="modal" data-bs-target="#savemodel">Save and contineu later</a> -->
+                         <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="submit" value="Next" class="btn border-success text-success shadow "> 
                         </div>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="col m-2 mt-5">
+        <div class="col ">
             <?php
             get_sidebar();
             ?>
