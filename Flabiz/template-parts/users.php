@@ -2,12 +2,13 @@
 // Template Name: users
 // Get all users
 ob_start();
-get_header();
 
 if (!current_user_can('manage_options')) {
-    wp_redirect('restricted');
+    wp_redirect(home_url() . '/restricted');
     exit;
 }
+
+get_header();
 
 $args = array(
     'role' => 'subscriber',

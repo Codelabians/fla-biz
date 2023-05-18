@@ -31,7 +31,7 @@ get_header();
                 </p>
                 <div class="form-row form-group d-flex ">
                     <label for="first_day">Date</label>
-                    <input type="date" id="first_day" name="first_day">
+                    <input class="form_control" type="date" id="first_day" name="first_day">
                 </div>
                 <p>
                     <strong>What is the expected first date wages will be paid?</strong>

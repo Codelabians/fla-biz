@@ -104,6 +104,15 @@
     margin-bottom: 3rem;
 }
 
+@media only screen and (max-width: 770px) {
+    .update_user_data {
+        flex-direction: column;
+    }
+}
+
+
+
+
 .card {
     width: 100%;
 }
@@ -124,9 +133,69 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+/* Add horizontal scrolling for small screens */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Make the table scroll horizontally when needed */
+.table-responsive table {
+    width: 100%;
+    min-width: 600px;
+}
+
+
 /* 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 } */
+
+
+/* Style the scrollbar track */
+::-webkit-scrollbar {
+    width: 10px;
+    /* Adjust the width as needed */
+}
+
+/* Style the scrollbar handle */
+::-webkit-scrollbar-thumb {
+    background-color: #3C3B6E;
+    /* Customize the handle color */
+    border-radius: 10px;
+    /* Adjust the border radius as desired */
+}
+
+/* Change the scrollbar handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #21204c;
+    /* Customize the handle color on hover */
+}
+
+
+
+.login-container {
+    width: 400px;
+    margin: 150px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-top: 0;
+}
+
+
+.header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    gap: 2rem;
+}
