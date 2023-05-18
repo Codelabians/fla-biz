@@ -1,10 +1,7 @@
 <?php 
 // Template Name: restricted
+// ob_start();
 get_header();
-function redirect_to_homePage() {
-    wp_redirect(home_url());
-    exit;
-}
 ?>
 
 
@@ -22,8 +19,8 @@ function redirect_to_homePage() {
 </style>
 <div class="container restricted_are border-2 p-2 text-center center-middle">
     <h2><strong> You need higher level to visit this page</strong></h2>
-    <p>This page can only be visited by the admin, if you're admin please try to login again</p>
-    <button  class="btn btn-warning">Go to Home</button>
+    <p>This page can only be visited by the admin, if you're admin please try to login here 👇</p>
+    <a href="<?php echo home_url()?>/wp-admin"  class="btn btn-warning">Login Here</a>
 </div>
 
 

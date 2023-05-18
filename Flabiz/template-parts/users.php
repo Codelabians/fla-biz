@@ -2,12 +2,13 @@
 // Template Name: users
 // Get all users
 ob_start();
-get_header();
 
-if ( ! current_user_can( 'manage_options' ) ) {
-    wp_redirect('restricted');
+if (!current_user_can('manage_options')) {
+    wp_redirect(home_url() . '/restricted');
     exit;
 }
+
+get_header();
 
 $args = array(
     'role' => 'subscriber',
@@ -35,7 +36,9 @@ if (!empty($user_query->results)) {
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($user_query->results as $user): ?>
+                <?php foreach ($user_query->results as $user):
+                
+                    ?>
                     <tr>
                         <td class="text-wrap text-break">
                             <?php echo esc_html($user->ID); ?>
@@ -59,7 +62,7 @@ if (!empty($user_query->results)) {
                             <a href="<?php echo esc_url(get_permalink(get_page_by_title('User')) . '?user_id=' . $user->ID); ?>"
                                 class="btn-primary">View</a>
                         </td>
-                       
+
                     </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -67,7 +70,7 @@ if (!empty($user_query->results)) {
     </div>
     <?php
 } else {
-    echo('
+    echo ('
     <h2 class="text-center color-gray p-5 m-5">Users not found.</h2>
     ');
 

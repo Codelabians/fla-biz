@@ -47,9 +47,9 @@ session_start();
 
   <!-- custom alert -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.css">
-  
-  
-  
+
+
+
 
   <?php
   wp_head();
@@ -59,13 +59,22 @@ session_start();
 
 <body>
   <nav id="tf-menu" class="navbar navbar-expand-lg navbar-fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">
+    <div class="container">
+      <a class="navbar-brand" href="<?php echo home_url()?>">
         <?php
-        if (function_exists('the_custom_logo')) {
-          the_custom_logo();
+        if (function_exists('custom_custom_logo_setup')) {
+          $custom_logo_id = get_theme_mod('custom_logo');
+          $logo_image = wp_get_attachment_image_src($custom_logo_id, 'full');
+          if ($logo_image) {
+            echo '<a href="' . esc_url(home_url('/')) . '">';
+            echo '<img style="width:12rem;" src="' . esc_url($logo_image[0]) . '" alt="' . get_bloginfo('name') . '">';
+            echo '</a>';
+          } else {
+            echo '<h1 class="text-light">' . get_bloginfo('name') . '</h1>';
+          }
         }
         ?>
+
       </a>
       <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -74,11 +83,11 @@ session_start();
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav navbar-nav ms-auto">
-          <li><a href="/" class="scroll nav-link text-white">Home</a></li>
+          <li><a href="<?php echo home_url()?>" class="scroll nav-link text-white">Home</a></li>
 
-          <li><a href="/faq/" class="scroll nav-link text-white">FAQ</a></li>
-          <li><a href="/contact/" class="scroll nav-link text-white">Contact</a></li>
-          <li><a href="/infringment-protection/" class="scroll nav-link text-white">Infringement Protection</a></li>
+          <li><a href="<?php echo home_url()?>#faq/" class="scroll nav-link text-white">FAQ</a></li>
+          <li><a href="<?php echo home_url()?>#contact/" class="scroll nav-link text-white">Contact</a></li>
+          <li><a href="<?php echo home_url()?>#infringment-protection/" class="scroll nav-link text-white">Infringement Protection</a></li>
           <?php
           if (is_user_logged_in()) {
             $user = wp_get_current_user();
@@ -87,11 +96,11 @@ session_start();
             <li><a href="/record" class="scroll nav-link text-white">
                 <?= ucfirst($user->data->user_nicename) ?>
               </a></li>
-            <li><a href="<?= wp_logout_url("/") ?>" class="scroll nav-link text-white">Logout</a></li>
+            <li><a href="<?php echo wp_logout_url("/") ?>" class="scroll nav-link text-white">Logout</a></li>
             <?php
           } else {
             ?>
-            <li><a href="/login/" class="scroll nav-link text-white">Login</a></li>
+            <li><a href="<?php echo home_url()?>/wp-admin" class="scroll nav-link text-white">Login</a></li>
             <?php
           }
           ?>

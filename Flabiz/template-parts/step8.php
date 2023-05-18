@@ -151,7 +151,7 @@ get_header();
                 </div>
                 <div class="ml-md-auto col-sm-12 d-flex ">
                     <div class="box-checkbox  mt-3 mb-3 ">
-                        <input type="checkbox" id="accept " class="form-check-input shadow" value="accept" name="accept" required>
+                        <input type="checkbox" id="accept " class="form-check-input shadow" value="I accept the User Agreement" name="accept" required>
                         <label for="">I accept the <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">User Agreement</a> and The Notice of Annual Report</label>
                     </div>
                 </div>

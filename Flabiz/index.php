@@ -17,7 +17,7 @@
 get_header();
 ?>
 <div id="tf-home">
-    <div class=""> <!-- Overlay Color -->
+    <div class="header"> <!-- Overlay Color -->
         <div class="container"> <!-- container -->
             <div class="content-heading text-center"> <!-- Input Your Home Content Here -->
                 <h1>

@@ -909,54 +909,51 @@ jQuery(document).ready(function () {
     if (parts.length > 1) {
         span1.textContent = parts[0];
         span2.textContent = "- " + parts[1];
-      } else {
+    } else {
         span1.textContent = parts[0];
-      }
-      if (parts1.length > 1) {
-        span4.textContent = parts1[0];
-        span3.textContent = "- " + parts1[1];
-      } else {
-        span4.textContent = parts1[0];
-      }
-      if (parts2.length > 1) {
+    }
+    if (parts1.length > 1) {
+        span3.textContent = parts1[0];
+        span4.textContent = "- " + parts1[1];
+    } else {
+        span3.textContent = parts[0];
+    }
+    if (parts2.length > 1) {
         span5.textContent = parts2[0];
         span6.textContent = "- " + parts2[1];
-      } else {
+    } else {
         span5.textContent = parts2[0];
-      }
-      if (parts3.length > 1) {
+    }
+    if (parts3.length > 1) {
         span7.textContent = parts3[0];
         span8.textContent = "- " + parts3[1];
-      } else {
-        span7.textContent = parts3[0];
-      }
-
+    } else {
+        span8.textContent = parts3[0];
+    }
     // Get the HTML element where you want to display the span elements
     const applicationElement = document.getElementById("application");
     const applicationElement1 = document.getElementById("applications");
-     // Get the HTML element where you want to display the span elements
-     const applicationElement2 = document.getElementById("applicationss");
-     const applicationElement3 = document.getElementById("applicationsss");
-
-
+    const applicationElement2 = document.getElementById("applicationss");
+    const applicationElement3 = document.getElementById("applicationsss");
     // Replace the original content of the HTML element with the two new span elements
     applicationElement.innerHTML = "";
     applicationElement.appendChild(span1);
     applicationElement.appendChild(span2);
-     // Replace the original content of the HTML element with the two new span elements
-     applicationElement1.innerHTML = "";
-     applicationElement1.appendChild(span4);
-     applicationElement1.appendChild(span3);
-     applicationElement2.innerHTML = "";
-     applicationElement2.appendChild(span5);
-     applicationElement2.appendChild(span6);
-     applicationElement3.innerHTML = "";
-     applicationElement3.appendChild(span7);
-     applicationElement3.appendChild(span8);
-
+    // Replace the original content of the HTML element with the two new span elements
+    applicationElement1.innerHTML = "";
+    applicationElement1.appendChild(span3);
+    applicationElement1.appendChild(span4);
+    // Replace the original content of the HTML element with the two new span elements
+    applicationElement2.innerHTML = "";
+    applicationElement2.appendChild(span5);
+    applicationElement2.appendChild(span6);
+    // Replace the original content of the HTML element with the two new span elements
+    applicationElement3.innerHTML = "";
+    applicationElement3.appendChild(span7);
+    applicationElement3.appendChild(span8);
     // Ajax request send for server
     jQuery(document).on("click", "#final", function () {
-
+        console.log('final btn clicked');
         jQuery.ajax({
             type: 'POST',
             url: jQuery(this).data("url"),

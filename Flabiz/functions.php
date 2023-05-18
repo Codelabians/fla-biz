@@ -955,11 +955,14 @@ function insert_form_data()
 
 	}
 
-	$to = 'jabbar.azam@codelab.pk';
-	$subject = 'Test email';
-	$message = 'This is a test email message';
-	$headers = array('Content-Type: text/html; charset=UTF-8');
-	wp_mail($to, $subject, $message, $headers);
+	$to = 'jabbar.azam@codelab.pk';  // Replace with the recipient's email address
+    $subject = 'test email title';     // Replace with your email subject
+    $message = 'test email body';     // Replace with your email content
+    
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+    
+    // Send the email
+    wp_mail($to, $subject, $message, $headers);
 
 	// Send response back to JavaScript
 	wp_send_json_success('User created successfully, and its data is inserted.');
@@ -970,12 +973,22 @@ function insert_form_data()
 
 
 
-// restricte users and user page 
-function restrict_page_access()
-{
-	if (!current_user_can('manage_options') && (is_page('users') || is_page('user'))) {
-		wp_redirect(home_url());
-		exit;
-	}
+// // restricte users and user page 
+// function restrict_page_access()
+// {
+// 	if (!current_user_can('manage_options') && (is_page('users') || is_page('user'))) {
+// 		wp_redirect('restricted');
+// 		exit;
+// 	}
+// }
+// add_action('wp', 'restrict_page_access');
+
+
+function wpse_set_noindex() {
+    if (is_page(array('user', 'users', 'restricted'))) { 
+        $meta_tags = get_option('wpse_noindex_meta_tags', array());
+        $meta_tags['noindex'] = 'noindex';
+        update_option('wpse_noindex_meta_tags', $meta_tags);
+    }
 }
-add_action('wp', 'restrict_page_access');
+add_action('wp_head', 'wpse_set_noindex');

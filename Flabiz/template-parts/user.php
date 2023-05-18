@@ -2,12 +2,13 @@
 // Template Name: User
 
 ob_start();
-get_header();
-
-if ( ! current_user_can( 'manage_options' ) ) {
-    wp_redirect( home_url() );
+if (!current_user_can('manage_options')) {
+    wp_redirect(home_url() . '/restricted');
     exit;
 }
+
+get_header();
+
 
 // Get user ID from query parameter
 $user_id = isset($_GET['user_id']) ? intval($_GET['user_id']) : 0;
@@ -42,12 +43,12 @@ $exclude_keys = array(
 // Output the user metadata
 if ($user_data) {
     ?>
-    <div class=" ">
+    <div class="">
 
         <div class="container">
             <h2 class="text-center p-5 fw-bold">User
-                <strong >
-                    <?php echo esc_html($user_id) ?>
+                <strong>
+                    #<?php echo esc_html($user_id) ?>
                 </strong>
                 Data
             </h2>
@@ -67,7 +68,7 @@ if ($user_data) {
             <?php
             if (isset($_POST['delete_user'])) {
                 // Get the user ID from the URL parameter
-                
+        
 
                 $user_id = intval($_GET['user_id']);
                 $user_meta = get_user_meta($user_id);
@@ -96,7 +97,8 @@ if ($user_data) {
                             style="height: 100px"></textarea>
                         <div class="d-flex justify-content-around">
                             <button class="btn btn-primary" type="submit">Add Note</button>
-                            <button onclick="return confirm('Are you sure you want to delete this user?')" class="btn btn-danger" name="delete_user">Delete User</button>
+                            <button onclick="return confirm('Are you sure you want to delete this user?')"
+                                class="btn btn-danger" name="delete_user">Delete User</button>
                         </div>
                     </form>
                 </div>
@@ -138,6 +140,7 @@ if ($user_data) {
                 }
                 ?>
         </div>
+        <div class="container table-responsive">
 
         <table class="border rounded-3 table table-light table-striped-columns text-center">
             <?php
@@ -171,10 +174,11 @@ if ($user_data) {
                 }
             } ?>
         </table>
+        </div>
     </div>
     <?php
 } else {
-    echo('<h2 class="text-center color-gray ">User not found.</h2>');
+    echo ('<h2 class="text-center color-gray ">User not found.</h2>');
 }
 
 
@@ -188,11 +192,11 @@ $officers = json_decode($officers_data, true);
 // Check if officers data is available
 if ($officers) {
     ?>
-    <div class="container ">
+    <div class="container table-responsive">
         <h2 class="text-center p-5 fw-bold">Officers</h2>
-        <table class="border rounded-3 table table-light table-striped-columns text-center">
-            <thead>
-                <tr>
+        <table class="border rounded-3 table table-light table-striped text-center">
+            <thead >
+                <tr class="table-dark border-dark">
                     <th>Position</th>
                     <th>First Name</th>
                     <th>Last Name</th>
@@ -237,7 +241,7 @@ if ($officers) {
     </div>
     <?php
 } else {
-    echo('<h2 class="text-center color-gray mt-5">Officers Data not found.</h2> </br>');
+    echo ('<h2 class="text-center color-gray mt-5">Officers Data not found.</h2> </br>');
 }
 
 
@@ -251,11 +255,11 @@ $directors = json_decode($directors_data);
 
 if ($directors) {
     ?>
-    <div class="container">
+    <div class="container table-responsive">
         <h2 class="text-center pb-5 pt-5 fw-bold">Directors</h2>
-        <table class="border rounded-3 table table-light table-striped-columns text-center">
+        <table class="border rounded-3 table table-light table-striped text-center">
             <thead>
-                <tr>
+                <tr class="table-dark border-dark">
                     <th>Name</th>
                     <th>Email</th>
                     <th>Address</th>
@@ -296,7 +300,7 @@ if ($directors) {
     </div>
     <?php
 } else {
-    echo('<h2 class="text-center color-gray ">Directors Data not found.</h2>');
+    echo ('<h2 class="text-center color-gray ">Directors Data not found.</h2>');
 }
 
 
