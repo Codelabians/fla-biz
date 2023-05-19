@@ -9,7 +9,7 @@ get_header();
             <form data-action="#" id="myForm" class=" m-3">
                 <h2>Create an account</h2>
                 <p>With this username and password, you can return to this website at any time to complete or check on
-                    the status of your application. An email confirmation will be sent to</p>
+                    the status of your application. An email confirmation will be sent to <strong id="show_Email"></strong> </p>
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-12">
                         <label for="first_name" class="form-label">First Name</label>

@@ -37,6 +37,15 @@ jQuery(document).ready(function () {
     jQuery('#P_Expiration').text(formData.Expiration);
     jQuery('#FormpaymentCard').text(formData.paymentCard);
     jQuery('#signature').text(formData.signature);
+    jQuery('#show_Email').text(formData.primary_email);
+    jQuery('#NAME').text(formData.first_name);
+    jQuery('#ADRESS').text(formData.personal_address);
+    // jQuery('#officer_position_data').text(formData.personal_address);
+
+
+
+
+
     // Getting Modal
     if (jQuery("#errorModal").length) {
         let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
@@ -871,11 +880,40 @@ jQuery(document).ready(function () {
             }
         }
     }
+    
+    function iterateofficers() {
+        let officeroutput = "";
+        let presidentName = "";
+    
+        if (formData.officers != undefined) {
+            for (i = 0; i < formData.officers.length; i++) {
+                officeroutput += "<li>" + formData.officers[i].first_name + " " + formData.officers[i].address + "</li>";
+    
+                if (formData.officers[i].position === "President") {
+                    // Save the president's name
+                    presidentName = formData.officers[i].first_name;
+                }
+            }
+    
+            if (jQuery("#officerLis").length) {
+                jQuery("#officerLis").html(officeroutput);
+            }
+    
+            if (presidentName !== "") {
+                if (jQuery("#presidentName").length) {
+                    jQuery("#presidentName").text(presidentName);
+                }
+            }
+        }
+    }
+    
+    
+    
     const value = formData.chekbox3;
     const value1 = formData.chekbox4;
     const value2 = formData.chekbox6;
     const value3 = formData.chekbox5;
-    
+
     // Split the string value into two parts
     const parts = value.split(" - ");
     const parts1 = value1.split(" - ");
@@ -889,12 +927,12 @@ jQuery(document).ready(function () {
     span1.style.float = "left"; // float to the left
     const span2 = document.createElement("span");
     span2.style.float = "right"; // float to the right
-        // Create the two span elements
-        const span4 = document.createElement("span");
-        span4.style.float = "left"; // float to the left
-        const span3 = document.createElement("span");
-        span3.style.float = "right"; // float to the right
-         // Create the two span elements
+    // Create the two span elements
+    const span4 = document.createElement("span");
+    span4.style.float = "left"; // float to the left
+    const span3 = document.createElement("span");
+    span3.style.float = "right"; // float to the right
+    // Create the two span elements
     const span5 = document.createElement("span");
     span5.style.float = "left"; // float to the left
     const span6 = document.createElement("span");
@@ -903,7 +941,7 @@ jQuery(document).ready(function () {
     span7.style.float = "left"; // float to the left
     const span8 = document.createElement("span");
     span8.style.float = "right"; // float to the right
-        
+
 
     // Set the text content of the span elements to the parts of the string
     if (parts.length > 1) {

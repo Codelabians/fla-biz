@@ -15,14 +15,14 @@ get_header();
                 <div class="form-row form-group d-flex flex-column">
                     <label for="">Agriculter</label>
                     <div>
-                        <input type="number" class="form-control shadow " id="agri" name="agri">
+                        <input type="number" id="agri" name="agri">
                         <small>farm worker</small>
                     </div>
                 </div>
                 <div class="form-row form-group d-flex flex-column">
                     <label for="">other</label>
                     <div>
-                        <input type="number" class="form-control shadow " name="others" id="others">
+                        <input type="number" name="others" id="others">
                         <small>all other</small>
                     </div>
                 </div>
@@ -31,38 +31,37 @@ get_header();
                 </p>
                 <div class="form-row form-group d-flex ">
                     <label for="first_day">Date</label>
-                    <input type="date" class="shadow" id="first_day" name="first_day">
+                    <input type="date" id="first_day" name="first_day">
                 </div>
                 <p>
                     <strong>What is the expected first date wages will be paid?</strong>
                 </p>
                 <div class="form-row form-group d-flex ">
                     <label for="first_date">Date</label>
-                    <input type="date" class="shadow" id="first_date shadow" name="first_date">
+                    <input type="date" id="first_date shadow" name="first_date">
                 </div>
                 <p>To file an EIN Application with the IRS, it is necessary to supply the Social Security number of the
                     President of your new corporation. Please provide that below.</p>
 
-                <div class="row d-flex" id="officer_position-data">
-               
+                <div class="row ">
+                    <span>president Name:</span>
+                    <span id="presidentName"></span>
                 </div>
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-12">
                         <label for="primary_ssn" class="form-label">SSN:</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-sm-12">
-                        <input class="form-control ssn shadow" data-required="true" data-error="ssn number is required "
-                            id="primary_ssn" name="primary_ssn" type="text" onfocus="this.type='text'"
-                            onblur="this.type='password'">
+                        <input class="form-control ssn " data-required="true" data-error="ssn number is required " id="primary_ssn" name="primary_ssn" type="text" onfocus="this.type='text'" onblur="this.type='password'">
                     </div>
                 </div>
                 <div class="row mt-5">
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
                         <a id="my-link" href="step-five" class="btn btn-success text-white shadow ">Previous</a>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                            <input type="submit" value="Next" class="btn border-success text-success shadow "> 
-                        </div>
+                        <input type="submit" value="Next" class="btn border-success text-success shadow ">
+                    </div>
                 </div>
             </form>
         </div>
@@ -93,4 +92,4 @@ get_header();
 
     <?php
     get_footer()
-        ?>
+    ?>

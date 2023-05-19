@@ -28,34 +28,14 @@ get_header();
                     <p>
                         As a secondary option, you or someone at your company may prefer to act as the registered agent for the company being formed
                     </p>
-                    <div class="person-info fade show " role="alert">
-                        <div id="business-manager-detail-table">
-                            <p><strong>We show your information as:</strong></p>
-                            <!--Main User Data Table-->
-                            <ul class="list-grpup list-group-flush">
-                                <li class="list-group-item d-flex justify-content-lg-between">
-                                    <span class="info-title">Physical Adress</span>
-                                    <span class="info-data me-3" id="physicalasdress"></span>
-                                </li>
-                            </ul>
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr class="bg-light">
-                                        <th>Name</th>
-                                        <th>Address</th>
-                                        <th>Email</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td id="main-name"></td>
-                                        <td id="main-address"></td>
-                                        <td id="main-email"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    <p><strong>We show your information as:</strong></p>
+                    <h5 class=" text-dark alert alert-secondary show shadow">
+                        <p id="NAME"></p>
+                        <p id="ADRESS"></p>
+                    </h5>
+
+                    <h3>Do you wish to file the S Corporation election form?</h3>
+
                     <p>Will you be your own registered agent, using the information as above?</p>
                     <div>
                         <h3>register agent agreement</h3>
@@ -71,8 +51,8 @@ get_header();
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <a href="step-three" class="btn btn-success text-white shadow">Previous</a>
                         </div>
-                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <input type="submit" value="Next" class="btn border-success text-success shadow "> 
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <input type="submit" value="Next" class="btn border-success text-success shadow ">
                         </div>
                     </div>
                 </div>
