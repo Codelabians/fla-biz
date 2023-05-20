@@ -134,7 +134,7 @@ get_header();
                         <label for="phone_number8" class="form-label">phone number</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
-                        <input type="number" class="form-control address_fields shadow" data-required="true" data-error="phone number is required" id="phone_number8" name="phone_number8">
+                        <input type="number" class="form-control address_fields shadow " data-required="true" data-error="phone number is required" id="phone_number8" name="phone_number8">
                     </div>
                 </div>
                 <h3>
@@ -151,7 +151,7 @@ get_header();
                 </div>
                 <div class="ml-md-auto col-sm-12 d-flex ">
                     <div class="box-checkbox  mt-3 mb-3 ">
-                        <input type="checkbox" id="accept " class="form-check-input shadow" value="I accept the User Agreement" name="accept" required>
+                        <input type="checkbox" id="accept " data-required="true" data-error="first check the agriment" class="form-check-input shadow" checked value="I accept the User Agreement" name="accept" required>
                         <label for="">I accept the <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">User Agreement</a> and The Notice of Annual Report</label>
                     </div>
                 </div>

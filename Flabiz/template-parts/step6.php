@@ -26,25 +26,25 @@ get_header();
                         <small>all other</small>
                     </div>
                 </div>
-                <p>
+                <p class="mt-5">
                     <strong>What date do you expect will be your first day in business?</strong>
                 </p>
-                <div class="form-row form-group d-flex ">
-                    <label for="first_day">Date</label>
+                <div class="form-row form-group d-flex  ">
                     <input type="date" id="first_day" name="first_day">
+                    <label for="first_day">Date</label>
                 </div>
-                <p>
+                <p class="mt-5">
                     <strong>What is the expected first date wages will be paid?</strong>
                 </p>
                 <div class="form-row form-group d-flex ">
-                    <label for="first_date">Date</label>
                     <input type="date" id="first_date shadow" name="first_date">
+                    <label for="first_date">Date</label>
                 </div>
                 <p>To file an EIN Application with the IRS, it is necessary to supply the Social Security number of the
                     President of your new corporation. Please provide that below.</p>
 
-                <div class="row ">
-                    <span>president Name:</span>
+                <div class="col">
+                    <strong>president Name:</strong>
                     <span id="presidentName"></span>
                 </div>
                 <div class="row">
@@ -52,7 +52,7 @@ get_header();
                         <label for="primary_ssn" class="form-label">SSN:</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-sm-12">
-                        <input class="form-control ssn " data-required="true" data-error="ssn number is required " id="primary_ssn" name="primary_ssn" type="text" onfocus="this.type='text'" onblur="this.type='password'">
+                        <input class="form-control ssn " data-required="true" data-error="ssn number is required " placeholder="111-11-1111" id="primary_ssn" name="primary_ssn" type="text" onfocus="this.type='text'" onblur="this.type='password'">
                     </div>
                 </div>
                 <div class="row mt-5">

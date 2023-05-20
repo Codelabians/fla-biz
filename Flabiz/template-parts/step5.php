@@ -72,7 +72,7 @@ get_header();
                     <div class="ml-md-auto col-sm-12 d-flex">
                         <input type="checkbox" value=" Corporate kit with bylaws  - $20" id="chekbox5" class="form-check-input me-1" name="chekbox5">
                         <label for="chekbox5">
-                            <span>Corporate kit with bylaws, and a personalized binder for all corporate documents -
+                            <span>Corporate kit with bylaws, -
                                 $20</span>
                         </label>
                     </div>
@@ -112,8 +112,8 @@ get_header();
                 </p>
                 <div class="ml-md-auto col-sm-12 d-flex justify-content-between align-items-center ">
                     <div class="box-checkbox border border-2 border-success rounded shadow m-2 p-2 ">
-                        <input class="custom-control-input m-2 form-check-input" value="I need file for EIN" checked
-                            type="checkbox" id="checkbox7" name="checkbox7">
+                        <input class="custom-control-input m-2 form-check-input checkbox7" value="I need file for EIN" checked
+                            type="checkbox"  id="checkbox7" name="checkbox7">
                         <label for="checkbox7">
                             <span>
                                 <h4>I need file for EIN</h4>

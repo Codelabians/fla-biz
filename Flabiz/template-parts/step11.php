@@ -2,6 +2,19 @@
 // Template Name: step11
 get_header();
 ?>
+<style>
+    .password-wrapper {
+        position: relative;
+    }
+
+    .password-toggle {
+        position: absolute;
+        top: 54%;
+        left: 900px;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+</style>
 <div class="container">
     <div class="row ">
         <div class="col-sm-12 col-md-10 col-lg-8">
@@ -40,14 +53,18 @@ get_header();
                         <label for="password" class="form-label">password</label>
                     </div>
                     <div class="col-md-9 col-lg-9 col-sm-12">
-                        <input data-required="true" data-error="password isrequired" class="form-control shadow" id="password" name="password" type="password">
+                        <input data-required="true" data-error="password isrequired" class="form-control shadow position-relative" id="password" name="password" type="password">
                     </div>
-                    <div class="form-check">
+                    <i class="password-toggle"  onclick="togglePasswordVisibility()">
+                        <!-- <i class="fas fa-eye"></i> -->
+                        👁️
+                    </i>
+                    <!-- <div class="form-check">
                         <input class="form-check-input shadow" type="checkbox" id="show-password-checkbox">
                         <label class="form-check-label" for="show-password-checkbox">
                             Show password
                         </label>
-                    </div>
+                    </div> -->
                 </div>
 
                 <h2 class="pt-5 pb-2">Note:</h2>
@@ -65,7 +82,7 @@ get_header();
                         <a href="step-ten" class="btn btn-success text-white shadow">Previous</a>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 ">
-                        <input class="btn btn-success text-white shadow" type="submit" value="Save Data" id="final" data-url=<?= admin_url("admin-ajax.php") ?> >
+                        <input class="btn btn-success text-white shadow" type="submit" value="Save Data" id="final" data-url=<?= admin_url("admin-ajax.php") ?>>
                     </div>
                 </div>
                 <!-- Error Modal -->
@@ -95,6 +112,17 @@ get_header();
 
 
 </div>
+<script>
+    function togglePasswordVisibility() {
+        var input = document.getElementById("password");
+
+        if (input.type === "password") {
+            input.type = "text";
+        } else {
+            input.type = "password";
+        }
+    }
+</script>
 <?php
 get_footer();
 

@@ -19,14 +19,13 @@ get_header();
 
                 <div class="ml-md-auto col-sm-12 d-flex justify-content-between align-items-center mt-5">
                     <div class="box-checkbox border border-2 border-success rounded shadow m-2 p-2 ">
-                        <input class="custom-control-input m-2 form-check-input " checked type="checkbox" id="checkbox7" name="checkbox7">
-                        <label for="checkbox7">
+                        <input class="custom-control-input m-2 form-check-input " type="checkbox" id="checkbox11" value="Sub Election  -  $39.00" name="checkbox11">
+                        <label for="checkbox11">
                             <span>
-                                <h4>I neend file for EIN</h4>
+                                <h4>Yes, file the S Corporation election form</h4>
                             </span>
                         </label>
                     </div>
-                    <a class="mt-2" id="my-link" style="cursor:pointer;">I don't neend file for EIN</a>
                 </div>
                 <div class="row mt-5">
                     <div class="col-lg-6 col-md-6 col-sm-12">

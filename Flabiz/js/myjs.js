@@ -23,9 +23,6 @@ jQuery(document).ready(function () {
     jQuery('#alternate_name').text(formData.alternate_name);
     jQuery('#city').text(formData.city);
     jQuery('#application').text(formData.chekbox7);
-    // Get the string value you want to split
-    // Get the string value you want to split
-
     jQuery('#agrii').text(formData.agri);
     jQuery('#others').text(formData.others);
     jQuery('#pssn').text(formData.primary_ssn);
@@ -360,11 +357,20 @@ jQuery(document).ready(function () {
                         isValid = false;
                         errorMessage += "<li> card number can't not be greater or less then 16 </li>"
                         input.classList.add('error');
+                    }else if (input.id === "phone_number8" && input.value.length > 12) {
+                        isValid = false;
+                        errorMessage += "<li> PHONE number can't not be greater or less then 12 </li>"
+                        input.classList.add('error');
+                    }else if (input.id === "phone_number8" && input.value.length < 12) {
+                        isValid = false;
+                        errorMessage += "<li> PHONE number can't not be greater or less then 12 </li>"
+                        input.classList.add('error');
                     } else {
                         input.classList.remove('error');
                     }
                 }
             }
+            
             errorMessage += "</ol>";
             // If the form is invalid, don't save the data and display an error message
             if (!isValid) {
@@ -843,6 +849,13 @@ jQuery(document).ready(function () {
                 $("#rr").hide();
             }
         });
+        $("#checkbox11").click(function () {
+            if ($(this).is(":checked")) {
+                $("#order11").show();
+            } else {
+                $("#order11").hide();
+            }
+        });
 
     });
 
@@ -880,7 +893,7 @@ jQuery(document).ready(function () {
             }
         }
     }
-    
+
     function iterateofficers() {
         let officeroutput = "";
         let presidentName = "";
@@ -913,13 +926,20 @@ jQuery(document).ready(function () {
     const value1 = formData.chekbox4;
     const value2 = formData.chekbox6;
     const value3 = formData.chekbox5;
+    const value4 = formData.chekbox;
+    const value11 = formData.checkbox11;
+
+
 
     // Split the string value into two parts
     const parts = value.split(" - ");
     const parts1 = value1.split(" - ");
-    // Split the string value into two parts
     const parts2 = value2.split(" - ");
     const parts3 = value3.split(" - ");
+    const parts4 = value4.split(" - ");
+    const parts11 = value11.split(" - ");
+
+
 
 
     // Create the two span elements
@@ -941,7 +961,14 @@ jQuery(document).ready(function () {
     span7.style.float = "left"; // float to the left
     const span8 = document.createElement("span");
     span8.style.float = "right"; // float to the right
-
+    const span9 = document.createElement("span");
+    span9.style.float = "left"; // float to the left
+    const span10 = document.createElement("span");
+    span10.style.float = "right"; // float to the right
+    const span11 = document.createElement("span");
+    span11.style.float = "left"; // float to the left
+    const span12 = document.createElement("span");
+    span12.style.float = "right"; // float to the right
 
     // Set the text content of the span elements to the parts of the string
     if (parts.length > 1) {
@@ -968,11 +995,27 @@ jQuery(document).ready(function () {
     } else {
         span8.textContent = parts3[0];
     }
+    if (parts4.length > 1) {
+        span9.textContent = parts4[0];
+        span10.textContent = "- " + parts4[1];
+    } else {
+        span9.textContent = parts4[0];
+    }
+    if (parts11.length > 1) {
+        span11.textContent = parts11[0];
+        span12.textContent = "- " + parts11[1];
+    } else {
+        span11.textContent = parts11[0];
+    }
     // Get the HTML element where you want to display the span elements
     const applicationElement = document.getElementById("application");
     const applicationElement1 = document.getElementById("applications");
     const applicationElement2 = document.getElementById("applicationss");
     const applicationElement3 = document.getElementById("applicationsss");
+    const applicationElement4 = document.getElementById("application4");
+    const applicationElement11 = document.getElementById("application11");
+
+
     // Replace the original content of the HTML element with the two new span elements
     applicationElement.innerHTML = "";
     applicationElement.appendChild(span1);
@@ -989,7 +1032,16 @@ jQuery(document).ready(function () {
     applicationElement3.innerHTML = "";
     applicationElement3.appendChild(span7);
     applicationElement3.appendChild(span8);
+     // Replace the original content of the HTML element with the two new span elements
+     applicationElement4.innerHTML = "";
+     applicationElement4.appendChild(span9);
+     applicationElement4.appendChild(span10);
+     // Replace the original content of the HTML element with the two new span elements
+     applicationElement11.innerHTML = "";
+     applicationElement11.appendChild(span11);
+     applicationElement11.appendChild(span12);
     // Ajax request send for server
+
     jQuery(document).on("click", "#final", function () {
         console.log('final btn clicked');
         jQuery.ajax({

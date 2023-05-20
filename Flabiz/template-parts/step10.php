@@ -210,7 +210,7 @@ get_header();
                 </div>
                 <div class="card-summary card m-3 shadow">
                     <h5 class="card-header mt-0 ">Payment information
-                        <a href="step-one" class=" float-end text-decoration-none ">Edit</a>
+                        <a href="step-nine" class=" float-end text-decoration-none ">Edit</a>
                     </h5>
                     <ul class="list-grpup list-group-flush">
                         <li class="list-group-item d-flex justify-content-lg-between">
