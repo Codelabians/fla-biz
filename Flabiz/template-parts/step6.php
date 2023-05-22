@@ -37,7 +37,7 @@ get_header();
                     <strong>What is the expected first date wages will be paid?</strong>
                 </p>
                 <div class="form-row form-group d-flex ">
-                    <input type="date" id="first_date shadow" name="first_date">
+                    <input type="date" id="first_date " name="first_date">
                     <label for="first_date">Date</label>
                 </div>
                 <p>To file an EIN Application with the IRS, it is necessary to supply the Social Security number of the
@@ -56,10 +56,10 @@ get_header();
                     </div>
                 </div>
                 <div class="row mt-5">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
                         <a id="my-link" href="step-five" class="btn btn-success text-white shadow ">Previous</a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
                         <input type="submit" value="Next" class="btn border-success text-success shadow ">
                     </div>
                 </div>

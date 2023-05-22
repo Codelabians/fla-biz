@@ -385,6 +385,7 @@ jQuery(document).ready(function () {
 
         });
     }
+   
 
 
     // Saving data In Session Storage
@@ -787,6 +788,12 @@ jQuery(document).ready(function () {
         });
     });
 
+    if(document.getElementById("chekbox3").checked) {
+        document.getElementById('chekbox3').value="Fictitious Name (DBA) - $69";
+        console.log(document.getElementById('chekbox3').value)
+    }
+   
+
     //   show data with checkbox in sidebar
     $(function () {
         $("#chekbox").click(function () {
@@ -796,22 +803,29 @@ jQuery(document).ready(function () {
             } else {
                 $(".ragreement").show();
                 $("#agriment").hide();
+               
             }
         });
         $("#chekbox2").click(function () {
             if ($(this).is(":checked")) {
                 $("#order2").show();
+
             } else {
                 $("#order2").hide();
+               
             }
         });
         $("#chekbox3").click(function () {
             if ($(this).is(":checked")) {
                 $("#order3").show();
                 $(".Fictitiousname").show();
+                
+
             } else {
                 $("#order3").hide();
                 $(".Fictitiousname").hide();
+                
+                
             }
         });
         $("#chekbox4").click(function () {
@@ -819,6 +833,8 @@ jQuery(document).ready(function () {
                 $("#order4").show();
             } else {
                 $("#order4").hide();
+               
+
             }
         });
         $("#chekbox5").click(function () {
@@ -826,6 +842,9 @@ jQuery(document).ready(function () {
                 $("#order5").show();
             } else {
                 $("#order5").hide();
+                
+
+
             }
         });
         $("#chekbox6").click(function () {
@@ -833,6 +852,9 @@ jQuery(document).ready(function () {
                 $("#order6").show();
             } else {
                 $("#order6").hide();
+          
+
+
             }
         });
         $("#chekbox7").click(function () {
@@ -840,6 +862,9 @@ jQuery(document).ready(function () {
                 $("#order7").show();
             } else {
                 $("#order7").hide();
+                
+                
+
             }
         });
         $("#checbox").click(function () {
@@ -847,6 +872,8 @@ jQuery(document).ready(function () {
                 $("#rr").show();
             } else {
                 $("#rr").hide();
+                
+
             }
         });
         $("#checkbox11").click(function () {
@@ -854,11 +881,12 @@ jQuery(document).ready(function () {
                 $("#order11").show();
             } else {
                 $("#order11").hide();
+                
+
             }
         });
 
     });
-
     iterateDirectors();
     function iterateDirectors() {
         let output = "";
@@ -1040,8 +1068,8 @@ jQuery(document).ready(function () {
      applicationElement11.innerHTML = "";
      applicationElement11.appendChild(span11);
      applicationElement11.appendChild(span12);
-    // Ajax request send for server
-
+    // // // Ajax request send for server
+       
     jQuery(document).on("click", "#final", function () {
         console.log('final btn clicked');
         jQuery.ajax({

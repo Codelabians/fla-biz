@@ -22,7 +22,7 @@ get_header();
                             <label for="shares" class="form-label">Shares</label>
                         </div>
                         <div class="col-md-9 col-lg-9 col-sm-12">
-                            <input class="form-control shares shadow" value="2000" class="form-check-input me-1"
+                            <input class="form-control shares " value="2000" class="form-check-input me-1"
                                 data-required="true" data-error="shares is required" id="shares" name="shares"
                                 type="number">
                         </div>
@@ -45,7 +45,7 @@ get_header();
                 <div class="form-row form-group m-3 ">
                     <div class="ml-md-auto col-sm-12 ">
                         <input type="checkbox" id="chekbox3" class="form-check-input me-1" name="chekbox3"
-                            value="Fictitious Name (DBA) - $69">
+                            value="">
                         <label for="chekbox3">
                             <span>Fictitious Name (DBA) - $69</span>
                         </label>
@@ -123,10 +123,10 @@ get_header();
                     <a class="mt-2" id="my-link" style="cursor:pointer;">I don't need file for EIN</a>
                 </div>
                 <div class="row mt-5">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
                         <a href="step-four" class="btn btn-success text-white shadow">Previous</a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
                             <input type="submit" value="Next" class="btn border-success text-success shadow "> 
                         </div>
                 </div>

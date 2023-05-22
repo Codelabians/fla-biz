@@ -18,8 +18,8 @@ get_header();
 
 
                 <div class="ml-md-auto col-sm-12 d-flex justify-content-between align-items-center mt-5">
-                    <div class="box-checkbox border border-2 border-success rounded shadow m-2 p-2 ">
-                        <input class="custom-control-input m-2 form-check-input " type="checkbox" id="checkbox11" value="Sub Election  -  $39.00" name="checkbox11">
+                    <div class="box-checkbox border border-2 border-success rounded  m-2 p-2 ">
+                        <input class="custom-control-input m-2 form-check-input " type="checkbox" id="checkbox11" value="SubElection - $29" name="checkbox11">
                         <label for="checkbox11">
                             <span>
                                 <h4>Yes, file the S Corporation election form</h4>
@@ -28,10 +28,10 @@ get_header();
                     </div>
                 </div>
                 <div class="row mt-5">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
                         <a id="my-link" href="step-six" class="btn btn-success text-white shadow ">Previous</a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
                             <input type="submit" value="Next" class="btn border-success text-success shadow "> 
                         </div>
                 </div>

@@ -48,10 +48,10 @@ get_header();
                 <!-- for next -->
                 <div class="row mt-1 d-flex flex-column justify-content-end ">
                     <div class="row mt-5">
-                        <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
                             <a href="step-three" class="btn btn-success text-white shadow">Previous</a>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
                             <input type="submit" value="Next" class="btn border-success text-success shadow ">
                         </div>
                     </div>
