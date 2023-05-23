@@ -367,51 +367,51 @@ jQuery(document).ready(function () {
                         input.classList.add('error');
                     } else if (input.id === "chekbox3") {
                         if (input.checked) {
-                            input.value = "Fictitious Name (DBA) - $69";
-                        }else{
+                            input.value = "Fictitious Name (DBA) - 69";
+                        } else {
                             input.value = "Fictitious Name (DBA) - don't need";
                         }
                     } else if (input.id === "chekbox") {
                         if (input.checked) {
-                            input.value = "Register agent service - $69";
-                        }else{
+                            input.value = "Register agent service - 69";
+                        } else {
                             input.value = "Register agent service - don't need";
                         }
                     } else if (input.id === "chekbox4") {
                         if (input.checked) {
-                            input.value = "Custom stock certificates and corporate seals - $49";
-                        }else{
+                            input.value = "Custom stock certificates and corporate seals - 49";
+                        } else {
                             input.value = "Custom stock certificates - don't need";
                         }
                     } else if (input.id === "chekbox5") {
                         if (input.checked) {
-                            input.value = "Corporate kit with bylaws  - $20";
-                        }else{
+                            input.value = "Corporate kit with bylaws  - 20";
+                        } else {
                             input.value = "Corporate kit with bylaws - don't need";
                         }
                     } else if (input.id === "chekbox6") {
                         if (input.checked) {
-                            input.value = "Company Embosser - $25";
-                        }else{
+                            input.value = "Company Embosser - 25";
+                        } else {
                             input.value = "Company Embosser - don't need";
                         }
                     } else if (input.id === "chekbox7") {
                         if (input.checked) {
                             input.value = "I need file for EIN";
-                        }else{
+                        } else {
                             input.value = "I don't need file for EIN";
                         }
                     } else if (input.id === "checbox") {
                         if (input.checked) {
-                            input.value = "Certificate of Status - $20";
-                        }else{
+                            input.value = "Certificate of Status - 20";
+                        } else {
                             input.value = "Certificate of Status  - don't need";
                         }
                     } else if (input.id === "checkbox11") {
                         if (input.checked) {
-                            input.value = "SubElection - $29";
-                        }else{
-                            input.value = "SubElection  - don't need";
+                            input.value = "SubElection - 29";
+                        } else {
+                            input.value = "SubElection  -  don't need";
                         }
                     } else {
                         input.classList.remove('error');
@@ -1105,6 +1105,51 @@ jQuery(document).ready(function () {
     applicationElement11.innerHTML = "";
     applicationElement11.appendChild(span11);
     applicationElement11.appendChild(span12);
+
+    // ...
+
+    // Count variable to store the sum
+    let count = 0;
+
+    // Check if the second span's value is a number and add it to the count
+    if (!isNaN(parseInt(parts[1]))) {
+        count += parseInt(parts[1]);
+    }
+
+    if (!isNaN(parseInt(parts1[1]))) {
+        count += parseInt(parts1[1]);
+    }
+
+    if (!isNaN(parseInt(parts2[1]))) {
+        count += parseInt(parts2[1]);
+    }
+
+    if (!isNaN(parseInt(parts3[1]))) {
+        count += parseInt(parts3[1]);
+    }
+
+    if (!isNaN(parseInt(parts4[1]))) {
+        count += parseInt(parts4[1]);
+    }
+
+    if (!isNaN(parseInt(parts11[1]))) {
+        count += parseInt(parts11[1]);
+    }
+    count += 79;
+    // Create a span element for the count
+    const spanCount = document.createElement("span");
+    spanCount.style.float = "right"; // float to the right
+    spanCount.textContent = "Total: " + count;
+
+    // Get the HTML element where you want to display the count
+    const countElement = document.getElementById("count");
+
+    // Replace the original content of the HTML element with the count span element
+    countElement.innerHTML = "";
+    countElement.appendChild(spanCount);
+
+    // ...
+
     // // // Ajax request send for server
 
     jQuery(document).on("click", "#final", function () {

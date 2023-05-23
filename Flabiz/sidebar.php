@@ -83,9 +83,9 @@
 		<li id="application11" class=" list-group-item  m-2 d-flex justify-content-between ">
 
 		</li>
-		<li id="total" class=" list-group-item  m-3 border-1 border-top  ">
-			<span>Sub total </span>
-			<span class="float-end">$79</span>
+		<li id="count" class=" list-group-item  m-3 border-1 border-top  ">
+			<!-- <span>Sub total </span>
+			<span class="float-end">$79</span> -->
 		</li>
 	</ul>
 	<p>*State filing fees, shipping & handling and sales tax will be computed on checkout. You will have a chance to review your order before checking out</p>
