@@ -357,20 +357,68 @@ jQuery(document).ready(function () {
                         isValid = false;
                         errorMessage += "<li> card number can't not be greater or less then 16 </li>"
                         input.classList.add('error');
-                    }else if (input.id === "phone_number8" && input.value.length > 12) {
+                    } else if (input.id === "phone_number8" && input.value.length > 12) {
                         isValid = false;
                         errorMessage += "<li> PHONE number can't not be greater or less then 12 </li>"
                         input.classList.add('error');
-                    }else if (input.id === "phone_number8" && input.value.length < 12) {
+                    } else if (input.id === "phone_number8" && input.value.length < 12) {
                         isValid = false;
                         errorMessage += "<li> PHONE number can't not be greater or less then 12 </li>"
                         input.classList.add('error');
+                    } else if (input.id === "chekbox3") {
+                        if (input.checked) {
+                            input.value = "Fictitious Name (DBA) - $69";
+                        }else{
+                            input.value = "Fictitious Name (DBA) - don't need";
+                        }
+                    } else if (input.id === "chekbox") {
+                        if (input.checked) {
+                            input.value = "Register agent service - $69";
+                        }else{
+                            input.value = "Register agent service - don't need";
+                        }
+                    } else if (input.id === "chekbox4") {
+                        if (input.checked) {
+                            input.value = "Custom stock certificates and corporate seals - $49";
+                        }else{
+                            input.value = "Custom stock certificates - don't need";
+                        }
+                    } else if (input.id === "chekbox5") {
+                        if (input.checked) {
+                            input.value = "Corporate kit with bylaws  - $20";
+                        }else{
+                            input.value = "Corporate kit with bylaws - don't need";
+                        }
+                    } else if (input.id === "chekbox6") {
+                        if (input.checked) {
+                            input.value = "Company Embosser - $25";
+                        }else{
+                            input.value = "Company Embosser - don't need";
+                        }
+                    } else if (input.id === "chekbox7") {
+                        if (input.checked) {
+                            input.value = "I need file for EIN";
+                        }else{
+                            input.value = "I don't need file for EIN";
+                        }
+                    } else if (input.id === "checbox") {
+                        if (input.checked) {
+                            input.value = "Certificate of Status - $20";
+                        }else{
+                            input.value = "Certificate of Status  - don't need";
+                        }
+                    } else if (input.id === "checkbox11") {
+                        if (input.checked) {
+                            input.value = "SubElection - $29";
+                        }else{
+                            input.value = "SubElection  - don't need";
+                        }
                     } else {
                         input.classList.remove('error');
                     }
                 }
             }
-            
+
             errorMessage += "</ol>";
             // If the form is invalid, don't save the data and display an error message
             if (!isValid) {
@@ -385,7 +433,7 @@ jQuery(document).ready(function () {
 
         });
     }
-   
+
 
 
     // Saving data In Session Storage
@@ -787,13 +835,6 @@ jQuery(document).ready(function () {
             }
         });
     });
-
-    if(document.getElementById("chekbox3").checked) {
-        document.getElementById('chekbox3').value="Fictitious Name (DBA) - $69";
-        console.log(document.getElementById('chekbox3').value)
-    }
-   
-
     //   show data with checkbox in sidebar
     $(function () {
         $("#chekbox").click(function () {
@@ -803,7 +844,7 @@ jQuery(document).ready(function () {
             } else {
                 $(".ragreement").show();
                 $("#agriment").hide();
-               
+
             }
         });
         $("#chekbox2").click(function () {
@@ -812,20 +853,20 @@ jQuery(document).ready(function () {
 
             } else {
                 $("#order2").hide();
-               
+
             }
         });
         $("#chekbox3").click(function () {
             if ($(this).is(":checked")) {
                 $("#order3").show();
                 $(".Fictitiousname").show();
-                
+
 
             } else {
                 $("#order3").hide();
                 $(".Fictitiousname").hide();
-                
-                
+
+
             }
         });
         $("#chekbox4").click(function () {
@@ -833,7 +874,7 @@ jQuery(document).ready(function () {
                 $("#order4").show();
             } else {
                 $("#order4").hide();
-               
+
 
             }
         });
@@ -842,7 +883,7 @@ jQuery(document).ready(function () {
                 $("#order5").show();
             } else {
                 $("#order5").hide();
-                
+
 
 
             }
@@ -852,7 +893,7 @@ jQuery(document).ready(function () {
                 $("#order6").show();
             } else {
                 $("#order6").hide();
-          
+
 
 
             }
@@ -862,8 +903,6 @@ jQuery(document).ready(function () {
                 $("#order7").show();
             } else {
                 $("#order7").hide();
-                
-                
 
             }
         });
@@ -872,7 +911,6 @@ jQuery(document).ready(function () {
                 $("#rr").show();
             } else {
                 $("#rr").hide();
-                
 
             }
         });
@@ -881,7 +919,6 @@ jQuery(document).ready(function () {
                 $("#order11").show();
             } else {
                 $("#order11").hide();
-                
 
             }
         });
@@ -925,21 +962,21 @@ jQuery(document).ready(function () {
     function iterateofficers() {
         let officeroutput = "";
         let presidentName = "";
-    
+
         if (formData.officers != undefined) {
             for (i = 0; i < formData.officers.length; i++) {
                 officeroutput += "<li>" + formData.officers[i].first_name + " " + formData.officers[i].address + "</li>";
-    
+
                 if (formData.officers[i].position === "President") {
                     // Save the president's name
                     presidentName = formData.officers[i].first_name;
                 }
             }
-    
+
             if (jQuery("#officerLis").length) {
                 jQuery("#officerLis").html(officeroutput);
             }
-    
+
             if (presidentName !== "") {
                 if (jQuery("#presidentName").length) {
                     jQuery("#presidentName").text(presidentName);
@@ -947,9 +984,9 @@ jQuery(document).ready(function () {
             }
         }
     }
-    
-    
-    
+
+
+
     const value = formData.chekbox3;
     const value1 = formData.chekbox4;
     const value2 = formData.chekbox6;
@@ -1060,16 +1097,16 @@ jQuery(document).ready(function () {
     applicationElement3.innerHTML = "";
     applicationElement3.appendChild(span7);
     applicationElement3.appendChild(span8);
-     // Replace the original content of the HTML element with the two new span elements
-     applicationElement4.innerHTML = "";
-     applicationElement4.appendChild(span9);
-     applicationElement4.appendChild(span10);
-     // Replace the original content of the HTML element with the two new span elements
-     applicationElement11.innerHTML = "";
-     applicationElement11.appendChild(span11);
-     applicationElement11.appendChild(span12);
+    // Replace the original content of the HTML element with the two new span elements
+    applicationElement4.innerHTML = "";
+    applicationElement4.appendChild(span9);
+    applicationElement4.appendChild(span10);
+    // Replace the original content of the HTML element with the two new span elements
+    applicationElement11.innerHTML = "";
+    applicationElement11.appendChild(span11);
+    applicationElement11.appendChild(span12);
     // // // Ajax request send for server
-       
+
     jQuery(document).on("click", "#final", function () {
         console.log('final btn clicked');
         jQuery.ajax({

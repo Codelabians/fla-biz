@@ -22,9 +22,7 @@ get_header();
                             <label for="shares" class="form-label">Shares</label>
                         </div>
                         <div class="col-md-9 col-lg-9 col-sm-12">
-                            <input class="form-control shares " value="2000" class="form-check-input me-1"
-                                data-required="true" data-error="shares is required" id="shares" name="shares"
-                                type="number">
+                            <input class="form-control shares " value="2000" class="form-check-input me-1" data-required="true" data-error="shares is required" id="shares" name="shares" type="number">
                         </div>
                     </div>
                 </div>
@@ -35,8 +33,7 @@ get_header();
                 </p>
                 <div class="form-row form-group m-3 ">
                     <div class="ml-md-auto col-sm-12 ">
-                        <input type="checkbox" id="checbox" class="form-check-input me-1"
-                            value="Certificate of Status - $20" name="checbox">
+                        <input type="checkbox" id="checbox" class="form-check-input me-1"  name="checbox">
                         <label for="checbox">
                             <span>Certificate of Status - $20</span>
                         </label>
@@ -44,8 +41,7 @@ get_header();
                 </div>
                 <div class="form-row form-group m-3 ">
                     <div class="ml-md-auto col-sm-12 ">
-                        <input type="checkbox" id="chekbox3" class="form-check-input me-1" name="chekbox3"
-                            value="">
+                        <input type="checkbox" id="chekbox3" class="form-check-input me-1" name="chekbox3">
                         <label for="chekbox3">
                             <span>Fictitious Name (DBA) - $69</span>
                         </label>
@@ -61,8 +57,7 @@ get_header();
                 </div>
                 <div class="form-row form-group m-3">
                     <div class="ml-md-auto col-sm-12">
-                        <input type="checkbox" id="chekbox4" class="form-check-input me-1"
-                            value="Custom stock certificates and corporate seals - $49" name="chekbox4">
+                        <input type="checkbox" id="chekbox4" class="form-check-input me-1"  name="chekbox4">
                         <label for="">
                             <span>Custom stock certificates and corporate seals - $49</span>
                         </label>
@@ -70,7 +65,7 @@ get_header();
                 </div>
                 <div class="form-row form-group m-3">
                     <div class="ml-md-auto col-sm-12 d-flex">
-                        <input type="checkbox" value=" Corporate kit with bylaws  - $20" id="chekbox5" class="form-check-input me-1" name="chekbox5">
+                        <input type="checkbox"  id="chekbox5" class="form-check-input me-1" name="chekbox5">
                         <label for="chekbox5">
                             <span>Corporate kit with bylaws, -
                                 $20</span>
@@ -79,8 +74,7 @@ get_header();
                 </div>
                 <div class="form-row form-group m-3">
                     <div class="ml-md-auto col-sm-12">
-                        <input type="checkbox" class="form-check-input me-1" value="Company Embosser - $25"
-                            id="chekbox6" name="chekbox6">
+                        <input type="checkbox" class="form-check-input me-1"  id="chekbox6" name="chekbox6">
                         <label for="chekbox6">
                             <span>Company Embosser - $25</span>
                         </label>
@@ -112,8 +106,7 @@ get_header();
                 </p>
                 <div class="ml-md-auto col-sm-12 d-flex justify-content-between align-items-center ">
                     <div class="box-checkbox border border-2 border-success rounded shadow m-2 p-2 ">
-                        <input class="custom-control-input m-2 form-check-input checkbox7" value="I need file for EIN" checked
-                            type="checkbox"  id="checkbox7" name="checkbox7">
+                        <input class="custom-control-input m-2 form-check-input checkbox7"  checked type="checkbox" id="checkbox7" name="checkbox7">
                         <label for="checkbox7">
                             <span>
                                 <h4>I need file for EIN</h4>
@@ -127,18 +120,16 @@ get_header();
                         <a href="step-four" class="btn btn-success text-white shadow">Previous</a>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
-                            <input type="submit" value="Next" class="btn border-success text-success shadow "> 
-                        </div>
+                        <input type="submit" value="Next" class="btn border-success text-success shadow ">
+                    </div>
                 </div>
-                <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title text-black fw-bold" id="exampleModalLabel">Oops, please fix the
                                     following issues:</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body" id="modal-error">
 

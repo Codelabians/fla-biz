@@ -3,7 +3,7 @@
 get_header();
 
 ?>
-<div class="container ">
+<div class="container d-flex flex-column justify-content-center ">
     <div class="row ">
         <div class="col-sm-12 col-md-10 col-lg-8 m-4 mt-5 ">
             <form data-action="step-five" id="myForm">
@@ -18,7 +18,7 @@ get_header();
                 <div class="ml-md-auto col-sm-12 d-flex">
                     <div class="box-checkbox border border-2 border-success rounded shadow m-2 p-2  ">
                         <div class="col m-3 ">
-                            <input type="checkbox" id="chekbox" checked value="Register agent service - $69" class="form-check-input " name="chekbox">
+                            <input type="checkbox" id="chekbox" checked  class="form-check-input " name="chekbox">
                             &nbsp; <label for="chekbox">I dont want fla-biz to be my register agent</label>
                         </div>
                     </div>

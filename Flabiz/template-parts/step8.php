@@ -62,7 +62,7 @@ get_header();
                             <option value="CT">Connecticut</option>
                             <option value="DC">District of Columbia</option>
                             <option value="DE">Delaware</option>
-                            <option value="FL">Florida</option>
+                            <option value="FL">flabiz</option>
                             <option value="GA">Georgia</option>
                             <option value="HI">Hawaii</option>
                             <option value="IA">Iowa</option>
@@ -188,22 +188,22 @@ get_header();
                             </div>
                             <div class="modal-body">
                                 <P>
-                                    It is very important to make sure all data entered is correct before submitting the data for filing. Once a document is submitted to the Florida Incorporation Service, it cannot be changed or altered by our office or the remitter. No phone calls can be made to the filing section to ask for changes or to request that a document be flagged to "not file". This includes the process of selecting a name for your company.
+                                    It is very important to make sure all data entered is correct before submitting the data for filing. Once a document is submitted to the flabiz Incorporation Service, it cannot be changed or altered by our office or the remitter. No phone calls can be made to the filing section to ask for changes or to request that a document be flagged to "not file". This includes the process of selecting a name for your company.
                                 </P>
-                                Once a document has been filed with the Florida Department of State it becomes a permanent record and cannot be "un filed". Pursuant to applicable Florida Statutes, corporations may submit (with an additional fee, and within 30 business days of filing) Articles of Correction to correct a filed document. Corrections and/or changes to Articles may also be made by filing an amendment - refer to pertinent Florida Statutes for details. If changes need to be made to a fictitious name, then a new filing will have to be submitted, with the entire filing fee.
+                                Once a document has been filed with the flabiz Department of State it becomes a permanent record and cannot be "un filed". Pursuant to applicable flabiz Statutes, corporations may submit (with an additional fee, and within 30 business days of filing) Articles of Correction to correct a filed document. Corrections and/or changes to Articles may also be made by filing an amendment - refer to pertinent flabiz Statutes for details. If changes need to be made to a fictitious name, then a new filing will have to be submitted, with the entire filing fee.
                                 <P>
-                                    Data inserted by the filer onto Florida Incorporation Service filing information screens will be submitted to create Articles of Incorporation, Articles of Organization, or Fictitious Name Registration for submittal to the Florida Department of State, U.S. Internal Revenue Service, or other agencies. There is no immediate written confirmation of filing with the Florida Department of State; however, a response will be sent back by email from Florida Incorporation Service (if you have provided your email address with your contact information) confirming your filing.
+                                    Data inserted by the filer onto flabiz Incorporation Service filing information screens will be submitted to create Articles of Incorporation, Articles of Organization, or Fictitious Name Registration for submittal to the flabiz Department of State, U.S. Internal Revenue Service, or other agencies. There is no immediate written confirmation of filing with the flabiz Department of State; however, a response will be sent back by email from flabiz Incorporation Service (if you have provided your email address with your contact information) confirming your filing.
                                 </P>
-                                Florida Incorporation Service files applicable documents on your behalf with the State of Florida or other agencies electronically. This allows your new company to be formed within two to three business days.
+                                flabiz Incorporation Service files applicable documents on your behalf with the State of flabiz or other agencies electronically. This allows your new company to be formed within two to three business days.
                                 <P>
                                     When you click the "Next" button below your information will be submitted.
                                 </P>
-                                For the purpose of filing documents online, the "typed" name of the individual "signing" the document is sufficient under s.15.16, Florida Statutes. Electronic signatures have the same legal effect as original signatures. Typing in someone's name/signature without their permission constitutes forgery.
+                                For the purpose of filing documents online, the "typed" name of the individual "signing" the document is sufficient under s.15.16, flabiz Statutes. Electronic signatures have the same legal effect as original signatures. Typing in someone's name/signature without their permission constitutes forgery.
                                 <P>
                                     Once a document is sent for filing, it is reviewed for statutory compliance. If the document is rejected, we will provide you with information regarding the deficiency in order for this to be corrected. There is no additional fee to correct the data and resubmit the document. You will simply be instructed to confirm the changes.
                                 </P>
                                 <P>
-                                    If you need assistance, please contact Florida Incorporation Service at 800-370-2942.
+                                    If you need assistance, please contact flabiz Incorporation Service at 800-370-2942.
                                 </P>
                             </div>
                         </div>

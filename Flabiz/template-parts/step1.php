@@ -102,7 +102,7 @@ get_header();
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-md-12">
                         <h2>Principal Place of Business</h2>
-                        <p>The Division of Corporations requires that this be an occupied physical Florida address. If you have not decided yet where the principal office will be, you may specify another Florida address, such as a home address. This information can easily be changed later.</p>
+                        <p>The Division of Corporations requires that this be an occupied physical flabiz address. If you have not decided yet where the principal office will be, you may specify another flabiz address, such as a home address. This information can easily be changed later.</p>
                     </div>
                 </div>
                 <!--Fields-->
@@ -160,7 +160,7 @@ get_header();
                             <option value="Escambia">Escambia</option>
                             <option value="Flagler">Flagler</option>
                             <option value="Franklin">Franklin</option>
-                            <option value="Florida" selected>Florida</option>
+                            <option value="flabiz" selected>flabiz</option>
                             <option value="Gadsden">Gadsden</option>
                             <option value="Gilchrist">Gilchrist</option>
                             <option value="Glades">Glades</option>
@@ -240,7 +240,7 @@ get_header();
                     <div class="col-md-12 col-sm-12 col-md-12">
                         <h2>Business Mailing Address</h2>
                         <p>This is the address the Division of Corporations will use for correspondence with you. You may use a PO Box for this address,
-                            and it does not have to be a Florida address.</p>
+                            and it does not have to be a flabiz address.</p>
                     </div>
                 </div>
                 <!--Fields-->

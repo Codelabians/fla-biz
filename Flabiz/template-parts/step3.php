@@ -5,7 +5,7 @@ get_header();
 
 ?>
 
-<div class="container-fluid mt-5">
+<div class="container mt-5">
     <div class="row">
         <div class="col-sm-12 col-md-8 col-lg-8">
             <!--Primary Contact Information-->
@@ -14,7 +14,7 @@ get_header();
             <div id="business-manager-detail-table ">
                 <p><strong>We show your information as:</strong></p>
                 <!--Main User Data Table-->
-                <table class="table table-striped shadow">
+                <table class="table table-striped ">
                     <thead>
                         <tr class="bg-light">
                             <th>Name</th>
@@ -34,7 +34,7 @@ get_header();
             <h3 class="mt-5">Director Information</h3>
             <p>
                 Your company must have at least one director, but may have more. You may also be the only director. A director must be a legal adult (18 years of age or older) and
-                <strong>is NOT required to live within the State of Florida</strong>.
+                <strong>is NOT required to live within the State of flabiz</strong>.
             </p>
             <p id="business-manager-detail" style="display: none">
                 The current corporate directors are listed below. Review this list for accuracy before continuing. You can remove any existing director by clicking the "x" icon to the right of that director's information.
@@ -124,7 +124,7 @@ get_header();
                                             <option value="CT">Connecticut</option>
                                             <option value="DC">District of Columbia</option>
                                             <option value="DE">Delaware</option>
-                                            <option value="FL">Florida</option>
+                                            <option value="FL">flabiz</option>
                                             <option value="GA">Georgia</option>
                                             <option value="HI">Hawaii</option>
                                             <option value="IA">Iowa</option>
@@ -239,7 +239,7 @@ get_header();
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <h3 class="mt-5">Officer Information</h3>
                     <p>
-                        One person may be a director and hold all officer positions. Typically, a Florida corporation has a President, Secretary, and Treasurer.
+                        One person may be a director and hold all officer positions. Typically, a flabiz corporation has a President, Secretary, and Treasurer.
                     </p>
                     <p id="business-manager-officer-detail" style="display:none;">
                         The current corporate officers are listed below. Review this list for accuracy before continuing. You can remove any existing officer by clicking the "x" icon to the right of that officer's information.
@@ -361,7 +361,7 @@ get_header();
                                                     <option value="CT">Connecticut</option>
                                                     <option value="DC">District of Columbia</option>
                                                     <option value="DE">Delaware</option>
-                                                    <option value="FL">Florida</option>
+                                                    <option value="FL">flabiz</option>
                                                     <option value="GA">Georgia</option>
                                                     <option value="HI">Hawaii</option>
                                                     <option value="IA">Iowa</option>
