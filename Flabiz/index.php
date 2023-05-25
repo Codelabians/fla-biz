@@ -17,9 +17,9 @@
 get_header();
 ?>
 <div id="tf-home">
-    <div class="header"> <!-- Overlay Color -->
+    <div class="header h-auto"> <!-- Overlay Color -->
         <div class="container"> <!-- container -->
-            <div class="content-heading text-center"> <!-- Input Your Home Content Here -->
+            <div class="content-heading text-center "> <!-- Input Your Home Content Here -->
                 <h1>
                     Florida's Division of Corporations oversees businesses operating within the state
                 </h1>

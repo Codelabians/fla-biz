@@ -13,16 +13,16 @@ get_header();
                     below.
                 </p>
                 <div class="form-row form-group d-flex flex-column">
-                    <label for="">Agriculter</label>
+                    <label for="agri">Agriculter</label>
                     <div>
-                        <input type="number" id="agri" name="agri">
+                        <input type="number" id="agri" name="agri" value="0" >
                         <small>farm worker</small>
                     </div>
                 </div>
                 <div class="form-row form-group d-flex flex-column">
-                    <label for="">other</label>
+                    <label for="others">other</label>
                     <div>
-                        <input type="number" name="others" id="others">
+                        <input type="number" name="others" id="others" value="0">
                         <small>all other</small>
                     </div>
                 </div>
@@ -30,7 +30,7 @@ get_header();
                     <strong>What date do you expect will be your first day in business?</strong>
                 </p>
                 <div class="form-row form-group d-flex  ">
-                    <input type="date" id="first_day" name="first_day">
+                    <input type="date" id="first_day" name="first_day" value="<?php echo date( "Y-m-d" ); ?>">
                     <label for="first_day">Date</label>
                 </div>
                 <p class="mt-5">
@@ -47,7 +47,7 @@ get_header();
                     <strong>president Name:</strong>
                     <span id="presidentName"></span>
                 </div>
-                <div class="row">
+                <div class="form-row w-auto">
                     <div class="col-lg-3 col-md-3 col-sm-12">
                         <label for="primary_ssn" class="form-label">SSN:</label>
                     </div>

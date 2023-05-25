@@ -6,7 +6,7 @@ get_header();
 ?>
 
 
-<div class="container-fluid mt-5">
+<div class="container mt-5">
     <div class="row">
         <div class="col-sm-12 col-md-8 col-lg-8">
             <h2>Filing Information</h2>
@@ -160,7 +160,7 @@ get_header();
                             <option value="Escambia">Escambia</option>
                             <option value="Flagler">Flagler</option>
                             <option value="Franklin">Franklin</option>
-                            <option value="flabiz" selected>flabiz</option>
+                            <option value="florida" selected>Florida</option>
                             <option value="Gadsden">Gadsden</option>
                             <option value="Gilchrist">Gilchrist</option>
                             <option value="Glades">Glades</option>
@@ -301,7 +301,7 @@ get_header();
                         <!--Country-->
                         <div class="row">
                             <div class="col-md-3 col-sm-12 col-lg-3">
-                                <label for="mailing_country" class="form-label">City</label>
+                                <label for="mailing_country" class="form-label">state</label>
                             </div>
                             <div class="col-lg-7 col-md-7 col-sm-12">
                                 <select name="mailing_county" id="mailing_county" class="form-control">
@@ -385,19 +385,10 @@ get_header();
                                 <label for="mailing_zip_code" class="form-label">Zip Code</label>
                             </div>
                             <div class="col-lg-9 col-md-9 col-sm-12">
-                                <input type="text" class="form-control" id="mailing_zip_code" name="mailing_zip_code">
+                                <input type="number" class="form-control" id="mailing_zip_code" name="mailing_zip_code">
                             </div>
                         </div>
-                        <!--Phone-->
-                        <div class="row">
-                            <div class="col-md-3 col-sm-12 col-lg-3">
-                                <label for="mailing_phone" class="form-label">Phone</label>
-                            </div>
-                            <div class="col-lg-9 col-md-9 col-sm-12">
-                                <input type="text" class="form-control phone" id="mailing_phone" name="mailing_phone">
-                            </div>
-                        </div>
-
+                    
                     </div>
                 </div>
 
@@ -421,7 +412,7 @@ get_header();
 
 
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-end">
                         <input type="submit" value="Next" class="btn border-success text-success shadow ">
                     </div>
                 </div>

@@ -7,7 +7,7 @@ get_header();
 ?>
 
 
-    <div class="container-fluid mt-5">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-sm-12 col-md-8 col-lg-8">
                 <!--Primary Contact Information-->
@@ -185,7 +185,7 @@ get_header();
                             <label for="personal_zip_code" class="form-label">Zip Code</label>
                         </div>
                         <div class="col-lg-9 col-md-9 col-sm-12">
-                            <input type="text" class="form-control address_fields" data-required="true" data-error="Zip Code is required" id="personal_zip_code" name="personal_zip_code">
+                            <input type="number" class="form-control address_fields" data-required="true" data-error="Zip Code is required" id="personal_zip_code" name="personal_zip_code">
                         </div>
                     </div>
 

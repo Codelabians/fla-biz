@@ -16,7 +16,7 @@
 	</aside><!-- .sidebar .widget-area -->
 <?php endif; ?>
 <div class="col-lg-12 col-md-6  m-4 ">
-	<h4 class="text text-center">order summary</h4>
+	<h4 class="text text-center">Order summary</h4>
 	<ul class="ul">
 		<li id="order1" class=" list-group-item border-1 border-top m-3 ">
 			<span>fla-biz service </span>
@@ -24,7 +24,7 @@
 		</li>
 		<li id="agriment" style="display:none" class=" list-group-item  m-3 ">
 			<span>Register agent service </span>
-			<span class="float-end">$79</span>
+			<span class="float-end">$500</span>
 		</li>
 		<li id="rr" style="display:none" class=" list-group-item  m-3 ">
 			<span>Certificate of Status </span>

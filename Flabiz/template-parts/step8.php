@@ -149,8 +149,8 @@ get_header();
                         <input type="date" id="date" class="" name="date" value="date">
                     </div>
                 </div>
-                <div class="ml-md-auto col-sm-12 d-flex ">
-                    <div class="box-checkbox  mt-3 mb-3 ">
+                <div class="ml-md-auto col-sm-12  ">
+                    <div class="box-checkbox  mt-3 mb-3 d-flex ">
                         <input type="checkbox" id="accept " data-required="true" data-error="first check the agriment" class="form-check-input shadow" checked value="I accept the User Agreement" name="accept" required>
                         <label for="">I accept the <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">User Agreement</a> and The Notice of Annual Report</label>
                     </div>
@@ -163,7 +163,7 @@ get_header();
                 </div> -->
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-lg-3">
-                        <label for="signature" class="form-label">Digital signature:</label>
+                        <label for="signature" class="form-label">Electronic signature:</label>
                     </div>
                     <div class="col-lg-9 col-md-9 col-sm-12">
                         <input type="text" data-required="true" data-error="Signature is required" class="form-control address_fields " id="signature" name="signature">

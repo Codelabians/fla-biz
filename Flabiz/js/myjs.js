@@ -37,7 +37,7 @@ jQuery(document).ready(function () {
     jQuery('#show_Email').text(formData.primary_email);
     jQuery('#NAME').text(formData.first_name);
     jQuery('#ADRESS').text(formData.personal_address);
-    // jQuery('#officer_position_data').text(formData.personal_address);
+    
 
 
 
@@ -156,7 +156,7 @@ jQuery(document).ready(function () {
         }
 
         let formatted = "";
-        for (let i = 0; i < cleaned.length && i < 12; i++) {
+        for (let i = 0; i < cleaned.length && i < 10; i++) {
             if (i === 3 || i === 6) {
                 formatted += '-';
             }
@@ -192,7 +192,7 @@ jQuery(document).ready(function () {
     })
     // zip code validation
     jQuery(document).on("keyup", "#zip_code", function () {
-        if (jQuery(this).val().trim().length < 4) {
+        if (jQuery(this).val().trim().length < 5) {
             jQuery(this).addClass("error")
         } else {
             jQuery(this).removeClass("error")
@@ -210,7 +210,7 @@ jQuery(document).ready(function () {
     })
     // validation for phone number
     jQuery(document).on("keyup", "#phone", function () {
-        if (jQuery(this).val().trim().length < 12) {
+        if (jQuery(this).val().trim().length < 10) {
             jQuery(this).addClass("error")
         } else {
             jQuery(this).removeClass("error")
@@ -301,17 +301,21 @@ jQuery(document).ready(function () {
                         isValid = false;
                         errorMessage += "<li>Phone Number format is XXX-XXX-XXXX</li>"
                         input.classList.add('error');
-                    } else if (input.id === "phone" && input.value.length < 12) {
+                    } else if (input.id === "phone" && input.value.length < 10) {
                         isValid = false;
-                        errorMessage += "<li>Phone number can't be less than 12 characters</li>"
+                        errorMessage += "<li>Phone number can't be less than 10 characters</li>"
                         input.classList.add('error');
                     } else if (input.name === "company_purpose" && input.value.length > 50) {
                         isValid = false;
                         errorMessage += "<li>Company purpose can't be greater than 50 characters</li>"
                         input.classList.add('error');
-                    } else if (input.name === "zip_code" && input.value.length < 4) {
+                    } else if (input.name === "zip_code" && input.value.length < 5) {
                         isValid = false;
-                        errorMessage += "<li>Zip code can't be less than 4 characters</li>"
+                        errorMessage += "<li>Zip code can't be less than 5 characters</li>"
+                        input.classList.add('error');
+                    } else if (input.name === "zip_code" && input.value.length > 5) {
+                        isValid = false;
+                        errorMessage += "<li>Zip code can't be greater than 5 characters</li>"
                         input.classList.add('error');
                     } else if (input.id === "primary_email" && !ValidateEmail(input.value)) {
                         isValid = false;
@@ -357,13 +361,13 @@ jQuery(document).ready(function () {
                         isValid = false;
                         errorMessage += "<li> card number can't not be greater or less then 16 </li>"
                         input.classList.add('error');
-                    } else if (input.id === "phone_number8" && input.value.length > 12) {
+                    } else if (input.id === "phone_number8" && input.value.length > 10) {
                         isValid = false;
-                        errorMessage += "<li> PHONE number can't not be greater or less then 12 </li>"
+                        errorMessage += "<li> PHONE number can't not be greater or less then 10 </li>"
                         input.classList.add('error');
-                    } else if (input.id === "phone_number8" && input.value.length < 12) {
+                    } else if (input.id === "phone_number8" && input.value.length < 10) {
                         isValid = false;
-                        errorMessage += "<li> PHONE number can't not be greater or less then 12 </li>"
+                        errorMessage += "<li> PHONE number can't not be greater or less then 10 </li>"
                         input.classList.add('error');
                     } else if (input.id === "chekbox3") {
                         if (input.checked) {
@@ -379,7 +383,7 @@ jQuery(document).ready(function () {
                         }
                     } else if (input.id === "chekbox4") {
                         if (input.checked) {
-                            input.value = "Custom stock certificates and corporate seals - 49";
+                            input.value = "Custom stock certificates & seals - 49";
                         } else {
                             input.value = "Custom stock certificates - don't need";
                         }
@@ -822,19 +826,7 @@ jQuery(document).ready(function () {
         savingDataInSessionStorage(false)
         window.location.href = "step-four";
     })
-
-    // show and hide data on checkbox
-    $(function () {
-        $("#chkbox").click(function () {
-            if ($(this).is(":checked")) {
-                $(".ragreement").show();
-                $("#ragent").show();
-            } else {
-                $(".ragreement").hide();
-                $("#ragent").hide();
-            }
-        });
-    });
+    
     //   show data with checkbox in sidebar
     $(function () {
         $("#chekbox").click(function () {
@@ -860,7 +852,6 @@ jQuery(document).ready(function () {
             if ($(this).is(":checked")) {
                 $("#order3").show();
                 $(".Fictitiousname").show();
-
 
             } else {
                 $("#order3").hide();
@@ -985,172 +976,126 @@ jQuery(document).ready(function () {
         }
     }
 
-
-
-    const value = formData.chekbox3;
-    const value1 = formData.chekbox4;
-    const value2 = formData.chekbox6;
-    const value3 = formData.chekbox5;
-    const value4 = formData.chekbox;
-    const value11 = formData.checkbox11;
-
-
-
-    // Split the string value into two parts
-    const parts = value.split(" - ");
-    const parts1 = value1.split(" - ");
-    const parts2 = value2.split(" - ");
-    const parts3 = value3.split(" - ");
-    const parts4 = value4.split(" - ");
-    const parts11 = value11.split(" - ");
-
-
-
-
-    // Create the two span elements
-    const span1 = document.createElement("span");
-    span1.style.float = "left"; // float to the left
-    const span2 = document.createElement("span");
-    span2.style.float = "right"; // float to the right
-    // Create the two span elements
-    const span4 = document.createElement("span");
-    span4.style.float = "left"; // float to the left
-    const span3 = document.createElement("span");
-    span3.style.float = "right"; // float to the right
-    // Create the two span elements
-    const span5 = document.createElement("span");
-    span5.style.float = "left"; // float to the left
-    const span6 = document.createElement("span");
-    span6.style.float = "right"; // float to the right
-    const span7 = document.createElement("span");
-    span7.style.float = "left"; // float to the left
-    const span8 = document.createElement("span");
-    span8.style.float = "right"; // float to the right
-    const span9 = document.createElement("span");
-    span9.style.float = "left"; // float to the left
-    const span10 = document.createElement("span");
-    span10.style.float = "right"; // float to the right
-    const span11 = document.createElement("span");
-    span11.style.float = "left"; // float to the left
-    const span12 = document.createElement("span");
-    span12.style.float = "right"; // float to the right
-
-    // Set the text content of the span elements to the parts of the string
-    if (parts.length > 1) {
-        span1.textContent = parts[0];
-        span2.textContent = "- " + parts[1];
-    } else {
-        span1.textContent = parts[0];
-    }
-    if (parts1.length > 1) {
-        span3.textContent = parts1[0];
-        span4.textContent = "- " + parts1[1];
-    } else {
-        span3.textContent = parts[0];
-    }
-    if (parts2.length > 1) {
-        span5.textContent = parts2[0];
-        span6.textContent = "- " + parts2[1];
-    } else {
-        span5.textContent = parts2[0];
-    }
-    if (parts3.length > 1) {
-        span7.textContent = parts3[0];
-        span8.textContent = "- " + parts3[1];
-    } else {
-        span8.textContent = parts3[0];
-    }
-    if (parts4.length > 1) {
-        span9.textContent = parts4[0];
-        span10.textContent = "- " + parts4[1];
-    } else {
-        span9.textContent = parts4[0];
-    }
-    if (parts11.length > 1) {
-        span11.textContent = parts11[0];
-        span12.textContent = "- " + parts11[1];
-    } else {
-        span11.textContent = parts11[0];
-    }
-    // Get the HTML element where you want to display the span elements
-    const applicationElement = document.getElementById("application");
-    const applicationElement1 = document.getElementById("applications");
-    const applicationElement2 = document.getElementById("applicationss");
-    const applicationElement3 = document.getElementById("applicationsss");
-    const applicationElement4 = document.getElementById("application4");
-    const applicationElement11 = document.getElementById("application11");
-
-
-    // Replace the original content of the HTML element with the two new span elements
-    applicationElement.innerHTML = "";
-    applicationElement.appendChild(span1);
-    applicationElement.appendChild(span2);
-    // Replace the original content of the HTML element with the two new span elements
-    applicationElement1.innerHTML = "";
-    applicationElement1.appendChild(span3);
-    applicationElement1.appendChild(span4);
-    // Replace the original content of the HTML element with the two new span elements
-    applicationElement2.innerHTML = "";
-    applicationElement2.appendChild(span5);
-    applicationElement2.appendChild(span6);
-    // Replace the original content of the HTML element with the two new span elements
-    applicationElement3.innerHTML = "";
-    applicationElement3.appendChild(span7);
-    applicationElement3.appendChild(span8);
-    // Replace the original content of the HTML element with the two new span elements
-    applicationElement4.innerHTML = "";
-    applicationElement4.appendChild(span9);
-    applicationElement4.appendChild(span10);
-    // Replace the original content of the HTML element with the two new span elements
-    applicationElement11.innerHTML = "";
-    applicationElement11.appendChild(span11);
-    applicationElement11.appendChild(span12);
-
-    // ...
-
-    // Count variable to store the sum
     let count = 0;
-
-    // Check if the second span's value is a number and add it to the count
-    if (!isNaN(parseInt(parts[1]))) {
-        count += parseInt(parts[1]);
-    }
-
-    if (!isNaN(parseInt(parts1[1]))) {
-        count += parseInt(parts1[1]);
-    }
-
-    if (!isNaN(parseInt(parts2[1]))) {
-        count += parseInt(parts2[1]);
-    }
-
-    if (!isNaN(parseInt(parts3[1]))) {
-        count += parseInt(parts3[1]);
-    }
-
-    if (!isNaN(parseInt(parts4[1]))) {
-        count += parseInt(parts4[1]);
-    }
-
-    if (!isNaN(parseInt(parts11[1]))) {
-        count += parseInt(parts11[1]);
-    }
     count += 79;
-    // Create a span element for the count
+
+    if (formData.checkbox3 != "undefined") {
+        const value = formData.chekbox3;
+        const parts = value.split(" - ");
+        // create two spans element
+        const span1 = document.createElement("span");
+        span1.style.float = "left"; // float to the left
+        const span2 = document.createElement("span");
+        span2.style.float = "right"; // float to the right
+        // check parts
+        if (parts.length > 1) {
+            span1.textContent = parts[0];
+            span2.textContent = "- " + parts[1];
+        } else {
+            span1.textContent = parts[0];
+        }
+        // create element in sidebar where display
+        const applicationElement = document.getElementById("application");
+        applicationElement.innerHTML = "";
+        applicationElement.appendChild(span1);
+        applicationElement.appendChild(span2);
+
+        if (!isNaN(parseInt(parts[1]))) {
+            count += parseInt(parts[1]);
+        }
+    }
+
+    if (formData.chekbox4 != "undefined") {
+        const value1 = formData.chekbox4;
+        const parts1 = value1.split(" - ");
+        const span3 = document.createElement("span");
+        span3.style.float = "left"; // float to the left
+        const span4 = document.createElement("span");
+        span4.style.float = "right"; // float to the right
+        if (parts1.length > 1) {
+            span3.textContent = parts1[0];
+            span4.textContent = "- " + parts1[1];
+        } else {
+            span3.textContent = parts1[0];
+        }
+        const applicationElement1 = document.getElementById("applicationss");
+        applicationElement1.innerHTML = "";
+        applicationElement1.appendChild(span3);
+        applicationElement1.appendChild(span4);
+
+        if (!isNaN(parseInt(parts1[1]))) {
+            count += parseInt(parts1[1]);
+        }
+    }
+
+    if (formData.chekbox5 != "undefined") {
+        const value2 = formData.chekbox6;
+        const parts2 = value2.split(" - ");
+        const span5 = document.createElement("span");
+        span5.style.float = "left"; // float to the left
+        const span6 = document.createElement("span");
+        span6.style.float = "right"; // float to the right
+        if (parts2.length > 1) {
+            span5.textContent = parts2[0];
+            span6.textContent = "- " + parts2[1];
+        } else {
+            span5.textContent = parts2[0];
+        }
+        const applicationElement2 = document.getElementById("applications");
+        applicationElement2.innerHTML = "";
+        applicationElement2.appendChild(span5);
+        applicationElement2.appendChild(span6);
+        if (!isNaN(parseInt(parts2[1]))) {
+            count += parseInt(parts2[1]);
+        }
+
+    }
+    if (formData.chekbox != "undefined") {
+        const value4 = formData.chekbox;
+        const parts4 = value4.split(" - ");
+        const span7 = document.createElement("span");
+        span7.style.float = "left"; // float to the left
+        const span8 = document.createElement("span");
+        span8.style.float = "right"; // float to the right
+        if (parts4.length > 1) {
+            span7.textContent = parts4[0];
+            span8.textContent = "- " + parts4[1];
+        } else {
+            span7.textContent = parts4[0];
+        }
+        const applicationElement3 = document.getElementById("applicationsss");
+        applicationElement3.innerHTML = "";
+        applicationElement3.appendChild(span7);
+        applicationElement3.appendChild(span8);
+
+    }
+    if (formData.checkbox11 != "undefined") {
+        const value11 = formData.checkbox11;
+        const parts11 = value11.split(" - ");
+        const span11 = document.createElement("span");
+        span11.style.float = "left"; // float to the left
+        const span12 = document.createElement("span");
+        span12.style.float = "right"; // float to the right
+        if (parts11.length > 1) {
+            span11.textContent = parts11[0];
+            span12.textContent = "- " + parts11[1];
+        } else {
+            span11.textContent = parts11[0];
+        }
+        const applicationElement11 = document.getElementById("application11");
+        applicationElement11.innerHTML = "";
+        applicationElement11.appendChild(span11);
+        applicationElement11.appendChild(span12);
+
+    }
     const spanCount = document.createElement("span");
     spanCount.style.float = "right"; // float to the right
     spanCount.textContent = "Total: " + count;
-
-    // Get the HTML element where you want to display the count
     const countElement = document.getElementById("count");
-
-    // Replace the original content of the HTML element with the count span element
     countElement.innerHTML = "";
     countElement.appendChild(spanCount);
 
-    // ...
-
-    // // // Ajax request send for server
+    // Ajax request send for server
 
     jQuery(document).on("click", "#final", function () {
         console.log('final btn clicked');

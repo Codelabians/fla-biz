@@ -146,12 +146,13 @@
 }
 
 
-/* 
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
-  margin: 0;
-} */
+  margin: 0; 
+  display: none;
+}
 
 
 /* Style the scrollbar track */
@@ -191,7 +192,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 
 .header {
-    height: 100vh !important;
+    /* height: auto !important; */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
