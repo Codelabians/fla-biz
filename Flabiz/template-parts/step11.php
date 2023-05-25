@@ -42,7 +42,7 @@ get_header();
                     </div>
                     <div class="col-md-9 col-lg-9 col-sm-12 d-flex">
                         <input data-required="true" data-error="password isrequired" class="form-control " id="password" name="password" type="password">
-                        <i class="password-toggle  bg-light p-2 border text-center d-block justify-content-center  " style="height: 44px;"  onclick="togglePasswordVisibility()">
+                        <i class="password-toggle  bg-light p-2 border text-center d-block justify-content-center  " style="height: 44px; cursor:pointer;"  onclick="togglePasswordVisibility()">
                         <!-- <i class="fas fa-eye"></i> -->
                         👁️
                     </i>
@@ -71,9 +71,20 @@ get_header();
                         <a href="step-ten" class="btn btn-success text-white shadow">Previous</a>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 mt-1 ">
-                        <input class="btn btn-success text-white shadow" type="submit" value="Save Data" id="final" data-url=<?= admin_url("admin-ajax.php") ?>>
+                        <input class="btn btn-success text-white shadow" id="SaveBtn" type="submit" value="Save Data">
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 mt-1 ">
+                        <input class="btn btn-success text-white shadow" style="display:none;"  value="Submit Data" id="final" data-url=<?= admin_url("admin-ajax.php") ?>>
                     </div>
                 </div>
+
+
+
+
+
+
+
+
                 <!-- Error Modal -->
                 <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">

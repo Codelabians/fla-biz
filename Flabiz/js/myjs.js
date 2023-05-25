@@ -37,7 +37,7 @@ jQuery(document).ready(function () {
     jQuery('#show_Email').text(formData.primary_email);
     jQuery('#NAME').text(formData.first_name);
     jQuery('#ADRESS').text(formData.personal_address);
-    
+
 
 
 
@@ -283,6 +283,9 @@ jQuery(document).ready(function () {
         var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         return expr.test(email);
     };
+
+
+
     // FormData Event Listener on Submission and show Error in Modal
     function assigningEventListenerToForm(formElement) {
         formElement.addEventListener('submit', function (event) {
@@ -430,11 +433,12 @@ jQuery(document).ready(function () {
                 let myModal = new bootstrap.Modal(document.getElementById("errorModal"), {});
                 myModal.show();
                 return;
+            } else {
+                window.location.href = jQuery(this).data("action");
+                savingDataInSessionStorage(true);
+                
+                window.location.href = jQuery(this).data("action");
             }
-            window.location.href = jQuery(this).data("action");
-            savingDataInSessionStorage(true);
-            window.location.href = jQuery(this).data("action");
-
         });
     }
 
@@ -826,7 +830,7 @@ jQuery(document).ready(function () {
         savingDataInSessionStorage(false)
         window.location.href = "step-four";
     })
-    
+
     //   show data with checkbox in sidebar
     $(function () {
         $("#chekbox").click(function () {
@@ -1094,6 +1098,21 @@ jQuery(document).ready(function () {
     const countElement = document.getElementById("count");
     countElement.innerHTML = "";
     countElement.appendChild(spanCount);
+
+    var saveBtn = document.getElementById('SaveBtn');
+    var submitBtn = document.getElementById('final');
+
+
+    saveBtn.onclick = () => {
+        showmodeldatasaved();
+    }
+    
+    function showmodeldatasaved() {
+        console.log('data has been saved')
+        saveBtn.style.display = "none";
+        submitBtn.style.display = "block";
+    }
+
 
     // Ajax request send for server
 
