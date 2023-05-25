@@ -18,11 +18,11 @@ get_header();
                 <div class="ml-md-auto col-sm-12 p-3  ">
                     <div class="box-checkbox ">
                         <div class="col  ">
-                            <input type="checkbox" id="chekbox" checked  class="form-check-input " name="chekbox">
-                            &nbsp; <label for="chekbox">I  want fla-biz to be my register agent</label>
+                            <input type="checkbox" id="chekbox" checked class="form-check-input " name="chekbox">
+                            &nbsp; <label for="chekbox">I want fla-biz to be my register agent</label>
                         </div>
                     </div>
-                    <a class="mt-3 align-content-center " id="my-link" onclick="uncheckCheckbox()" style="cursor:pointer;">I don't  want fla-biz to be my register agent</a>
+                    <a class="mt-3 align-content-center " id="my-link" onclick="uncheckCheckbox()" style="cursor:pointer;">I don't want fla-biz to be my register agent</a>
 
                 </div>
                 <!-- show data on check box -->
@@ -41,21 +41,21 @@ get_header();
                         <h3>Register Agent Agreement</h3>
                         <p>
                             Having been named as registered agent and to accept service of process for the above stated company at the place designated above, I hereby accept the appointment as registered agent and agree to act in this capacity. I further agree to comply with the provisions of all statutes relating to the proper and complete performance of my duties, and I am familiar with and accept the obligations of my position as registered agent as provided for in Chapter 608, Florida Statutes.<br>
-                            By clicking the <strong>"Next"</strong>  button below, you will signify your consent to this agreement and your desire to act as registered agent for the company being formed.
+                            By clicking the <strong>"Next"</strong> button below, you will signify your consent to this agreement and your desire to act as registered agent for the company being formed.
                         </p>
                     </div>
                 </div>
                 <!-- for next -->
-                <div class="row mt-1 d-flex flex-column justify-content-end ">
-                    <div class="row mt-5">
-                        <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
-                            <a href="step-three" class="btn btn-success text-white shadow">Previous</a>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
-                            <input type="submit" value="Next" class="btn border-success text-success shadow ">
-                        </div>
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1 text-center">
+                        <a href="step-three" class="btn btn-success text-white shadow">Previous</a>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1 text-center">
+                        <input type="submit" value="Next" class="btn border-success text-success shadow ">
                     </div>
                 </div>
+
             </form>
         </div>
         <div class="col ">
@@ -68,7 +68,7 @@ get_header();
 <script>
     function uncheckCheckbox() {
         document.getElementById("chekbox").checked = false;
-      }
+    }
 </script>
 <?php
 get_footer();

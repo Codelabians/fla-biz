@@ -7,9 +7,9 @@ get_header();
         <div class="col-sm-12 col-md-10 col-lg-8 m-3 mt-3">
             <form id="myForm" data-action="step-seven">
                 <h2>EIN Application</h2>
-                <p>
+                <p >
                     What will be your best guess for the highest number of employees you will employ within the next 12
-                    months (yourself being one)? If you are not sure, you may wish to use the default values indicated
+                    months (yourself being one)? If you are not sure, you may <br class="d-sm-block d-xl-none d-md-none"> wish to use the default  values indicated
                     below.
                 </p>
                 <div class="form-row form-group d-flex flex-column">
@@ -51,15 +51,15 @@ get_header();
                     <div class="col-lg-3 col-md-3 col-sm-12">
                         <label for="primary_ssn" class="form-label">SSN:</label>
                     </div>
-                    <div class="col-md-9 col-lg-9 col-sm-12">
+                    <div class="col-md-9 col-lg-9 col-sm-12 ">
                         <input class="form-control ssn " data-required="true" data-error="ssn number is required " placeholder="111-11-1111" id="primary_ssn" name="primary_ssn" type="text" onfocus="this.type='text'" onblur="this.type='password'">
                     </div>
                 </div>
                 <div class="row mt-5">
-                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1 text-center">
                         <a id="my-link" href="step-five" class="btn btn-success text-white shadow ">Previous</a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1 text-center">
                         <input type="submit" value="Next" class="btn border-success text-success shadow ">
                     </div>
                 </div>

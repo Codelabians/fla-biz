@@ -122,10 +122,10 @@ get_header();
                     <a class="mt-2" id="my-link" onclick="uncheckCheckbox()" style="cursor:pointer;">I don't need file for EIN</a>
                 </div>
                 <div class="row mt-5 ">
-                    <div class="col-lg-6 col-md-6 col-sm-12  mt-3">
+                    <div class="col-lg-6 col-md-6 col-sm-12 text-center mt-3">
                         <a href="step-four" class="btn btn-success text-white shadow">Previous</a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                    <div class="col-lg-6 col-md-6 col-sm-12 text-center mt-3">
                         <input type="submit" value="Next" class="btn border-success text-success shadow ">
                     </div>
                 </div>

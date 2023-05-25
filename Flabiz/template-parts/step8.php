@@ -6,8 +6,8 @@ get_header();
     <div class="row ">
         <div class="col-sm-12 col-md-10 col-lg-8">
             <form data-action="step-nine" id="myForm" class=" m-3">
-                <h3>Notice of Annual Report</h3>
-                <p>
+                <h3>User agreement</h3>
+                <!-- <p>
                     This corporation must file an Annual Report with the Division of Corporations between January 1st and May 1st of every year to maintain "active" status. The corporation's first annual report will be due between January 1st and May 1st of the calendar year following the year the corporation is formed and must be filed online. The fee to file a Corporation Annual Report is $150 And the fee to file an LLC Annual Report is $138. A $400 late fee is applied if the report is filed after May 1st. Reminder notices to file the Annual Report will be sent to the e-mail address you provide in these articles. File early to avoid the late fee.
                 </p>
                 <p>
@@ -16,7 +16,7 @@ get_header();
 
                 <!--Fields-->
                 <!--Address-->
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-3 col-sm-12 col-lg-3">
                         <label for="personal_address8" class="form-label">Address</label>
                     </div>
@@ -24,7 +24,7 @@ get_header();
                         <input data-required="true" data-error="Address is required" type="text" class="form-control " id="personal_address8" name="personal_address8">
                     </div>
                 </div>
-                <!--Apartment-->
+                Apartment
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-lg-3">
                         <label for="personal_suit_apt8" class="form-label">Suite. Apt. #, etc.</label>
@@ -33,7 +33,7 @@ get_header();
                         <input type="text" class="form-control " id="personal_suit_apt8" name="personal_suit_apt8">
                     </div>
                 </div>
-                <!--City-->
+                City
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-lg-3">
                         <label for="personal_city8" class="form-label">City</label>
@@ -42,8 +42,8 @@ get_header();
                         <input type="text" data-required="true" data-error="City is required" class="form-control address_fields " id="personal_city8" name="personal_city8">
                     </div>
                 </div>
-                <!--Country-->
-                <div class="row">
+                Country-->
+                <!-- <div class="row">
                     <div class="col-md-3 col-sm-12 col-lg-3">
                         <label for="personal_state8" class="form-label">State</label>
                     </div>
@@ -120,8 +120,8 @@ get_header();
                         </select>
                     </div>
                 </div>
-                <!--Zip code-->
-                <div class="row">
+               Zip code-->
+                <!-- <div class="row">
                     <div class="col-md-3 col-sm-12 col-lg-3">
                         <label for="personal_zip_code8" class="form-label">Zip Code</label>
                     </div>
@@ -139,7 +139,7 @@ get_header();
                 </div>
                 <h3>
                     Delayed Effective Date
-                </h3>
+                </h3>  -->
                 <p>
                     Companies registered in Flabiz can opt to specify a future effective date, meaning that the company will be recognized as a valid corporation or LLC on that date rather than on the date of filing. For instance, a company filing in November 2020 can set an effective date of January 2021 to delay official recognition until the start of the new year. This can be a maximum of 90 days in the future.
                 </p>
@@ -151,8 +151,8 @@ get_header();
                 </div>
                 <div class="ml-md-auto col-sm-12  ">
                     <div class="box-checkbox  mt-3 mb-3 d-flex ">
-                        <input type="checkbox" id="accept " data-required="true" data-error="first check the agriment" class="form-check-input shadow" checked value="I accept the User Agreement" name="accept" required>
-                        <label for="">I accept the <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">User Agreement</a> and The Notice of Annual Report</label>
+                        <input type="checkbox" id="accept " data-required="true" data-error="first check the agriment" class="form-check-input shadow me-2" checked value="I accept the User Agreement" name="accept" required>
+                        <label for="accept">I accept the <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">User Agreement</a> and The Notice of Annual Report</label>
                     </div>
                 </div>
                 <!-- <div class="form-row form-group ">
@@ -171,10 +171,10 @@ get_header();
                 </div>
 
                 <div class="row mt-5">
-                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1 text-center">
                         <a href="step-seven" class="btn btn-success text-white  ">Previous</a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1 text-center">
                             <input type="submit" value="Next" class="btn border-success text-success   "> 
                         </div>
                 </div>

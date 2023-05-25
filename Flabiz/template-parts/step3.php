@@ -485,14 +485,12 @@ get_header();
                         </div>
                     </div>
                     <div class="row mt-5">
-                        <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
+                        <div class="col-lg-6 col-md-6 col-sm-12 mt-1 text-center">
                             <a href="step-two"  class="btn btn-success text-white shadow">Previous</a>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
+                        <div class="col-lg-6 col-md-6 col-sm-12 mt-1 text-center">
                             <button id="step-three-button" type="button" class="btn border-success text-success shadow ">Next</button>
-                            <!-- <a type="submit" class="btn btn-success text-white">Next</a> -->
-                            <!-- Button trigger modal -->
-                            <!-- <a href="" class="" data-bs-toggle="modal" data-bs-target="#savemodel">Save and contineu later</a> -->
+                            
                         </div>
                     </div>
 

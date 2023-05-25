@@ -8,12 +8,12 @@ jQuery(document).ready(function () {
 
 
 
-    jQuery('#name').text(formData.first_name);
+    jQuery('#name').text(formData.first_name + "  " + formData.last_name);
     jQuery('#Address').text(formData.personal_address);
     jQuery('#email').text(formData.primary_email);
     jQuery('#email2').text(formData.primary_email);
     jQuery('#phone').text(formData.primary_phone);
-    jQuery('#choice1').text(formData.preferred_name);
+    jQuery('#choice1').text(formData.preferred_name_type);
     jQuery('#choice2').text(formData.alternate_name_type);
     jQuery('#purpose').text(formData.principal_activity);
     jQuery('#purpose2').text(formData.company_purpose);
@@ -21,7 +21,7 @@ jQuery(document).ready(function () {
     jQuery('#mailingadress').text(formData.mailing_address);
     jQuery('#shares').text(formData.shares);
     jQuery('#alternate_name').text(formData.alternate_name);
-    jQuery('#city').text(formData.city);
+    jQuery('#city').text(formData.address);
     jQuery('#application').text(formData.chekbox7);
     jQuery('#agrii').text(formData.agri);
     jQuery('#others').text(formData.others);
@@ -37,7 +37,7 @@ jQuery(document).ready(function () {
     jQuery('#show_Email').text(formData.primary_email);
     jQuery('#NAME').text(formData.first_name);
     jQuery('#ADRESS').text(formData.personal_address);
-    
+
 
 
 
@@ -110,7 +110,7 @@ jQuery(document).ready(function () {
         }
     })
     // Card Number Validation
-    jQuery(document).on("keyup", "#CardNumber", function () {
+    jQuery(document).on("keyup", ".card", function () {
         if (!formatCardNumber(jQuery(this).val())) {
             jQuery(this).val("")
             jQuery(this).addClass("error")
@@ -137,9 +137,24 @@ jQuery(document).ready(function () {
 
         }
     })
+    jQuery(document).on("keyup", "#CVV", function () {
+        if (jQuery(this).val().trim().length < 4) {
+            jQuery(this).addClass("error")
+        } else {
+            jQuery(this).removeClass("error")
+
+        }
+    })
     // length fix of card
     jQuery(document).on("keyup", "#CardNumber", function () {
-        if (jQuery(this).val().trim().length < 16) {
+        if (jQuery(this).val().trim().length > 16) {
+            jQuery(this).addClass("error")
+        } else {
+            jQuery(this).removeClass("error")
+        }
+    })
+    jQuery(document).on("keyup", "#CardNumber", function () {
+        if (jQuery(this).val().trim().length < 14) {
             jQuery(this).addClass("error")
         } else {
             jQuery(this).removeClass("error")
@@ -164,6 +179,8 @@ jQuery(document).ready(function () {
         }
         return formatted;
     }
+    // Formatting the card number
+
     // Formatting the ssn number
     function formatssnNumber(ssn) {
         // Remove all non-digit characters from the ssn number
@@ -192,6 +209,23 @@ jQuery(document).ready(function () {
     })
     // zip code validation
     jQuery(document).on("keyup", "#zip_code", function () {
+        if (jQuery(this).val().trim().length < 5) {
+            jQuery(this).addClass("error")
+        } else {
+            jQuery(this).removeClass("error")
+
+        }
+    })
+    // zip code validation
+    jQuery(document).on("keyup", "#zip_code", function () {
+        if (jQuery(this).val().trim().length < 5) {
+            jQuery(this).addClass("error")
+        } else {
+            jQuery(this).removeClass("error")
+
+        }
+    })
+    jQuery(document).on("keyup", "#personal_zip_code", function () {
         if (jQuery(this).val().trim().length < 5) {
             jQuery(this).addClass("error")
         } else {
@@ -317,6 +351,10 @@ jQuery(document).ready(function () {
                         isValid = false;
                         errorMessage += "<li>Zip code can't be greater than 5 characters</li>"
                         input.classList.add('error');
+                    } else if (input.id === "personal_zip_code" && input.value.length > 5) {
+                        isValid = false;
+                        errorMessage += "<li>Zip code can't be greater than 5 characters</li>"
+                        input.classList.add('error');
                     } else if (input.id === "primary_email" && !ValidateEmail(input.value)) {
                         isValid = false;
                         errorMessage += "<li>Enter valid email</li>"
@@ -353,13 +391,21 @@ jQuery(document).ready(function () {
                         isValid = false;
                         errorMessage += "<li> password is required</li>"
                         input.classList.add('error');
-                    } else if (input.id === "CardNumber" && input.value.length < 16) {
+                    } else if (input.id === "CVV" && input.value.length < 4) {
                         isValid = false;
-                        errorMessage += "<li> card number can't not be greater or less then 16 </li>"
+                        errorMessage += "<li> CVV number can't be less than or greater than 4 </li>"
+                        input.classList.add('error');
+                    } else if (input.id === "CVV" && input.value.length > 4) {
+                        isValid = false;
+                        errorMessage += "<li> CVV number can't be less than or greater than 4 </li>"
+                        input.classList.add('error');
+                    } else if (input.id === "CardNumber" && input.value.length < 14) {
+                        isValid = false;
+                        errorMessage += "<li> card number can not be  less then 14 </li>"
                         input.classList.add('error');
                     } else if (input.id === "CardNumber" && input.value.length > 16) {
                         isValid = false;
-                        errorMessage += "<li> card number can't not be greater or less then 16 </li>"
+                        errorMessage += "<li> card number can't not be greater  then 16 </li>"
                         input.classList.add('error');
                     } else if (input.id === "phone_number8" && input.value.length > 10) {
                         isValid = false;
@@ -369,7 +415,13 @@ jQuery(document).ready(function () {
                         isValid = false;
                         errorMessage += "<li> PHONE number can't not be greater or less then 10 </li>"
                         input.classList.add('error');
-                    } else if (input.id === "chekbox3") {
+                    } 
+                    // else if (input.id === "Expiration") {
+                    //     // Get the expiration date input field
+                        
+
+                    // }
+                    else if (input.id === "chekbox3") {
                         if (input.checked) {
                             input.value = "Fictitious Name (DBA) - 69";
                         } else {
@@ -826,7 +878,7 @@ jQuery(document).ready(function () {
         savingDataInSessionStorage(false)
         window.location.href = "step-four";
     })
-    
+
     //   show data with checkbox in sidebar
     $(function () {
         $("#chekbox").click(function () {
@@ -956,11 +1008,11 @@ jQuery(document).ready(function () {
 
         if (formData.officers != undefined) {
             for (i = 0; i < formData.officers.length; i++) {
-                officeroutput += "<li>" + formData.officers[i].first_name + " " + formData.officers[i].address + "</li>";
+                officeroutput += "<li>" + formData.officers[i].first_name + " " + formData.officers[i].last_name + "</li>";
 
                 if (formData.officers[i].position === "President") {
                     // Save the president's name
-                    presidentName = formData.officers[i].first_name;
+                    presidentName = formData.officers[i].first_name + " " + formData.officers[i].last_name;
                 }
             }
 
@@ -1094,6 +1146,18 @@ jQuery(document).ready(function () {
     const countElement = document.getElementById("count");
     countElement.innerHTML = "";
     countElement.appendChild(spanCount);
+
+    /// Get the expiration date input field
+    var expirationDateInput = document.getElementById("Expiration");
+
+    // Set the minimum value of the input field to the current date
+    var currentDate = new Date();
+    var year = currentDate.getFullYear();
+    var month = (currentDate.getMonth() + 1).toString().padStart(2, "0");
+    var day = currentDate.getDate().toString().padStart(2, "0");
+    var minDate = year + "-" + month + "-" + day;
+    expirationDateInput.min = minDate;
+
 
     // Ajax request send for server
 

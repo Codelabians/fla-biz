@@ -185,16 +185,16 @@ get_header();
                             <label for="personal_zip_code" class="form-label">Zip Code</label>
                         </div>
                         <div class="col-lg-9 col-md-9 col-sm-12">
-                            <input type="number" class="form-control address_fields" data-required="true" data-error="Zip Code is required" id="personal_zip_code" name="personal_zip_code">
+                            <input type="number" class="form-control address_fields " data-required="true" data-error="Zip Code is required" id="personal_zip_code" name="personal_zip_code">
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
+                    <div class="row ">
+                        <div class="col-lg-6 col-md-6 col-sm-12 text-center mt-1">
                             <a href="step-one" class="btn btn-success text-white shadow">Previous</a>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
-                            <input type="submit" value="Next" class="btn border-success text-success shadow "> 
+                        <div class="col-lg-6 col-md-6 col-sm-12 mt-1 text-center">
+                            <input type="submit" value="Next" class="btn border-success  text-success shadow "> 
                         </div>
                     </div>
                     <!-- Error Modal -->

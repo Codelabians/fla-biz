@@ -6,7 +6,7 @@ get_header();
     <div class="row ">
         <div class="col-sm-12 col-md-10 col-lg-8">
 
-            <form data-action="step-Eleven" id="myForm" class=" m-3">
+            <form data-action="step-Eleven" id="myForm" class=" m-4">
                 <h1>Company Information Summary</h1>
                 <p>
                     Following is a summary of your company's information as you have entered it; please verify this is
@@ -25,7 +25,8 @@ get_header();
                     <ul class="list-grpup list-group-flush">
                         <li class="list-group-item d-flex justify-content-lg-between  ">
                             <span class="info-title">Name:</span>
-                            <span class="info-data me-3" id="name"></span>
+                            <p class="info-data " id="name"></p>
+
                         </li>
                         <li class="list-group-item d-flex justify-content-lg-between ">
                             <span class="info-title">Adress:</span>
@@ -237,10 +238,10 @@ get_header();
                 </div>
                 
                 <div class="row mt-5">
-                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1 text-center">
                         <a href="step-nine" class="btn btn-success text-white shadow">Previous</a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1 text-center">
                             <input type="submit" value="Next" class="btn border-success text-success shadow "> 
                         </div>
                 </div>

@@ -13,15 +13,13 @@ get_header();
                     <div class="col">
                         <div class="form-outline">
                             <label class="form-label" for="NameOnCard">Name on card</label>
-                            <input type="text" id="NameOnCard" data-error="Name on card is required"
-                                class="form-control " data-required="true" />
+                            <input type="text" id="NameOnCard" data-error="Name on card is required" class="form-control " data-required="true" />
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-outline">
                             <label class="form-label" for="CardNumber">Credit card number</label>
-                            <input type="number" id="CardNumber" data-error="Card number is required"
-                                class="form-control card " data-required="true" />
+                            <input type="number" id="CardNumber" data-error="Card number is required" class="form-control card " data-required="true" />
                         </div>
                     </div>
                 </div>
@@ -30,32 +28,29 @@ get_header();
                     number to increase the security of your purchase.</p>
                 <div class="form-outline">
                     <label class="form-label" for="CVV">CVN/CVV</label>
-                    <input type="text" id="CVV" data-error="CVN/CVV is required" class="form-control "
-                    data-required="true" />
+                    <input type="number" id="CVV" data-error="CVN/CVV is required" class="form-control CVV " data-required="true" />
                 </div>
                 <div class="form-outline">
                     <label class="form-label" for="Expiration">Expiration</label>
-                    <input type="date" id="Expiration" data-error="Expiration is required" class="form-control "
-                    data-required="true" />
+                    <input type="date" id="Expiration" min="" data-error="Expiration date is required" class="form-control " data-required="true" />
                 </div>
                 <h5 class="mb-4">Payment</h5>
-                <select name="paymentCard" id="paymentCard" data-error="card type is required" class="form-control  "
-                    data-required="true" data-error="Card is required">
+                <select name="paymentCard" id="paymentCard" data-error="card type is required" class="form-control  " data-required="true" data-error="Card is required">
                     <option value="">Select card</option>
                     <option value="MasterCard">Master card</option>
                     <option value="visaCard">Visa card</option>
                     <option value="AmericanExpress">American Express</option>
                     <option value="Discover">Discover</option>
                 </select>
-                
+
                 <hr class="my-4" />
                 <div class="row mt-5">
-                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1 text-center">
                         <a href="step-eight" class="btn btn-success text-white shadow ">Previous</a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
-                            <input type="submit" value="Next" class="btn border-success text-success shadow  "> 
-                        </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1 text-center">
+                        <input type="submit" value="Next" class="btn border-success text-success shadow  ">
+                    </div>
                 </div>
             </form>
         </div>

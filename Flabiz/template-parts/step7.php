@@ -17,21 +17,21 @@ get_header();
                 <h3>Do you wish to file the S Corporation election form?</h3>
 
 
-                <div class="ml-md-auto col-sm-12 d-flex justify-content-between align-items-center mt-5">
-                    <div class="box-checkbox border border-2 border-success rounded  m-2 p-2 ">
+                <div class="ml-md-auto col-sm-12   d-flex justify-content-center align-items-center mt-5">
+                    <div class="box-checkbox border border-2 border-success rounded m-sm-0 p-sm-0 m-2 p-0 ">
                         <input class="custom-control-input m-2 form-check-input " type="checkbox" id="checkbox11"  name="checkbox11">
                         <label for="checkbox11">
                             <span>
-                                <h4>Yes, file the S Corporation election form</h4>
+                                <h5>Yes, file the S Corporation election form</h5>
                             </span>
                         </label>
                     </div>
                 </div>
                 <div class="row mt-5">
-                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1 text-center">
                         <a id="my-link" href="step-six" class="btn btn-success text-white shadow ">Previous</a>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-1 text-center">
                             <input type="submit" value="Next" class="btn border-success text-success shadow "> 
                         </div>
                 </div>

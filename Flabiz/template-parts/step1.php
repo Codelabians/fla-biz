@@ -412,7 +412,7 @@ get_header();
 
 
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-end">
+                    <div class="col-lg-12 col-md-12 col-sm-12 mt-3 text-center">
                         <input type="submit" value="Next" class="btn border-success text-success shadow ">
                     </div>
                 </div>

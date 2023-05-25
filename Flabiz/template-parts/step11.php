@@ -67,10 +67,10 @@ get_header();
                     result in the rejection of your request.</p>
 
                 <div class="row mt-5">
-                    <div class="col-lg-4 col-md-4 col-sm-12 mt-1">
+                    <div class="col-lg-4 col-md-4 col-sm-12 mt-1 text-center">
                         <a href="step-ten" class="btn btn-success text-white shadow">Previous</a>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 mt-1 ">
+                    <div class="col-lg-4 col-md-4 col-sm-12 mt-1 text-center ">
                         <input class="btn btn-success text-white shadow" type="submit" value="Save Data" id="final" data-url=<?= admin_url("admin-ajax.php") ?>>
                     </div>
                 </div>
