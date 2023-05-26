@@ -70,21 +70,13 @@ get_header();
                     <div class="col-lg-4 col-md-4 col-sm-12 mt-1 text-center">
                         <a href="step-ten" class="btn btn-success text-white shadow">Previous</a>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 mt-1 ">
+                    <div class="col-lg-4 col-md-4 col-sm-12 mt-1 text-center ">
                         <input class="btn btn-success text-white shadow" id="SaveBtn" type="submit" value="Save Data">
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 mt-1 ">
-                        <input class="btn btn-success text-white shadow" style="display:none;"  value="Submit Data" id="final" data-url=<?= admin_url("admin-ajax.php") ?>>
+                    <div class="col-lg-4 col-md-4 col-sm-12 mt-1 text-center ">
+                        <input class="btn btn-success text-white shadow" style="display:none;" type="button"  value="Submit Data" id="final" data-url=<?= admin_url("admin-ajax.php") ?>>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
                 <!-- Error Modal -->
                 <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">

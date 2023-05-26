@@ -4,8 +4,8 @@ get_header();
 
 ?>
 <div class="container">
-    <div class="row ">
-        <div class="col-sm-12 col-md-10 col-lg-8 m-4 mt-5 ">
+    <div class="row  ">
+        <div class="col-sm-12 col-md-10 col-lg-8  mt-5 ">
             <form data-action="step-five" id="myForm">
                 <h2>Who will be the registerd Agent?</h2>
                 <p>

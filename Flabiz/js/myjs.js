@@ -6,7 +6,7 @@ jQuery(document).ready(function () {
     let globalUser = {};
     let directors = [];
 
-
+    
 
     jQuery('#name').text(formData.first_name + "  " + formData.last_name);
     jQuery('#Address').text(formData.personal_address);
@@ -418,10 +418,10 @@ jQuery(document).ready(function () {
                         isValid = false;
                         errorMessage += "<li> PHONE number can't not be greater or less then 10 </li>"
                         input.classList.add('error');
-                    } 
+                    }
                     // else if (input.id === "Expiration") {
                     //     // Get the expiration date input field
-                        
+
 
                     // }
                     else if (input.id === "chekbox3") {
@@ -488,7 +488,7 @@ jQuery(document).ready(function () {
             } else {
                 window.location.href = jQuery(this).data("action");
                 savingDataInSessionStorage(true);
-                
+
                 window.location.href = jQuery(this).data("action");
             }
         });
@@ -1151,6 +1151,19 @@ jQuery(document).ready(function () {
     countElement.innerHTML = "";
     countElement.appendChild(spanCount);
 
+   
+
+
+    var saveBtn = document.getElementById('SaveBtn');
+    var submitBtn = document.getElementById('final');
+    saveBtn.onclick = () => {
+        showmodeldatasaved();
+    }
+    function showmodeldatasaved() {
+        console.log('data has been saved')
+        saveBtn.style.display = "none";
+        submitBtn.style.display = "block";
+    }
     // Ajax request send for server
 
     jQuery(document).on("click", "#final", function () {

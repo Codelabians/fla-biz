@@ -4,7 +4,7 @@ get_header();
 ?>
 <div class="container">
     <div class="row  ">
-        <div class="col-sm-12 col-md-10 col-lg-8 m-3 mt-3">
+        <div class="col-sm-12 col-md-10 col-lg-8  mt-3">
             <form id="myForm" data-action="step-seven">
                 <h2>EIN Application</h2>
                 <p >
@@ -47,7 +47,8 @@ get_header();
                     <strong>president Name:</strong>
                     <span id="presidentName"></span>
                 </div>
-                <div class="form-row w-auto">
+                
+                <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-12">
                         <label for="primary_ssn" class="form-label">SSN:</label>
                     </div>

@@ -6,12 +6,12 @@ get_header();
 ?>
 
 <div class="container mt-5">
-    <div class="row">
+    <div class="row ">
         <div class="col-sm-12 col-md-8 col-lg-8">
             <!--Primary Contact Information-->
             <!--Heading-->
             <h2>Business Management</h2>
-            <div id="business-manager-detail-table ">
+            <div id="business-manager-detail-table" style="overflow-y:hidden" >
                 <p><strong>We show your information as:</strong></p>
                 <!--Main User Data Table-->
                 <table class="table table-striped ">

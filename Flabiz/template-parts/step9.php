@@ -78,6 +78,10 @@ get_header();
     </div>
 </div>
 </div>
+<script>
+    const currentDate = new Date().toISOString().split("T")[0];
+    document.getElementById("Expiration").min = currentDate;
+</script>
 <?php
 get_footer();
 
