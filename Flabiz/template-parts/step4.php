@@ -16,7 +16,7 @@ get_header();
                     This additional service can be added for only $500 for the first year of service.
                 </p>
                 <div class="ml-md-auto col-sm-12 p-3  ">
-                    <div class="box-checkbox ">
+                    <div class="box-checkbox" required>
                         <div class="col  ">
                             <input type="checkbox" id="chekbox" checked class="form-check-input " name="chekbox">
                             &nbsp; <label for="chekbox">I want fla-biz to be my register agent</label>

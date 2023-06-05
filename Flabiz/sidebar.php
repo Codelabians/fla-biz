@@ -20,44 +20,44 @@
 	<ul class="ul">
 		<li id="order1" class=" list-group-item border-1 border-top m-3 ">
 			<span>fla-biz service </span>
-			<span class="float-end">$79</span>
+			<span class="float-end">79</span>
 		</li>
 		<li id="agriment" style="display:none" class=" list-group-item  m-3 ">
 			<span>Register agent service </span>
-			<span class="float-end">$500</span>
+			<span class="float-end">500</span>
 		</li>
 		<li id="rr" style="display:none" class=" list-group-item  m-3 ">
 			<span>Certificate of Status </span>
-			<span class="float-end">$20.00</span>
+			<span class="float-end">20.00</span>
 		</li>
 		<li id="order3" style=" display:none " class=" list-group-item  m-3 ">
 			<span>Fictitious Name Registration </span>
-			<span class="float-end">$69</span>
+			<span class="float-end">69</span>
 		</li>
 		<li id="order4" style=" display:none " class=" list-group-item  m-3 ">
 			<span>Corporate Seals &  Stock </span>
-			<span class="float-end">$49</span>
+			<span class="float-end">49</span>
 
 
 		</li>
 
 		<li id="order5" style=" display:none " class=" list-group-item  m-3 ">
 			<span>Bylaws and Minutes </span>
-			<span class="float-end">$49.00</span>
+			<span class="float-end">49.00</span>
 		</li>
 
 		<li id="order6" style=" display:none " class=" list-group-item  m-3 ">
 			<span>Corporate Embosser </span>
-			<span class="float-end">$20.00</span>
+			<span class="float-end">20.00</span>
 		</li>
 
 		<li id="order7" style=" display:none " class=" order7 list-group-item  m-3  ">
 			<span>EIN Application</span>
-			<span class="float-end">$25.00</span>
+			<span class="float-end">25.00</span>
 		</li>
 		<li id="order11" style="display:none" class="list-group-item m-3 ">
 			<span> Sub-S Election</span>
-			<span class="float-end">$39</span>
+			<span class="float-end">39</span>
 		</li>
 		<li id="application4" class=" list-group-item  m-3 d-flex justify-content-between">
 

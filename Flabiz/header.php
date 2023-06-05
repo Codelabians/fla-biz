@@ -74,7 +74,6 @@ session_start();
           }
         }
         ?>
-
       </a>
       <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

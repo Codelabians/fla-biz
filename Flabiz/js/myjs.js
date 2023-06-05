@@ -1033,7 +1033,7 @@ jQuery(document).ready(function () {
     }
 
     let count = 0;
-    count += 79;
+    count += 579;
 
     if (formData.checkbox3 != "undefined") {
         const value = formData.chekbox3;
